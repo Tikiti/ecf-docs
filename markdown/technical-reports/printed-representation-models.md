@@ -83,7 +83,7 @@ Every printed representation must include:
 | **1.6** | e-Credit Note (E34) | Includes "NCF que modifica" field |
 | **1.7** | Pagination | Multi-page layout with "Página X de Y" |
 | **2.1/2.2** | e-Consumption (E32) | Client data required when total ≥ 250k DOP |
-| **2.3** | Continuous Paper (Ticket) | Narrow format for POS/thermal printers |
+| **2.3** | Continuous Paper (Ticket) | Narrow format for POS/thermal printers. Ideal for high-volume retail (< RD$250k). |
 | **3.1** | Deferred Sending | Note: "Consult validity after 24 hours" |
 | **4.1** | Contingency (Offline) | Note: "Consult validity after 72 hours" |
 | **4.2** | Technical Incapacity | Fallback B-series NCF; no QR code |
@@ -127,7 +127,8 @@ https://ecf.dgii.gov.do/{ambiente}/consultatimbre?
 - Used when e-CF transmission is batched or delayed (but within 24 hours)
 - Includes warning: **"Consulte su validez después de 24 horas"**
 - The e-CF is generated and signed but not immediately transmitted to DGII
-- Issuers who provide a consultation portal should include their URL
+- **Mandatory Link**: Issuers **must** provide a URL where the receiver can consult the e-CF once it is transmitted to DGII.
+  - *PDF Footnote*: "(Enlace consulta proveedor electrónico) esta ruta deberá ser generada por el emisor electrónico"
 
 ### Contingency Mode (Offline)
 

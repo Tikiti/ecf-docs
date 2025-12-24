@@ -32,17 +32,17 @@ This format is used to **cancel (annul) unused e-NCF sequences** that were autho
     <Version>1.0</Version>
     <RncEmisor>...</RncEmisor>
     <CantidadNCFAnulados>...</CantidadNCFAnulados>
-    <FechaHoraAnulacionNCF>...</FechaHoraAnulacionNCF>
+    <FechaHoraAnulacioneNCF>...</FechaHoraAnulacioneNCF>
   </Encabezado>
   <DetalleAnulacion>
     <Anulacion>  <!-- 1 to 10 repetitions -->
       <NoLinea>...</NoLinea>
       <TipoeCF>...</TipoeCF>
       <TablaRangoSecuenciasAnuladaseNCF>
-        <SecuenciaNCFDesde>...</SecuenciaNCFDesde>
-        <SecuenciaNCFHasta>...</SecuenciaNCFHasta>
+        <SecuenciaeNCFDesde>...</SecuenciaeNCFDesde>
+        <SecuenciaeNCFHasta>...</SecuenciaeNCFHasta>
       </TablaRangoSecuenciasAnuladaseNCF>
-      <CantidadNCFAnulados>...</CantidadNCFAnulados>
+      <CantidadeNCFAnulados>...</CantidadeNCFAnulados>
     </Anulacion>
   </DetalleAnulacion>
   <Signature>...</Signature>
@@ -59,8 +59,8 @@ This format is used to **cancel (annul) unused e-NCF sequences** that were autho
 |---------|------|---------|-----|-------------|
 | `Version` | NUM | 3 | 1 | Value: `1.0` |
 | `RncEmisor` | NUM | 9/11 | 1 | Taxpayer RNC |
-| `CantidadNCFAnulados` | NUM | — | 1 | Total count of annulled sequences |
-| `FechaHoraAnulacionNCF` | ALFA | 19 | 1 | Format: DD-MM-YYYY HH:MM:SS |
+| `CantidadeNCFAnulados` | NUM | — | 1 | Total count of annulled sequences |
+| `FechaHoraAnulacioneNCF` | ALFA | 19 | 1 | Format: DD-MM-YYYY HH:MM:SS |
 
 ### DetalleAnulacion (Detail)
 
@@ -68,9 +68,9 @@ This format is used to **cancel (annul) unused e-NCF sequences** that were autho
 |---------|------|---------|-----|-------------|
 | `NoLinea` | NUM | — | 1 | Line number (1-10) |
 | `TipoeCF` | NUM | 2 | 1 | e-CF type code (31-47) |
-| `SecuenciaNCFDesde` | ALFA | 13 | 1 | Starting e-NCF of range |
-| `SecuenciaNCFHasta` | ALFA | 13 | 1 | Ending e-NCF of range |
-| `CantidadNCFAnulados` | NUM | — | 1 | Count for this line |
+| `SecuenciaeNCFDesde` | ALFA | 13 | 1 | Starting e-NCF of range |
+| `SecuenciaeNCFHasta` | ALFA | 13 | 1 | Ending e-NCF of range |
+| `CantidadeNCFAnulados` | NUM | — | 1 | Count for this line |
 
 ---
 

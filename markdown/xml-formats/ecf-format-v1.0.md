@@ -255,6 +255,28 @@ See [Digital Signing Guide](../guides/digital-signing-guide.md) for implementati
 | `2` | Crédito (Credit) |
 | `3` | Gratuito (Free/No charge) |
 
+### Table V: Common Unit of Measures (UnidadMedida) - Partial List
+
+| Code | Abbr | Description |
+|------|------|-------------|
+| `13` | DOC | Docena |
+| `19` | HOR | Hora |
+| `43` | UND | Unidad (Unit) |
+| `26` | M | Metro |
+| `23` | LB | Libra |
+| `24` | LITRO | Litro |
+| `12` | DIA | Día |
+| `5` | BOTELLA | Botella |
+| `6` | CAJ | Caja |
+| `15` | GL | Galón |
+| `21` | KG | Kilogramo |
+| `31` | PAQ | Paquete |
+| `34` | PZA | Pieza |
+| `54` | PAX | Pasajero |
+
+> [!NOTE]
+> This is a partial list of common units. See pages 84-86 of the technical report for the full list of 60+ codes.
+
 ---
 
 ## Validation Rules

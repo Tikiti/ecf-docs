@@ -84,6 +84,9 @@ The RFCE (Resumen de Factura de Consumo Electrónica) is a **simplified summary 
 | `TotalITBIS2` | NUM | 18 | 2 | ITBIS at 16% |
 | `MontoTotal` | NUM | 18 | 1 | Grand total |
 
+> [!NOTE]
+> **Formula**: `MontoTotal` = `MontoGravadoTotal` + `MontoExento` + `TotalITBIS` + `MontoImpuestoAdicional`
+
 ### Security Elements
 
 | Element | Type | Max Len | Req | Description |
@@ -107,7 +110,10 @@ Applies when the consumer invoice includes ISC or other special taxes.
 | Element | Type | Max Len | Req | Description |
 |---------|------|---------|-----|-------------|
 | `MontoNoFacturable` | NUM | 18 | 2 | Non-billable amounts (can be negative) |
-| `MontoPeriodo` | NUM | 18 | 3 | Period amount = MontoTotal + MontoNoFacturable |
+| `MontoPeriodo` | NUM | 18 | 3 | Period amount |
+
+> [!NOTE]
+> **Formula**: `MontoPeriodo` = `MontoTotal` + `MontoNoFacturable`
 
 ---
 

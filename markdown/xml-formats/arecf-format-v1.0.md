@@ -23,7 +23,7 @@ The ARECF (Acuse de Recibo) is a confirmation document sent from the **receiver*
 
 ```
 <ARECF>
-  <DetalleAcuseDeRecibo>
+  <DetalleAcusedeRecibo>
     <Version>1.0</Version>
     <RNCEmisor>...</RNCEmisor>
     <RNCComprador>...</RNCComprador>
@@ -31,7 +31,7 @@ The ARECF (Acuse de Recibo) is a confirmation document sent from the **receiver*
     <Estado>...</Estado>
     <CodigoMotivoNoRecibido>...</CodigoMotivoNoRecibido>
     <FechaHoraAcuseRecibo>...</FechaHoraAcuseRecibo>
-  </DetalleAcuseDeRecibo>
+  </DetalleAcusedeRecibo>
   <Signature>...</Signature>
 </ARECF>
 ```

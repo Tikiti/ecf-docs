@@ -22,6 +22,23 @@ This document serves as the primary technical guide for the DGII e-CF system, pr
 
 ---
 
+## Web Services Overview (Section 4)
+
+The DGII provides the following REST API services for e-CF operations:
+
+| Service | Description |
+|---------|-------------|
+| **4.1 Autenticación** | Token generation via signed seed (1-hour validity) |
+| **4.2 Recepción e-CF** | Submit e-CF XML, returns `TrackId` |
+| **4.3 Recepción RFCE** | Submit consumer invoice summary (< RD$250k) |
+| **4.4 Recepción Aprobación Comercial** | Submit ACECF (acceptance/rejection) to DGII |
+| **4.5 Consulta Resultado e-CF** | Query e-CF status by `TrackId` (for issuers) |
+| **4.6 Consulta Estado e-CF** | Query e-CF validity (for receivers) |
+| **4.7 Consulta TrackId e-CF** | Get all TrackIds for an e-NCF |
+| **4.8 Consulta Directorio** | Lookup receiver's service URLs |
+| **4.9 Consulta Estatus Servicios** | Check DGII service availability |
+| **4.10 Anulación e-NCF** | Cancel unused e-NCF sequences |
+
 ## e-CF Types (Tipos de Comprobante)
 
 | Code | Type | Description |
@@ -103,7 +120,18 @@ Global discounts or charges applied to the entire invoice.
 
 ### Section E: Paginación — Optional
 
-Information about pages and items per page.
+### Section E: Paginación — Optional
+
+Required **only** when the printed representation exceeds one page. It must appear on all pages except the last one (which contains the global totals).
+
+| Element | Description |
+|---------|-------------|
+| `PaginaNo` | Sequential page number (starts at 1) |
+| `SubtotalGravadoPagina` | Sum of taxed amounts on this page |
+| `SubtotalExentoPagina` | Sum of exempt items on this page |
+| `SubtotalItbisPagina` | Sum of ITBIS on this page |
+| `SubtotalImpuestoAdicionalPagina` | Sum of ISC + Other Taxes on this page |
+| `MontoTotalPagina` | Grand total for items on this page |
 
 ---
 
@@ -228,6 +256,18 @@ The printed version of an e-CF must include:
 ## Contingency Operations (Operación en Contingencia)
 
 Defined as exceptional situations preventing normal e-CF emission.
+
+### Notification Requirement
+The issuer **must immediately notify** DGII of the contingency state via:
+1.  **Office Virtual (OFV)**: Contingency Module
+2.  **Contact Center**: Notification of situation and type
+
+### Contingency Types (Tipos de Contingencia)
+
+| Type | Definition | End Condition |
+|------|------------|---------------|
+| **Total Contingency** | System failure affecting **all** operations/branches. | Ends when DGII receives the first e-CF or user notifies resolution. |
+| **Partial Contingency** | System failure affecting **some** branches/POS, while others operate normally. | Ends when user notifies resolution for those specific branches. |
 
 ### Scenario A: No Connection (Falta de Conectividad)
 If you cannot connect to DGII Web Services:

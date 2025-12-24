@@ -43,6 +43,10 @@ The **App Firma Digital** is a Windows desktop application provided by the DGII 
 2.  A system dialog will appear asking where to save the file.
 3.  Choose a location and save. Use a clear name (e.g., `[OriginalName]_signed.xml`).
 
+### Additional UI Features
+- **Limpiar Campos** (Clear Fields): Resets all input fields to empty state.
+- **Ruta por Defecto** (Default Path): Remembers the last used directory for saving files.
+
 ---
 
 ## Troubleshooting

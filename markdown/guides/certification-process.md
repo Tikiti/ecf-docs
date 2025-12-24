@@ -84,11 +84,14 @@ flowchart TD
 | 8 | **Inicio Prueba Recepción e-CF** | Start reception test phase |
 | 9 | **Recepción e-CF** | Confirm ability to receive e-CFs |
 | 10 | **Inicio Prueba Recepción Aprobación Comercial** | Start response reception tests |
-| 11 | **Recepción Aprobación Comercial** | Confirm ability to receive responses |
+| 11 | **Recepción Aprobación Comercial** | Reply to DGII approvals with status "OK" or "Error" |
 | 12 | **URL Servicios Producción** | Enter production endpoints |
-| 13 | **Declaración Jurada** | Sign legal affidavit electronically |
+| 13 | **Declaración Jurada** | Sign affidavit using [App Firma Digital](./digital-signature-app-guide.md) |
 | 14 | **Verificación Estatus** | DGII final compliance check |
 | 15 | **Finalizado** | Transition to Electronic Issuer status |
+
+> [!NOTE]
+> **Changing Representative**: If you need to change the legal representative for the process, you must cancel the current application in the portal (available in steps 1-13) with the reason "Cambio de representante" and start a new application.
 
 ---
 

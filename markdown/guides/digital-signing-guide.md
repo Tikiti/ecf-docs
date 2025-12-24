@@ -91,6 +91,37 @@ xmlDoc.DocumentElement.AppendChild(
 );
 ```
 
+### VB.NET
+
+```vbnet
+Private Function Signed(ByVal xmlDoc As XmlDocument, ByVal pathCert As String, ByVal passCert As String) As XmlDocument
+    Dim cert = New X509Certificate2(pathCert, passCert, X509KeyStorageFlags.Exportable)
+    Dim exportedKeyMaterial = cert.PrivateKey.ToXmlString(True)
+    Dim key = New RSACryptoServiceProvider(New CspParameters(24))
+    key.PersistKeyInCsp = False
+    key.FromXmlString(exportedKeyMaterial)
+    
+    Dim signedXml As SignedXml = New SignedXml(xmlDoc)
+    signedXml.SigningKey = key
+    signedXml.SignedInfo.SignatureMethod = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"
+    
+    Dim reference As Reference = New Reference()
+    reference.AddTransform(New XmlDsigEnvelopedSignatureTransform())
+    reference.DigestMethod = "http://www.w3.org/2001/04/xmlenc#sha256"
+    reference.Uri = ""
+    signedXml.AddReference(reference)
+    
+    Dim keyInfo As KeyInfo = New KeyInfo()
+    keyInfo.AddClause(New KeyInfoX509Data(cert))
+    signedXml.KeyInfo = keyInfo
+    signedXml.ComputeSignature()
+    
+    Dim xmlFirmaDigital As XmlElement = signedXml.GetXml()
+    xmlDoc.DocumentElement.AppendChild(xmlDoc.ImportNode(xmlFirmaDigital, True))
+    Return xmlDoc
+End Function
+```
+
 ### Java
 
 > **References**: [Oracle Java SE](https://www.oracle.com/java/technologies/javase-downloads.html), [XML Parser v2](https://repo1.maven.org/maven2/com/oracle/database/xml/xmlparserv2/)
@@ -141,6 +172,48 @@ DOMSignContext dsc = new DOMSignContext(
 );
 XMLSignature signature = fac.newXMLSignature(si, ki);
 signature.sign(dsc);
+```
+
+### PHP
+
+> **Library**: [selective-php/xmldsig](https://github.com/selective-php/xmldsig)  
+> **Tested Version**: PHP 8.1.12+
+
+**Critical Library Modifications Required:**
+The official PDF mandates modifying `XmlSigner.php` in the library:
+1. Set `$xml->preserveWhiteSpace = false;` (default is true)
+2. Change C14N call: `$element->C14N(false, false);` (remove comments)
+3. In `appendSignature`, comment out `KeyValue`, `RSAKeyValue`, and `Exponent` tags (lines 154-170 approx).
+
+```php
+<?php
+use Selective\XmlDSig\PrivateKeyStore;
+use Selective\XmlDSig\Algorithm;
+use Selective\XmlDSig\CryptoSigner;
+use Selective\XmlDSig\XmlSigner;
+
+public function sign(string $p12Content, string $password, string $xmlContent): string
+{
+    if (!openssl_pkcs12_read($p12Content, $certs, $password)) {
+        throw new Exception("Error reading P12");
+    }
+
+    $pemContent = $certs['cert'] . $certs['pkey'];
+    
+    $privateKeyStore = new PrivateKeyStore();
+    $privateKeyStore->loadFromPem($pemContent, $password);
+    $privateKeyStore->addCertificatesFromX509Pem($pemContent);
+
+    $algorithm = new Algorithm(Algorithm::METHOD_SHA256);
+    $cryptoSigner = new CryptoSigner($privateKeyStore, $algorithm);
+    
+    // Remember: validation is strict on whitespace and C14N!
+    $xmlSigner = new XmlSigner($cryptoSigner);
+    $xmlSigner->setReferenceUri(''); 
+
+    return $xmlSigner->signXml($xmlContent);
+}
+?>
 ```
 
 ### TypeScript/Node.js

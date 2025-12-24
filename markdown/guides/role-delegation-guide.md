@@ -41,10 +41,11 @@ Taxpayers (issuers) can delegate specific responsibilities to other individuals 
 6.  Click **Aceptar**.
 
 ### Step 2: Sign the Request
-1.  The OFV will generate an **Authorization XML**.
-2.  **Download** this XML file.
-3.  Use the **App Firma Digital** (or your own tool) to **digitally sign** this XML using the **Administrator's** digital certificate.
-4.  Save the signed XML.
+1.  You will be prompted to accept the **Legal Terms**. Click **Aceptar Términos Legales**.
+2.  The OFV will generate an **Authorization XML**.
+3.  **Download** this XML file (Button: `Descargar`).
+4.  Use the **App Firma Digital** (or your own tool) to **digitally sign** this XML using the **Administrator's** digital certificate.
+5.  Save the signed XML.
 
 ### Step 3: Upload Authorization
 1.  Return to the OFV menu `Delegación de e-CF`.

@@ -204,8 +204,20 @@ The "Respresentación Impresa" (Printed Invoice) must include a QR code pointing
 7. `CodigoSeguridad` (Take the first **6 characters** of the signature hash)
 
 **URL Encoding Rules:**
-You **must** URL-encode special characters in the Security Code if they appear:
-`Space` `!` `#` `$` `&` `'` `(` `)` `*` `+` `,` `/` `:` `;` `=` `?` `@` `[` `]`
+You **must** URL-encode special characters in the Security Code if they appear. Common characters and their hex codes:
+
+| Char | Hex | Char | Hex | Char | Hex |
+|------|-----|------|-----|------|-----|
+| Space | `%20` | `*` | `%2A` | `>` | `%3E` |
+| `!` | `%21` | `+` | `%2B` | `\` | `%5C` |
+| `#` | `%23` | `,` | `%2C` | `^` | `%5E` |
+| `$` | `%24` | `/` | `%2F` | `_` | `%5F` |
+| `&` | `%26` | `:` | `%3A` | `` ` `` | `%60` |
+| `'` | `%27` | `;` | `%3B` | `"` | `%22` |
+| `(` | `%28` | `=` | `%3D` | `-` | `%2D` |
+| `)` | `%29` | `?` | `%3F` | `.` | `%2E` |
+| `[` | `%5B` | `]` | `%5D` | `@` | `%40` |
+| `<` | `%3C` | | | | |
 
 **Example Constructed URL**:
 `https://ecf.dgii.gov.do/ecf/consultatimbre?RncEmisor=101672919&RncComprador=&eNCF=E310000000001&FechaEmision=20-01-2023&MontoTotal=100.00&FechaFirma=20-01-2023%2010:00:00&CodigoSeguridad=AbC123`
@@ -251,12 +263,58 @@ Use the **Directory Query** to find another company's endpoints.
 * **Endpoint**: `/api/Consulta/Directorio?rnc={destination_rnc}`
 * **Response**: Returns `urlRecepcion` and `urlAceptacion` for that taxpayer.
 
+### Query Acknowledgment of Receipt
+As an issuer, you can query whether the receiver acknowledged your e-CF:
+
+* **Base URL**: `https://ecf.dgii.gov.do/{ambiente}/emisorreceptor`
+* **Endpoint**: `/api/emision/consultaacuserecibo`
+* **Method**: `GET`
+* **Params**: `Rnc={ReceiverRNC}`, `Encf={eNCF}`
+* **Response**:
+
+```json
+{
+  "rnc": "string",
+  "encf": "string",
+  "estado": "string",
+  "mensajes": ["string"]
+}
+```
+
+### Send Commercial Approval (Simulated/Real)
+Post an ACECF to the receiver's approval endpoint:
+
+* **Base URL**: `https://ecf.dgii.gov.do/{ambiente}/emisorreceptor`
+* **Endpoint**: `/api/emision/aprobacioncomercial`
+* **Method**: `POST`
+* **Body**: Signed ACECF XML
+
 ---
 
 ## 8. Technical Constraints
 
 *   **Character Set**: **UTF-8** is mandatory.
-*   **File Naming**: `[RNC_EMISOR][E-NCF].xml` (e.g., `101672919E3100000001.xml`).
+*   **XML Special Characters**: The following characters must be escaped in XML content:
+
+| Character | Name | XML Entity |
+|-----------|------|------------|
+| `"` | Quote | `&#34;` or `&quot;` |
+| `&` | Ampersand | `&#38;` or `&amp;` |
+| `'` | Apostrophe | `&#39;` or `&apos;` |
+| `<` | Less than | `&#60;` or `&lt;` |
+| `>` | Greater than | `&#62;` or `&gt;` |
+
+*   **File Naming Conventions**:
+
+| Document Type | Naming Format | Example |
+|---------------|---------------|---------|
+| **e-CF** | `RNCEmisor` + `e-NCF` | `101672919E3100000001.xml` |
+| **ACECF** | `RNCComprador` + `e-NCF` | `101672919E3100000001.xml` |
+| **ARECF** | `RNCComprador` + `e-NCF` | `101672919E3100000001.xml` |
+| **RFCE** | `RNCEmisor` + `e-NCF` | `101672919E3200000001.xml` |
+
+> [!NOTE]
+> For RFCE, the e-NCF used is typically the sequence of the summary itself, e.g., `E32...`.
 *   **Empty Tags**: **Forbidden**. Do not include `<Field></Field>` or `<Field />`. Omit the tag entirely if the value is null/empty.
 *   **Floating Point**: Max 2 decimal places for amounts (standard), unless specified otherwise.
 *   **Signature**:
