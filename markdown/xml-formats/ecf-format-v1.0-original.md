@@ -699,3 +699,273 @@ Consulte [Guía de Firma Digital](../guides/digital-signing-guide.md) para detal
 
 ---
 
+## Tablas de Códigos (TABLAS)
+
+### Tabla I: Impuestos Adicionales (Códigos de Impuestos Adicionales)
+
+| Código | Tipo de Impuesto | Abreviatura | Descripción | Tasa |
+|--------|------------------|-------------|-------------|------|
+| 001 | Propina Legal | Propina Legal | Propina legal | 10% |
+| 002 | CDT | CDT | Contribución Desarrollo Telecomunicaciones (Ley 153-98 Art. 45) | 2% |
+| 003 | ISC | ISC | Servicios Seguros en general | 16% |
+| 004 | ISC | ISC | Servicios de Telecomunicaciones | 10% |
+| 005 | Primera Placa | Primera Placa | Expedición de la primera placa | 17% |
+| 006 | ISC Específico | ISC Específico | Cerveza | 632.58 |
+| 007 | ISC Específico | ISC Específico | Vinos de uva | 632.58 |
+| 008 | ISC Específico | ISC Específico | Vermut y demás vinos de uvas frescas | 632.58 |
+| 009 | ISC Específico | ISC Específico | Demás bebidas fermentadas | 632.58 |
+| 010 | ISC Específico | ISC Específico | Alcohol Etílico sin desnaturalizar (≥80%) | 632.58 |
+| 011 | ISC Específico | ISC Específico | Alcohol Etílico sin desnaturalizar (<80%) | 632.58 |
+| 012 | ISC Específico | ISC Específico | Aguardientes de uva | 632.58 |
+| 013 | ISC Específico | ISC Específico | Whisky | 632.58 |
+| 014 | ISC Específico | ISC Específico | Ron y demás aguardientes de caña | 632.58 |
+| 015 | ISC Específico | ISC Específico | Gin y Ginebra | 632.58 |
+| 016 | ISC Específico | ISC Específico | Vodka | 632.58 |
+| 017 | ISC Específico | ISC Específico | Licores | 632.58 |
+| 018 | ISC Específico | ISC Específico | Demás bebidas espirituosas | 632.58 |
+| 019 | ISC Específico | ISC Específico | Alcohol etílico desnaturalizado | 632.58 |
+| 020 | ISC Específico | ISC Específico | Cigarrillos de tabaco rubio | Por unidad |
+| 021 | ISC Específico | ISC Específico | Cigarrillos de tabaco negro | Por unidad |
+| 022 | ISC Específico | ISC Específico | Cigarros (puros) | Por unidad |
+| 023 | ISC Ad-Valorem | ISC Ad-Valorem | Productos de alcohol y bebidas alcohólicas | 10% |
+| 024 | ISC Ad-Valorem | ISC Ad-Valorem | Vehículos de motor | Variable |
+| 025 | ISC Ad-Valorem | ISC Ad-Valorem | Electrodomésticos | Variable |
+| 026 | CESC | CESC | Contribución especial sector construcción | 5% |
+| 027-039 | Varios | Varios | Otros códigos ISC según clasificación DGII | Variable |
+
+> [!NOTE]
+> Las tasas de ISC Específico son actualizadas periódicamente por DGII. La cifra 632.58 es la tasa por litro de alcohol absoluto a la fecha del documento.
+
+---
+
+### Tabla II: Monedas — LISTA OFICIAL DGII
+
+> [!WARNING]
+> Solo las siguientes 17 monedas están oficialmente reconocidas por DGII para transacciones en moneda extranjera. Usar códigos no listados puede causar errores de validación. Nota: DOP (Peso Dominicano) es la moneda nativa y NO está listada aquí—esta tabla es solo para campos `<OtraMoneda>` (moneda extranjera).
+
+| Código | Moneda (Español) | Moneda (Inglés) |
+|--------|------------------|-----------------|
+| BRL | Real Brasileño | Brazilian Real |
+| CAD | Dólar Canadiense | Canadian Dollar |
+| CHF | Franco Suizo | Swiss Franc |
+| CHY | Yuan Chino (Renminbi) | Chinese Yuan *(DGII usa CHY; ISO 4217 es CNY)* |
+| COP | Peso Colombiano | Colombian Peso *(agregado 2025)* |
+| DKK | Corona Danesa | Danish Krone |
+| EUR | Euro | Euro |
+| GBP | Libra Esterlina | British Pound |
+| HTG | Gurda Haitiana *(typo PDF, correcto: Gourde)* | Haitian Gourde *(agregado 2024)* |
+| JPY | Yen Japonés | Japanese Yen |
+| MXN | Peso Mexicano | Mexican Peso *(agregado 2024)* |
+| NOK | Corona Noruega | Norwegian Krone |
+| SCP | Libra Escocesa | Scottish Pound |
+| SEK | Corona Sueca | Swedish Krona |
+| USD | Dólar Estadounidense | US Dollar |
+| VEF | Bolívar Fuerte Venezolano | Venezuelan Bolívar *(obsoleto - Venezuela ahora usa VES)* |
+| XDR | Derecho Especial de Giro (DEG) | IMF Special Drawing Rights |
+
+> [!NOTE]
+> **Nota al pie 83**: XDR (DEG) no es una moneda sino la unidad de cuenta del FMI.
+
+---
+
+### Tabla III: Provincias y Municipios (Códigos de Provincia/Municipio)
+
+> [!WARNING]
+> **Solo Muestra** - Esta tabla contiene 22 páginas (158+ municipios) en el PDF original. No codificar estos valores. 
+> 
+> **Lista completa disponible en: [provinces.md](provinces.md)**
+
+Esta es una tabla de 22 páginas en el PDF original (páginas 63-85). Se proporciona una muestra a continuación:
+
+| Código Provincia | Código Municipio | Descripción |
+|------------------|------------------|-------------|
+| 010000 | — | DISTRITO NACIONAL |
+| — | 010100 | MUNICIPIO SANTO DOMINGO DE GUZMÁN |
+| — | 010101 | Santo Domingo de Guzmán (D.M.) |
+| 020000 | — | PROVINCIA AZUA |
+| — | 020100 | MUNICIPIO AZUA |
+| — | 020101 | Azua (D.M.) |
+| 320000 | — | PROVINCIA SANTO DOMINGO |
+| — | 320100 | MUNICIPIO SANTO DOMINGO ESTE |
+| — | 320101 | Santo Domingo Este (D.M.) |
+| — | 320200 | MUNICIPIO SANTO DOMINGO OESTE |
+| — | 320300 | MUNICIPIO SANTO DOMINGO NORTE |
+| — | 320400 | MUNICIPIO BOCA CHICA |
+| — | 320500 | MUNICIPIO SAN ANTONIO DE GUERRA |
+| — | 320600 | MUNICIPIO LOS ALCARRIZOS |
+| — | 320700 | MUNICIPIO PEDRO BRAND |
+
+> [!TIP]
+> Fuente: Oficina Nacional de Estadística (ONE), Departamento de Cartografía, División de Límites y Linderos. Actualizado 30 de junio de 2014.
+
+---
+
+### Tabla IV: Unidades de Medida - Lista Completa
+
+| Código | Abrev | Medida |
+|--------|-------|--------|
+| 1 | BARR | Barril |
+| 2 | BOL | Bolsa |
+| 3 | BOT | Bote |
+| 4 | BULTO | Bultos |
+| 5 | BOTELLA | Botella |
+| 6 | CAJ | Caja/Cajón |
+| 7 | CAJETILLA | Cajetilla |
+| 8 | CM | Centímetro |
+| 9 | CIL | Cilindro |
+| 10 | CONJ | Conjunto |
+| 11 | CONT | Contenedor |
+| 12 | DÍA | Día |
+| 13 | DOC | Docena |
+| 14 | FARD | Fardo |
+| 15 | GL | Galones |
+| 16 | GRAD | Grado |
+| 17 | GR | Gramo |
+| 18 | GRAN | Granel |
+| 19 | HOR | Hora |
+| 20 | HUAC | Huacal |
+| 21 | KG | Kilogramo |
+| 22 | kWh | Kilovatio Hora |
+| 23 | LB | Libra |
+| 24 | LITRO | Litro |
+| 25 | LOT | Lote |
+| 26 | M | Metro |
+| 27 | M2 | Metro Cuadrado |
+| 28 | M3 | Metro Cúbico |
+| 29 | MMBTU | Millones de Unidades Térmicas |
+| 30 | MIN | Minuto |
+| 31 | PAQ | Paquete |
+| 32 | PAR | Par |
+| 33 | PIE | Pie |
+| 34 | PZA | Pieza |
+| 35 | ROL | Rollo |
+| 36 | SOBR | Sobre |
+| 37 | SEG | Segundo |
+| 38 | TANQUE | Tanque |
+| 39 | TONE | Tonelada |
+| 40 | TUB | Tubo |
+| 41 | YD | Yarda |
+| 42 | YD2 | Yarda cuadrada |
+| 43 | UND | Unidad |
+| 44 | EA | Elemento |
+| 45 | MILLAR | Millar |
+| 46 | SAC | Saco |
+| 47 | LAT | Lata |
+| 48 | DIS | Display |
+| 49 | BID | Bidón |
+| 50 | RAC | Ración |
+| 51 | Q | Quintal |
+| 52 | GRT | Gross Register Tonnage (Toneladas de registro bruto) |
+| 53 | P2 | Pie cuadrado |
+| 54 | PAX | Pasajero |
+| 55 | PULG | Pulgadas |
+| 56 | STAY | Parqueo barcos en muelle |
+| 57 | BDJ | Bandeja |
+| 58 | HA | Hectárea |
+| 59 | ML | Mililitro |
+| 60 | MG | Miligramo |
+| 61 | OZ | Onzas |
+| 62 | OZT | Onzas Troy |
+
+---
+
+### Tabla V: Formas de Pago (Métodos de Pago)
+
+| Código | Descripción |
+|--------|-------------|
+| 1 | Efectivo |
+| 2 | Cheque/Transferencia/Depósito |
+| 3 | Tarjeta de Crédito/Débito |
+| 4 | Venta a Crédito |
+| 5 | Bonos o Certificados de regalo |
+| 6 | Permuta |
+| 7 | Nota de crédito |
+| 8 | Otras Formas de pago |
+
+> [!NOTE]
+> Si `FormaPago = 05` (certificados de regalo), el e-CF debe ser tipo 32 (Factura de Consumo).
+
+---
+
+### Tabla VI: Tipos de Ingresos
+
+| Código | Descripción |
+|--------|-------------|
+| 01 | Ingresos por operaciones |
+| 02 | Ingresos financieros |
+| 03 | Ingresos extraordinarios |
+| 04 | Ingresos por arrendamientos |
+| 05 | Ingresos por venta de activo depreciable |
+| 06 | Otros ingresos |
+
+---
+
+### Tabla VII: Tipos de Pago
+
+| Código | Descripción |
+|--------|-------------|
+| 1 | Contado |
+| 2 | Crédito |
+| 3 | Gratuito |
+
+> [!WARNING]
+> Las facturas con `TipoPago = 3` (Gratuito) no pueden ser usadas para propósitos de crédito fiscal.
+
+---
+
+## Resumen de Reglas de Validación
+
+| ID Regla | Descripción |
+|----------|-------------|
+| E01 | `eNCF` debe coincidir con el RNC emisor y ser de un rango autorizado, no expirado |
+| E05 | Para tipo 31, `RNCComprador` es obligatorio y debe ser válido/activo |
+| E32 | Para tipo 32 ≥ RD$250,000, la identificación del comprador es obligatoria |
+| E-DATE | `FechaEmision` no puede ser >30 días en el pasado desde el envío |
+| E-TOTAL | `MontoTotal` debe ser igual a la suma de componentes |
+| E-SIG | `RNCEmisor` debe coincidir con el RNC autorizado del firmante |
+| E-EXP | La secuencia e-NCF no debe estar expirada al momento del envío |
+| E-EMPTY | Las etiquetas vacías están prohibidas; omitir etiquetas con valores nulos |
+
+> [!CAUTION]
+> **Las Etiquetas Vacías Están Prohibidas**: No incluir elementos vacíos como `<Field></Field>` o `<Field />`. Si un valor es nulo/vacío, **omitir la etiqueta completamente**.
+
+---
+
+## Referencia de Tipos de Datos
+
+| Tipo | Descripción |
+|------|-------------|
+| `ALFA` | Cadena alfanumérica |
+| `NUM` | Numérico (enteros) |
+| `DEC` | Número decimal (16 enteros, 2-6 decimales según especificado) |
+| `DATE` | Fecha en formato DD-MM-YYYY |
+
+---
+
+## Límites de Líneas de Ítems
+
+| Tipo e-CF | Condición | Máx Líneas |
+|-----------|-----------|------------|
+| 32 (Consumo) | < RD$250,000 | 10,000 |
+| 32 (Consumo) | ≥ RD$250,000 | 1,000 |
+| Todos los demás tipos | — | 10,000 |
+
+> [!NOTE]
+> **Nota al pie 48**: Las facturas de consumo ≥ RD$250,000 tienen un máximo de 1,000 líneas de ítems.
+
+---
+
+## Reglas de Negocio Clave de Notas al Pie
+
+1. **Nota al pie 4**: Las facturas de consumo < DOP$250,000 tienen RNC de comprador opcional.
+2. **Nota al pie 30**: Los montos de nota de crédito deben ser ≤ total de factura original.
+3. **Nota al pie 36**: Los montos en Gastos Menores (tipo 43) no pueden ser usados como anticipo de ITBIS.
+4. **Nota al pie 48**: Facturas de consumo ≥ DOP$250k limitadas a 1,000 líneas de ítems.
+5. **Nota al pie 54**: Para Pagos al Exterior (tipo 47), `IndicadorBienoServicio` debe ser `2` (Servicio).
+6. **Notas al pie 57-58 (reporte especial ISC)**:
+   - Para **alcohol y bebidas alcohólicas** (códigos ISC **006-012**): Reportar el **contenido de alcohol absoluto (volumen por unidad) en litros**.
+   - Para **productos de tabaco y cigarrillos** (códigos ISC **013-022**): Reportar el **número de unidades por paquete** (cajetilla).
+   - Este campo es **solo requerido** cuando se facturan bienes cuya transferencia, a nivel de **productor o fabricante**, está gravada con ISC (códigos 006-022).
+
+---
+
