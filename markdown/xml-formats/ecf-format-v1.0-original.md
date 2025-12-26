@@ -358,3 +358,171 @@ Cuando las transacciones son en moneda extranjera, esta sección refleja la estr
 
 ---
 
+## Sección B: DetallesItem (Detalles de Líneas de Ítems)
+
+Cada elemento `<Item>` describe un ítem de línea (bien o servicio). Hasta 100 ítems por e-CF (hasta 1,000 para tipo 32 ≥DOP$250k, o 10,000 para tipo 32 <DOP$250k).
+
+### B.1 Identificación de Ítem (Campos 1-3)
+
+| # | Elemento | Descripción | Máx | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 1 | `<NumeroLinea>` | Número de línea | 5 | NUM | Secuencial 1 a n | N | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| — | `<TablaCodigosItem>` | — | — | — | Contenedor (hasta 5 reps) | — | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 2 | `<TipoCodigo>` | Tipo de código | 14 | ALFANUM | EAN, PLU, DUN, Interna | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 3 | `<CodigoItem>` | Código de ítem | 35 | ALFANUM | Hasta 5 códigos | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+
+### B.2 Indicador de Impuesto y Retención (Campos 4-7)
+
+| # | Elemento | Descripción | Máx | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 4 | `<IndicadorFacturacion>` | Indicador de impuesto | 1 | NUM | 0-4 (ver códigos abajo) | P | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| — | `<Retencion>` | — | — | — | Contenedor (si existe retención) | — | 2 | 0 | 2 | 2 | 1 | 0 | 0 | 0 | 0 | 1 |
+| 5 | `<IndicadorAgenteRetencionoPercepcion>` | Indicador de agente | 1 | NUM | 1=R (Retención), 2=P (Percepción) | N | 2 | 0 | 2 | 2 | 1 | 0 | 0 | 0 | 0 | 1 |
+| 6 | `<MontoITBISRetenido>` | ITBIS retenido | 18 | NUM | ≥0, 2 decimales | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
+| 7 | `<MontoISRRetenido>` | ISR retenido | 18 | NUM | ≥0, 2 decimales | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 1 |
+
+**Valores de IndicadorFacturacion:**
+
+| Código | Descripción |
+|--------|-------------|
+| `0` | No Facturable |
+| `1` | Gravado ITBIS Tasa 1 (18%) |
+| `2` | Gravado ITBIS Tasa 2 (16%) |
+| `3` | Gravado ITBIS Tasa 3 (0%) |
+| `4` | Exento |
+
+> [!NOTE]
+> **Tipo 43, 44, 47**: IndicadorFacturacion debe = 4 (Exento). **Tipo 46**: debe = 3 (ITBIS 0%).
+
+> [!WARNING]
+> Si `IndicadorFacturacion=4` (Exento) Y `IndicadorAgenteRetencionoPercepcion=1` (R), entonces `MontoITBISRetenido` **debe ser 0**.
+
+---
+
+### B.3 Detalles del Ítem (Campos 8-14)
+
+| # | Elemento | Descripción | Máx | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 8 | `<NombreItem>` | Nombre del ítem | 80 | ALFANUM | — | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 9 | `<IndicadorBienoServicio>` | Bien/Servicio | 1 | NUM | 1=Bien, 2=Servicio | N | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 10 | `<DescripcionItem>` | Descripción | 1000 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 11 | `<CantidadItem>` | Cantidad | 18 | NUM | >0, 2 decimales | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 12 | `<UnidadMedida>` | Unidad de medida | 2 | NUM | Códigos Tabla IV | P | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 13 | `<CantidadReferencia>` | Cantidad de referencia | 18 | NUM | ≥0, para ISC 006-022 | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 14 | `<UnidadReferencia>` | Unidad de referencia | 2 | NUM | Códigos Tabla IV | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+
+> [!NOTE]
+> **Tipo 47 (Pagos al Exterior)**: Campo 9 `IndicadorBienoServicio` debe = 2 (Servicio).
+
+---
+
+### B.4 Subcantidad para Productos ISC (Campos 15-18)
+
+Para productos de alcohol, tabaco con códigos ISC 006-022 (específico) y 023-039 (ad-valorem).
+
+| # | Elemento | Descripción | Máx | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| — | `<TablaSubcantidad>` | — | — | — | Contenedor (hasta 5 reps) | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 15 | `<Subcantidad>` | Sub-cantidad | 19 | NUM | ≥0, 3 decimales | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 16 | `<CodigoSubcantidad>` | Código de unidad | 2 | NUM | Códigos Tabla IV | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 17 | `<GradosAlcohol>` | Grados de alcohol % | 5 | NUM | >0, 3 ent + 2 dec | I | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 18 | `<PrecioUnitarioReferencia>` | Precio unitario de referencia | 18 | NUM | >0 (PVP para cálculo ISC) | I | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+
+> [!NOTE]
+> **Campo 15 (Subcantidad)**: Para alcohol = contenido de alcohol absoluto en litros. Para tabaco = unidades de cigarrillos por paquete.
+> **Campo 18 (PrecioUnitarioReferencia)**: Para ISC Ad-Valorem (códigos 023-039), este es el precio de venta al público (PVP) usado como base imponible.
+
+---
+
+### B.5 Fechas del Producto (Campos 19-20)
+
+| # | Elemento | Descripción | Máx | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 19 | `<FechaElaboracion>` | Fecha de fabricación | 10 | ALFANUM | dd-MM-AAAA | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| 20 | `<FechaVencimientoItem>` | Fecha de vencimiento | 10 | ALFANUM | dd-MM-AAAA | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+
+---
+
+### B.6 Sección Minería (Campos 21-24)
+
+Solo para facturas del sector minero (condicional en transacciones mineras).
+
+| # | Elemento | Descripción | Máx | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| — | `<Mineria>` | — | — | — | Contenedor (sector minero) | — | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+| 21 | `<PesoNetoKilogramo>` | Peso neto (kg) | 19 | NUM | ≥0, 3 decimales | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+| 22 | `<PesoNetoMineria>` | Peso neto mineral | 19 | NUM | ≥0, 3 decimales | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+| 23 | `<TipoAfiliacion>` | Tipo de afiliación | 1 | NUM | 1=Afiliado, 2=No afiliado | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+| 24 | `<Liquidacion>` | Tipo de liquidación | 1 | NUM | 1=Provisional, 2=Final | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+
+---
+
+### B.7 Precio Unitario (Campo 25)
+
+| # | Elemento | Descripción | Máx | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 25 | `<PrecioUnitarioItem>` | Precio unitario | 20 | NUM | ≥0, 4 decimales | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+
+> [!NOTE]
+> Para productores de alcohol/cerveza: este es el **precio de lista**. Para servicios de seguros: esta es la **prima del seguro**.
+
+---
+
+### B.8 Descuentos (Campos 26-29)
+
+| # | Elemento | Descripción | Máx | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 26 | `<DescuentoMonto>` | Total descuento | 18 | NUM | ≥0, 2 decimales | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| — | `<TablaSubDescuento>` | — | — | — | Contenedor (hasta 12 reps) | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 27 | `<TipoSubDescuento>` | Tipo de sub-descuento | 1 | ALFA | "$" o "%" | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 28 | `<SubDescuentoPorcentaje>` | Porcentaje de descuento | 5 | NUM | >0, 3 ent + 2 dec | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 29 | `<MontoSubDescuento>` | Monto de sub-descuento | 18 | NUM | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+
+---
+
+### B.9 Recargos (Campos 30-33)
+
+| # | Elemento | Descripción | Máx | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 30 | `<RecargoMonto>` | Total recargo | 18 | NUM | ≥0, 2 decimales | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| — | `<TablaSubRecargo>` | — | — | — | Contenedor (hasta 12 reps) | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 31 | `<TipoSubRecargo>` | Tipo de sub-recargo | 1 | ALFA | "$" o "%" | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 32 | `<SubRecargoPorcentaje>` | Porcentaje de recargo | 5 | NUM | >0, 3 ent + 2 dec | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 33 | `<MontoSubRecargo>` | Monto de sub-recargo | 18 | NUM | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+
+---
+
+### B.10 Impuestos Adicionales por Ítem (Campo 34)
+
+| # | Elemento | Descripción | Máx | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| — | `<TablaImpuestoAdicional>` | — | — | — | Contenedor (hasta 2 reps) | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+| 34 | `<TipoImpuesto>` | Código de impuesto | 3 | NUM | Tabla I (001-039) | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+
+---
+
+### B.11 OtraMoneda por Ítem (Campos 35-38)
+
+Detalle en moneda extranjera a nivel de ítem.
+
+| # | Elemento | Descripción | Máx | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| — | `<OtraMonedaDetalle>` | — | — | — | Contenedor (detalle ME) | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 35 | `<PrecioOtraMoneda>` | Precio unitario (ME) | 20 | NUM | ≥0, 4 decimales | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 36 | `<DescuentoOtraMoneda>` | Descuento (ME) | 18 | NUM | ≥0, 2 decimales | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 37 | `<RecargoOtraMoneda>` | Recargo (ME) | 18 | NUM | ≥0, 2 decimales | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 38 | `<MontoItemOtraMoneda>` | Total de línea (ME) | 18 | NUM | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+
+---
+
+### B.12 Total de Línea (Campo 39)
+
+| # | Elemento | Descripción | Máx | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 39 | `<MontoItem>` | Total de línea | 18 | NUM | =(Precio×Cant)−Descuento+Recargo | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+
+> [!NOTE]
+> `MontoItem` puede ser **0** para notas de crédito de corrección de texto (cuando `CodigoModificacion=2` en Información de Referencia).
+
+---
+
