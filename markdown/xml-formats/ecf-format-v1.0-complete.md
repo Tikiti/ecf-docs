@@ -181,3 +181,101 @@ The PDF specification includes a "Representación Impresa" (Print Representation
 | 36 | `<InformacionAdicionalEmisor>` | Información adicional | 250 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | 37 | `<FechaEmision>` | Fecha de emisión | 10 | ALFANUM | DD-MM-YYYY, validar fecha inicio emisor electrónico | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 
+## Section A: Encabezado (Header)
+
+### A.1 IdDoc (Document Identification)
+
+| # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 1 | `<Version>` | Format version | 3 | ALFANUM | Value: "1.0" | N | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 2 | `<TipoeCF>` | e-CF type code | 2 | NUM | Valid type (31-47) | P | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 3 | `<eNCF>` | Electronic fiscal number | 13 | ALFANUM | Valid sequence format | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 4 | `<FechaVencimientoSecuencia>` | e-NCF expiry date | 10 | DATE | DD-MM-YYYY | I | 1 | 0 | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 5 | `<IndicadorNotaCredito>` | Credit note >30 days | 1 | NUM | 0=≤30 days, 1=>30 days | N | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 6 | `<IndicadorEnvioDiferido>` | Deferred sending | 1 | NUM | 0=normal, 1=deferred | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 2 | 0 |
+| 7 | `<IndicadorMontoGravado>` | ITBIS included in prices | 1 | NUM | 0=excluded, 1=included | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 8 | `<TipoIngresos>` | Income type code | 2 | NUM | Values 01-06 (See Tabla VI) | N | 1 | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 0 |
+| 9 | `<TipoPago>` | Payment type | 1 | NUM | 1=Cash, 2=Credit, 3=Free | N | 1 | 1 | 1 | 1 | 1 | 3 | 1 | 1 | 1 | 3 |
+| 10 | `<FechaLimitePago>` | Payment deadline | 10 | DATE | DD-MM-YYYY, ≥FechaEmision | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 3 |
+| 11 | `<TerminoPago>` | Payment terms | 15 | ALFANUM | Free text | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| — | `<TablaFormasPago>` | Payment methods table | — | — | Container (see note) | — | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 12 | `<FormaPago>` | Payment method code | 2 | NUM | Values 1-8 (Tabla V) | N | 3 | 3 | 3 | 0 | 3 | 0 | 3 | 3 | 3 | 3 |
+| 13 | `<MontoPago>` | Payment amount | 18 | NUM | 16 int + 2 dec, ≥0 | N | 2 | 2 | 2 | 0 | 2 | 0 | 2 | 2 | 2 | 3 |
+| 14 | `<TipoCuentaPago>` | Account type | 2 | ALFA | CT=Checking, AH=Savings, OT=Other | N | 3 | 3 | 3 | 0 | 3 | 0 | 3 | 3 | 3 | 3 |
+| 15 | `<NumeroCuentaPago>` | Account number | 28 | ALFANUM | — | N | 3 | 3 | 3 | 0 | 3 | 0 | 3 | 3 | 3 | 3 |
+| 16 | `<BancoPago>` | Bank name | 75 | ALFANUM | — | N | 3 | 3 | 3 | 0 | 3 | 0 | 3 | 3 | 3 | 3 |
+| 17 | `<FechaDesde>` | Billing period start | 10 | ALFANUM | DD-MM-YYYY, ≤FechaHasta | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 3 |
+| 18 | `<FechaHasta>` | Billing period end | 10 | ALFANUM | DD-MM-YYYY, ≥FechaDesde | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 3 |
+| 19 | `<TotalPaginas>` | Total pages | 3 | NUM | >1, conditional if Paginación exists | I | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+
+> [!NOTE]
+> **`<TablaFormasPago>` Structure**: Each payment is wrapped in `<FormaDePago>` containing `<FormaPago>` + `<MontoPago>`.
+> For multiple payments via check/transfer (code 2), only ONE `<TipoCuentaPago>` entry should be used.
+
+> [!NOTE]
+> **Footnote 1**: The e-NCF structure consists of: Series letter (E-Z, except P) + 2-digit type code + 10-digit sequence.
+> 
+> **Footnote 2**: `IndicadorNotaCredito = 1` means the credit note loses the ITBIS tax credit benefit (issued >30 days after original).
+>
+> **Footnote 3**: Invoices with `TipoPago = 3` (Free/No charge) cannot be used for tax credit claims.
+
+---
+
+### A.2 Emisor (Issuer)
+
+| # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 20 | `<RNCEmisor>` | Issuer RNC | 9/11 | NUM | Valid 9 or 11 digits | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 21 | `<RazonSocialEmisor>` | Legal name | 150 | ALFANUM | — | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 22 | `<NombreComercial>` | Trade name | 150 | ALFANUM | — | I | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 23 | `<Sucursal>` | Branch code | 20 | ALFANUM | — | I | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 24 | `<DireccionEmisor>` | Address | 100 | ALFANUM | — | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 25 | `<Municipio>` | Municipality code | 6 | NUM | Tabla III | P | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 26 | `<Provincia>` | Province code | 6 | NUM | Tabla III | P | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| — | `<TablaTelefonoEmisor>` | Phone container (up to 3) | — | — | — | — | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 27 | `<TelefonoEmisor>` | Phone number (up to 3) | 12 | ALFANUM | Format: xxx-xxx-xxxx | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 28 | `<CorreoEmisor>` | Email | 80 | ALFANUM | Valid email format | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 29 | `<WebSite>` | Website | 50 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 30 | `<ActividadEconomica>` | Economic activity | 100 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 31 | `<CodigoVendedor>` | Seller code | 60 | ALFANUM | Internal reference | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 32 | `<NumeroFacturaInterna>` | Internal invoice number | 20 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 33 | `<NumeroPedidoInterno>` | Internal order number | 20 | NUM | — | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 34 | `<ZonaVenta>` | Sales zone | 20 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 35 | `<RutaVenta>` | Sales route | 20 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 36 | `<InformacionAdicionalEmisor>` | Additional information | 250 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 37 | `<FechaEmision>` | Issue date | 10 | ALFANUM | DD-MM-YYYY, validate e-invoicer start date | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+
+---
+
+### A.3 Comprador (Buyer)
+
+| # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 38 | `<RNCComprador>` | Buyer RNC | 11 | NUM | Valid 9 or 11 digits | I | 1 | 2 | 2 | 2 | 1 | 0 | 1 | 1 | 2 | 2 |
+| 39 | `<IdentificadorExtranjero>` | Foreign ID | 20 | ALFANUM | For non-residents | I | 0 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 2 | 2 |
+| 40 | `<RazonSocialComprador>` | Legal name | 150 | ALFANUM | — | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 2 |
+| 41 | `<ContactoComprador>` | Contact name/phone | 80 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| 42 | `<CorreoComprador>` | Email | 80 | ALFANUM | Valid email | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 3 |
+| 43 | `<DireccionComprador>` | Address | 100 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 3 |
+| 44 | `<MunicipioComprador>` | Municipality | 6 | NUM | Tabla III | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 3 |
+| 45 | `<ProvinciaComprador>` | Province | 6 | NUM | Tabla III | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 3 |
+| 46 | `<PaisComprador>` | Country name | 60 | ALFA | Full country name | P | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 47 | `<FechaEntrega>` | Delivery date | 10 | DATE | DD-MM-YYYY | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 48 | `<ContactoEntrega>` | Delivery contact | 100 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 49 | `<DireccionEntrega>` | Delivery address | 100 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 50 | `<TelefonoAdicional>` | Delivery phone | 12 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 51 | `<FechaOrdenCompra>` | Purchase order date | 10 | DATE | DD-MM-YYYY | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 52 | `<NumeroOrdenCompra>` | Purchase order number | 20 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 53 | `<CodigoInternoComprador>` | Buyer internal code | 20 | ALFANUM | Internal reference | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| 54 | `<ResponsablePago>` | Payment responsible | 20 | ALFA | — | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| 55 | `<Informacionadicionalcomprador>` | Notes | 150 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+
+> [!IMPORTANT]
+> **Buyer Identification Rules:**
+> - Type 31 (Crédito Fiscal): `RNCComprador` always mandatory
+> - Type 32 (Consumo) ≥ RD$250,000: `RNCComprador` or `IdentificadorExtranjero` mandatory
+> - Type 32 (Consumo) < RD$250,000: `RNCComprador` optional
+> - Type 46 (Exports): Use `RNCComprador` for residents, `IdentificadorExtranjero` for non-residents
+
+---
+
