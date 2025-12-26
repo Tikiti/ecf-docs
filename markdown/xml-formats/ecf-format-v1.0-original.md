@@ -215,3 +215,61 @@ La especificación PDF incluye una columna \"Representación Impresa\" que indic
 \u003e - Tipo 46 (Exportaciones): Usar `RNCComprador` para residentes, `IdentificadorExtranjero` para no residentes
 
 ---
+
+### A.4 InformacionesAdicionales (Información de Exportación/Embarque)
+
+Esta sección se utiliza principalmente para **Tipo 46 (Exportaciones)** y facturas relacionadas con embarques.
+
+| # | Elemento | Descripción | Máx | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 56 | `\u003cFechaEmbarque\u003e` | Fecha de embarque | 10 | DATE | DD-MM-YYYY | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 57 | `\u003cNumeroEmbarque\u003e` | Número de embarque | 25 | ALFA | — | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 58 | `\u003cNumeroContenedor\u003e` | Número de contenedor | 100 | ALFA | — | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 59 | `\u003cNumeroReferencia\u003e` | Número de referencia | 20 | NUM | — | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 60 | `\u003cNombrePuertoEmbarque\u003e` | Puerto de carga | 40 | ALFA | — | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 61 | `\u003cCondicionesEntrega\u003e` | Términos de entrega | 3 | ALFA | CIF/FOB/EXW etc. | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 62 | `\u003cTotalFob\u003e` | Valor total FOB | 18 | DEC | ≥0, 2 decimales | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 63 | `\u003cSeguro\u003e` | Monto del seguro | 18 | DEC | ≥0, 2 decimales | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 64 | `\u003cFlete\u003e` | Monto del flete | 18 | DEC | ≥0, 2 decimales | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 65 | `\u003cOtrosGastos\u003e` | Otros gastos | 18 | DEC | ≥0, 2 decimales | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 66 | `\u003cTotalCif\u003e` | Valor total CIF | 18 | DEC | FOB+Seguro+Flete+Otros | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 67 | `\u003cRegimenAduanero\u003e` | Régimen aduanero | 35 | ALFA | Según clasificación DGA | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 68 | `\u003cNombrePuertoSalida\u003e` | Puerto de salida | 40 | ALFANUM | — | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 69 | `\u003cNombrePuertoDesembarque\u003e` | Puerto de destino | 40 | ALFANUM | — | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 70 | `\u003cPesoBruto\u003e` | Peso bruto | 18 | DEC | ≥0, 2 decimales | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 71 | `\u003cPesoNeto\u003e` | Peso neto | 18 | DEC | ≥0, 2 decimales | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 72 | `\u003cUnidadPesoBruto\u003e` | Unidad de peso bruto | 2 | NUM | Tabla IV | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 73 | `\u003cUnidadPesoNeto\u003e` | Unidad de peso neto | 2 | NUM | Tabla IV | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 74 | `\u003cCantidadBulto\u003e` | Número de paquetes | 18 | DEC | \u003e0, 2 decimales | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 75 | `\u003cUnidadBulto\u003e` | Unidad de paquete | 2 | NUM | Tabla IV | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 76 | `\u003cVolumenBulto\u003e` | Volumen | 18 | DEC | \u003e0, 2 decimales | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 77 | `\u003cUnidadVolumen\u003e` | Unidad de volumen | 2 | NUM | Tabla IV | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+
+\u003e [!NOTE]
+\u003e **Distinción de Etiquetas de Puerto**: Según especificación DGII, estos son 3 puertos diferentes:
+\u003e - `NombrePuertoEmbarque` (#60) = Puerto donde se cargan las mercancías
+\u003e - `NombrePuertoSalida` (#68) = Puerto de partida (puede diferir del puerto de carga)
+\u003e - `NombrePuertoDesembarque` (#69) = Puerto de destino (descarga)
+
+---
+
+### A.5 Transporte (Transport)
+
+| # | Elemento | Descripción | Máx | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 78 | `\u003cViaTransporte\u003e` | Modo de transporte | 2 | NUM | 01=Terrestre, 02=Marítimo, 03=Aérea | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 79 | `\u003cPaisOrigen\u003e` | País de origen de la mercancía | 60 | ALFA | — | N |  0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 80 | `\u003cDireccionDestino\u003e` | Dirección de destino | 100 | ALFANUM | — | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 81 | `\u003cPaisDestino\u003e` | País de destino | 60 | ALFA | — | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 3 |
+| 82 | `\u003cRNCIdentificacionCompaniaTransportista\u003e` | RNC/ID del transportista | 20 | ALFANUM | — | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 83 | `\u003cNombreCompaniaTransportista\u003e` | Nombre de compañía transportista | 150 | ALFANUM | — | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 84 | `\u003cNumeroViaje\u003e` | Número de viaje/vuelo | 20 | ALFANUM | — | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 85 | `\u003cConductor\u003e` | Código o nombre del conductor | 20 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 86 | `\u003cDocumentoTransporte\u003e` | Documento de transporte | 20 | NUM | — | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 87 | `\u003cFicha\u003e` | Ficha/registro de transporte | 10 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 88 | `\u003cPlaca\u003e` | Número de placa del vehículo | 7 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 89 | `\u003cRutaTransporte\u003e` | Ruta de transporte establecida | 20 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 90 | `\u003cZonaTransporte\u003e` | Zona de transporte | 20 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 91 | `\u003cNumeroAlbaran\u003e` | Número de albarán de entrega | 20 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+
+---
