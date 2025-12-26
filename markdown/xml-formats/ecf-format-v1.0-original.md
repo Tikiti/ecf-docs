@@ -273,3 +273,88 @@ Esta sección se utiliza principalmente para **Tipo 46 (Exportaciones)** y factu
 | 91 | `\u003cNumeroAlbaran\u003e` | Número de albarán de entrega | 20 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
 
 ---
+### A.6 Totales
+
+| # | Elemento | Descripción | Máx | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 92 | `<MontoGravadoTotal>` | Monto total gravado | 18 | DEC | Suma de montos gravados | I | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 93 | `<MontoGravadoI1>` | Monto gravado ITBIS 18% | 18 | DEC | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 94 | `<MontoGravadoI2>` | Monto gravado ITBIS 16% | 18 | DEC | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 95 | `<MontoGravadoI3>` | Monto gravado ITBIS 0% | 18 | DEC | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 96 | `<MontoExento>` | Monto exento | 18 | DEC | ≥0, 2 decimales | I | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 0 | 2 |
+| 97 | `<ITBIS1>` | Tasa ITBIS 1 | 2 | NUM | Tasa 18% (valor: 18) | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 98 | `<ITBIS2>` | Tasa ITBIS 2 | 2 | NUM | Tasa 16% (valor: 16) | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 99 | `<ITBIS3>` | Tasa ITBIS 3 | 2 | NUM | Tasa 0% (valor: 0) | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 100 | `<TotalITBIS>` | Total ITBIS | 18 | DEC | Suma de ITBIS | I | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 101 | `<TotalITBIS1>` | ITBIS al 18% | 18 | DEC | MontoGravadoI1 × 0.18 | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 102 | `<TotalITBIS2>` | ITBIS al 16% | 18 | DEC | MontoGravadoI2 × 0.16 | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 103 | `<TotalITBIS3>` | ITBIS al 0% | 18 | DEC | MontoGravadoI3 × 0 = 0 | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 104 | `<MontoImpuestoAdicional>` | Total impuestos adicionales | 18 | DEC | Suma de ISC + Otros | I | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+| — | `<ImpuestosAdicionales>` | — | — | — | Contenedor (hasta 20 reps) | — | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 105 | `<TipoImpuesto>` | Código de tipo de impuesto | 3 | NUM | Tabla I (001-039) | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 106 | `<TasaImpuestoAdicional>` | Tasa de impuesto | 5 | NUM | Según Tabla I | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 107 | `<MontoImpuestoSelectivoConsumoEspecifico>` | ISC Específico | 18 | DEC | ≥0 | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 108 | `<MontoImpuestoSelectivoConsumoAdvalorem>` | ISC Ad-Valorem | 18 | DEC | ≥0, **ver regla Granel** | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 109 | `<OtrosImpuestosAdicionales>` | Otros impuestos | 18 | DEC | ≥0 | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+
+> [!CAUTION]
+> **Regla del 30% de Recargo "Granel" para ISC Ad-Valorem** (Códigos 023-035):
+> Cuando la unidad de medida es **Granel** (Código 18), el precio base debe ser **incrementado en 30%** antes de calcular el impuesto Ad-Valorem.
+> Fórmula: `ISC = (PrecioBase × 1.30) × TasaAdValorem`
+
+> [!WARNING]
+> **Códigos de ISC (006-039)**: Estos requieren lógica de cálculo estricta. Si `TipoImpuesto` está en el rango 006-039, debe calcular ISC Específico O ISC Ad-Valorem según el tipo de código de impuesto. Consulte las fórmulas DGII en Tabla I.
+
+| # | Elemento | Descripción | Máx | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----:|
+| 110 | `<MontoTotal>` | Monto total general | 18 | DEC | ≥0, suma de componentes | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 111 | `<MontoNoFacturable>` | Montos no facturables | 18 | DEC | Puede ser negativo | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 2 | 0 |
+| 112 | `<MontoPeriodo>` | Monto del período | 18 | DEC | MontoTotal+MontoNoFacturable | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 113 | `<SaldoAnterior>` | Saldo anterior | 18 | DEC | Puede ser ± (positivo o negativo) | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 114 | `<MontoAvancePago>` | Monto de anticipo | 18 | DEC | >0 (debe ser positivo) | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 115 | `<ValorPagar>` | Valor a pagar | 18 | DEC | Puede ser ±  o 0 | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 116 | `<TotalITBISRetenido>` | Total ITBIS retenido | 18 | DEC | ≥0 | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
+| 117 | `<TotalISRRetencion>` | Total ISR retenido | 18 | DEC | ≥0 | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 |
+| 118 | `<TotalITBISPercepcion>` | Total ITBIS percibido | 18 | DEC | >0 (debe ser positivo) | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
+| 119 | `<TotalISRPercepcion>` | Total ISR percibido | 18 | DEC | >0 (debe ser positivo) | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
+
+> [!NOTE]
+> **Régimen de Percepción**: El PDF nota "Régimen de percepción no está vigente" (régimen de percepción no está actualmente en vigencia). Los campos 118-119 están incluidos para uso futuro.
+
+> [!NOTE]
+> **Fórmula**: `MontoTotal` = `MontoGravadoTotal` + `MontoExento` + `TotalITBIS` + `MontoImpuestoAdicional`
+> Nota: Los descuentos/recargos se manejan en la sección global DescuentosORecargos, no en esta fórmula.
+
+---
+
+### A.7 OtraMoneda (Totales en Otra Moneda en el Encabezado)
+
+Cuando las transacciones son en moneda extranjera, esta sección refleja la estructura de Totales en la moneda alternativa.
+
+| # | Elemento | Descripción | Máx | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 120 | `<TipoMoneda>` | Código de moneda | 3 | ALFA | Tabla II | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 121 | `<TipoCambio>` | Tasa de cambio | 7 | NUM | 3 ent + 4 dec, >0 | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 122 | `<MontoGravadoTotalOtraMoneda>` | Total gravado (ME) | 18 | DEC | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 123 | `<MontoGravado1OtraMoneda>` | Monto ITBIS 18% (ME) | 18 | DEC | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 124 | `<MontoGravado2OtraMoneda>` | Monto ITBIS 16% (ME) | 18 | DEC | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 125 | `<MontoGravado3OtraMoneda>` | Monto ITBIS 0% (ME) | 18 | DEC | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 126 | `<MontoExentoOtraMoneda>` | Exento (ME) | 18 | DEC | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 0 | 2 |
+| 127 | `<TotalITBISOtraMoneda>` | Total ITBIS (ME) | 18 | DEC | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 128 | `<TotalITBIS1OtraMoneda>` | ITBIS 18% (ME) | 18 | DEC | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 129 | `<TotalITBIS2OtraMoneda>` | ITBIS 16% (ME) | 18 | DEC | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 130 | `<TotalITBIS3OtraMoneda>` | ITBIS 0% (ME) | 18 | DEC | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 131 | `<MontoImpuestoAdicionalOtraMoneda>` | Impuestos adicionales (ME) | 18 | DEC | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+| — | `<ImpuestosAdicionalesOtraMoneda>` | — | — | — | Contenedor (hasta 20 reps) | — | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+| 132 | `<TipoImpuestoOtraMoneda>` | Código de impuesto (ME) | 3 | NUM | Tabla I (001-039) | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+| 133 | `<TasaImpuestoAdicionalOtraMoneda>` | Tasa de impuesto (ME) | 5 | NUM | Según Tabla I | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+| 134 | `<MontoImpuestoSelectivoConsumoEspecificoOtraMoneda>` | ISC Específico (ME) | 18 | DEC | >0, 2 decimales | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 135 | `<MontoImpuestoSelectivoConsumoAdvaloremOtraMoneda>` | ISC Ad-Valorem (ME) | 18 | DEC | >0, 2 decimales | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 136 | `<OtrosImpuestosAdicionalesOtraMoneda>` | Otros impuestos adicionales (ME) | 18 | DEC | >0, 2 decimales | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+| 137 | `<MontoTotalOtraMoneda>` | Monto total general (ME) | 18 | DEC | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+
+> [!NOTE]
+> **OtraMoneda ImpuestosAdicionales**: Cuando se factura en moneda extranjera con impuestos adicionales (ISC, etc.), esta estructura refleja la estructura DOP `ImpuestosAdicionales` pero en los montos de moneda extranjera. Se permiten **hasta 20 repeticiones** de entradas `<ImpuestosAdicionalesOtraMoneda>`.
+
+---
+
