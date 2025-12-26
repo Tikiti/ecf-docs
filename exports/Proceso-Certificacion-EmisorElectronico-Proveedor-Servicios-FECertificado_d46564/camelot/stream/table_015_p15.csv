@@ -1,0 +1,8 @@
+"2.3  URL Servicios Producción"
+"Luego de que el contribuyente complete exitosamente cada una de las pruebas del proceso de certificación , en esta etapa"
+"se deberán completar las URL de los servicios de Autenticación, Recepción y Aprobación Comercial que estarán disponibles"
+"en el ambiente productivo."
+"El formulario donde se indicarán estas URL7  contendrá las siguientes especificaciones:"
+"7 Las URL serán almacenadas en el directorio de servicios mediante un web service que se encargará de comunicar el proceso de"
+"certificación directamente con la Oficina Virtual (OFV)."
+"14"

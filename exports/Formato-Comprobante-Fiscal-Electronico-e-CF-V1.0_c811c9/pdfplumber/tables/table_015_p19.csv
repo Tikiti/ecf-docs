@@ -1,0 +1,51 @@
+,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,CAMPOS,DESCRIPCIÓN,Largo,Tipo,Validación,I,Fact. Créd.,Fact.,,Nota,,Gastos,Regím.,,,Pagos
+,,,,,,,Fiscal,Consum.,Nota Déb.,Créd.,Compras,Menor.,Espec.,Guber.,Export.,Exterior
+,,,,,,,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.
+,,,Max,,,,,,,,,,,,,
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+85,"Conductor
+<Conductor>","Corresponde al código o nombre
+del conductor.",20,"ALFA
+NUM",a) Sin validación,N,3,3,3,3,0,0,3,3,3,0
+86,"Documento
+<DocumentoTransporte>","Corresponde al documento de
+transporte del conductor.",20,NUM,a) Sin validación,N,3,3,3,3,0,0,3,3,3,0
+87,"Ficha
+<Ficha>","Corresponde a la ficha del
+transporte.",10,"ALFA
+NUM",a) Sin validación,N,3,3,3,3,0,0,3,3,3,0
+88,"Placa
+<Placa>","Corresponde al número de
+placa del vehículo del
+transporte.",7,"ALFA
+NUM",a) Sin validación,N,3,3,3,3,0,0,3,3,3,0
+89,"Ruta de Transporte
+<RutaTransporte>","Corresponde a la ruta
+establecida de transporte.",20,"ALFA
+NUM",a) Sin validación,N,3,3,3,3,0,0,3,3,3,0
+90,"Zona de Tranporte
+<ZonaTransporte>","Corresponde a la zona de
+transporte.",20,"ALFA
+NUM",a) Sin validación,N,3,3,3,3,0,0,3,3,3,0
+91,"Número Albarán
+<NumeroAlbaran>","Corresponde al número de
+albarán de entrega.",20,"ALFA
+NUM",a) Sin validación,N,3,3,3,3,0,0,3,3,3,0
+,FIN ÁREA,TRANSPORTE,,,,,,,,,,,,,,
+,"ÁREA
+<Totales>",TOTALES,,,,,1,1,1,1,1,1,1,1,1,1
+92,"Monto Gravado Total11
+<MontoGravadoTotal>","Total de la suma de valores de
+monto gravado ITBIS a
+diferentes tasas.
+Condicional a que exista Monto
+gravado1, y/o Monto gravado 2
+y/o Monto gravado 3.",18,NUM,"a) Valor numérico de 16 enteros, 2
+decimales; ≥ 0 (No puede ser
+negativo).
+b) Valor numérico de la sumatoria del
+total Monto gravado ITBIS Tasa1 +
+Monto gravado ITBIS Tasa 2 + Monto
+gravado ITBIS Tasa3.",I,2,2,2,2,2,0,0,2,2,0

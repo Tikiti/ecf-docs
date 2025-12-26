@@ -1,0 +1,113 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. 
+Créd. 
+Fiscal 
+Electr. 
+ 
+31","Fact. 
+Consum. 
+Electr. 
+ 
+32","Nota 
+Déb. 
+Electr. 
+ 
+33","Nota Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Guber. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"30","Monto Recargo 
+<RecargoMonto>","Totaliza 
+todos 
+los 
+Subrecargos 
+otorgados 
+al 
+ítem 
+en 
+montos. 
+Condicional 
+a 
+que 
+exista  Monto 
+Subrecargo.","18","NUM","b
+a)    Valor  numérico  de  16  enteros,  2 
+decimales; ≥0 (No puede ser negativo). 
+) Monto Subrecargo.","I","2","2","2","2","2","0","2","2","2","0"
+"","Tabla de 
+Distribución de 
+Subrecargo 
+<TablaSubRecargo>67","Condicional a que exista recargo en el 
+ítem. 
+Se 
+pueden 
+incluir 
+12 
+repeticiones  de  pares  Tipo  –  Valor. 
+Incluye los tres campos siguientes:","","","","N","2","2","2","2","2","0","2","2","2","0"
+"31","Tipo Subrecargo 
+<TipoSubRecargo>","Indica si el Subrecargo está en $ o %. 
+Condicional a que exista recargo en el 
+ítem.","1","ALFA","""$"" o ""%""","N","2","2","2","2","2","0","2","2","2","0"
+"32","Subrecargo en % 
+<SubRecargoPorcentaje
+>","Valor del Subrecargo en porcentaje %. 
+Condicional 
+a 
+que 
+exista 
+tipo 
+Subrecargo en porcentaje (%).","5","NUM","a)Valor 
+numérico, 
+3 
+enteros 
+y 
+2 
+decimales; >0 (No puede ser negativo)","N","2","2","2","2","2","0","2","2","2","0"
+"33","Monto Subrecargo 
+<MontoSubRecargo>","S
+Correspondiente al valor del Subrecargo 
+expresado en monto. Condicional a que 
+exista subrecargo. 
+i va  el  subrecargo en %, deberá ir el 
+monto del subrecargo.","18","NUM","a) 
+  Valor  numérico  de  16  enteros, 
+decimales; 
+≥0 
+(No 
+puede 
+ser 
+negativo). 
+b) Si va el subrecargo en %, el valor del 
+subrecargo en monto deberá ser igual 
+al precio unitario del ítem por el valor 
+del  subrecargo  en  porcentaje,  por  la 
+cantidad de ítems.","N","2","2","2","2","2","0","2","2","2","0"
+"","FIN TABLA","SUBRECARGO","","","","","","","","","","","","","",""
+"","Tabla de Códigos de 
+Impuestos Adicionales 
+<TablaImpuestoAdicion
+al>68","Se  pueden  incluir  2  repeticiones  de 
+códigos de impuesto.","","","","","2","2","2","2","0","0","269","2","0","0"

@@ -1,0 +1,30 @@
+"","","Corresponde  al","total  de 
+los","","","",""
+"","","montos 
+de","ITBIS 
+al 
+16%,","","","",""
+"","","asignados 
+en","la 
+factura 
+de","","","",""
+"","","","","","","a)  Valor  numérico  de  16  enteros,  dos",""
+"","Total ITBIS Tasa 2","consumo electrónica.","","","","",""
+"","","","","","","decimales; ≥ 0 (No puede ser negativo).",""
+"21","<TotalITBIS2>","C","","18","NUM","","2"
+"","","","ondicional a que en la línea de","","","",""
+"","","detalle 
+exista","algún 
+ítem","","","",""
+"","","gravado al 16%","","","","",""
+"","","Corresponde  al","total  de 
+los","","","",""
+"","","","montos de ITBIS tasa cero (0%),","","","",""
+"","","asignados 
+en","la 
+factura 
+de","","","",""
+"","","","","","","a)  Valor  numérico  de  16  enteros,  dos",""
+"","Total ITBIS Tasa3","consumo electrónica.","","","","",""
+"","","","","","","decimales; ≥ 0 (No puede ser negativo).",""
+"22","<TotalITBIS3>","","","18","NUM","","2"

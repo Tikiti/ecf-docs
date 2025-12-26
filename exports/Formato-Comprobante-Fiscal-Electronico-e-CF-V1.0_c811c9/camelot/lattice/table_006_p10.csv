@@ -1,0 +1,94 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. Créd. 
+Fiscal 
+Electr. 
+ 
+31","Fact. 
+Consum. 
+Electr. 
+ 
+32","Nota 
+Déb. 
+Electr. 
+ 
+33","Nota 
+Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Guber. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"13","Monto de Pago 
+<MontoPago>","Indica  el  monto  asociado  para  cada 
+forma  de  pago.  Condicional  a  que 
+exista una forma de pago.","18","NUM","a)  Valor  numérico  de  16 
+enteros,  2  decimales;  ≥  0 
+(Debe ser positivo)","N","2","2","2","0","2","0","2","2","2","3"
+"","FIN TABLA","","","","","","","","","","","","","","",""
+"14","Tipo Cuenta de Pago3 
+<TipoCuentaPago>","Cuenta de origen de la transferencia o 
+del cheque.","2","ALFA","Código Tipo: 
+ CT: Cta. Corriente 
+ AH: Ahorro 
+ OT: Otra","N","3","3","3","0","3","0","3","3","3","3"
+"15","Cuenta de Pago 
+<NumeroCuentaPago>","Número  de  la  cuenta  si  la  forma  de 
+pago  es  por  cheque  o  transferencia 
+bancaria.","28","ALFA 
+NUM","a) Sin validación","N","3","3","3","0","3","0","3","3","3","3"
+"16","Banco de Pago 
+<BancoPago>","Banco de la Cuenta.","75","ALFA 
+NUM","a) Sin validación","N","3","3","3","0","3","0","3","3","3","3"
+"17","Fecha desde 
+<FechaDesde>","Período de facturación para Servicios 
+Periódicos 
+Ej. 
+Energía 
+eléctrica, 
+telefónica, otros. 
+Fecha desde 
+(Fecha inicial del servicio facturado).","10","ALFA 
+NUM","Fecha válida: 
+a) Formato 
+dd-MM-AAAA  
+b) Menor o igual que 
+“Fecha hasta”. 
+De  acuerdo  al  Formato 
+del 
+campo 
+de 
+descripción.","N","3","3","3","3","0","0","3","3","3","3"
+"18","Fecha hasta 
+<FechaHasta>","Período de facturación para Servicios 
+Periódicos. Fecha hasta 
+(Fecha final del servicio facturado).","10","ALFA 
+NUM","Fecha válida:  
+a) Formato  
+dd-MM-AAAA  
+b) Mayor o igual a “Fecha 
+desde”. 
+De  acuerdo  al  Formato 
+del 
+campo 
+de 
+Descripción.","N","3","3","3","3","0","0","3","3","3","3"

@@ -1,0 +1,54 @@
+"","or>","","","","","","","","","","","","","","",""
+"","FIN ÁREA","COMPRADOR","","","","","","","","","","","","","",""
+"","ÁREA","","","","","","","","","","","","","","",""
+"","","INFORMACIONES ADICIONALES","","","","","3","3","3","3","0","0","3","3","3","0"
+"","<InformacionesAdicionales>","","","","","","","","","","","","","","",""
+"","Fecha Embarque","Corresponde 
+a 
+la 
+fecha 
+del","10","ALFA","a)Fecha válida:","","","","","","","","","","",""
+"56","","","","","","N","3","3","3","3","0","0","3","3","3","0"
+"","<FechaEmbarque>","embarque.","","NUM","Formato (dd-MM-AAAA)","","","","","","","","","","",""
+"","Número de Embarque","Dato  correspondiente  al  número  de","25","ALFA","a) Sin validación","","","","","","","","","","",""
+"57","","","","","","N","3","3","3","3","0","0","3","3","3","0"
+"","<NumeroEmbarque>","embarque.","","NUM","","","","","","","","","","","",""
+"","Número de Contenedor","Dato  correspondiente  al  número  de","100","ALFA","a) Sin validación","","","","","","","","","","",""
+"58","","","","","","N","3","3","3","3","0","0","3","3","3","0"
+"","<NumeroContenedor >","contenedor.","","NUM","","","","","","","","","","","",""
+"","Número de Referencia","Dato  correspondiente  al  número  de","20","","a) Sin validación","","","","","","","","","","",""
+"59","","","","NUM","","N","3","3","3","3","0","0","3","3","3","0"
+"","<NumeroReferencia>","referencia.","","","","","","","","","","","","","",""
+"","Nombre Puerto Embarque","Nombre del puerto de embarque de","","ALFA","","","","","","","","","","","",""
+"60","","","40","","a) Sin validación","N","0","0","0","0","0","0","0","0","3","0"
+"","<NombrePuertoEmbarque>","la mercancía.","","NUM","","","","","","","","","","","",""
+"","","Se refiere a los términos comerciales","","","","","","","","","","","","","",""
+"","","fijados 
+por 
+el 
+comprador 
+y 
+el","","","","","","","","","","","","","",""
+"","","vendedor referente a las condicones","","","","","","","","","","","","","",""
+"","Condiciones de Entrega","","","","","","","","","","","","","","",""
+"61","","de  entrega  de 
+las  mercancías  y/o","3","ALFA","a) Sin validación","N","0","0","0","0","0","0","0","0","3","0"
+"","<CondicionesEntrega>","","","","","","","","","","","","","","",""
+"","","productos.","","","","","","","","","","","","","",""
+"","","S
+e indica si es CIF, FOB, etc.","","","","","","","","","","","","","",""
+"","Total FOB","Corresponde a la suma del valor FOB","","","a) Valor numérico de 16","","","","","","","","","","",""
+"62","","","18","NUM","","N","0","0","0","0","0","0","0","0","3","0"
+"","<TotalFob>","de todas las mercancías.","","","enteros, 2 decimales; > 0","","","","","","","","","","",""
+"","","Corresponde  al  monto  total  de 
+la","","","","","","","","","","","","","",""
+"","","prima que figura en el documento de","","","","","","","","","","","","","",""
+"","Seguro","","","","a) Valor numérico de 16","","","","","","","","","","",""
+"63","","embarque 
+o 
+el 
+documento 
+que","18","NUM","","N","0","0","0","0","0","0","0","0","3","0"
+"","<Seguro>","","","","enteros, 2 decimales; > 0","","","","","","","","","","",""
+"","","certifica el valor de la prima asignada","","","","","","","","","","","","","",""
+"","","por la compañía aseguradora.","","","","","","","","","","","","","",""

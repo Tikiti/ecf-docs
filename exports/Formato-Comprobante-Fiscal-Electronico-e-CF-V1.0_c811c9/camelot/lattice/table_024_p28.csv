@@ -1,0 +1,115 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. 
+Créd. 
+Fiscal 
+Electr. 
+ 
+31","Fact. 
+Consum. 
+Electr. 
+ 
+32","Nota 
+Déb. 
+Electr. 
+ 
+33","Nota 
+Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Guber. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"116","Total Monto ITBIS Retenido 
+<TotalITBISRetenido>","Monto del ITBIS correspondiente a la 
+retención  que  será  realizada  por  el 
+comprador. Condicional a que en la 
+línea de detalle exista retención.","18","NUM","b
+a) Valor numérico de 16 enteros, dos 
+decimales, ≥0 (No puede ser negativo) 
+)  Campo Monto ITBIS Retenido de 
+la sección Detalle de B. o S.","N","2","0","2","2","2","0","0","0","0","0"
+"117","Total Monto Retención Renta 
+<TotalISRRetencion>","Monto del Impuesto Sobre la Renta 
+correspondiente 
+a 
+la 
+retención 
+realizada de la prestación o locación 
+de servicios. Condicional a que en la 
+línea de detalle exista retención.","18","NUM","a) Valor numérico de 16 enteros, dos 
+decimales, ≥0 (No puede ser negativo) 
+ 
+b)Monto 
+Retención 
+Renta 
+de 
+la 
+sección Detalle de B. o S.","N","2","0","2","2","2","0","0","0","0","2"
+"118","Total Monto ITBIS Percibido32 
+<TotalITBISPercepcion>","Monto 
+del 
+ITBIS 
+que 
+el 
+contribuyente cobra 
+a 
+terceros 
+como 
+adelanto 
+del 
+impuesto que éste  percibirá en  sus 
+operaciones. Condicional a que en la 
+línea de detalle exista percepción.","18","NUM","a)Valor  numérico  de  16  enteros,  dos 
+decimales, >0 (No puede ser negativo)","N","2","0","2","2","2","0","0","0","0","0"
+"119","Total Monto Percepción Renta 
+<TotalISRPercepcion>","Monto del Impuesto Sobre la Renta 
+que 
+el 
+contribuyente 
+cobra 
+a 
+terceros 
+como 
+adelanto 
+del 
+impuesto que éste  percibirá en  sus 
+operaciones. Condicional a que en la 
+línea de detalle exista percepción.","18","NUM","a) Valor numérico de 16 enteros, dos 
+decimales; >0 (No puede ser negativo)","N","2","0","2","2","2","0","0","0","0","0"
+"","FIN ÁREA","TOTALES ENCABEZADO","","","","","","","","","","","","","",""
+"","ÁREA 
+<OtraMoneda>","OTRA MONEDA ENCABEZADO","Condicional a que la facturación sea en 
+ 
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+2 
+ 
+ 
+Otra Moneda.","","","","","","","","","","","","",""

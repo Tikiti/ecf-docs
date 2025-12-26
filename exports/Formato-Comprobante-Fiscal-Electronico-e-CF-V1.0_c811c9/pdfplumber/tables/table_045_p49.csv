@@ -1,0 +1,36 @@
+,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,CAMPOS,DESCRIPCIÓN,Largo,,Validación,,,,,,,,,,,
+,,,,Tipo,,,Fact. Créd.,Fact.,Nota,Nota,,Gastos,Regím.,,,Pagos
+,,,,,,I,,,,,,,,,,
+,,,Max,,,,Fiscal,Consum.,Déb.,Créd.,Compras,Menor.,Espec.,Guber.,Export.,Exterior
+,,,,,,,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+,ÁREA,DESCUENTOS O RECARGOS,,,,,,,,,,,,,,
+,,,,,,,2,2,2,2,2,0,2,2,2,0
+,<DescuentosORecargos>,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,ÁREA,DESCUENTO O RECARGO.,,,,,,,,,,,,,,
+,,,,,,,2,2,2,2,2,0,2,2,2,0
+,<DescuentoORecargo>,Se pueden incluir hasta 20 repeticiones.,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+1,"N° de Línea o N° Secuencial
+<NumeroLinea>","Número de descuento o recargo. De 1 a
+20 repeticiones. Condicional a que exista
+Descuento o Recargo global.75",2,NUM,"a)Número secuencial de la
+línea.",N,2,2,2,2,2,0,2,2,2,0
+2,"Tipo de Ajuste
+<TipoAjuste>","D(descuento) o R(recargo).
+Condicional a que se aplique descuento
+global o recargo global.",1,ALFA,D o R,N,2,2,2,2,2,0,2,2,2,0
+3,"Indicador Norma 10-07
+<IndicadorNorma1007>","Indica si el descuento que se aplica es
+según lo establecido en la norma 10-07.",1,NUM,"a)Valor 1 si corresponde
+aplicar el descuento según lo
+establecido en la norma 10-
+07.",N,3,3,3,3,0,0,0,3,0,0
+4,"Descripción de Descuento
+o Recargo
+<DescripcionDescuentooRec
+argo>",Especificación de descuento o recargo.,45,ALFA,a)Sin Validación,I,3,3,3,3,3,0,3,3,3,0

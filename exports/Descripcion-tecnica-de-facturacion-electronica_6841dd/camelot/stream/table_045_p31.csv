@@ -1,0 +1,7 @@
+"","curl -X 'GET' \"
+"","'https://ecf.dgii.gov.do/testecf/consultatrackids/api/trackids/co"
+"","nsulta?rncemisor=xxxxxxxxx&encf=xxxxxxxxxxxxx' \"
+"EJEMPLO CURL","-H 'accept: application/json' \"
+"","-H 'Authorization: bearer"
+"","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1j"
+"","NkMC0wMGQ4MTczMzYxNWUiLCJuYmYiOjya1l8Yw'"

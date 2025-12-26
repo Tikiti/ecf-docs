@@ -1,0 +1,109 @@
+"","","","","","","","Fact.","","","","","","","","","Pagos"
+"","","","Largo","","","I","","","","","","","","","",""
+"","","","","","","","Créd.","Fact.","","Nota","","Gastos","Regím.","","Export.","Exterior"
+"","CAMPOS","DESCRIPCIÓN","","Tipo","Validación","","","","","","","","","","",""
+"","","","Max","","","","Fiscal","Consum.","Nota","Créd.","Compras","Menor.","Espec.","Guber.","Electr.","Electr."
+"","","","","","","","Electr.","Electr.","Déb. Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","",""
+"","","","","","","","31","32","33","34","41","43","44","45","46","47"
+"","","","","","a)  Valor  numérico  de  16  enteros,  2","","","","","","","","","","",""
+"","","Total de la suma de valores de monto","","","","","","","","","","","","","",""
+"","","","","","decimales; 
+≥ 
+0 
+(No 
+puede 
+ser","","","","","","","","","","",""
+"","","gravado  ITBIS  a  diferentes  tasas,  de","","","","","","","","","","","","","",""
+"","","","","","negativo).","","","","","","","","","","",""
+"","","las líneas correspondientes a la página","","","","","","","","","","","","","",""
+"","Subtotal Monto Gravado","","","","b) El valor indicado debe ser igual a","","","","","","","","","","",""
+"","","que se indica.","","","","","","","","","","","","","",""
+"","Total Página","","","","la 
+sumatoria  del  Subtotal  Monto","","","","","","","","","","",""
+"4","","","18","NUM","","I","2","2","2","2","2","0","0","2","2","0"
+"","<SubtotalMontoGravadoPagi","C","","","gravado 
+ITBIS 
+Tasa1 
++ 
+Subtotal","","","","","","","","","","",""
+"","","ondicional  a  que  exista 
+Subtotal","","","","","","","","","","","","","",""
+"","na>","","","","Monto 
+gravado 
+ITBIS 
+Tasa2 
++","","","","","","","","","","",""
+"","","Monto gravado1, y/o Subtotal Monto","","","","","","","","","","","","","",""
+"","","","","","Subtotal Monto gravado ITBIS Tasa3","","","","","","","","","","",""
+"","","gravado 
+2 
+y/o 
+Subtotal  Monto","","","","","","","","","","","","","",""
+"","","","","","de la página indicada.","","","","","","","","","","",""
+"","","gravado 3 Página.","","","","","","","","","","","","","",""
+"","","Total de la suma de valores de Ítems","","","","","","","","","","","","","",""
+"","","","","","a)  Valor  numérico  de  16  enteros,  2","","","","","","","","","","",""
+"","","gravados  asignados  a 
+ITBIS  tasa  1","","","","","","","","","","","","","",""
+"","","","","","decimales; 
+≥ 
+0 
+(No 
+puede 
+ser","","","","","","","","","","",""
+"","","(tasa 
+18%), 
+de 
+las 
+líneas","","","","","","","","","","","","","",""
+"","","","","","negativo).","","","","","","","","","","",""
+"","Subtotal Monto Gravado","","","","","","","","","","","","","","",""
+"","","correspondientes a la página que se","","","","","","","","","","","","","",""
+"","Tasa 1 Página","","","","b","","","","","","","","","","",""
+"5","","indica, 
+menos 
+descuentos 
+más","18","NUM","","N","2","2","2","2","2","0","0","2","0","0"
+"","","","","",") Suma de valores del monto ítem","","","","","","","","","","",""
+"","<SubtotalMontoGravado1Pa","","","","","","","","","","","","","","",""
+"","","recargos.78","","","","","","","","","","","","","",""
+"","","","","","con 
+indicador 
+de 
+facturación=1,","","","","","","","","","","",""
+"","gina>","","","","","","","","","","","","","","",""
+"","","C","","","menos descuentos más recargos, de","","","","","","","","","","",""
+"","","ondicional a que la página contenga","","","","","","","","","","","","","",""
+"","","","","","las  líneas  de  ítems  incluidos  en  la","","","","","","","","","","",""
+"","","algún ítem gravado a tasa ITBIS 1.","","","","","","","","","","","","","",""
+"","","","","","página.","","","","","","","","","","",""
+"","","Total de la suma de valores de Ítems","","","a)  Valor  numérico  de  16  enteros,  2","","","","","","","","","","",""
+"","","gravados  asignados  a 
+ITBIS  tasa  2","","","decimales; 
+≥ 
+0 
+(No 
+puede 
+ser","","","","","","","","","","",""
+"","","(tasa 
+16%), 
+de 
+las 
+líneas","","","negativo).","","","","","","","","","","",""
+"","Subtotal Monto Gravado","","","","","","","","","","","","","","",""
+"","","correspondientes a la página que se","","","","","","","","","","","","","",""
+"","Tasa 2 Página","","","","b","","","","","","","","","","",""
+"6","","indica, 
+menos 
+descuentos 
+más","18","NUM","","N","2","2","2","2","2","0","0","2","0","0"
+"","","","","",") Suma de valores del monto ítem","","","","","","","","","","",""
+"","<SubtotalMontoGravado2Pa","","","","","","","","","","","","","","",""
+"","","recargos.","","","con 
+indicador 
+de 
+facturación=2,","","","","","","","","","","",""
+"","gina>","","","","","","","","","","","","","","",""
+"","","C","","","menos descuentos más recargos, de","","","","","","","","","","",""
+"","","ondicional a que la página contenga","","","las  líneas  de  ítems  incluidos  en  la","","","","","","","","","","",""
+"","","algún ítem gravado a tasa ITBIS 2.","","","página.","","","","","","","","","","",""

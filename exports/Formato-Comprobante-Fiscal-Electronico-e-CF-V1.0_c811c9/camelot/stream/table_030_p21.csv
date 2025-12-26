@@ -1,0 +1,59 @@
+"","","","","","","","","","","","","","","","",""
+"","CAMPOS","","","","","","Fiscal","Consum.","Déb.","Créd.","Compras","Menor.","Espec.","Gub.","Export.","Exterior"
+"","","","","","","","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr."
+"","","","","","","","31","32","33","34","41","43","44","45","46","47"
+"","","","","","a) 
+Valor 
+numérico 
+de 
+16 
+enteros, 
+2","","","","","","","","","","",""
+"","","Total  de  la  suma  de  valores  de  Ítems","","","","","","","","","","","","","",""
+"","","","","","decimales≥ 0 (No puede ser negativo).","","","","","","","","","","",""
+"","","gravados asignados a ITBIS tasa 3 (tasa","","","","","","","","","","","","","",""
+"","Monto Gravado ITBIS","","","","","","","","","","","","","","",""
+"","","0%), menos descuentos más recargos.","","","b","","","","","","","","","","",""
+"95","Tasa 3","","18","NUM",")  Suma  de  valores  del  monto 
+ítem  con","N","2","2","2","2","2","0","0","2","2","0"
+"","<MontoGravadoI3>","C","","","indicador 
+de 
+facturación=3, 
+menos","","","","","","","","","","",""
+"","","ondicional a que en la línea de detalle","","","","","","","","","","","","","",""
+"","","","","","descuentos más recargos.","","","","","","","","","","",""
+"","","exista algún ítem gravado a tasa ITBIS3.","","","","","","","","","","","","","",""
+"","","","","","a) 
+Valor 
+numérico 
+de 
+16 
+enteros, 
+2","","","","","","","","","","",""
+"","","Total  de  la  suma  de  valores  de  ítems","","","","","","","","","","","","","",""
+"","","","","","decimales. ≥ 0 (No puede ser negativo).","","","","","","","","","","",""
+"","","exentos, 
+menos","descuentos 
+más","","","","","","","","","","","","",""
+"","Monto Exento","recargos.","","","b","","","","","","","","","","",""
+"","","","","","","","2","2","2","2","2","214","2","2","0","2"
+"96","","","18","NUM",")  Suma  de  valores  del  monto 
+ítem  con","I","","","","","","","","","",""
+"","<MontoExento>","","","","","","","","","","","","","","",""
+"","","C","","","indicador 
+de 
+facturación=4, 
+menos","","","","","","","","","","",""
+"","","ondicional a que en la línea de detalle","","","","","","","","","","","","","",""
+"","","","","","descuentos más recargos.","","","","","","","","","","",""
+"","","exista algún ítem exento.","","","","","","","","","","","","","",""
+"","","Tasa de ITBIS 1 (18%).","","","","","","","","","","","","","",""
+"","ITBIS Tasa 1","","","","a) 2 enteros en porcentaje Ej.: 18%","","","","","","","","","","",""
+"97","","Condicional a que en la línea de detalle","2","NUM","","N15","2","2","2","2","2","0","0","2","0","0"
+"","<ITBIS1>","","","","b) Existe ítem con indicador de facturación=1","","","","","","","","","","",""
+"","","exista ítem gravado a tasa 1.","","","","","","","","","","","","","",""
+"","","Tasa  de  ITBIS  2  (16%).  Condicional  a","","","","","","","","","","","","","",""
+"","ITBIS Tasa 2","","","","a) 2 enteros en porcentaje Ej.: 16%.","","","","","","","","","","",""
+"98","","que en la línea de detalle exista ítem","2","NUM","","N","2","2","2","2","2","0","0","2","0","0"
+"","<ITBIS2>","","","","b) Existe ítem con indicador de facturación=2.","","","","","","","","","","",""
+"","","gravado a tasa 2.","","","","","","","","","","","","","",""

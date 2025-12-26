@@ -1,0 +1,38 @@
+,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,Fact.,,,,,,,,,
+,CAMPOS,DESCRIPCIÓN,Largo,Tipo,Validación,I,Créd.,Fact.,Nota,Nota,,Gastos,Regím.,,,Pagos
+,,,,,,,Fiscal,Consum.,Déb.,Créd.,Compras,Menor.,Espec.,Guber.,Export.,Exterior
+,,,Max,,,,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.
+,,,,,,,,,,,,,,,,
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+120,"Código Otra moneda
+<TipoMoneda>","Moneda alternativa en que se
+expresan los Montos. Condicional a
+que la facturación sea realizada en
+moneda extranjera.33
+Este campo debe tener uno de los
+valores indicados en la ‘Tabla
+Codificación Monedas’. Por ejemplo:
+“USD” o “EUR”, etc.",3,ALFA,"a) Validar con la Tabla II
+(Codificación Monedas).",N,2,2,2,2,2,2,2,2,2,2
+,,,,,a) Valor numérico de 3,,,,,,,,,,,
+,,Factor de conversión utilizado.,,,,,,,,,,,,,,
+,Tipo de Cambio,,,,enteros y 4 decimales; > 0.,,,,,,,,,,,
+121,,Condicional a que existan datos en,7,NUM,,N,2,2,2,2,2,2,2,2,2,2
+,<TipoCambio>,,,,(Debe ser positivo),,,,,,,,,,,
+,,código otra moneda.,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,a) Valor numérico de 16,,,,,,,,,,,
+,,Total de la suma de valores de,,,"enteros, 2 decimales; ≥ 0 (No",,,,,,,,,,,
+,,Monto gravado ITBIS Otra Moneda,,,puede ser negativo),,,,,,,,,,,
+,,a diferentes tasas.,,,b) Valor numérico de la,,,,,,,,,,,
+,Monto gravado total Otra,,,,sumatoria del total Monto,,,,,,,,,,,
+122,Moneda,Condicional a que exista datos en,18,NUM,gravado ITBIS Tasa1 Otra,N34,2,2,2,2,2,0,0,2,2,0
+,<MontoGravadoTotalOtraMoneda>,código otra moneda y Monto,,,Moneda + Monto gravado,,,,,,,,,,,
+,,gravado ITBIS en otra moneda a,,,ITBIS Tasa 2 Otra Moneda,,,,,,,,,,,
+,,"distintas tasas (18%, 16% y 0%).",,,+Monto gravado ITBIS Tasa3,,,,,,,,,,,
+,,,,,Otra Moneda.,,,,,,,,,,,
+,,,,,,,,,,,,,,,,

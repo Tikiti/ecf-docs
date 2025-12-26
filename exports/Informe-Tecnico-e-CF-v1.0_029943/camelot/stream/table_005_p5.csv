@@ -1,0 +1,44 @@
+"Deﬁniciones"
+"Aprobación  o  Rechazo  Comercial:  es  la  respuesta  que  emite  el  Receptor  Electrónico  sobre  un  e-CF"
+"recibido  donde  informa,  tanto  al  emisor  electrónico  del  e-CF  como  a  la  DGII,  la  conformidad  o  no,"
+"respec�vamente,  con  el  documento  recibido, 
+la  cual  es  enviada  a  través  del  Servicio  Web  de"
+"Aprobación Comercial, en el formato estándar XML deﬁnido."
+"Acuse  de  Recibo:  es  una  respuesta  automá�ca  que  indica  que  el  e-CF  fue  recibido  por  el  receptor"
+"electrónico; esta no implica una respuesta posi�va o nega�va respecto de la transacción comercial."
+"Cer�ﬁcado  Digital:  es  un  documento  digital  emi�do  y  ﬁrmado  digitalmente  por  una  en�dad  de"
+"cer�ﬁcación,  que 
+iden�ﬁca 
+inequívocamente  a  un  suscriptor  durante  el  período  de  vigencia  del"
+"cer�ﬁcado y que se cons�tuye en prueba de que dicho suscriptor es fuente u originador del contenido"
+"de un documento digital o mensaje de datos que incorpore su cer�ﬁcado asociado."
+"Con�ngencia:  es  el  estado  que  deﬁne  las  situaciones  excepcionales  que  podrían  impedir  el  curso"
+"normal del ciclo de facturación electrónica y para el cual se encuentran deﬁnidas acciones especíﬁcas"
+"que deben seguir los actores del modelo en cada situación."
+"Firma  Digital:  se  entenderá  como  un  valor  numérico  que  se  adhiere  a  un  mensaje  de  datos  y  que,"
+"u�lizando  un  procedimiento  matemá�co  conocido,  vinculado  a  la  clave  del  iniciador  y  al  texto  del"
+"mensaje, permite determinar que este valor se ha obtenido exclusivamente con la clave del iniciador y"
+"el  texto  del  mensaje,  y  que  el  mensaje 
+inicial  no  ha  sido  modiﬁcado  después  de  efectuada 
+la"
+"transmisión."
+"órgano 
+regulador 
+de 
+las 
+INDOTEL 
+(Ins�tuto 
+Dominicano 
+de 
+las 
+Telecomunicaciones):"
+"telecomunicaciones y del comercio electrónico, documentos y ﬁrmas digitales, de conformidad con las"
+"leyes No. 153-98 General de Telecomunicaciones y No. 126-02 de Comercio Electrónico, Documentos y"
+"Firmas Digitales de la República Dominicana, respec�vamente."
+"Lenguaje  de  Marcas  Expansible  (XML):  es  un  lenguaje  estándar  que  estructura  el  intercambio  de"
+"información entre diferentes plataformas, permi�endo la organización y el e�quetado de documentos."
+"Algunos de sus campos de aplicación son las bases de datos, los documentos de texto, las hojas de"
+"cálculo y las páginas web."
+"Mensajes  de  Datos:  es  la  información  generada,  enviada,  recibida,  almacenada  o  comunicada  por"
+"medios electrónicos, óp�cos o similares, como pudieran ser, entre otros, el intercambio electrónico de"
+"datos (EDI, por sus siglas en inglés), el correo electrónico, el telegrama, el télex o el telefax."

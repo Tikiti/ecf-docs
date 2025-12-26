@@ -1,0 +1,46 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","Factura de 
+Consumo 
+Electrónica 
+(<250mil) 
+ 
+32"
+"","ÁREA 
+<Encabezado>","ENCABEZADO","","","","1"
+"1","VERSIÓN","Versión del formato utilizado.","3","ALFA 
+NUM","a) Valor: 1.0","1"
+"","ÁREA 
+<IdDoc>","IDENTIFICACIÓN DEL 
+DOCUMENTO","","","","1"
+"2","Tipo Comprobante Fiscal 
+Electrónico 
+<TipoeCF>","Indica si el documento es: 
+Código Tipo: 
+32: Factura de Consumo 
+Electrónica","2","NUM","a) Código Tipo: 
+32: Factura de Consumo Electrónica","1"
+"3","e-NCF 
+<eNCF>","Secuencia autorizada por la 
+DGII.","13","ALFA 
+NUM","a) Número de secuencia autorizada 
+por DGII.","1"
+"4","Tipo de Ingresos 
+<TipoIngresos>","Indica 
+el 
+tipo  de 
+ingreso 
+recibido,  según  clasificación 
+del 
+formato  de  envío  de 
+ventas de Bienes o Servicios.","2","NUM","Código Tipo: 
+01: 
+Ingresos  por  operaciones 
+(No 
+financieros). 
+02: Ingresos Financieros 
+03: Ingresos Extraordinarios 
+04: Ingresos por Arrendamientos 
+05: 
+Ingresos  por  Venta  de  Activo 
+Depreciable 
+06: Otros Ingresos","1"

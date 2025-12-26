@@ -1,0 +1,19 @@
+"1.  Introducción"
+"El acuse de recibo es la respuesta que el receptor deberá enviar al emisor como constancia de recepción del Comprobante"
+"Fiscal Electrónico; el mismo no implica aceptación ni rechazo del e-CF, sólo indica si fue o no recibido."
+"A
+l  momento  de  recibir  la  factura,  el  receptor  está  obligado  a  confirmar  al  emisor  la  recepción  del  documento  con  una"
+"respuesta de recepción1, previo a la aprobación comercial."
+"E
+l presente documento describe el contenido que debe tener el formato XML del acuse de recibo, incluyendo los mensajes"
+"que serán utilizados por los receptores electrónicos."
+"2.  Contenido del Formato XML del Acuse de Recibo"
+"a
+)  Detalle del Acuse de Recibo: especifica el contenido de la respuesta que el receptor debe enviar al emisor."
+"b)  Firma Digital: que avala la integridad de la respuesta y autenticidad del remitente."
+"3.  Códigos de Obligatoriedad"
+"1
+ - Dato obligatorio: el dato debe estar siempre en el archivo."
+"2 - Dato condicional: el dato no es obligatorio pero pasa a serlo en determinados casos, si se cumple una cierta condición."
+"1 El Acuse de Recibo confirma que el documento corresponde a una factura electrónica y ha sido recibida."
+"Pág. 3 de 6"

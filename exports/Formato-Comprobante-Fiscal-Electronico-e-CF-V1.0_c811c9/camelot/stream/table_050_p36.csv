@@ -1,0 +1,11 @@
+"Corresponde a la información de un ítem. Debe ir al menos una línea de detalle, se puede incluir la cantidad  páginas que incluyan todos los ítems, respetando la normativa.","","","","","","","","","","","",""
+"","","","","","","","OBLIGATORIEDAD","","","","",""
+"","","","I
+Fact.","","","","","","","","",""
+"","","","Créd.","Fact.","Nota","","","Gastos","Regím.","","","Pagos"
+"","Largo","Tipo","","","","","","","","","",""
+"CAMPOS","DESCRIPCIÓN","Validación","Fiscal","Consum.","Déb.","Nota Créd.","Compras","Menor.","Espec.","Guber.","Export.","Exterior"
+"","","","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr."
+"","Max","","","","","","","","","","",""
+"","","","31","32","33","34","41","43","44","45","46","47"
+"ÁREA","","","","","","","","","","","",""

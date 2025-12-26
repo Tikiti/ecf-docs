@@ -1,0 +1,93 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. 
+Créd. 
+Fiscal 
+Electr. 
+ 
+31","Fact. 
+Consum. 
+Electr. 
+ 
+32","Nota Déb. 
+Electr. 
+ 
+33","Nota 
+Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Guber. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"19","Total Páginas 
+<TotalPaginas>","C
+  C
+Indica el total de páginas en la que será 
+impreso el e-CF. 
+uenta las veces que se repite el campo 
+Página No. de la sección Paginación.  
+ondicional a que exista paginación.","3","NUM","b
+a) 
+Valor 
+numérico 
+hasta 
+3 
+enteros, > 1 (Debe ser positivo). 
+) Total de veces que se repite el 
+campo ‘Página No.’ de la sección 
+Paginación.","I","2","2","2","2","2","2","2","2","2","2"
+"","FIN ÁREA","IDENTIFICACIÓN DEL DOCUMENTO","","","","","","","","","","","","","",""
+"","ÁREA 
+<Emisor>","EMISOR","","","","","1","1","1","1","1","1","1","1","1","1"
+"20","RNC Emisor 
+<RNCEmisor>","Corresponde al RNC del emisor.","9 u 11","NUM","Validar en el Registro Nacional 
+de contribuyentes.  
+Se tiene que validar: 
+a) RNC cumpla con estructura 
+de formato. 
+b) RNC esté autorizado como 
+Facturador Electrónico. 
+c) RNC se encuentre en estatus 
+“Activo”. 
+d) RNC no posea marcas de 
+bloqueos.","I","1","1","1","1","1","1","1","1","1","1"
+"21","Nombre o Razón Social 
+Emisor 
+<RazonSocialEmisor>","Nombre o Razón Social del emisor.","150","ALFA 
+NUM","a) Sin validación","I","1","1","1","1","1","1","1","1","1","1"
+"22","Nombre Comercial 
+<NombreComercial>","Nombre Comercial.","150","ALFA 
+NUM","a) Sin validación","I","3","3","3","3","3","3","3","3","3","3"
+"23","Sucursal 
+<Sucursal>","Indica nombre de la sucursal que emite 
+el 
+e-CF. 
+Corresponde 
+a 
+un 
+dato 
+administrado por el emisor.","20","ALFA 
+NUM","a) Sin validación","I","3","3","3","3","3","3","3","3","3","3"
+"24","Dirección de Emisor 
+<DireccionEmisor>","Datos correspondientes a Domicilio de 
+operación del Emisor.","100","ALFA 
+NUM","a) Sin validación","I","1","1","1","1","1","1","1","1","1","1"

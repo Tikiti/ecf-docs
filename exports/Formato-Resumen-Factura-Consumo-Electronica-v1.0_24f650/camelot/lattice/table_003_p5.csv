@@ -1,0 +1,38 @@
+"5","Tipo de Pago 
+<TipoPago>","I
+ndica  el 
+tipo  de  pago  del 
+cliente.","1","NUM","Código Tipo: 
+1: Contado 
+2: Crédito 
+3: Gratuito","1"
+"","TABLA DE FORMAS DE PAGO1","Hasta 07 repeticiones. 
+Contiene los dos campos 
+siguientes.","","","","3"
+"6","Forma de Pago 
+<FormaPago>","Indica  el  método  en  que  se 
+pagará la factura.","2","NUM","Código Forma: 
+1: Efectivo 
+2: Cheque/Transferencia/ 
+Depósito 
+3: Tarjeta de Débito/Crédito 
+4: Venta a Crédito 
+5: Bonos o Certificados de regalo 
+6: Permuta 
+7: Nota de crédito 
+8: Otras Formas de pago","3"
+"7","Monto de Pago 
+<MontoPago>","C
+Indica el monto asociado para 
+cada forma de pago.  
+ondicional  a  que  exista  una 
+forma de pago.","18","NUM","a) Valor numérico de 16 enteros, 2 
+decimales; ≥ 0 (Debe ser positivo)","2"
+"","FIN ÁREA","IDENTIFICACIÓN DEL DOCUMENTO","","","",""
+"","ÁREA 
+<Emisor>","EMISOR","","","","1"
+"8","RNC Emisor 
+<RNCEmisor>","Corresponde al RNC del emisor.","9 u 11","NUM","Validar  en  el  Registro  Nacional  de 
+contribuyentes.  
+Se tiene que validar: 
+a) RNC cumpla con estructura de","1"

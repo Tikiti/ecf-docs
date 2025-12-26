@@ -1,0 +1,104 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. 
+Créd. 
+Fiscal 
+Electr. 
+ 
+31","Fact. 
+Consum. 
+Electr. 
+ 
+32","Nota Déb. 
+Electr. 
+ 
+33","Nota 
+Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Guber. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"25","Municipio 
+<Municipio>","Dato  correspondiente  al  domicilio  de 
+operación del Emisor.","6","NUM","a) Validar con código de la 
+Tabla III (Codificación 
+Provincias Y Municipios)","P","3","3","3","3","3","3","3","3","3","3"
+"26","Provincia 
+<Provincia>","Dato  correspondiente  al  domicilio  de 
+operación del Emisor.","6","NUM","a) Validar con código de la 
+Tabla III (Codificación 
+Provincias Y Municipios","P","3","3","3","3","3","3","3","3","3","3"
+"","Tabla de Teléfono Emisor 
+<TablaTelefonoEmisor>","Se pueden incluir 3 repeticiones.","","","","","3","3","3","3","3","3","3","3","3","3"
+"27","Teléfono Emisor 
+<TelefonoEmisor>","Dato  correspondiente  al  teléfono  de 
+contacto del emisor.","12","ALFA 
+NUM","Formato válido: 
+Estructura de teléfono 
+(xxx-xxx-xxxx)","N","3","3","3","3","3","3","3","3","3","3"
+"","FIN TABLA","TELÉFONO EMISOR","","","","","","","","","","","","","",""
+"28","Correo Electrónico Emisor 
+<CorreoEmisor>","Dato correspondiente al correo 
+electrónico del emisor.","80","ALFA 
+NUM","Formato válido: Estructura de 
+correo electrónico 
+(xxxxx@xxx.xx)","N","3","3","3","3","3","3","3","3","3","3"
+"29","WebSite 
+<WebSite>","Dato correspondiente a la página web 
+del emisor.","50","ALFA 
+NUM","a) Sin validación","N","3","3","3","3","3","3","3","3","3","3"
+"30","Actividad Económica Emisor 
+<ActividadEconomica>","Dato 
+correspondiente 
+a 
+la 
+actividad 
+económica  del  Emisor  (se  puede  incluir 
+sólo 
+la 
+actividad 
+económica 
+que 
+corresponde a la transacción).","100","ALFA 
+NUM","a) Sin validación","N","3","3","3","3","3","3","3","3","3","3"
+"31","Código del Vendedor 
+<CodigoVendedor>","Identificador del Vendedor.","60","ALFA 
+NUM","a) Sin validación","N","3","3","3","3","0","0","3","3","3","0"
+"32","Número Factura Interna 
+<NumeroFacturaInterna>","Corresponde  al  número 
+interno  de 
+la 
+factura.","20","ALFA 
+NUM","a) Sin validación","N","3","3","3","3","3","3","3","3","3","3"
+"33","Número pedido Interno 
+<NumeroPedidoInterno>","Corresponde 
+al 
+número 
+de 
+pedido 
+interno asignado a la factura.","20","NUM","a) Sin validación","N","3","3","3","3","3","3","3","3","3","3"
+"34","Zona de Venta 
+<ZonaVenta>","Corresponde  a 
+la  zona  de  venta  del 
+vendedor.","20","ALFA 
+NUM","a) Sin validación.","N","3","3","3","3","0","0","3","3","3","0"

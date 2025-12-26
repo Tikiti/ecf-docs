@@ -1,0 +1,15 @@
+Línea,Cantidad,"Unidad
+de
+Medida",Nombre ítem,Precio,,Monto ítem,,"Monto ítem
+según formato
+e-CF","Dif. por
+línea
+según e-
+CF"
+,,,,,,según emisor,,,
+,,,,,,e-CF,,,
+,,,,,,(Cant. *,,,
+,,,,,,Precio),,,
+1,5.50,Caj,Lápiz,100.33,552.80,,,551.82,0.99
+2,10.25,Caj,Cuaderno,555.44,5694.00,,,5693.26,0.74
+3,2.00,Caj,Borrador,333.25,667.50,,,666.50,1.00

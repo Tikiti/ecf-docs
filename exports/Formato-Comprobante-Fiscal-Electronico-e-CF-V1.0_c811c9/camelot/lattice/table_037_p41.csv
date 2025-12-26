@@ -1,0 +1,94 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. 
+Créd. 
+Fiscal 
+Electr. 
+ 
+31","Fact. 
+Consum. 
+Electr. 
+ 
+32","Nota 
+Déb. 
+Electr. 
+ 
+33","Nota 
+Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Guber. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"20","Fecha Vencimiento 
+<FechaVencimientoItem>","Dato 
+correspondiente 
+a 
+la 
+fecha  de 
+vencimiento del ítem.","10","ALFA 
+NUM","a)Fecha válida 
+Formato: (dd-MM-AAAA)","N","3","3","3","3","3","0","3","3","3","0"
+"","ÁREA 
+<Mineria>","MINERÍA. 
+Condicional 
+a  que 
+exista 
+facturación 
+relacionado al sector minería.","","","","","0","2","2","2","0","0","0","0","2","0"
+"21","Peso Neto Kilogramo 
+<PesoNetoKilogramo>","Indica  el  peso  neto  en  kilogramo  del 
+mineral.61","19","NUM","a)  Valor  numérico  de  16  enteros,  3 
+decimales; ≥0 (No puede ser negativo).","N","0","2","2","2","0","0","0","0","2","0"
+"22","Peso Neto 
+<PesoNetoMineria>","Indica el peso neto del mineral.62","19","NUM","a)  Valor  numérico  de  16  enteros,  3 
+decimales; ≥0 (No puede ser negativo).","N","0","2","2","2","0","0","0","0","2","0"
+"23","Tipo Afiliación 
+<TipoAfiliacion>","Indica si el destinatario es o no afiliada.63","1","NUM","a) Indica si es valor: 
+  1: Afiliada 
+2: No afiliada","N","0","2","2","2","0","0","0","0","2","0"
+"24","Liquidación 
+<Liquidacion>","Indica  si 
+la 
+liquidación  del  mineral  es 
+provisional o final.64","1","NUM","a) Indica si es valor: 
+ 1: Provisional 
+ 2: Final","N","0","2","2","2","0","0","0","0","2","0"
+"","FIN ÁREA","MINERÍA","","","","","","","","","","","","","",""
+"25","Precio Unitario del 
+Ítem65 
+<PrecioUnitarioItem>","Dato  correspondiente  al  precio  unitario 
+del ítem.","a)Valor numérico de 16 enteros, 4 
+I 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+1 
+20 
+NUM 
+decimales; ≥0 (No puede ser negativo).","","","","","","","","","","","","",""

@@ -1,0 +1,57 @@
+,,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,CAMPOS,DESCRIPCIÓN,Largo,Tipo,Validación,I,Fact. Créd.,Fact.,Nota,,,Gastos,Regím.,,,Pagos
+,,,,,,,,Fiscal,Consum.,Déb.,Nota Créd.,Compras,Menor.,Espec.,Guber.,Export.,Exterior
+,,,,,,,,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.
+,,,,Max,,,,,,,,,,,,,
+,,,,,,,,31,32,33,34,41,43,44,45,46,47
+,,ÁREA,,,,,,,,,,,,,,,
+,,,ENCABEZADO,,,,,1,1,1,1,1,1,1,1,1,1
+,,<Encabezado>,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+1,,VERSIÓN,Versión del formato utilizado.,3,"ALFA
+NUM",Valor: 1.0,N,1,1,1,1,1,,,,1,
+,,,,,,,,,,,,,1,1,1,,1
+,,,,,,,,,,,,,,,,,
+,,"ÁREA
+<IdDoc>",IDENTIFICACIÓN DEL DOCUMENTO,,,,,1,1,1,1,1,,,1,,1
+,,,,,,,,,,,,,1,1,,1,
+,,,,,,,,,,,,,,,,,
+2,,,,,,,,,,,,,,,,,
+,,,Indica si el documento es:,,,,,,,,,,,,,,
+,,,Código Tipo:,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,31: Factura de Crédito Fiscal,,,,,,,,,,,,,,
+,,,Electrónica,,,,,,,,,,,,,,
+,,,32: Factura de Consumo Electrónica,,,,,,,,,,,,,,
+,,,33: Nota de Débito Electrónica,,,a) De acuerdo a la,,,,,,,,,,,
+,,Tipo Comprobante,,,,,,,,,,,,,,,
+,,,34: Nota de Crédito Electrónica,,,codificación del campo de,,,,,,,,,,,
+,,Fiscal Electrónico,,2,NUM,,P,1,1,1,1,1,1,1,1,1,1
+,,,41: Compras Electrónico,,,Descripción.,,,,,,,,,,,
+,,<TipoeCF>,,,,,,,,,,,,,,,
+,,,43: Gastos Menores Electrónico,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,44: Regímenes Especiales Electrónica,,,,,,,,,,,,,,
+,,,45: Gubernamental Electrónico,,,,,,,,,,,,,,
+,,,46: Comprobante para,,,,,,,,,,,,,,
+,,,Exportaciones Electrónico,,,,,,,,,,,,,,
+,,,47: Comprobante para Pagos al,,,,,,,,,,,,,,
+,,,Exterior Electrónico,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+3,,,,,,,,,,,,,,,,,
+,,e-NCF,,,ALFA,a) Validar con No. Secuencia,,,,,,,,,,,
+,,,Secuencia autorizada por la DGII.,13,,,I,1,1,1,1,1,1,1,1,1,1
+,,<eNCF>,,,NUM,autorizada por DGII.,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+4,,,,,,Fecha válida:,,,,,,,,,,,
+,,,,,,a) Formato,,,,,,,,,,,
+,,Fecha Vencimiento,Fecha de vencimiento de la secuencia,,,,,,,,,,,,,,
+,,,,,ALFA,(dd-MM-AAAA),,,,,,,,,,,
+,,<FechaVencimientoSecuenci,de e-NCF.,10,,,I,1,0,1,0,1,1,1,1,1,1
+,,,,,NUM,b) Validar con fecha de,,,,,,,,,,,
+,,a>,,,,,,,,,,,,,,,
+,,,,,,vencimiento de la,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,autorización de la secuencia.,,,,,,,,,,,

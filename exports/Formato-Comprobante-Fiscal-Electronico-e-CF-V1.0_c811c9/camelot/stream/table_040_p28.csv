@@ -1,0 +1,63 @@
+"","","","","","","","","","","","","","","","",""
+"","","DESCRIPCIÓN","","Tipo","Validación","","Créd.","Fact.","Nota","Nota","","Gastos","Regím.","","","Pagos"
+"","","","Max","","","","Fiscal","Consum.","Déb.","Créd.","Compras","Menor.","Espec.","Guber.","Export.","Exterior"
+"","CAMPOS","","","","","","","","","","","","","","",""
+"","","","","","","","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr."
+"","","","","","","","31","32","33","34","41","43","44","45","46","47"
+"","","","","","a) Valor numérico de 16 enteros, dos","","","","","","","","","","",""
+"","","Monto del ITBIS correspondiente a la","","","","","","","","","","","","","",""
+"","","","","","decimales, ≥0 (No puede ser negativo)","","","","","","","","","","",""
+"","Total Monto ITBIS Retenido","retención  que  será  realizada  por  el","","","","","","","","","","","","","",""
+"116","","","18","NUM","b","N","2","0","2","2","2","0","0","0","0","0"
+"","<TotalITBISRetenido>","comprador. Condicional a que en la","","",")  Campo Monto ITBIS Retenido de","","","","","","","","","","",""
+"","","línea de detalle exista retención.","","","la sección Detalle de B. o S.","","","","","","","","","","",""
+"","","Monto del Impuesto Sobre la Renta","","","","","","","","","","","","","",""
+"","","","","","a) Valor numérico de 16 enteros, dos","","","","","","","","","","",""
+"","","correspondiente 
+a 
+la 
+retención","","","","","","","","","","","","","",""
+"","","","","","decimales, ≥0 (No puede ser negativo)","","","","","","","","","","",""
+"","Total Monto Retención Renta","realizada de la prestación o locación","","","","","","","","","","","","","",""
+"","","","18","NUM","","N","2","0","2","2","2","0","0","0","0","2"
+"117","<TotalISRRetencion>","","","","","","","","","","","","","","",""
+"","","de servicios. Condicional a que en la","","","","","","","","","","","","","",""
+"","","","","","b)Monto 
+Retención 
+Renta 
+de 
+la","","","","","","","","","","",""
+"","","línea de detalle exista retención.","","","","","","","","","","","","","",""
+"","","","","","sección Detalle de B. o S.","","","","","","","","","","",""
+"","","Monto 
+del 
+ITBIS 
+que 
+el","","","","","","","","","","","","","",""
+"","","contribuyente cobra","","","","","","","","","","","","","",""
+"","","a 
+terceros 
+como 
+adelanto 
+del","","","","","","","","","","","","","",""
+"","Total Monto ITBIS Percibido32","","","","a)Valor  numérico  de  16  enteros,  dos","","","","","","","","","","",""
+"118","","","18","NUM","","N","2","0","2","2","2","0","0","0","0","0"
+"","<TotalITBISPercepcion>","impuesto que éste  percibirá en  sus","","","","","","","","","","","","","",""
+"","","","","","decimales, >0 (No puede ser negativo)","","","","","","","","","","",""
+"","","operaciones. Condicional a que en la","","","","","","","","","","","","","",""
+"","","línea de detalle exista percepción.","","","","","","","","","","","","","",""
+"","","Monto del Impuesto Sobre la Renta","","","","","","","","","","","","","",""
+"","","que 
+el 
+contribuyente 
+cobra 
+a","","","","","","","","","","","","","",""
+"","","terceros 
+como 
+adelanto 
+del","","","","","","","","","","","","","",""
+"","Total Monto Percepción Renta","","","","a) Valor numérico de 16 enteros, dos","","","","","","","","","","",""
+"119","","impuesto que éste  percibirá en  sus","18","NUM","","N","2","0","2","2","2","0","0","0","0","0"
+"","<TotalISRPercepcion>","","","","decimales; >0 (No puede ser negativo)","","","","","","","","","","",""
+"","","operaciones. Condicional a que en la","","","","","","","","","","","","","",""
+"","","línea de detalle exista percepción.","","","","","","","","","","","","","",""

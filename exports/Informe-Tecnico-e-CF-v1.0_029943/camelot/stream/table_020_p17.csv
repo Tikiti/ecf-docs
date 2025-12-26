@@ -1,0 +1,9 @@
+"El modelo funciona de la siguiente manera:",""
+"1)","Una vez emitida la factura de consumo electrónica menor a DOP$250 mil, el emisor deberá"
+"","guardar en su base de datos dicha factura y remitir a Impuestos Internos un resumen de la"
+"","factura  de  consumo  electrónica13,  el  cual  debe  cumplir  con  el 
+formato  de 
+resumen"
+"","establecido."
+"2)","Impuestos Internos retorna la respuesta de la validación del formato de resumen de consumo"
+"","electrónica remitido, con uno de los siguientes estados:"

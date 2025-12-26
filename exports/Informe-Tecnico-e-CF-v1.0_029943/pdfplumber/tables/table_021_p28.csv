@@ -1,0 +1,20 @@
+Sección de Detalle de Bienes y Servicios,,,,,,,,,,,Cálculo a),,,Cálculo b),
+"No.
+Línea",,"Cantidad
+ítem","Indicador
+facturación","Descripción
+ítem","Precio
+unitario
+ítem","Código
+Impuesto
+Adicional",,"Monto
+ítem",,,,Porcentaje del,,"Monto
+descuento
+aplicable",
+,,,,,,,,,,,,monto ítem,,,
+,,,,,,,,,,,,respecto al,,,
+,,,,,,,,,,,,monto total,,,
+1,,1,18%,XXXXXXX,200.00,002,,200.00,,,31.75%,,,31.75,
+2,,1,18%,XXXXXXX,300.00,002,,300.00,,,47.62%,,,47.62,
+3,,1,18%,XXXXXXX,130.00,,,130.00,,,20.63%,,,20.63,
+,Total,,,,,,,,630.00,,,,,,

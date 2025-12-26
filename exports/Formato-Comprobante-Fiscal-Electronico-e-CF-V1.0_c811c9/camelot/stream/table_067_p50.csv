@@ -1,0 +1,48 @@
+"","","Indica  si  existe  descuento  o 
+recargo","","","","","","","","","","","","","",""
+"","Tipo de valor","aplicado 
+en 
+Porcentaje 
+o  Monto.","","","","","","","","","","","","","",""
+"5","","","1","ALFA","“%” o “$”","I","2","2","2","2","2","0","2","2","2","0"
+"","<TipoValor>","Condicional  a  que  exista  descuento  o","","","","","","","","","","","","","",""
+"","","recargo global.","","","","","","","","","","","","","",""
+"","","Valor  del  Descuento  o  Recargo 
+en","","","a) Valor numérico; 3 enteros y","","","","","","","","","","",""
+"","Descuento o Recargo en %","","","","","","","","","","","","","","",""
+"6","","porcentaje. 
+Condicional 
+a 
+que","5","NUM","2 decimales; >0 (No puede ser","I","2","2","2","2","2","0","2","2","2","0"
+"","<ValorDescuentooRecargo>","","","","","","","","","","","","","","",""
+"","","descuento o recargo global sea en %.","","","negativo).","","","","","","","","","","",""
+"","","","","","a)  Valor 
+numérico 
+de 
+16","","","","","","","","","","",""
+"","","","","","enteros, 2 decimales; ≥0.","","","","","","","","","","",""
+"","Monto de Descuento o","Valor  del  descuento  o  recargo.  Si  se","","","","","","","","","","","","","",""
+"7","Recargo","refiere al tipo de valor $ se debe indicar","18","NUM","b","I","2","2","2","2","2","0","2","2","2","0"
+"","","","","",") Si va el descuento o recargo","","","","","","","","","","",""
+"","<MontoDescuentooRecargo>","el monto.","","","","","","","","","","","","","",""
+"","","","","","en  %, 
+debe 
+ir 
+el  monto","","","","","","","","","","",""
+"","","","","","correspondiente.","","","","","","","","","","",""
+"","","","","","a)  Valor 
+numérico 
+de 
+16","","","","","","","","","","",""
+"","Monto en otra moneda de","","","","enteros, 2 decimales; ≥0.","","","","","","","","","","",""
+"","Descuento o Recargo","Valor en otra moneda. Aplica en montos","","","","","","","","","","","","","",""
+"8","","","18","NUM","b","N","3","3","3","3","3","0","3","3","3","0"
+"","<MontoDescuentooRecargoOt","de descuento o recargo global.","","",")   Si 
+va 
+el 
+descuento 
+o","","","","","","","","","","",""
+"","raMoneda>","","","","recargo en %, debe ir el monto","","","","","","","","","","",""
+"","","","","","correspondiente.","","","","","","","","","","",""
+"","","Indica si el descuento o recargo afecta a","","","","","","","","","","","","","",""
+"","","","","","a) Indicar si es valor:","","","","","","","","","","",""

@@ -1,0 +1,8 @@
+"Consulta Directorio de Servicios"
+"Servicios web responsable de retornar en el ambiente productivo los contribuyentes"
+"electrónicos autorizados y las URLs de sus servicios de recepción de eCF, aprobación"
+"comercial y autenticación (Opcional)."
+"En el caso de este servicio en el ambiente de pre-certificación, se retornarán las URLs"
+"de prueba del servicio de emisor receptor habilitado por DGII para simular ser otro"
+"contribuyente, permitiendo autenticarse, recibir y enviar comprobantes y/o"
+"aprobaciones comerciales."

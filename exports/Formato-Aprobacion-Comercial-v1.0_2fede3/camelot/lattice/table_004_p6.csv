@@ -1,0 +1,7 @@
+"No.","Campo","Descripción","Tipo","Largo 
+Máx.","Validación","Obligatoriedad"
+"","ÁREA 
+<Signature>","SIGNATURE","","","","1"
+"1","Firma Digital","Firma digital sobre el archivo de 
+Aprobación Comercial","","","","1"
+"","FIN ÁREA","SIGNATURE","","","",""

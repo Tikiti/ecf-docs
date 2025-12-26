@@ -1,0 +1,38 @@
+,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,,,Largo,,Validación,,Fact.,,,,,,,,,
+,,,,Tipo,,,,,,,,,,,,
+,,,Max,,,I,Créd.,Fact.,Nota,Nota,,,Regím.,,,Pagos
+,CAMPOS,DESCRIPCIÓN,,,,,Fiscal,Consum.,Déb.,Créd.,Compras,Gastos,Espec.,Guber.,Export.,Exterior
+,,,,,,,,,,,,Menor.,,,,
+,,,,,,,Electr.,Electr.,Electr.,Electr.,Electr.,,Electr.,Electr.,Electr.,Electr.
+,,,,,,,,,,,,Electr.,,,,
+,,,,,,,31,32,33,34,,,,,,
+,,,,,,,,,,,,43,,,,
+,,,,,,,,,,,41,,44,45,46,47
+17,"Grados Alcohol en %
+<GradosAlcohol>59","Corresponde al porcentaje de alcohol
+en el volumen de concentración total
+alcohólica por unidad de producto.
+Condicional a que el ítem esté gravado
+con códigos de impuestos adicionales
+006 hasta 018 en la Tabla de
+Codificación Tipo de Impuestos
+Adicional (bebidas alcohólicas).",5,NUM,"a) Valor numérico de 3
+enteros y 2 decimales; >0.
+(Debe ser positivo)",I,2,2,2,2,0,0,0,2,0,0
+18,"Precio Unitario de Referencia
+<PrecioUnitarioReferencia>60","Precio unitario para la unidad de
+medida de referencia (no se usa para el
+cálculo del monto Total).
+Condicional a que el ítem esté gravado
+con códigos de impuestos adicionales
+desde 023 hasta 039 en la Tabla de
+Codificación Tipo de Impuestos
+Adicional.",18,NUM,"a) Valor numérico de 16
+enteros, 2 decimales. >0 (No
+puede ser negativo)",I,2,2,2,2,0,0,0,2,0,0
+19,"Fecha Elaboración
+<FechaElaboracion>","Dato correspondiente a la fecha de
+elaboración del ítem.",10,"ALFA
+NUM","a)Fecha válida
+Formato: (dd-MM-AAAA)",N,3,3,3,3,3,0,3,3,3,0

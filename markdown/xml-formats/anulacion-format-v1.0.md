@@ -16,8 +16,10 @@ This format is used to **cancel (annul) unused e-NCF sequences** that were autho
 
 **API Endpoint:**
 - **Method**: `POST`
-- **Endpoint**: `/api/AnulacionSecuencias`
-- **Body**: Signed ANECF XML
+- **Service Path**: `{ambiente}/anulacionrangos/api/operaciones/anularrango`
+- **Endpoint**: `/api/operaciones/anularrango`
+- **Full URL Example**: `https://ecf.dgii.gov.do/testecf/anulacionrangos/api/operaciones/anularrango`
+- **Body**: Signed ANECF XML (Content-Type: `multipart/form-data`, field: `xml`)
 
 > [!CAUTION]
 > If an invoice has already been sent to DGII or the receptor, it **cannot** be cancelled with this format. Use a **Nota de Crédito Electrónica (type 34)** instead.
@@ -59,18 +61,21 @@ This format is used to **cancel (annul) unused e-NCF sequences** that were autho
 |---------|------|---------|-----|-------------|
 | `Version` | NUM | 3 | 1 | Value: `1.0` |
 | `RncEmisor` | NUM | 9/11 | 1 | Taxpayer RNC |
-| `CantidadeNCFAnulados` | NUM | — | 1 | Total count of annulled sequences |
-| `FechaHoraAnulacioneNCF` | ALFA | 19 | 1 | Format: DD-MM-YYYY HH:MM:SS |
+| `CantidadeNCFAnulados` | NUM | 10 | 1 | Total count of annulled sequences |
+| `FechaHoraAnulacioneNCF` | ALFANUM | 19 | 1 | Format: DD-MM-YYYY HH:mm:ss |
+
+> [!NOTE]
+> The header field `CantidadeNCFAnulados` must equal the sum of all line-level `CantidadeNCFAnulados` values in the detail section.
 
 ### DetalleAnulacion (Detail)
 
 | Element | Type | Max Len | Req | Description |
 |---------|------|---------|-----|-------------|
-| `NoLinea` | NUM | — | 1 | Line number (1-10) |
+| `NoLinea` | NUM | 2 | 1 | Line number (1-10) |
 | `TipoeCF` | NUM | 2 | 1 | e-CF type code (31-47) |
-| `SecuenciaeNCFDesde` | ALFA | 13 | 1 | Starting e-NCF of range |
-| `SecuenciaeNCFHasta` | ALFA | 13 | 1 | Ending e-NCF of range |
-| `CantidadeNCFAnulados` | NUM | — | 1 | Count for this line |
+| `SecuenciaeNCFDesde` | ALFANUM | 13 | 1 | Starting e-NCF of range |
+| `SecuenciaeNCFHasta` | ALFANUM | 13 | 1 | Ending e-NCF of range |
+| `CantidadeNCFAnulados` | NUM | 10 | 1 | Count for this line |
 
 ---
 
@@ -112,3 +117,90 @@ This format is used to **cancel (annul) unused e-NCF sequences** that were autho
 | Code | Meaning |
 |------|---------|
 | `1` | Mandatory |
+
+---
+
+## Example (Anexo I)
+
+The following example demonstrates the ANECF format structure for cancelling e-NCF sequences.
+
+### A. Encabezado (Header)
+
+| Field | Value |
+|-------|-------|
+| Versión | 1.00 |
+| RNC Emisor | 123456789 |
+| Cantidad de e-NCF Anulados | 84 |
+| Fecha y Hora de Firma | 01-01-2019 08:50:15 |
+
+### B. DetalleAnulacion
+
+**Line 1: Type 31**
+
+| Field | Value |
+|-------|-------|
+| Número de Línea | 1 |
+| Tipo de e-CF | 31 |
+| Secuencia de e-NCF Desde | E310000000001 |
+| Secuencia de e-NCF Hasta | E310000000001 |
+| Secuencia de e-NCF Desde | E310000000005 |
+| Secuencia de e-NCF Hasta | E310000000050 |
+| Cantidad de e-NCF Anulados | 47 |
+
+**Line 2: Type 44**
+
+| Field | Value |
+|-------|-------|
+| Número de Línea | 2 |
+| Tipo de e-CF | 44 |
+| Secuencia de e-NCF Desde | E440000000010 |
+| Secuencia de e-NCF Hasta | E440000000046 |
+| Cantidad de e-NCF Anulados | 37 |
+
+> [!NOTE]
+> **Footnote 1**: The e-NCF structure consists of: series letter (E-Z, except P) + 2-digit type code + 10-digit sequence.
+>
+> **Footnote 2**: Series letters A-D and P are reserved and cannot be used.
+
+---
+
+## XML Structure Example
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<AnulacionNCF>
+  <Encabezado>
+    <Version>1.0</Version>
+    <RncEmisor>123456789</RncEmisor>
+    <CantidadeNCFAnulados>84</CantidadeNCFAnulados>
+    <FechaHoraAnulacioneNCF>01-01-2019 08:50:15</FechaHoraAnulacioneNCF>
+  </Encabezado>
+  <DetalleAnulacion>
+    <Anulacion>
+      <NoLinea>1</NoLinea>
+      <TipoeCF>31</TipoeCF>
+      <TablaRangoSecuenciasAnuladaseNCF>
+        <SecuenciaeNCFDesde>E310000000001</SecuenciaeNCFDesde>
+        <SecuenciaeNCFHasta>E310000000001</SecuenciaeNCFHasta>
+      </TablaRangoSecuenciasAnuladaseNCF>
+      <TablaRangoSecuenciasAnuladaseNCF>
+        <SecuenciaeNCFDesde>E310000000005</SecuenciaeNCFDesde>
+        <SecuenciaeNCFHasta>E310000000050</SecuenciaeNCFHasta>
+      </TablaRangoSecuenciasAnuladaseNCF>
+      <CantidadeNCFAnulados>47</CantidadeNCFAnulados>
+    </Anulacion>
+    <Anulacion>
+      <NoLinea>2</NoLinea>
+      <TipoeCF>44</TipoeCF>
+      <TablaRangoSecuenciasAnuladaseNCF>
+        <SecuenciaeNCFDesde>E440000000010</SecuenciaeNCFDesde>
+        <SecuenciaeNCFHasta>E440000000046</SecuenciaeNCFHasta>
+      </TablaRangoSecuenciasAnuladaseNCF>
+      <CantidadeNCFAnulados>37</CantidadeNCFAnulados>
+    </Anulacion>
+  </DetalleAnulacion>
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <!-- Digital signature goes here -->
+  </Signature>
+</AnulacionNCF>
+```

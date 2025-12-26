@@ -1,0 +1,14 @@
+,,,,,,
+,CAMPOS,DESCRIPCIÓN,Largo,,Validación,
+,,,,Tipo,,Obligatoriedad
+,,,Max,,,
+,,,,,,
+,,,,,,
+,"ÁREA
+<Signature>",SIGNATURE,,,,1
+,,,,,,
+1,Firma Digital,"Firma digital sobre todo el documento.
+(Encabezado, Detalle, Descuentos - Recargos,
+Paginación, Información de Referencia, Fecha y
+Hora de Firma del e-CF).",,,,1
+,FIN ÁREA,SIGNATURE,,,,

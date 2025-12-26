@@ -1,0 +1,37 @@
+108,"Monto Impuesto Selectivo
+al Consumo
+Ad Valorem
+<MontoImpuestoSelectivoCons
+umoAdvalorem>","Valor del impuesto selectivo al consumo
+(ISC) ad valorem asociado al código de
+impuesto adicional. Condicional a que
+exista código del 023 al 03924.
+El cálculo del monto del ISC ad valorem
+dependerá de la tasa correspondiente al
+código del impuesto en la Tabla I
+(Codificación Tipos de Impuestos
+Adicionales).",18,NUM,"a) Valor numérico de 16 enteros, dos
+decimales; >0 (debe ser positivo).
+b) Si el código del impuesto se encuentra entre
+023 hasta 035 se debe verificar la unidad de
+medida del ítem, si es a granel (código 18) se
+deberá calcular el Impuesto Selectivo Ad
+Valorem incrementando en un treinta por
+ciento (30%) el precio unitario del ítem
+(equivalente al precio de lista) por la cantidad
+ítem por la tasa del impuesto
+correspondiente.
+c) Para los ítems con código entre 023-035
+(ISC Ad valorem)25, y unidad de medida
+distinta de granel, se debe dividir el precio
+unitario de referencia entre (1+tasa ITBIS tasa
+1). Este resultado se debe restar del ISC
+Especifico Unitario26 y este último resultado se
+debe dividir entre (1+tasa del impuesto
+adicional especificado), esto dará como
+resultado la base imponible del impuesto. Esta
+base (ISC Ad Valorem unitario) se deberá
+multiplicar por la cantidad, por la cantidad de
+referencia y por la tasa del impuesto
+correspondiente.
+d) Cuando el código del impuesto adicional sea",N,2,2,2,2,0,0,0,2,0,0

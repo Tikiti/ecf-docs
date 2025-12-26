@@ -1,0 +1,21 @@
+Sección,Descripción,,Requisito,e-CF,
+"F. Información de
+Referencia",En esta sección se deben,,"Obligatorio y
+condicional.",,Obligatorio solo para Notas
+,detallar los e-CF modificados o,,,,de Crédito y Débito
+,reemplazados con e-CF.,,,,Electrónica cuando modifica
+,,,,,un documento en papel o
+,,,,,uno electrónico. Es
+,,,,,condicional para el resto de
+,,,,,"los e-CF, cuando se trate de"
+,,,,,una sustitución de un NCF
+,,,,,por un e-CF (casos de
+,,,,,contingencia).
+"H. Fecha y Hora de la
+firma digital.","Indica la fecha y hora de la
+firma digital.",,Obligatorio,Todos,
+I. Firma Digital,"Corresponde a la firma digital
+sobre toda la información
+contenida en las secciones
+anteriores, para garantizar la
+integridad del e-CF.",,Obligatorio,Todos,

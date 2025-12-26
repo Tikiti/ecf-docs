@@ -1,0 +1,8 @@
+"Autenticación"
+"Servicio web responsable de generar una sesión para el contribuyente, validando su"
+"identidad mediante el uso de un certificado digital sobre un archivo (Semilla) que"
+"obtendrá de una petición y el cual, deberá enviar firmado para recibir un token con"
+"una duración determinada (1 hora por el momento)."
+"Con la entrega de dicho token el contribuyente podrá utilizar los restantes servicios de"
+"facturación electrónica, especificándolo como header de autorización de los requests"
+"(Authorization: Bearer {token})."

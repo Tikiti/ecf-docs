@@ -1,0 +1,131 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. 
+Créd. 
+Fiscal 
+Electr. 
+ 
+31","Fact. 
+Consum. 
+Electr. 
+ 
+32","Nota 
+Déb. 
+Electr. 
+ 
+33","Nota 
+Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Guber. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"125","Monto gravado ITBIS Tasa 3 
+Otra Moneda 
+<MontoGravado3OtraMoneda>","C
+Total de la suma de valores de Ítems 
+gravados asignados a ITBIS tasa 3 en 
+Otra  Moneda 
+(tasa  0%),  menos 
+descuentos  en  Otra  Moneda  más 
+recargos 
+en 
+Otra 
+Moneda. 
+(Asignados a ítem gravados en Otra 
+Moneda). 
+ondicional  a  que  exista  datos  en 
+código  otra  moneda 
+y 
+el 
+ítem 
+contenga  indicador  de  facturación 
+igual a 3.","18","NUM","b
+a)  Valor  numérico  de  16 
+enteros, 2 decimales; ≥ 0 (No 
+puede ser negativo). 
+) 
+Suma 
+de 
+valores 
+del 
+monto ítem con indicador de 
+facturación=3, 
+menos 
+descuentos en Otra Moneda 
+más 
+recargos 
+en 
+Otra 
+Moneda.","N","2","2","2","2","2","0","0","2","2","0"
+"126","Monto exento en Otra 
+Moneda 
+<MontoExentoOtraMoneda>","C
+Total de la suma de valores de ítems 
+exentos, menos  descuentos  en  Otra 
+Moneda  más 
+recargos 
+en 
+Otra 
+Moneda (asignados a ítems exentos). 
+ondicional  a  que  exista  datos  en 
+código  otra  moneda 
+y 
+el 
+ítem 
+contenga  indicador  de  facturación 
+igual a 4.","18","NUM","a)  Valor  numérico  de  16 
+enteros, 2 decimales; ≥ 0 (No 
+puede ser negativo). 
+ 
+ Suma  de  valores  del  monto 
+ítem 
+con 
+indicador 
+de 
+facturación=4, 
+menos 
+descuentos  en  Otra  Moneda 
+más 
+recargos 
+en 
+Otra 
+Moneda.","N","2","2","2","2","2","236","2","2","0","2"
+"127","Total ITBIS en Otra Moneda 
+<TotalITBISOtraMoneda>","Total de la suma de valores de ITBIS 
+en Otra Moneda a diferentes tasas. 
+Condicional a que exista Total ITBIS 
+Tasa  1  en  Otra  Moneda,  y/o  Total 
+ITBIS  Tasa  2  en  Otra  Moneda  y/o 
+Total ITBIS Tasa 3 en Otra Moneda.","18","NUM","b
+a) 
+Valor 
+numérico 
+de 
+16  enteros,  2  decimales;  ≥  0 
+(No puede ser negativo). 
+) Suma de Total ITBIS Tasa 1 
+en Otra Moneda + Total ITBIS 
+Tasa  2  en  Otra  Moneda  + 
+Total 
+ITBIS  Tasa  3  en  Otra 
+Moneda.","N","2","2","2","2","2","0","0","2","2","0"

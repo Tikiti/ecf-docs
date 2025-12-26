@@ -1,0 +1,32 @@
+"","","","","","a) 
+Valor 
+numérico 
+de 
+3","","","","","","","","","","",""
+"","","Factor de conversión utilizado.","","","","","","","","","","","","","",""
+"","Tipo de Cambio","","","","enteros  y  4  decimales;  >  0.","","","","","","","","","","",""
+"121","","Condicional  a  que  existan  datos  en","7","NUM","","N","2","2","2","2","2","2","2","2","2","2"
+"","<TipoCambio>","","","","(Debe ser positivo)","","","","","","","","","","",""
+"","","código otra moneda.","","","","","","","","","","","","","",""
+"","","","","","a)  Valor  numérico  de  16","","","","","","","","","","",""
+"","","Total  de 
+la  suma  de  valores  de","","","enteros, 2 decimales; ≥ 0 (No","","","","","","","","","","",""
+"","","Monto gravado ITBIS Otra Moneda","","","puede ser negativo)","","","","","","","","","","",""
+"","","a diferentes tasas.","","","b) 
+Valor 
+numérico 
+de 
+la","","","","","","","","","","",""
+"","Monto gravado total Otra","","","","sumatoria  del 
+total  Monto","","","","","","","","","","",""
+"122","Moneda","C
+ondicional  a  que  exista  datos  en","18","NUM","gravado 
+ITBIS 
+Tasa1  Otra","N34","2","2","2","2","2","0","0","2","2","0"
+"","<MontoGravadoTotalOtraMoneda>","código 
+otra  moneda 
+y  Monto","","","Moneda  +  Monto  gravado","","","","","","","","","","",""
+"","","gravado 
+ITBIS  en  otra  moneda  a","","","ITBIS  Tasa  2  Otra  Moneda","","","","","","","","","","",""
+"","","distintas tasas (18%, 16% y 0%).","","","+Monto gravado ITBIS Tasa3","","","","","","","","","","",""
+"","","","","","Otra Moneda.","","","","","","","","","","",""

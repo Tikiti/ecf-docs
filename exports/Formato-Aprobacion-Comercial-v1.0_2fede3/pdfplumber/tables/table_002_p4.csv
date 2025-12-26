@@ -1,0 +1,33 @@
+No.,Campo,Descripción,Tipo,Largo,Validación,Obligatoriedad
+,,,,Máx.,,
+,"ÁREA
+<DetalleAprobacionCome
+rcial>",DETALLE APROBACION COMERCIAL,,,,1
+1,Versión,Versión del formato de Aprobación,,,,
+,,,NUM,3,Valor: 1.0,1
+,,Comercial.,,,,
+,,,,,,
+2,"RNC del Emisor
+<RNCEmisor>","Número del Registro Nacional del
+contribuyente que emite el e-CF.",NUM9,9 u 11,"a) RNC cumple con la
+estructura de formato.
+b) RNC debe coincidir con el
+RNC del emisor del e-CF.",1
+3,"e-NCF
+<eNCF>","Número Comprobante Fiscal
+Electrónico (e-NCF).","ALFA
+NUM",13,"a) e-NCF cumple con la
+estructura de formato.
+b) e-NCF debe coincidir con
+el e-NCF del e-CF remitido
+por el emisor electrónico.",1
+4,"Fecha Emisión
+<FechaEmision>",Fecha de emisión del e-CF.,"ALFA
+NUM",10,"a) Formato fecha cumple
+con estructura dd-MM-
+AAAA.
+b) Fecha de emisión debe
+coincidir en la aprobación
+comercial y en el e-CF
+remitido por el emisor
+electrónico.",1

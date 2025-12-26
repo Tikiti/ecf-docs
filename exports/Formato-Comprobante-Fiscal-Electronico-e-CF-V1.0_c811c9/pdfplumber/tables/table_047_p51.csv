@@ -1,0 +1,52 @@
+,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,CAMPOS,DESCRIPCIÓN,Largo,,Validación,,,,,,,,,,,
+,,,,Tipo,,,,Fact.,Nota,Nota,,Gastos,Regím.,,,Pagos
+,,,,,,I,,,,,,,,,,
+,,,Max,,,,Fact. Créd.,Consum.,Déb.,Créd.,Compras,Menor.,Espec.,Guber.,Export.,Exterior
+,,,,,,,Fiscal Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.
+,,,,,,,,,,,,,,,,
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+,"ÁREA
+<Paginacion>",PAGINACIÓN,,,,,2,2,2,2,2,2,2,2,2,2
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,"ÁREA
+<Pagina>","PÁGINA
+Deberá repetirse para el total de
+páginas especificadas.",,,,,2,2,2,2,2,2,2,2,2,2
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+1,"Página No.
+<PaginaNo>","Indica la numeración de la página que
+contiene los datos del e-CF al realizar
+una representación impresa, siempre
+y cuando sea mayor a una página.",,,"a) Debe estar entre 1 y 100.
+b) El número indicado de página debe
+estar en orden secuencial.",I,2,2,2,2,2,2,2,2,2,2
+,,,3,NUM,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+2,"No. Línea Desde
+<NoLineaDesde>","Indica el no. de la línea de detalle del
+primer ítem que contiene la página.
+Condicional a que sea completado el
+campo Página No.",,,"a) Número de línea que corresponde al
+primer ítem que será incluido en la página.
+b) Valor numérico hasta 3 enteros.
+c) El valor indicado debe ser menor o igual
+al colocado en el campo ‘No. Línea Hasta’
+y debe ser mayor a cero (>0).",N,2,2,2,2,2,2,2,2,2,2
+,,,3,NUM,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+3,"No. Línea Hasta
+<NoLineaHasta>","Indica el no. de la línea de detalle del
+último ítem que será incluido en la
+página.
+Condicional a que sea completado el
+campo No. Línea Desde.",,,"a) Número de línea que corresponde al
+último ítem que será incluido en la página.
+b) Valor numérico hasta 3 enteros.
+c)El valor indicado debe ser mayor o igual
+al colocado en el campo ‘No. Línea Desde’
+y debe ser mayor a cero (>0).",N,2,2,2,2,2,2,2,2,2,2
+,,,3,NUM,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,

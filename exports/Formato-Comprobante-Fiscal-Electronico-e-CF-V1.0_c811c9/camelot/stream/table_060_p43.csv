@@ -1,0 +1,72 @@
+"","","","Largo","","","","","","","","","","","","",""
+"","CAMPOS","DESCRIPCIÓN","","","","","Fiscal","Consum.","Déb.","Nota Créd.","Compras","Menor.","Espec.","Guber.","Export.","Exterior"
+"","","","","Tipo","Validación","","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr."
+"","","","Max","","","","","","","","","","","","",""
+"","","","","","","","31","32","33","34","41","43","44","45","46","47"
+"","","Totaliza 
+todos 
+los 
+Subrecargos","","","a)    Valor  numérico  de  16  enteros,  2","","","","","","","","","","",""
+"","Monto Recargo","otorgados 
+al 
+ítem 
+en 
+montos.","","","decimales; ≥0 (No puede ser negativo).","","","","","","","","","","",""
+"30","","","18","NUM","","I","2","2","2","2","2","0","2","2","2","0"
+"","<RecargoMonto>","Condicional 
+a 
+que 
+exista  Monto","","","","","","","","","","","","","",""
+"","","Subrecargo.","","","b
+) Monto Subrecargo.","","","","","","","","","","",""
+"","Tabla de","Condicional a que exista recargo en el","","","","","","","","","","","","","",""
+"","Distribución de","ítem. 
+Se 
+pueden 
+incluir 
+12","","","","","","","","","","","","","",""
+"","","","","","","N","2","2","2","2","2","0","2","2","2","0"
+"","Subrecargo","repeticiones  de  pares  Tipo  –  Valor.","","","","","","","","","","","","","",""
+"","<TablaSubRecargo>67","Incluye los tres campos siguientes:","","","","","","","","","","","","","",""
+"","","Indica si el Subrecargo está en $ o %.","","","","","","","","","","","","","",""
+"","Tipo Subrecargo","","","","","","","","","","","","","","",""
+"31","","Condicional a que exista recargo en el","1","ALFA","""$"" o ""%""","N","2","2","2","2","2","0","2","2","2","0"
+"","<TipoSubRecargo>","","","","","","","","","","","","","","",""
+"","","ítem.","","","","","","","","","","","","","",""
+"","Subrecargo en %","Valor del Subrecargo en porcentaje %.","","","a)Valor 
+numérico, 
+3 
+enteros 
+y 
+2","","","","","","","","","","",""
+"32","<SubRecargoPorcentaje","Condicional 
+a 
+que 
+exista 
+tipo","5","NUM","decimales; >0 (No puede ser negativo)","N","2","2","2","2","2","0","2","2","2","0"
+"",">","Subrecargo en porcentaje (%).","","","","","","","","","","","","","",""
+"","","","","","a) 
+  Valor  numérico  de  16  enteros,","","","","","","","","","","",""
+"","","Correspondiente al valor del Subrecargo","","","","","","","","","","","","","",""
+"","","","","","decimales; 
+≥0 
+(No 
+puede 
+ser","","","","","","","","","","",""
+"","","expresado en monto. Condicional a que","","","","","","","","","","","","","",""
+"","","","","","negativo).","","","","","","","","","","",""
+"","","exista subrecargo.","","","","","","","","","","","","","",""
+"","Monto Subrecargo","","","","b) Si va el subrecargo en %, el valor del","","","","","","","","","","",""
+"33","","","18","NUM","","N","2","2","2","2","2","0","2","2","2","0"
+"","<MontoSubRecargo>","S","","","subrecargo en monto deberá ser igual","","","","","","","","","","",""
+"","","i va  el  subrecargo en %, deberá ir el","","","","","","","","","","","","","",""
+"","","","","","al precio unitario del ítem por el valor","","","","","","","","","","",""
+"","","monto del subrecargo.","","","","","","","","","","","","","",""
+"","","","","","del  subrecargo  en  porcentaje,  por  la","","","","","","","","","","",""
+"","","","","","cantidad de ítems.","","","","","","","","","","",""
+"","FIN TABLA","SUBRECARGO","","","","","","","","","","","","","",""
+"","Tabla de Códigos de","","","","","","","","","","","","","","",""
+"","Impuestos Adicionales","Se  pueden  incluir  2  repeticiones  de","","","","","","","","","","","","","",""
+"","","","","","","","2","2","2","2","0","0","269","2","0","0"
+"","<TablaImpuestoAdicion","códigos de impuesto.","","","","","","","","","","","","","",""
+"","al>68","","","","","","","","","","","","","","",""

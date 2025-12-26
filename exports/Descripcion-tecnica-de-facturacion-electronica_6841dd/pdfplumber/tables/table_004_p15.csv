@@ -1,0 +1,12 @@
+""
+"- Token: valor emitido por Impuestos Internos como llave de
+- Trackid: número único generado por Impuestos Internos a
+seguridad para utilizar los servicios de Facturación
+un e-CF recibido.
+Electrónica.
+- Error: motivo del mensaje de error recibido (Si aplica).
+- Expira: fecha y hora en la cual expira el token recibido.
+- Mensaje: mensaje asociado a un error recibido al intentar
+- Expedido: fecha y hora en la cual se recibió el token.
+enviar un e-CF (Si aplica)."
+""

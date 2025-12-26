@@ -1,0 +1,21 @@
+,Tipo Impuesto,,Tipo Impuesto,,Descripción,Tasa
+,,,(Abreviatura),,,
+023,"Impuesto Selectivo al
+Consumo
+(Tasa AdValorem)",ISC AdValorem,,,Cerveza,10%
+024,,,,,Vinos de uva,10%
+025,,,,,Vermut y demás vinos de uvas frescas,10%
+026,,,,,Demás bebidas fermentadas,10%
+027,,,,,Alcohol Etílico sin desnaturalizar (Mayor o igual a 80%),10%
+028,,,,,Alcohol Etílico sin desnaturalizar (inferior a 80%),10%
+029,,,,,Aguardientes de uva,10%
+030,,,,,Whisky,10%
+031,,,,,Ron y demás aguardientes de caña,10%
+032,,,,,Gin y Ginebra,10%
+033,,,,,Vodka,10%
+034,,,,,Licores,10%
+035,,,,,Los demás (Bebidas y Alcoholes),10%
+036,,,,,Cigarrillos que contengan tabaco cajetilla 20 unidades,20%
+037,,,,,Los demás Cigarrillos que contengan 20 unidades,20%
+038,,,,,Cigarrillos que contengan 10 unidades,20%
+039,,,,,Los demás Cigarrillos que contengan 10 unidades,20%

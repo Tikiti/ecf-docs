@@ -1,0 +1,8 @@
+"","XML,  ya  que  tienen  un  significado  por  sí  solos  y  deberán  ser  remplazados  por","",""
+"","definiciones estándar especificadas a continuación para dichos caracteres:","",""
+"Nombre","Carácter","Referencia Decimal","Referencia Hexadecimal"
+"quot","“ ”","&#34;","&#x22;"
+"amp","&","&#38;","&#x26;"
+"apos","‘","&#39;","&#x27;"
+"It","<","&#60;","&#x3C;"
+"gt",">","&#62;","&#x3E;"

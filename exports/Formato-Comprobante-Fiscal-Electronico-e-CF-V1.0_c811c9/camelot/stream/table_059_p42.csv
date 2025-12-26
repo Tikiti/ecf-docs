@@ -1,0 +1,79 @@
+"","","","","","","","Créd.","Fact.","Nota","Nota","","Gastos","Regím.","","","Pagos"
+"","","","Largo","","","","","","","","","","","","",""
+"","CAMPOS","DESCRIPCIÓN","","","","","Fiscal","Consum.","Déb.","Créd.","Compras","Menor.","Espec.","Guber.","Export.","Exterior"
+"","","","","Tipo","Validación","","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr."
+"","","","Max","","","","","","","","","","","","",""
+"","","","","","","","31","32","33","34","41","43","44","45","46","47"
+"","","Totaliza 
+todos 
+los 
+subdescuentos","","","a) Valor numérico de 16 enteros, 2","","","","","","","","","","",""
+"","Monto Descuento","otorgados 
+al 
+ítem 
+en 
+montos.","","","decimales; 
+≥0 
+(No 
+puede 
+ser","","","","","","","","","","",""
+"26","","","18","NUM","","I","2","2","2","2","2","0","2","2","2","0"
+"","<DescuentoMonto>","Condicional 
+a 
+que 
+exista  Monto","","","negativo).","","","","","","","","","","",""
+"","","Subdescuento.","","","b)Monto Subdescuento","","","","","","","","","","",""
+"","Tabla de","Condicional a que exista descuento en","","","","","","","","","","","","","",""
+"","Distribución de","el 
+ítem. 
+Se 
+pueden 
+incluir 
+12","","","","","","","","","","","","","",""
+"","","","","","","N","2","2","2","2","2","0","2","2","2","0"
+"","Subdescuento","repeticiones.  Incluye  los  tres  campos","","","","","","","","","","","","","",""
+"","<TablaSubDescuento>66","siguientes:","","","","","","","","","","","","","",""
+"","","Indica 
+si  el 
+Subdescuento  está  en","","","","","","","","","","","","","",""
+"","Tipo de Subdescuento","monto 
+($) 
+o 
+porcentaje 
+(%).","","","","","","","","","","","","","",""
+"27","","","1","ALFA","a) ""$"" o ""%""","N","2","2","2","2","2","0","2","2","2","0"
+"","<TipoSubDescuento>","Condicional a que exista descuento en","","","","","","","","","","","","","",""
+"","","el ítem.","","","","","","","","","","","","","",""
+"","Subdescuento en %","Valor del Subdescuento en porcentaje","","","a) 
+Valor numérico.","","","","","","","","","","",""
+"28","<SubDescuentoPorcentaj","%. 
+Condicional 
+a 
+que 
+exista 
+tipo","5","NUM","3  enteros  y  2  decimales;  >0  (No","N","2","2","2","2","2","0","2","2","2","0"
+"","e>","Subdescuento en porcentaje (%).","","","puede ser negativo)","","","","","","","","","","",""
+"","","","","","a)  Valor numérico de 16 enteros, 2","","","","","","","","","","",""
+"","","","","","decimales. 
+≥0 
+(No 
+puede 
+ser","","","","","","","","","","",""
+"","","Correspondiente 
+al 
+valor 
+del","","","","","","","","","","","","","",""
+"","","","","","negativo).","","","","","","","","","","",""
+"","","descuento expresado en monto.","","","","","","","","","","","","","",""
+"","","","","","b)  Si  va  el  subdescuento  en  %,  el","","","","","","","","","","",""
+"","Monto Subdescuento","","","","","","","","","","","","","","",""
+"29","","S","18","NUM","valor  del  subdescuento  en  monto","N","2","2","2","2","2","0","2","2","2","0"
+"","<MontoSubDescuento>","i va el subdescuento en %, deberá ir el","","","","","","","","","","","","","",""
+"","","","","","deberá  ser  igual  al  precio  unitario","","","","","","","","","","",""
+"","","monto del subdescuento.","","","","","","","","","","","","","",""
+"","","","","","de 
+ítem  por  el  subdescuento  en","","","","","","","","","","",""
+"","","","","","porcentaje,  por 
+la 
+cantidad  de","","","","","","","","","","",""
+"","","","","","ítems.","","","","","","","","","","",""

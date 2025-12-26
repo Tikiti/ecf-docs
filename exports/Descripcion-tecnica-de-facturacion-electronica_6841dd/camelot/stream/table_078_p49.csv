@@ -1,0 +1,8 @@
+"","https://ecf.dgii.gov.do/testecf/emisorreceptor/api/emision/envio"
+"REQUEST URL",""
+"","aprobacioncomercial"
+"","Aprobaciones comerciales para los tipos de eCF 32, 41, 43,"
+"","46 y 47 no aplican para ser enviadas a otro contribuyente."
+"VALIDACIONES","Parámetros de entrada válidos."
+"","Parámetros de entrada requeridos hayan sido completados."
+"","RNC del token autorizado."

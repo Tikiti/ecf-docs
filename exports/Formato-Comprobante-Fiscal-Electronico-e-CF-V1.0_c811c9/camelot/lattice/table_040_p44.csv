@@ -1,0 +1,118 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","I","Fact. 
+Créd. 
+Fiscal 
+Electr. 
+ 
+31","Fact. 
+Consum. 
+Electr. 
+ 
+32","Nota 
+Déb. 
+Electr. 
+ 
+33","Nota Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Guber. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"34","Código de Impuesto 
+Adicional 
+<TipoImpuesto>","Dato 
+correspondiente 
+al 
+Código 
+del 
+impuesto adicional de acuerdo a la Tabla 
+de 
+Codificación 
+Tipos 
+de 
+Impuestos 
+Adicionales (Tabla I). Condicional a que el 
+ítem 
+este 
+gravado 
+con 
+Impuesto 
+Adicional.70","3","NUM","Código  válido  respecto  a 
+la 
+Tabla  I  (Codificación  Tipos  de 
+Impuestos Adicionales).","N","2","2","2","2","0","0","271","2","0","0"
+"","FIN TABLA","IMPUESTOS ADICIONALES","","","","","","","","","","","","","",""
+"","ÁREA 
+<OtraMonedaDetalle>","OTRA MONEDA DETALLE. 
+Indicar precios en monedas alternativas. 
+72","","","","","2","2","2","2","2","2","2","2","2","2"
+"35","Precio unitario en otra 
+moneda 
+<PrecioOtraMoneda>","Dato correspondiente al precio Unitario 
+del Ítem en otra moneda. Condicional a 
+que el ítem sea en Otra Moneda.","20","NUM","a) 
+Valor 
+numérico 
+de 
+16 
+enteros,  4  decimales.  ≥0  (No 
+puede ser negativo).","N73","2","2","2","2","2","2","2","2","2","2"
+"36","Descuento en Otra 
+Moneda 
+<DescuentoOtraMoneda>","Corresponde 
+al 
+valor 
+de 
+descuento 
+otorgado en Otra Moneda.","18","NUM","a) 
+Valor 
+numérico 
+de 
+16 
+enteros,  2  decimales.  ≥0  (No 
+puede ser negativo).","N","3","3","3","3","3","3","3","3","3","3"
+"37","Recargo en Otra Moneda 
+<RecargoOtraMoneda>","Corresponde 
+el 
+valor 
+de 
+recargo 
+otorgado en Otra Moneda.","18","NUM","a) 
+Valor 
+numérico 
+de 
+16 
+enteros,  2  decimales.  ≥0  (No 
+puede ser negativo).","N","3","3","3","3","3","3","3","3","3","3"
+"38","Monto Ítem Otra Moneda 
+<MontoItemOtraMoneda>","(Precio  Unitario  en  otra  moneda  * 
+Cantidad) – Descuento en otra moneda 
++ Recargo en otra moneda. 
+Condicional  a  que  el  Precio  del  ítem  y 
+Descuentos  o  Recargo  (si  existen)  sean 
+en Otra Moneda.","18","NUM","a) 
+  Valor  numérico  de  16 
+enteros,  2  decimales.  ≥0  (No 
+puede ser negativo). 
+b) Valor numérico de acuerdo 
+al campo de Descripción.","N","2","2","2","2","2","2","2","2","2","2"

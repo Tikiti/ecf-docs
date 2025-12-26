@@ -1,0 +1,95 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. 
+Créd. 
+Fiscal 
+Electr. 
+31","Fact. 
+Consum. 
+Electr. 
+32","Nota 
+Déb. 
+Electr. 
+33","Nota 
+Créd. 
+Electr. 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Guber. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"17","Grados Alcohol en % 
+<GradosAlcohol>59","Corresponde  al  porcentaje  de  alcohol 
+en  el  volumen  de  concentración  total 
+alcohólica por unidad de producto. 
+Condicional a que el ítem esté gravado 
+con  códigos  de  impuestos  adicionales 
+006 
+hasta 
+018 
+en 
+la 
+Tabla 
+de 
+Codificación 
+Tipo 
+de 
+Impuestos 
+Adicional (bebidas alcohólicas).","5","NUM","a) 
+Valor 
+numérico 
+de 
+enteros 
+y  2  decimales;  >0. 
+(Debe ser positivo)","3   
+I","2","2","2","2","0","0","0","2","0","0"
+"18","Precio Unitario de Referencia 
+<PrecioUnitarioReferencia>60","C
+   
+Precio 
+unitario 
+para 
+la 
+unidad 
+de 
+medida de referencia (no se usa para el 
+cálculo del monto Total). 
+ondicional a que el ítem esté gravado 
+con  códigos  de  impuestos  adicionales 
+desde  023  hasta  039  en 
+la  Tabla  de 
+Codificación 
+Tipo 
+de 
+Impuestos 
+Adicional.","18","NUM","a) 
+Valor 
+numérico 
+de 
+16 
+enteros,  2  decimales.  >0  (No 
+puede ser negativo)","I","2","2","2","2","0","0","0","2","0","0"
+"19","Fecha Elaboración 
+<FechaElaboracion>","Dato 
+correspondiente  a 
+la 
+fecha  de 
+elaboración del ítem.","10","ALFA 
+NUM","a)Fecha válida  
+Formato: (dd-MM-AAAA)","N","3","3","3","3","3","0","3","3","3","0"

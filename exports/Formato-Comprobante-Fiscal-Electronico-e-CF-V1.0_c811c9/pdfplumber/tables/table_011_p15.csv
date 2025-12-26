@@ -1,0 +1,65 @@
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,,,Largo,,,I,,,,,,,,,,
+,CAMPOS,DESCRIPCIÓN,,Tipo,Validación,,,,,,,,,,,
+,,,,,,,Fact. Créd.,Fact.,Nota,Nota,,Gastos,Regím.,,,Pagos
+,,,Max,,,,Fiscal,Consum.,Déb.,Créd.,Compras,Menor.,Espec.,Guber.,Export.,Exterior
+,,,,,,,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.
+,,,,,,,,,,,,,,,,
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+41,"Contacto Comprador
+<ContactoComprador>","Nombre y teléfono de contacto del
+comprador.",80,"ALFA
+NUM",a) Sin validación,N,3,3,3,3,3,0,3,3,3,0
+42,"Correo Comprador
+<CorreoComprador>","Dato correspondiente al correo
+electrónico del comprador.",80,"ALFA
+NUM","Formato válido: Estructura de
+correo electrónico.
+(xxxxx@xxx.xx)",N,3,3,3,3,3,0,3,3,3,0
+,Dirección Comprador,,,ALFA,,,3,3,3,3,3,0,3,3,3,0
+43,,Dirección del comprador.,100,,a) Sin validación,N,,,,,,,,,,
+,<DireccionComprador>,,,NUM,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+44,"Municipio Comprador
+<MunicipioComprador>","Dato correspondiente a dirección de
+comprador.",6,NUM,"a) Validar con código de la
+Tabla III (Codificación
+Provincias y Municipios)",N,3,3,3,3,3,0,3,3,3,0
+45,"Provincia Comprador
+<ProvinciaComprador>","Dato correspondiente a dirección de
+comprador.",6,NUM,"a) Validar con código de la
+Tabla III (Codificación
+Provincias y Municipios)",N,3,3,3,3,3,0,3,3,3,0
+46,"País Comprador
+<PaisComprador>","Dato correspondiente al país hacia el cual
+se realiza la facturación.",60,ALFA,a) Sin validación.,P,0,0,0,0,0,0,0,0,3,0
+47,"Fecha Entrega
+<FechaEntrega>",Corresponde a la fecha de entrega del ítem.,10,"ALFA
+NUM","a) Fecha válida:
+Formato (dd-MM-AAAA)",N,3,3,3,3,0,0,3,3,3,0
+48,"Contacto de Entrega
+<ContactoEntrega>","Dato de contacto donde será realizada la
+entrega o envio del ítem (distinto al
+comprador).",100,"ALFA
+NUM",a) Sin validación,N,3,3,3,3,0,0,3,3,3,0
+49,"Dirección de Entrega
+<DireccionEntrega>","Corresponde a la dirección o destino del
+contacto de entrega.",100,"ALFA
+NUM",a) Sin validación,N,3,3,3,3,0,0,3,3,3,0
+50,"Telefóno
+<TelefonoAdicional>","Dato del teléfono correspondiente al
+contacto de entrega.",12,"ALFA
+NUM","a)Formato válido:
+Estructura de teléfono
+(xxx-xxx-xxxx)",N,3,3,3,3,0,0,3,3,3,0
+51,"Fecha Orden de Compra
+<FechaOrdenCompra>","Corresponde a la fecha de la orden de
+compra.",10,"ALFA
+NUM","a)Fecha válida:
+Formato (dd-MM-AAAA)",N,3,3,3,3,0,0,3,3,3,0
+52,"Número de Orden de Compra
+<NumeroOrdenCompra>","Corresponde al número de orden de
+compra.",20,"ALFA
+NUM",a) Sin Validación,N,3,3,3,3,0,0,3,3,3,0

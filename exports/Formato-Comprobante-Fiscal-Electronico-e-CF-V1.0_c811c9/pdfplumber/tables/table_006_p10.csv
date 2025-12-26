@@ -1,0 +1,58 @@
+,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,DESCRIPCIÓN,Largo,,Validación,,,,,,,,,,,
+,CAMPOS,,,Tipo,,,Fact. Créd.,Fact.,Nota,Nota,,Gastos,Regím.,,,Pagos
+,,,,,,I,,,,,,,,,,
+,,,Max,,,,Fiscal,Consum.,Déb.,Créd.,Compras,Menor.,Espec.,Guber.,Export.,Exterior
+,,,,,,,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.
+,,,,,,,,,,,,,,,,
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+13,,Indica el monto asociado para cada,,,a) Valor numérico de 16,,,,,,,,,,,
+,Monto de Pago,,,,,,,,,,,,,,,
+,,forma de pago. Condicional a que,18,NUM,"enteros, 2 decimales; ≥ 0",N,2,2,2,0,2,0,2,2,2,3
+,<MontoPago>,,,,,,,,,,,,,,,
+,,exista una forma de pago.,,,(Debe ser positivo),,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,FIN TABLA,,,,,,,,,,,,,,,
+14,,,,,Código Tipo:,,,,,,,,,,,
+,Tipo Cuenta de Pago3,Cuenta de origen de la transferencia o,,,CT: Cta. Corriente,,,,,,,,,,,
+,,,2,ALFA,,N,3,3,3,0,3,0,3,3,3,3
+,<TipoCuentaPago>,del cheque.,,,AH: Ahorro,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,OT: Otra,,,,,,,,,,,
+15,,Número de la cuenta si la forma de,,,,,,,,,,,,,,
+,Cuenta de Pago,,,ALFA,,,,,,,,,,,,
+,,pago es por cheque o transferencia,28,,a) Sin validación,N,3,3,3,0,3,0,3,3,3,3
+,<NumeroCuentaPago>,,,NUM,,,,,,,,,,,,
+,,bancaria.,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+16,,,,,,,,,,,,,,,,
+,Banco de Pago,,,ALFA,,,,,,,,,,,,
+,,Banco de la Cuenta.,75,,a) Sin validación,N,3,3,3,0,3,0,3,3,3,3
+,<BancoPago>,,,NUM,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+17,,,,,Fecha válida:,,,,,,,,,,,
+,,Período de facturación para Servicios,,,a) Formato,,,,,,,,,,,
+,,"Periódicos Ej. Energía eléctrica,",,,dd-MM-AAAA,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,Fecha desde,"telefónica, otros.",,ALFA,b) Menor o igual que,,,,,,,,,,,
+,,,10,,,N,3,3,3,3,0,0,3,3,3,3
+,<FechaDesde>,Fecha desde,,NUM,“Fecha hasta”.,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,(Fecha inicial del servicio facturado).,,,De acuerdo al Formato,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,del campo de,,,,,,,,,,,
+,,,,,descripción.,,,,,,,,,,,
+18,,,,,Fecha válida:,,,,,,,,,,,
+,,,,,a) Formato,,,,,,,,,,,
+,,Período de facturación para Servicios,,,dd-MM-AAAA,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,Fecha hasta,Periódicos. Fecha hasta,,ALFA,b) Mayor o igual a “Fecha,,,,,,,,,,,
+,,,10,,,N,3,3,3,3,0,0,3,3,3,3
+,<FechaHasta>,(Fecha final del servicio facturado).,,NUM,desde”.,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,De acuerdo al Formato,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,del campo de,,,,,,,,,,,
+,,,,,Descripción.,,,,,,,,,,,

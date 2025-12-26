@@ -1,0 +1,77 @@
+"","","Condicional 
+a 
+que 
+el","","","",""
+"","","contribuyente 
+indique 
+que","","","",""
+"","","existe 
+impuesto  selectivo  Ad-","","","",""
+"","","valorem, 
+en 
+la 
+factura 
+de","","","",""
+"","","consumo electrónica emitida.","","","",""
+"","","Valor 
+de 
+Otros 
+Impuestos","","","",""
+"","","Adicionales  asociado  al  código","","","",""
+"","","de impuesto adicional.","","","",""
+"","Monto Otros Impuestos","C","","","",""
+"","","ondicional 
+a 
+que 
+el","","","a) Valor numérico de 16 enteros, dos",""
+"27","Adicionales","","18","NUM","","2"
+"","","contribuyente 
+indique 
+que","","","decimales; >0 (debe ser positivo).",""
+"","<OtrosImpuestosAdicionales>","","","","",""
+"","","existe 
+otros 
+impuestos","","","",""
+"","","adicionales,  en 
+la 
+factura  de","","","",""
+"","","consumo electrónica emitida.","","","",""
+"","FIN TABLA","IMPUESTOS ADICIONALES","","","",""
+"","","","","","a) Valor numérico de 16 enteros, dos",""
+"","","V","","","decimales; ≥ 0 (No puede ser",""
+"","","alor de la suma de los campos","","","",""
+"","","","","","negativo)",""
+"","","Monto Gravado Total + Monto","","","",""
+"","Monto Total","","","","",""
+"","","exento  +Total  ITBIS  +  Monto","","","",""
+"28","","","18","NUM","b","1"
+"","<MontoTotal>","","","",") Valor de la suma del Monto Gravado",""
+"","","del 
+Impuesto 
+adicional,","","","",""
+"","","","","","Total  +  Monto  Exento  +Total  ITBIS  +",""
+"","","asignados 
+a 
+la 
+factura 
+de","","","",""
+"","","","","","Monto del Impuesto Adicional.",""
+"","","consumo electrónica.","","","",""
+"","","Corresponde al total del monto","","","",""
+"","","no  facturable,  asignados  en  la","","","",""
+"","","factura de consumo electrónica.","","","a)  Valor  numérico  de  16  enteros,  dos",""
+"","Monto no Facturable","C
+ondicional 
+a 
+que 
+el","","","decimales. (Puede ser negativo)",""
+"29","","","18","NUM","","2"
+"","<MontoNoFacturable>","contribuyente 
+indique 
+que","","","",""
+"","","existe monto no facturable, en","","","",""
+"","","la 
+factura 
+de 
+consumo","","","",""
+"","","electrónica emitida.","","","",""

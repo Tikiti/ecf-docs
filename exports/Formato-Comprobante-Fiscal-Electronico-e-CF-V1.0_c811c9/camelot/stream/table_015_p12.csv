@@ -1,0 +1,64 @@
+"","","","","","","","Créd.","Fact.","","Nota","","Gastos","Regím.","","","Pagos"
+"","CAMPOS","","","","","","Fiscal","Consum.","Nota Déb.","Créd.","Compras","Menor.","Espec.","Guber.","Export.","Exterior"
+"","","","","","","","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr."
+"","","","","","","","31","32","33","34","41","43","44","45","46","47"
+"","","","","","a) Validar con código de la","","","","","","","","","","",""
+"","Municipio","Dato  correspondiente  al  domicilio  de","","","","","","","","","","","","","",""
+"25","","","6","NUM","Tabla III (Codificación","P","3","3","3","3","3","3","3","3","3","3"
+"","<Municipio>","operación del Emisor.","","","","","","","","","","","","","",""
+"","","","","","Provincias Y Municipios)","","","","","","","","","","",""
+"","","","","","a) Validar con código de la","","","","","","","","","","",""
+"","Provincia","Dato  correspondiente  al  domicilio  de","","","","","","","","","","","","","",""
+"26","","","6","NUM","Tabla III (Codificación","P","3","3","3","3","3","3","3","3","3","3"
+"","<Provincia>","operación del Emisor.","","","","","","","","","","","","","",""
+"","","","","","Provincias Y Municipios","","","","","","","","","","",""
+"","Tabla de Teléfono Emisor","","","","","","","","","","","","","","",""
+"","","Se pueden incluir 3 repeticiones.","","","","","3","3","3","3","3","3","3","3","3","3"
+"","<TablaTelefonoEmisor>","","","","","","","","","","","","","","",""
+"","","","","","Formato válido:","","","","","","","","","","",""
+"","Teléfono Emisor","Dato  correspondiente  al  teléfono  de","","ALFA","","","","","","","","","","","",""
+"27","","","12","","Estructura de teléfono","N","3","3","3","3","3","3","3","3","3","3"
+"","<TelefonoEmisor>","contacto del emisor.","","NUM","","","","","","","","","","","",""
+"","","","","","(xxx-xxx-xxxx)","","","","","","","","","","",""
+"","FIN TABLA","TELÉFONO EMISOR","","","","","","","","","","","","","",""
+"","","","","","Formato válido: Estructura de","","","","","","","","","","",""
+"","Correo Electrónico Emisor","Dato correspondiente al correo","","","","","","","","","","","","","",""
+"28","","","80","ALFA","correo electrónico","N","3","3","3","3","3","3","3","3","3","3"
+"","<CorreoEmisor>","electrónico del emisor.","","","","","","","","","","","","","",""
+"","","","","NUM","(xxxxx@xxx.xx)","","","","","","","","","","",""
+"","WebSite","Dato correspondiente a la página web","","","","","","","","","","","","","",""
+"29","","","50","ALFA","a) Sin validación","N","3","3","3","3","3","3","3","3","3","3"
+"","<WebSite>","del emisor.","","","","","","","","","","","","","",""
+"","","","","NUM","","","","","","","","","","","",""
+"","","Dato 
+correspondiente 
+a 
+la 
+actividad","","","","","","","","","","","","","",""
+"","Actividad Económica Emisor","económica  del  Emisor  (se  puede  incluir","","ALFA","","","","","","","","","","","",""
+"30","","","100","","a) Sin validación","N","3","3","3","3","3","3","3","3","3","3"
+"","<ActividadEconomica>","sólo 
+la 
+actividad 
+económica 
+que","","NUM","","","","","","","","","","","",""
+"","","corresponde a la transacción).","","","","","","","","","","","","","",""
+"","Código del Vendedor","","","ALFA","","","","","","","","","","","",""
+"31","","Identificador del Vendedor.","60","","a) Sin validación","N","3","3","3","3","0","0","3","3","3","0"
+"","<CodigoVendedor>","","","NUM","","","","","","","","","","","",""
+"","Número Factura Interna","Corresponde  al  número 
+interno  de 
+la","","ALFA","","","","","","","","","","","",""
+"32","","","20","","a) Sin validación","N","3","3","3","3","3","3","3","3","3","3"
+"","<NumeroFacturaInterna>","factura.","","NUM","","","","","","","","","","","",""
+"","Número pedido Interno","Corresponde 
+al 
+número 
+de 
+pedido","","","","","","","","","","","","","",""
+"33","","","20","NUM","a) Sin validación","N","3","3","3","3","3","3","3","3","3","3"
+"","<NumeroPedidoInterno>","interno asignado a la factura.","","","","","","","","","","","","","",""
+"","Zona de Venta","Corresponde  a 
+la  zona  de  venta  del","","ALFA","","","","","","","","","","","",""
+"34","","","20","","a) Sin validación.","N","3","3","3","3","0","0","3","3","3","0"
+"","<ZonaVenta>","vendedor.","","NUM","","","","","","","","","","","",""

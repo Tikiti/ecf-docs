@@ -1,0 +1,79 @@
+"","","Condicional 
+a 
+que 
+el 
+contribuyente 
+indique 
+que 
+existe 
+impuesto  selectivo  Ad-
+valorem, 
+en 
+la 
+factura 
+de 
+consumo electrónica emitida.","","","",""
+"27","Monto Otros Impuestos 
+Adicionales 
+<OtrosImpuestosAdicionales>","C
+Valor 
+de 
+Otros 
+Impuestos 
+Adicionales  asociado  al  código 
+de impuesto adicional. 
+ondicional 
+a 
+que 
+el 
+contribuyente 
+indique 
+que 
+existe 
+otros 
+impuestos 
+adicionales,  en 
+la 
+factura  de 
+consumo electrónica emitida.","18","NUM","a) Valor numérico de 16 enteros, dos 
+decimales; >0 (debe ser positivo).","2"
+"","FIN TABLA","IMPUESTOS ADICIONALES","","","",""
+"28","Monto Total 
+<MontoTotal>","V
+alor de la suma de los campos 
+Monto Gravado Total + Monto 
+exento  +Total  ITBIS  +  Monto 
+del 
+Impuesto 
+adicional, 
+asignados 
+a 
+la 
+factura 
+de 
+consumo electrónica.","18","NUM","b
+a) Valor numérico de 16 enteros, dos 
+decimales; ≥ 0 (No puede ser 
+negativo) 
+) Valor de la suma del Monto Gravado 
+Total  +  Monto  Exento  +Total  ITBIS  + 
+Monto del Impuesto Adicional.","1"
+"29","Monto no Facturable 
+<MontoNoFacturable>","C
+Corresponde al total del monto 
+no  facturable,  asignados  en  la 
+factura de consumo electrónica.  
+ondicional 
+a 
+que 
+el 
+contribuyente 
+indique 
+que 
+existe monto no facturable, en 
+la 
+factura 
+de 
+consumo 
+electrónica emitida.","18","NUM","a)  Valor  numérico  de  16  enteros,  dos 
+decimales. (Puede ser negativo)","2"

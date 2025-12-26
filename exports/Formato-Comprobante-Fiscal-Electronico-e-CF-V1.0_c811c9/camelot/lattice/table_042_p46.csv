@@ -1,0 +1,101 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. 
+Créd. 
+Fiscal 
+Electr. 
+ 
+31","Fact. 
+Consum. 
+Electr. 
+ 
+32","Nota 
+Déb. 
+Electr. 
+ 
+33","Nota 
+Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Guber. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"","ÁREA 
+<Subtotales>","SUBTOTALES","","","","","3","3","3","3","3","3","3","3","3","3"
+"","ÁREA 
+<Subtotal>","SUBTOTAL 
+Se pueden incluir hasta 20 
+repeticiones.","","","","","3","3","3","3","3","3","3","3","3","3"
+"1","Número Subtotal 
+<NumeroSubTotal>","Número de Subtotal","2","NUM","a) 
+Número 
+secuencial 
+de 
+acuerdo 
+al 
+número 
+de 
+subtotales","N","3","3","3","3","3","3","3","3","3","3"
+"2","Descripción 
+< DescripcionSubtotal>","Título del Subtotal","40","ALFA","a) Sin validación.","N","3","3","3","3","3","3","3","3","3","3"
+"3","Orden 
+<Orden>","Ubicación para Impresión. 
+De  uso  para  el  contribuyente 
+como  ayuda  para  indicar  cómo 
+imprimirá Subtotales.","2","NUM","a) Sin validación.","N","3","3","3","3","3","3","3","3","3","3"
+"4","Subtotal Monto Gravado ITBIS 
+Total 
+<SubTotalMontoGravadoTotal>","Valor 
+de 
+la 
+sumatoria 
+del 
+Subtotal  Monto  Gravado  ITBIS 
+Tasa 1, ITBIS Tasa 2 e ITBIS Tasa 
+3; en DOP$ u otra moneda.","18","NUM","a) 
+Valor 
+numérico 
+de 
+16 
+enteros, 2 decimales; ≥0","N","3","3","3","3","3","0","0","3","3","0"
+"5","Subtotal Monto Gravado ITBIS 
+Tasa 1 
+<SubTotalMontoGravadoI1>","Valor  del  monto  gravado  del 
+Subtotal  asignados  a  ítem  con 
+ITBIS  tasa  1(18%);  en  DOP$  u 
+otra moneda.","18","NUM","a) 
+Valor 
+numérico 
+de 
+16 
+enteros, 2 decimales; ≥0","N","3","3","3","3","3","0","0","3","0","0"
+"6","Subtotal Monto Gravado ITBIS 
+Tasa 2 
+<SubTotalMontoGravadoI2>","Valor  del  monto  gravado  del 
+Subtotal  asignados  a  ítem  con 
+ITBIS  tasa  2  (16%);  en  DOP$  u 
+otra moneda.","18","NUM","a) 
+Valor 
+numérico 
+de 
+16 
+enteros, 2 decimales; ≥0","N","3","3","3","3","3","0","0","3","0","0"

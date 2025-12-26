@@ -1,0 +1,22 @@
+"<IndicadorMontoGravado>= 0","","","","","",""
+"<MontoDescuento>=100","","","","","",""
+"","","Sección de Detalle de Bienes y Servicios","","","Cálculo a)","Cálculo b)"
+"","","","","","Porcentaje del",""
+"","","Precio","Código","","","Monto"
+"No.","Cantidad","Indicador 
+Descripción","","Monto","monto ítem",""
+"","","unitario","Impuesto","","","descuento"
+"Línea","ítem","facturación 
+ítem","","ítem","respecto al",""
+"","","ítem","Adicional","","","aplicable"
+"","","","","","monto total",""
+"1","1","18% 
+XXXXXXX 
+200.00","002","200.00","31.75%","31.75"
+"2","1","18% 
+XXXXXXX 
+300.00","002","300.00","47.62%","47.62"
+"3","1","18% 
+XXXXXXX 
+130.00","","130.00","20.63%","20.63"
+"Total","","","","630.00","",""

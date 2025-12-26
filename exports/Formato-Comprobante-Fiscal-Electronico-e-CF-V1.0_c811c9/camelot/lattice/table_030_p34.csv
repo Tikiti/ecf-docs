@@ -1,0 +1,145 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. Créd. 
+Fiscal 
+Electr. 
+ 
+31","Fact. 
+Consum. 
+Electr. 
+ 
+32","Nota 
+Déb. 
+Electr. 
+ 
+33","Nota 
+Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Guber. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"135","Monto Impuesto Selectivo al 
+Consumo Ad Valorem en Otra 
+Moneda 
+<MontoImpuestoSelectivoConsumo
+AdvaloremOtraMoneda>","Valor 
+del 
+campo 
+Monto 
+Impuesto  
+Selectivo 
+al 
+Consumo 
+Ad 
+Valorem referenciado al tipo de 
+cambio del código Otra Moneda 
+especificado. 
+Condicional a que exista código 
+de impuesto adicional del 023 al 
+039,  este completado el campo 
+código otra moneda y el campo 
+Monto 
+Impuesto  Selectivo  Ad 
+Valorem.45","18","NUM","a
+a) Valor numérico de 16 enteros, 
+dos 
+decimales; 
+>0 
+(debe 
+ser 
+positivo). 
+) Valor 
+del 
+campo 
+Monto 
+Impuesto  Selectivo  Ad  Valorem 
+dividiendo 
+por 
+la 
+tasa 
+especificada en el campo Tipo de 
+Cambio.","N","2","2","2","2","0","0","0","2","0","0"
+"136","Monto Otros Impuestos 
+Adicionales en Otra Moneda 
+<OtrosImpuestosAdicionalesOtraMo
+neda>","Valor 
+del  Monto 
+Impuesto 
+Adicionales referenciado al tipo 
+de 
+cambio 
+del 
+código  Otra 
+Moneda especificado.  
+Condicional a que exista código 
+de impuesto adicional del 001 al 
+005,  este completado el campo 
+código otra moneda y el campo 
+Monto 
+Otros 
+Impuestos 
+Adicionales.46","18","NUM","c
+b) Valor numérico de 16 enteros, 
+dos 
+decimales; 
+>0 
+(debe 
+ser 
+positivo). 
+)  Valor  del  campo  Monto  Otros 
+Impuesto 
+Adicional 
+dividiendo 
+por 
+la 
+tasa  especificada  en  el 
+campo Tipo de Cambio.","N","2","2","2","2","0","0","247","2","0","0"
+"","FIN TABLA","IMPUESTOS ADICIONALES","","","","","","","","","","","","","",""
+"","137  Monto Total en Otra Moneda 
+<MontoTotalOtraMoneda>","C
+Monto  gravado  total  en  Otra 
+Moneda  +  Monto  exento  en 
+Otra  Moneda+  Total 
+ITBIS  en 
+Otra  Moneda+  Monto 
+del 
+Impuesto 
+Adicional 
+en  Otra 
+Moneda.  
+ondicional 
+a 
+que 
+exista 
+al 
+menos 
+un  monto 
+en 
+otra 
+moneda.","18","NUM","a) 
+Valor numérico de 16 enteros, 
+dos decimales; ≥ 0 (no puede ser 
+negativo). 
+b) Valor numérico de acuerdo con 
+el  total  sumatoria  del  campo  de 
+Descripción.","N","2","2","2","2","2","2","2","2","2","2"

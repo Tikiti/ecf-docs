@@ -1,0 +1,39 @@
+"No.","Campo","Descripción","Tipo","Largo 
+Máx.","Validación","Obligatoriedad"
+"4","Secuencia de e-NCF Hasta 
+<SecuenciaeNCFHasta>","Se  refiere  al  Número  de 
+Comprobante Fiscal 
+Electrónico (e-NCF) con el 
+secuencial  que  finaliza  el 
+rango de secuencias que 
+será  anulado.","ALFA 
+NUM","13","a)  El e-NCF cumple con la estructura 
+de formato  de número  de 
+comprobante fiscal  (13 
+posiciones)3. Ej.: E310000000001. 
+ 
+b)  El  e-NCF  tiene  la  misma  serie  y 
+tipo  de  comprobante  fiscal  que  el 
+colocado  en  el  campo “Secuencia 
+de e-NCF Desde”. 
+ 
+c)  El  e-NCF  es  mayor  o  igual  que  el 
+colocado en el  campo  “Secuencia  de   
+e-NCF  Desde”  y  es  mayor  a  cero 
+(>0).","1"
+"","FIN TABLA RANGO SECUENCIAS","","","","",""
+"5","Cantidad de e-NCF 
+Anulados 
+<CantidadeNCFAnulados>","Cantidad de secuencias de 
+e-NCF que se está 
+anulando. 
+En  este  campo  se  deberá 
+sumar  las secuencias 
+colocados en la tabla de 
+rangos  de  secuencias 
+anuladas de e-NCF.","NUM","10","∑ cantidad de e-NCF anulados por 
+a) 
+tipo de 
+ e-CF.","1"
+"","FIN ÁREA","ANULACIÓN","","","",""
+"","FIN ÁREA","DETALLE ANULACIÓN","","","",""

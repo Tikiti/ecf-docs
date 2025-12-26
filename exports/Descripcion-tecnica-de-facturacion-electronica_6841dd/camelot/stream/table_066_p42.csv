@@ -1,0 +1,10 @@
+"","ENCF
+ 
+CodigoSeguridad"
+"","FechaEmision"
+"","Ejemplo URL construida (Dirección de Host + Parámetros):"
+"","https://ecf.dgii.gov.do/testecf/consultatimbre?rncemisor=130"
+"","000001&rnccomprador=130000002&encf=e310000000001&f"
+"EJEMPLO","echaemision=10-10-2020&montototal=02.11&fechafirma=10-"
+"","10-2020%2009:00:00&codigoseguridad=dcp79q"
+"","Esta URL es la que se espera al leer el QR de la RI de un e-CF."

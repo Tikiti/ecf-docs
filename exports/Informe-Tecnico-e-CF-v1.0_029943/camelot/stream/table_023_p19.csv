@@ -1,0 +1,57 @@
+"","El e-CF debe contener las especificaciones establecidas en el siguiente recuadro16:","",""
+"Sección","Descripción","Requisito","e-CF"
+"A. Encabezado","Corresponde 
+a 
+la","Obligatorio","Todos"
+"","identificación del e-CF, donde","",""
+"","están contenidos los datos del","",""
+"","emisor, 
+receptor 
+y 
+datos","",""
+"","tributarios. 
+La 
+sección","",""
+"","contiene 
+las 
+áreas","",""
+"","Identificación del Documento,","",""
+"","Emisor, 
+Receptor,","",""
+"","Informaciones 
+Adicionales,","",""
+"","Transporte, 
+Totales 
+y  Otra","",""
+"","Moneda.","",""
+"B. Detalle de bienes o","Corresponde al detalle de los","Obligatorio","Todos"
+"Servicios","bienes o servicios.","",""
+"C. Subtotales","Corresponde 
+al 
+subtotal","Opcional","Todos"
+"Informativos","informativo. 
+Los 
+campos","",""
+"","contenidos en esta sección no","",""
+"","modifican 
+los 
+campos","",""
+"","totalizadores,  ni  aumentan  o","",""
+"","disminuyen 
+la 
+base 
+del","",""
+"","impuesto.","",""
+"D. Descuentos o","Esta  sección  se  utiliza  para","Condicional","Todos"
+"Recargos","especificar 
+descuentos 
+o","",""
+"","recargos globales que afectan","",""
+"","al total del e-CF.","",""
+"E. Paginación","En  esta  sección  se 
+indica 
+la","Opcional","Todos"
+"","cantidad  de  páginas  del  e-CF","",""
+"","en la Representación Impresa","",""
+"","y cuales ítems estarán en cada","",""
+"","una.","",""

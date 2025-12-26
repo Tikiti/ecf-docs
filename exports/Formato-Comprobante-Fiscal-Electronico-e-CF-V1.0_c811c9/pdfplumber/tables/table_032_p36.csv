@@ -1,0 +1,39 @@
+,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,Fact.,,,,,,,,,
+,CAMPOS,DESCRIPCIÓN,Largo,Tipo,Validación,I,Créd.,Fact.,Nota,,,Gastos,Regím.,,,Pagos
+,,,,,,,Fiscal,Consum.,Déb.,Nota Créd.,Compras,Menor.,Espec.,Guber.,Export.,Exterior
+,,,Max,,,,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.
+,,,,,,,,,,,,,,,,
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+,ÁREA,,,,,,,,,,,,,,,
+,,DETALLES ÍTEM,,,,,1,1,1,1,1,1,1,1,1,1
+,<DetallesItem>,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,ÁREA,ÍTEM,,,,,,,,,,,,,,
+,<Item>,Se pueden incluir hasta 100,,,,,1,1,1,1,1,1,1,1,1,1
+,,repeticiones.,,,,,,,,,,,,,,
+1,"N° de Línea o N° Secuencial
+<NumeroLinea>","Línea que numera el ítem. Desde 1 a
+100 repeticiones.48",5,NUM,"a) Número secuencial de la
+línea.",N,1,1,1,1,1,1,1,1,1,1
+,,Se pueden incluir 5 repeticiones de,,,,,3,3,3,3,3,3,3,3,3,3
+,Tabla de Códigos de Ítem,,,,,,,,,,,,,,,
+,,pares código – valor. Incluye los dos,,,,,,,,,,,,,,
+,<TablaCodigosItem>,,,,,,,,,,,,,,,
+,,campos siguientes:,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+2,"Tipo Código
+<TipoCodigo>","Tipo de codificación utilizada para el
+ítem
+Standard: EAN, PLU, DUN o Interna
+(Hasta 5 tipos de códigos)",14,"ALFA
+NUM",a)Sin validación.,N,3,3,3,3,3,3,3,3,3,3
+3,"Código del Ítem
+<CodigoItem>","Código del ítem de acuerdo a tipo de
+codificación indicada en campo
+anterior.
+(Hasta 5 códigos)",35,"ALFA
+NUM",a)Sin validación.,N,3,3,3,3,3,3,3,3,3,3
+,FIN TABLA,CÓDIGOS ÍTEM,,,,,,,,,,,,,,

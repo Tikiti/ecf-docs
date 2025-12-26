@@ -1,0 +1,33 @@
+"15. Otros impuestos adicionales"
+"Para 
+calcular 
+los 
+impuestos 
+adicionales:  Propina 
+Legal,  Contribución 
+al  Desarrollo  de 
+las"
+"Telecomunicaciones 
+(CDT),  Servicios  Seguros  en  general,  Servicios  de  Telecomunicaciones  y"
+"Expedición de la primera placa)34, se multiplican los siguientes campos para cada caso:"
+"▪ Si 
+el 
+campo 
+<IndicadorMontoGravado> 
+es 
+igual 
+a 
+0, 
+entonces 
+<MontoItem> 
+x"
+"<TasaImpuestoAdicional> para el código correspondiente al código del impuesto adicional."
+"Ejemplo:"
+"CDT"
+"<IndicadorMontoGravado>= 0"
+"<MontoItem>=500"
+"<TasaImpuestoAdicional>= 2%"
+"<OtrosImpuestosAdicionales>= 500 x 0.02= 10.00"
+"▪ Si  el  campo  <IndicadorMontoGravado>  es 
+igual  a  1,  entonces  <OtrosImpuestosAdicionales>  ="
+"<MontoItem>/ (1+ ITBIS tasa 1) x tasa correspondiente al código de impuesto adicional."

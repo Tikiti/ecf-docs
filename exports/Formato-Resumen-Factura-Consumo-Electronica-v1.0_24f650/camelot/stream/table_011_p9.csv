@@ -1,0 +1,30 @@
+"","","detalle 
+exista 
+algún 
+ítem","","","",""
+"","","gravado a tasa 0.","","","",""
+"","","Corresponde  a  la  suma  de  los","","","",""
+"","","campos 
+Monto 
+Impuesto","","","a) Valor  numérico  de  16  enteros,  dos",""
+"","","Selectivo al Consumo Específico","","","decimales; >0 (debe ser positivo).",""
+"","","y  Ad  Valorem  y  Monto  Otros","","","",""
+"","Monto del Impuesto Adicional","Impuestos 
+Adicionales,","","",") Valor de la suma del Monto Impuesto",""
+"23","<MontoImpuestoAdicional>","asignados 
+en 
+la 
+factura 
+de","18","NUM","Selectivo 
+al 
+Consumo 
+Específico+","2"
+"","","consumo electrónica.","","","Monto 
+Impuesto 
+Selectivo 
+Ad",""
+"","","","","","Valorem+  Monto 
+Otros 
+Impuestos",""
+"","","ondicional a que exista Monto","","","Adicionales.",""
+"","","Impuesto Selectivo al Consumo.","","","",""

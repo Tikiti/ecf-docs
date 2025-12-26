@@ -1,0 +1,76 @@
+"","","","","","","","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr."
+"","","","","","","","31","32","33","34","41","43","44","45","46","47"
+"","ÁREA","","","","","","","","","","","","","","",""
+"","","INFORMACIÓN DE REFERENCIA.","","","","","2","2","1","1","2","2","2","2","2","2"
+"","<InformacionReferencia>","","","","","","","","","","","","","","",""
+"","","","","","a)  Validar  que  el  número","","","","","","","","","","",""
+"","","","","","de 
+comprobante 
+fiscal","","","","","","","","","","",""
+"","","","","","modificado 
+haya 
+sido","","","","","","","","","","",""
+"","","Es  el  número  del  comprobante  fiscal","","","","","","","","","","","","","",""
+"","","","","","remitido previamente a la","","","","","","","","","","",""
+"","","que  será  afectado  o  remplazado  por","","","","","","","","","","","","","",""
+"","","","","","DGII. Este puede ser tanto","","","","","","","","","","",""
+"","","una secuencia electrónica.","","","","","","","","","","","","","",""
+"","","","","","secuencia 
+electrónica","","","","","","","","","","",""
+"","","T","","","como en papel.","","","","","","","","","","",""
+"","","anto  el 
+comprobante  afectado  o","","","","","","","","","","","","","",""
+"","","reemplazado, 
+como 
+la 
+secuencia","","","b","","","","","","","","","","",""
+"","Número de Comprobante","","","",") Si la emisión del e-CF es","","","","","","","","","","",""
+"","","electrónica, deben estar emitidos por","11 o 13 o","ALFA","","","","","","","","","","","",""
+"1","Fiscal modificado79","","","","por 
+Código 
+de","I","2","2","1","1","2","2","2","2","2","2"
+"","","el mismo RNC/Cédula.","19","NUM","","","","","","","","","","","",""
+"","<NCFModificado>","","","","Modificación 
+4:","","","","","","","","","","",""
+"","","C","","","Reemplazo 
+de 
+un","","","","","","","","","","",""
+"","","ondicional a que la emisión del e-CF","","","","","","","","","","","","","",""
+"","","","","","comprobante 
+no","","","","","","","","","","",""
+"","","corresponda 
+a 
+un 
+reemplazo 
+de","","","","","","","","","","","","","",""
+"","","","","","electrónico 
+emitido 
+en","","","","","","","","","","",""
+"","","Comprobante  Fiscal  no  electrónico","","","","","","","","","","","","","",""
+"","","","","","contingencia, 
+se 
+debe","","","","","","","","","","",""
+"","","emitido en contingencia.","","","","","","","","","","","","","",""
+"","","","","","validar que el tipo del NCF","","","","","","","","","","",""
+"","","","","","modificado 
+sea 
+el","","","","","","","","","","",""
+"","","","","","equivalente al tipo de e-CF","","","","","","","","","","",""
+"","","","","","que se está emitiendo.","","","","","","","","","","",""
+"","","Aplica cuando el RNC del que emite el","","","","","","","","","","","","","",""
+"","","e-CF no coincide con el comprobante","","","","","","","","","","","","","",""
+"","","fiscal modificado (debido a que el RNC","","","","","","","","","","","","","",""
+"","RNC Otro contribuyente","se 
+encuentre 
+dado 
+de 
+baja 
+por","","","","","","","","","","","","","",""
+"2","","","9 u 11","NUM","Validar estructura.","N","2","2","2","2","2","2","2","2","2","2"
+"","<RNCOtroContribuyente>","disolución,  fusión  o  escisión).  En  ese","","","","","","","","","","","","","",""
+"","","caso,  se  debe  validar  que  el  campo","","","","","","","","","","","","","",""
+"","","“RNC 
+otro 
+contribuyente” 
+esté","","","","","","","","","","","","","",""
+"","","completado correctamente.","","","","","","","","","","","","","",""

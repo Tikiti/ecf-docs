@@ -1,0 +1,59 @@
+,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,,DESCRIPCIÓN,Largo,,Validación,,,,,,,,,,,
+,,,,Tipo,,,Fact.,,,,,,,,,
+,CAMPOS,,Max,,,I,Créd.,Fact.,,Nota,,Gastos,Regím.,,,Pagos
+,,,,,,,,,,,,,,,,
+,,,,,,,Fiscal,Consum.,Nota Déb.,Créd.,Compras,Menor.,Espec.,Guber.,Export.,Exterior
+,,,,,,,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.
+,,,,,,,,,,,,,,,,
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+19,,,,,,,,,,,,,,,,
+,,Indica el total de páginas en la que será,,,a) Valor numérico hasta 3,,,,,,,,,,,
+,,impreso el e-CF.,,,"enteros, > 1 (Debe ser positivo).",,,,,,,,,,,
+,Total Páginas,,,,,,,,,,,,,,,
+,,Cuenta las veces que se repite el campo,3,NUM,,I,2,2,2,2,2,2,2,2,2,2
+,<TotalPaginas>,,,,b) Total de veces que se repite el,,,,,,,,,,,
+,,Página No. de la sección Paginación.,,,,,,,,,,,,,,
+,,,,,campo ‘Página No.’ de la sección,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,Condicional a que exista paginación.,,,Paginación.,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,FIN ÁREA,IDENTIFICACIÓN DEL DOCUMENTO,,,,,,,,,,,,,,
+,ÁREA,,,,,,,,,,,,,,,
+,,EMISOR,,,,,1,1,1,1,1,1,1,1,1,1
+,<Emisor>,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+20,,,,,Validar en el Registro Nacional,,,,,,,,,,,
+,,,,,de contribuyentes.,,,,,,,,,,,
+,,,,,Se tiene que validar:,,,,,,,,,,,
+,,,,,a) RNC cumpla con estructura,,,,,,,,,,,
+,,,,,de formato.,,,,,,,,,,,
+,RNC Emisor,Corresponde al RNC del emisor.,,,,,,,,,,,,,,
+,,,9 u 11,NUM,b) RNC esté autorizado como,I,1,1,1,1,1,1,1,1,1,1
+,<RNCEmisor>,,,,,,,,,,,,,,,
+,,,,,Facturador Electrónico.,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,c) RNC se encuentre en estatus,,,,,,,,,,,
+,,,,,“Activo”.,,,,,,,,,,,
+,,,,,d) RNC no posea marcas de,,,,,,,,,,,
+,,,,,bloqueos.,,,,,,,,,,,
+21,Nombre o Razón Social,,,,,,,,,,,,,,,
+,,,,ALFA,,,,,,,,,,,,
+,Emisor,Nombre o Razón Social del emisor.,150,,a) Sin validación,I,1,1,1,1,1,1,1,1,1,1
+,,,,NUM,,,,,,,,,,,,
+,<RazonSocialEmisor>,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+22,Nombre Comercial,,,ALFA,,,,,,,,,,,,
+,,Nombre Comercial.,150,,a) Sin validación,I,3,3,3,3,3,3,3,3,3,3
+,<NombreComercial>,,,NUM,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+23,,Indica nombre de la sucursal que emite,20,,,,,,,,,,,,,
+,Sucursal,,,ALFA,,,,,,,,,,,,
+,,el e-CF. Corresponde a un dato,,,a) Sin validación,I,3,3,3,3,3,3,3,3,3,3
+,<Sucursal>,,,NUM,,,,,,,,,,,,
+,,administrado por el emisor.,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+24,"Dirección de Emisor
+<DireccionEmisor>","Datos correspondientes a Domicilio de
+operación del Emisor.",100,"ALFA
+NUM",a) Sin validación,I,1,1,1,1,1,1,1,1,1,1

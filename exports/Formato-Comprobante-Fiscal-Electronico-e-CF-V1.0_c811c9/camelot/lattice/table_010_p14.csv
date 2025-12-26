@@ -1,0 +1,121 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. 
+Créd. 
+Fiscal 
+Electr. 
+ 
+31","Fact. 
+Consum. 
+Electr. 
+ 
+32","Nota Déb. 
+Electr. 
+ 
+33","Nota 
+Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Guber. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"39","Identificador Extranjero 
+<IdentificadorExtranjero>7","C
+  E
+Corresponde 
+al 
+número 
+de 
+identificación  cuando  el  comprador 
+es extranjero y no tiene RNC/Cédula.  
+ondicional  a  que  el  e-CF  es 
+tipo 
+32>DOP$250,000.00 
+(aplica 
+también 
+para  las  notas  de  crédito/débito  que 
+hagan referencia a ese tipo de e-CF), y 
+el campo RNC Comprador esté vacío. 
+n caso de que el  e-CF sea tipo  46, el 
+campo  es  condicional  a  que 
+la  Zona 
+Franca 
+Comercial 
+(Aeropuertos 
+y 
+Puertos) 
+realice 
+transferencia 
+de 
+bienes  a  No  Residentes  y  el  campo 
+‘RNC Comprador’ esté vacío.","20","ALFA 
+NUM","b
+a)  El 
+e-CF 
+de 
+consumo 
+electrónica 
+es 
+> 
+DOP$250,000.00 
+(aplica 
+también  para 
+las  notas  de 
+crédito/débito 
+que 
+hagan 
+referencia a ese tipo de e-CF). 
+)  El  campo  RNC  Comprador 
+está en blanco.","I","0","2","2","2","0","0","28","0","29","3"
+"40","Nombre o Razón Social 
+Comprador 
+<RazonSocialComprador>","E
+Nombre o Razón Social del comprador. 
+n caso de que el  e-CF sea tipo  46, el 
+campo  es  condicional  a  que  exista  el 
+campo 
+‘RNC 
+Comprador’ 
+o 
+‘Identificador Extranjero’.","150","ALFA 
+NUM","b
+a)  Si  el  e-CF  es  tipo  32  y  el 
+monto 
+total 
+es 
+≥ 
+DOP$250,000.00 
+se 
+debe 
+indicar  el  nombre  o 
+razón 
+social comprador. 
+) Si el e-CF tipo 33 y tipo 34 
+modifica  un  e-CF  tipo  32  con 
+monto 
+total 
+≥ 
+DOP$250,000.00, 
+se 
+debe 
+indicar nombre o razón social 
+comprador.","I","1","2","2","2","1","0","1","1","1","3"

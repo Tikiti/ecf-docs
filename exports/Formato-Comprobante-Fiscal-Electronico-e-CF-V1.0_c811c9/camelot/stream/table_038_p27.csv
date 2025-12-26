@@ -1,0 +1,51 @@
+"","","","","","","","Créd.","Fact.","Nota","Nota","","Gastos","Regím.","","","Pagos"
+"","","","","Tipo","Validación","","","","","","","","","","",""
+"","","","Max","","","","Fiscal","Consum.","Déb.","Créd.","Compras","Menor.","Espec.","Guber.","Export.","Exterior"
+"","CAMPOS","DESCRIPCIÓN","","","","","","","","","","","","","",""
+"","","","","","","","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr."
+"","","","","","","","31","32","33","34","41","43","44","45","46","47"
+"","","Total de la suma de montos de","","","","","","","","","","","","","",""
+"","","bienes 
+o 
+servicios 
+con","","","","","","","","","","","","","",""
+"","","","","","a)  Valor  numérico  de  16  enteros,  dos","","","","","","","","","","",""
+"","","Indicador de facturación=0.","","","","","","","","","","","","","",""
+"","","","","","decimales. (Puede ser negativo)","","","","","","","","","","",""
+"","Monto no Facturable","","","","","","","","","","","","","","",""
+"111","","C","18","NUM","b","N","2","2","2","2","0","0","2","2","2","0"
+"","","","","",") Valor numérico de acuerdo con el total","","","","","","","","","","",""
+"","<MontoNoFacturable>","ondicional a que en la línea de","","","","","","","","","","","","","",""
+"","","","","","sumatoria  monto  ítem  con  indicador  de","","","","","","","","","","",""
+"","","detalle  exista  algún 
+ítem  con","","","","","","","","","","","","","",""
+"","","","","","facturación=0.","","","","","","","","","","",""
+"","","indicador 
+facturación 
+igual  a","","","","","","","","","","","","","",""
+"","","cero (0).","","","","","","","","","","","","","",""
+"","","","","","a)  Valor  numérico  de  16  enteros,  dos","","","","","","","","","","",""
+"","","","","","decimales. (Puede ser negativo)","","","","","","","","","","",""
+"","Monto Período","Total  de 
+la  suma  de  Monto","","","","","","","","","","","","","",""
+"112","","","18","NUM","","N","3","3","3","3","3","3","3","3","3","3"
+"","<MontoPeriodo>","Total y Monto no Facturable.","","","b","","","","","","","","","","",""
+"","","","","",")  Monto  período=  Monto  Total+Monto","","","","","","","","","","",""
+"","","","","","No Facturable.","","","","","","","","","","",""
+"","","Saldo Anterior. Se incluye sólo","","","","","","","","","","","","","",""
+"","Saldo Anterior","","","","Valor 
+numérico 
+de 
+16 
+enteros,","dos","","","","","","","","","",""
+"113","","con 
+fines 
+de 
+ilustrar 
+con","18","NUM","","N","3","3","3","3","3","3","3","3","3","3"
+"","<SaldoAnterior>","","","","decimales. (Puede ser negativo).","","","","","","","","","","",""
+"","","claridad el cobro.","","","","","","","","","","","","","",""
+"","Monto Avance de pago","Pago parcial por adelantado de","","","a) Valor  numérico  de  16  enteros,  dos","","","","","","","","","","",""
+"","","","18","NUM","","N","3","3","3","3","3","3","3","3","3","3"
+"114","<MontoAvancePago>","la factura que se emite.","","","decimales. >0 (No puede ser negativo)","","","","","","","","","","",""
+"","","","","","a)Valor  numérico  de  16  enteros,  dos","","","","","","","","","","",""

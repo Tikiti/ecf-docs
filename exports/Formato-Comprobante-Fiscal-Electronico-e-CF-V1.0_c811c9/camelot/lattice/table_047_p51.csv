@@ -1,0 +1,69 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact.  Créd. 
+Fiscal Electr. 
+31","Fact. 
+Consum. 
+Electr. 
+32","Nota 
+Déb. 
+Electr. 
+33","Nota 
+Créd. 
+Electr. 
+34","Compras 
+Electr. 
+41","Gastos 
+Menor. 
+Electr. 
+43","Regím. 
+Espec. 
+Electr. 
+44","Guber. 
+Electr. 
+45","Export. 
+Electr. 
+46","Pagos 
+Exterior 
+Electr. 
+47"
+"","ÁREA 
+<Paginacion>","PAGINACIÓN","","","","","2","2","2","2","2","2","2","2","2","2"
+"","ÁREA 
+<Pagina>","PÁGINA 
+Deberá 
+repetirse  para  el 
+total  de 
+páginas especificadas.","","","","","2","2","2","2","2","2","2","2","2","2"
+"1","Página No. 
+<PaginaNo>","Indica la numeración de la página que 
+contiene los datos del e-CF al realizar 
+una representación impresa, siempre 
+y cuando sea mayor a una página.","3","NUM","b
+a) Debe estar entre 1 y 100. 
+)  El  número 
+indicado  de  página  debe 
+estar en orden secuencial.","I","2","2","2","2","2","2","2","2","2","2"
+"2","No. Línea Desde 
+<NoLineaDesde>","C
+Indica el no. de la línea de detalle del 
+primer ítem que contiene la página. 
+ondicional a que sea completado el 
+campo Página No.","3","NUM","a)  Número  de  línea  que  corresponde  al 
+primer ítem que será incluido en la página. 
+b) Valor numérico hasta 3 enteros. 
+c) El valor indicado debe ser menor o igual 
+al colocado en el campo ‘No. Línea Hasta’ 
+y debe ser mayor a cero (>0).","N","2","2","2","2","2","2","2","2","2","2"
+"3","No. Línea Hasta 
+<NoLineaHasta>","C
+Indica el no. de la línea de detalle del 
+último  ítem  que  será  incluido  en  la 
+página. 
+ondicional a que sea completado el 
+campo No. Línea Desde.","3","NUM","a)  Número  de  línea  que  corresponde  al 
+último ítem que será incluido en la página. 
+b) Valor numérico hasta 3 enteros. 
+c)El valor indicado debe ser mayor o igual 
+al colocado en el campo ‘No.  Línea Desde’ 
+y debe ser mayor a cero (>0).","N","2","2","2","2","2","2","2","2","2","2"

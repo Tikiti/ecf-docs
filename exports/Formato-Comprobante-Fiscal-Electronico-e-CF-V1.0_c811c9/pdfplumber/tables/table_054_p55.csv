@@ -1,0 +1,61 @@
+,CAMPOS,DESCRIPCIÓN,Largo,,Validación,,Fact.,,,,,,,,,
+,,,,,,,Créd.,Fact.,Nota,Nota,,Gastos,Regím.,,,Pagos
+,,,,,,I,,,,,,,,,,
+,,,Max,Tipo,,,Fiscal,Consum.,Déb.,Créd.,Compras,Menor.,Espec.,Guber.,Export.,Exterior
+,,,,,,,,,,,,,,,,
+,,,,,,,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+13,"Subtotal Impuesto Adicional
+Página
+<SubtotalImpuestoAdicionalPagina>","Sumatoria de los campos del área
+Subtotal Impuesto Adicional.
+Condicional a que se complete
+campos del área Subtotal Impuesto
+Adicional.",,,"a) Valor numérico de 16 enteros,
+dos decimales; >0 (debe ser
+positivo).
+b) Subtotal Impuesto Adicional=
+Subtotal Impuesto Selectivo al
+Consumo + Subtotal Otros
+Impuestos Adicionales.",I,2,2,2,2,0,0,2,2,0,0
+,,,18,NUM,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,"ÁREA
+<SubtotalImpuestoAdicional>",SUBTOTAL IMPUESTO ADICIONAL,,,"Condicional a que exista otros(s)
+impuesto(s) en la línea de detalle
+de la página, distinto(s) al ITBIS.",,2,2,2,2,0,0,2,2,0,0
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+14,"Subtotal Impuesto Selectivo al
+Consumo Página
+<SubtotalImpuestoSelectivoConsum
+oEspecificoPagina>","Valor del impuesto selectivo al
+consumo específico y Ad Valorem,
+correspondientes a los ítems del
+campo ‘No. de línea desde’ a ‘No. de
+línea hasta’, indicados en la página.
+Condicional a que los ítems del campo
+‘No. de línea desde’ a ‘No. de línea
+hasta’, existan gravados con
+Impuestos al Consumo Específico y Ad
+Valorem.",,,"a) Valor numérico de 16 enteros,
+dos decimales; >0 (debe ser
+positivo).",N,2,2,2,2,0,0,0,2,0,0
+,,,18,NUM,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+15,"Subtotal Otros Impuestos
+Adicionales Página
+<SubtotalOtrosImpuesto>","Valor del impuesto adicional
+(exceptuando el impuesto selectivo al
+consumo específico y Ad Valorem),
+correspondientes a los ítems del
+campo ‘No. de línea desde’ a ‘No. de
+línea hasta’, indicados en la página.
+Condicional a que los ítems del campo
+‘No. de línea desde’ a ‘No. de línea
+hasta’, existan gravados con Otros
+Impuestos Adicionales.",,,"a) Valor numérico de 16 enteros,
+dos decimales; >0 (debe ser
+positivo",N,2,2,2,2,0,0,2,2,0,0
+,,,18,NUM,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,

@@ -1,0 +1,6 @@
+"","Ejemplo URL construida (Dirección de Host + Parámetros):"
+"","https://fc.dgii.gov.do/testecf/consultatimbrefc?rncemisor=13"
+"","1880738&encf=e320000000064&montototal=6225.09&codig"
+"EJEMPLO",""
+"","oseguridad=uabnyh"
+"","Esta URL es la que se espera al leer el QR de la RI de un RFCE."

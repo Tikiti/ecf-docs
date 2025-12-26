@@ -1,0 +1,120 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. 
+Créd. 
+Fiscal 
+Electr. 
+ 
+31","Fact. 
+Consum. 
+Electr. 
+ 
+32","Nota 
+Déb. 
+Electr. 
+ 
+33","Nota 
+Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Guber. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"75","Unidad Bultos 
+<UnidadBulto>","Corresponde  a  la  unidad  de  medida 
+en la que se encuentra los bultos.","2","NUM","a) 
+Validar 
+con 
+la 
+Tabla 
+IV 
+(Codificación de Unidad de medida)","N","3","3","3","3","0","0","3","3","3","0"
+"76","Volumen 
+<VolumenBulto>","Corresponde 
+al 
+volumen 
+de 
+los 
+bultos.","18","NUM","a) Valor numérico de 16 enteros, 2 
+decimales; > 0","N","3","3","3","3","0","0","3","3","3","0"
+"77","Unidad Volumen 
+<UnidadVolumen>","Corresponde  a  la  unidad  de  medida 
+en la que se encuentra el volumen de 
+los bultos.","2","NUM","a) 
+Validar 
+con 
+la 
+Tabla 
+IV 
+(Codificación de Unidad de medida)","N","3","3","3","3","0","0","3","3","3","0"
+"","FIN ÁREA","INFORMACIONES ADICIONALES","","","","","","","","","","","","","",""
+"","ÁREA 
+<Transporte>","TRANSPORTE","","","","","3","3","3","3","0","0","3","3","3","0"
+"78","Vía Transporte 
+<ViaTransporte>","Se  especifica  si  el  transporte  es  vía 
+marítima, terrestre o aérea.","2","NUM","Se tiene que validar: 
+01: Terrestre 
+02: Marítimo 
+03: Aérea","N","0","0","0","0","0","0","0","0","3","0"
+"79","País Origen 
+<PaisOrigen>","Corresponde  al  país  de  origen  de  la 
+mercancía.","60","ALFA","a) Sin validación","N","0","0","0","0","0","0","0","0","3","0"
+"80","Dirección Destino 
+<DireccionDestino>","Corresponde a la dirección de destino 
+donde sera realizado el envío del ítem 
+(distinto 
+a 
+la 
+dirección 
+del 
+comprador).","100","ALFA 
+NUM","a) Sin validación","N","0","0","0","0","0","0","0","0","3","0"
+"81","País Destino 
+<PaisDestino>","Corresponde  al  país  destino  donde 
+sera 
+realizado 
+el 
+envío  del 
+ítem 
+(distinto a país del comprador).","60","ALFA","a) Sin validación","N","0","0","0","0","0","0","0","0","3","3"
+"82","RNC o Identificación 
+Compañía Transportista 
+<RNCIdentificacionCompani
+aTransportista>","Corresponde  al  dato  de  RNC  o  de 
+Identificación  de 
+la  compañía  que 
+realiza el transporte.","20","ALFA 
+NUM","a) Sin validación","N","0","0","0","0","0","0","0","0","3","0"
+"83","Nombre Compañía 
+Transportista 
+<NombreCompaniaTranspor
+tista>","Corresponde  al  dato  del  nombre  o 
+razón 
+social  de 
+la 
+compañía  que 
+realiza el transporte.","150","ALFA 
+NUM","a) Sin validación","N","0","0","0","0","0","0","0","0","3","0"
+"84","Número de Viaje 
+<NumeroViaje>","Corresponde al número de viaje o el 
+número del vuelo.","20","ALFA 
+NUM","a) Sin validación","N","0","0","0","0","0","0","0","0","3","0"

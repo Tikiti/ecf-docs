@@ -1,0 +1,86 @@
+"","","","","","","","Si  el  código  del  impuesto  se  encuentra  entre","","","","","","","","","","",""
+"","","","","","","","001,  002,  003  y  004, 
+se  debe 
+tomar 
+la","","","","","","","","","","",""
+"","","","","","","","sumatoria  de  los  montos  ítems  asignados  al","","","","","","","","","","",""
+"","","","","","","","código  y  restar 
+los  montos  de  descuentos","","","","","","","","","","",""
+"","","","","","","","aplicables 
+al 
+código 
+indicado,  para 
+luego","","","","","","","","","","",""
+"","","","","","","","multiplicar  este 
+resultado  por 
+la 
+tasa  del","","","","","","","","","","",""
+"","","","","","","","código  de  impuesto  adicional,  es  decir:  ( ∑","","","","","","","","","","",""
+"","","","","","","","montos 
+ítems- ∑ montos 
+descuentos","","","","","","","","","","",""
+"","","","","","","","aplicable) 
+*Tasa 
+Código 
+del 
+Impuesto","","","","","","","","","","",""
+"","","","","","","","Adicional.","","","","","","","","","","",""
+"","","","","","","","Si  el  campo 
+‘Indicador  Norma  10-07’  de 
+la","","","","","","","","","","",""
+"","","","","","","","sección 
+Descuentos 
+o 
+Recargos 
+es","","","","","","","","","","",""
+"","","","","","","","completado, 
+el 
+monto 
+de 
+descuento","","","","","","","","","","",""
+"","","","","","","","correspondiente no se deberá considerar.","","","","","","","","","","",""
+"","","","","","","","f) Si existe recargo global se debe multiplicar el","","","","","","","","","","",""
+"","","","","","","","porcentaje  del  monto  ítem  por  línea28  por  el","","","","","","","","","","",""
+"","","","","","","","Monto  Recargo 
+(global),  esto  dará 
+como","","","","","","","","","","",""
+"","","","","","","","resultado el monto de recargo aplicable para","","","","","","","","","","",""
+"","","","","","","","cada línea de detalle.","","","","","","","","","","",""
+"","","","","","","","Si  el  código  del  impuesto  se  encuentra  entre","","","","","","","","","","",""
+"","","","","","","","001, 002 y 004, se debe tomar la sumatoria de","","","","","","","","","","",""
+"","","","","","","","los  montos  ítems  asignados  a  los  códigos  y","","","","","","","","","","",""
+"","","","","","","","sumar  los  montos  de  recargos  aplicables  al","","","","","","","","","","",""
+"","","","","","","","código  indicado,  para  luego  multiplicar  este","","","","","","","","","","",""
+"","","","","","","","resultado  por  la  tasa  del  código  de  impuesto","","","","","","","","","","",""
+"","","","","","","","adicional,  es  decir: 
+( ∑ montos 
+ítems+ ∑","","","","","","","","","","",""
+"","","","","","","","montos  recargos  aplicable)  *Tasa  Código  del","","","","","","","","","","",""
+"","","","","","","","Impuesto Adicional.","","","","","","","","","","",""
+"FIN TABLA","","IMPUESTOS ADICIONALES","","","","","","","","","","","","","","","",""
+"","","","","","","","a) 
+Valor 
+numérico 
+de 
+16 
+enteros, 
+dos","","","","","","","","","","",""
+"","","","","","","","decimales; ≥ 0 (No puede ser negativo)","","","","","","","","","","",""
+"","","","","","","","b
+) Valor numérico de acuerdo con el total de la","","","","","","","","","","",""
+"","M","","","","","","sumatoria del campo de Descripción.","","","","","","","","","","",""
+"","","onto  Gravado  Total  +  Monto  exento","","","","","c
+)Si  es  completada  la  sección  Paginación,  el","","","","","","","","","","",""
+"Monto Total","","","","","","","","","","","","","","","","","",""
+"110","+Total 
+ITBIS","+  Monto","del","Impuesto","18","NUM","monto total debe ser igual a la sumatoria del","I","1","1","1","1","1","1","1","1","1","1"
+"<MontoTotal>","","","","","","","","","","","","","","","","","",""
+"","adicional.","","","","","","campo 
+‘Monto 
+Subtotal 
+Página’","","","","","","","","","","",""
+"","","","","","","","correspondiente a la sección.","","","","","","","","","","",""
+"","","","","","","","d
+) Si se emite un e-CF tipo 34, el monto total","","","","","","","","","","",""
+"","","","","","","","deberá ser menor o igual al monto total del e-","","","","","","","","","","",""
+"","","","","","","","CF modificado.30","","","","","","","","","","",""

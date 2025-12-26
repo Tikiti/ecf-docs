@@ -1,0 +1,101 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. 
+Créd. 
+Fiscal 
+Electr. 
+ 
+31","Fact. 
+Consum. 
+Electr. 
+ 
+32","Nota 
+Déb. 
+Electr. 
+ 
+33","Nota 
+Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Guber. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"","Tabla de 
+Impuestos Adicionales en Otra 
+moneda: 
+<ImpuestosAdicionalesOtraMoneda>
+40","Se  pueden  incluir  20  repeticiones 
+de pares código – valor. Incluye los 
+cinco campos siguientes:","","","Condicional  a  que  exista  otros(s) 
+impuesto(s)  en  la  línea  de  detalle 
+distinto(s) 
+al 
+ITBIS 
+y 
+este 
+completado el campo","","2","2","2","2","0","0","2","2","0","0"
+"132","Código de Impuesto adicional en 
+Otra Moneda 
+<TipoImpuestoOtraMoneda>","Dato correspondiente al Código del 
+impuesto adicional de acuerdo con 
+la  ‘Tabla  de  Codificación  Tipos  de 
+Impuestos Adicionales’.41","3","NUM","a) Validar con Tabla I (Codificación 
+Tipos de Impuestos Adicionales)","N","2","2","2","2","0","0","242","2","0","0"
+"133","Tasa de Impuesto adicional en 
+Otra Moneda 
+<TasaImpuestoAdicionalOtraMoneda
+>","Dato correspondiente a la Tasa del 
+Impuesto Adicional. Se debe indicar 
+la tasa de Impuesto.","5","NUM","a) Validar con Tabla I (Codificación 
+Tipos de Impuestos Adicionales)","N 43","2","2","2","2","0","0","2","2","0","0"
+"134","Monto Impuesto Selectivo al 
+Consumo Específico en Otra 
+Moneda 
+<MontoImpuestoSelectivoConsumoE
+specificoOtraMoneda>","Valor del campo Monto Impuesto 
+Selectivo  al  Consumo  Específico 
+referenciado al tipo de cambio del 
+código Otra Moneda especificado. 
+Condicional a que exista código de 
+impuesto adicional del 006 al 022,  
+este completado el campo código 
+otra  moneda  y  el  campo  Monto 
+Impuesto Selectivo Específico.44","18","NUM","b
+a)  Valor  numérico  de  16  enteros, 
+dos 
+decimales; 
+>0 
+(debe 
+ser 
+positivo). 
+) 
+Valor 
+del 
+campo 
+Monto 
+Impuesto 
+Selectivo 
+al  Consumo 
+Específico  dividiendo  por 
+la  tasa 
+especificada  en  el  campo  Tipo  de 
+Cambio.","N","2","2","2","2","0","0","0","2","0","0"

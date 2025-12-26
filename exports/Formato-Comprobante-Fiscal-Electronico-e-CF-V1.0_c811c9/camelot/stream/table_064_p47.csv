@@ -1,0 +1,63 @@
+"","","","Max","","","","","","","","","","","","",""
+"","","","","","","","Fiscal","Consum.","Déb.","Nota Créd.","Compras","Menor.","Espec.","Guber.","Export.","Exterior"
+"","","","","","","","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr."
+"","","","","","","","31","32","33","34","41","43","44","45","46","47"
+"","","Valor 
+del  monto 
+gravado 
+del","","","","","","","","","","","","","",""
+"","Subtotal Monto Gravado ITBIS Tasa 3","Subtotal asignados a ítem con ITBIS","","","a) Valor numérico de 16 enteros,","","","","","","","","","","",""
+"7","","","18","NUM","","N","3","3","3","3","3","0","0","3","3","0"
+"","<SubTotalMontoGravadoI3>","tasa 
+3 
+(0%); 
+en  DOP$ 
+u 
+otra","","","2 decimales; ≥0","","","","","","","","","","",""
+"","","moneda.","","","","","","","","","","","","","",""
+"","","Valor  de  la  sumatoria  del  Subtotal","","","","","","","","","","","","","",""
+"","","","","","a) Valor numérico de 16 enteros,","","","","","","","","","","",""
+"","Subtotal ITBIS","ITBIS Tasa 1, subtotal ITBIS Tasa 2 y","","","","","","","","","","","","","",""
+"8","","","18","NUM","2 decimales; ≥0","N","3","3","3","3","3","0","0","3","3","0"
+"","<SubTotaITBIS>","Subtotal  ITBIS  Tasa  3;  en  DOP$  u","","","","","","","","","","","","","",""
+"","","otra moneda.","","","","","","","","","","","","","",""
+"","Subtotal ITBIS Tasa 1","Valor  del  total  de  ITBIS  tasa  1  del","","","a) Valor numérico de 16 enteros,","","","","","","","","","","",""
+"9","","","18","NUM","","N","3","3","3","3","3","0","0","3","0","0"
+"","<SubTotaITBIS1>","Subtotal; en DOP$ u otra moneda.","","","2 decimales; ≥0","","","","","","","","","","",""
+"","Subtotal ITBIS Tasa 2","Valor  del  total  de  ITBIS  tasa  2  del","","","a) Valor numérico de 16 enteros,","","","","","","","","","","",""
+"10","","","18","NUM","","N","3","3","3","3","3","0","0","3","0","0"
+"","<SubTotaITBIS2>","Subtotal; en DOP$ u otra moneda.","","","2 decimales; ≥0","","","","","","","","","","",""
+"","Subtotal ITBIS Tasa 3","Valor  del  total  de  ITBIS  tasa  3  del","","","a) Valor numérico de 16 enteros,","","","","","","","","","","",""
+"11","","","18","NUM","","N","3","3","3","3","3","0","0","3","3","0"
+"","<SubTotaITBIS3>","Subtotal; en DOP$ u otra moneda.","","","2 decimales; ≥0","","","","","","","","","","",""
+"","","Valor  de  los  Impuestos  adicionales","","","a","","","","","","","","","","",""
+"","Subtotal Impuestos adicionales","","","",") Valor numérico de 16 enteros,","","","","","","","","","","",""
+"12","","del Subtotal. Aplica en subtotales en","18","NUM","","N","3","3","3","3","3","0","3","3","0","0"
+"","<SubTotalImpuestoAdicional>","","","","2 decimales; >0","","","","","","","","","","",""
+"","","DOP$ u otra moneda.","","","","","","","","","","","","","",""
+"","Subtotal Exento","Valor Exento del Subtotal. Aplica en","","","a) Valor numérico de 16 enteros,","","","","","","","","","","",""
+"13","","","18","NUM","","N","3","3","3","3","3","3","3","","0","3"
+"","<SubTotalExento>","subtotales en DOP$ u otra moneda.","","","2 decimales; ≥0","","","","","","","","","3","",""
+"","","Valor 
+de 
+la 
+línea 
+de 
+subtotal.","","","","","","","","","","","","","",""
+"","","Corresponde 
+a 
+la 
+sumatoria  de","","","","","","","","","","","","","",""
+"","","Subtotal  Monto 
+Gravado 
+ITBIS","","","a) Valor numérico de 16 enteros,","","","","","","","","","","",""
+"","Monto del Subtotal","","","","","","","","","","","","","","",""
+"14","","Total, 
+Subtotal 
+ITBIS, 
+Subtotal","18","NUM","2 decimales; ≥0","N","3","3","3","3","3","3","3","","3","3"
+"","<MontoSubTotal>","","","","","","","","","","","","","3","",""
+"","","Impuestos adicionales y/o   Subtotal","","","","","","","","","","","","","",""
+"","","Exento.  Aplica  en 
+subtotales  en","","","","","","","","","","","","","",""
+"","","DOP$ u otra moneda.","","","","","","","","","","","","","",""

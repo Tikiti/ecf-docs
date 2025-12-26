@@ -1,0 +1,67 @@
+,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,CAMPOS,DESCRIPCIÓN,Largo,Tipo,Validación,I,,Fact.,Nota,Nota,,Gastos,Regím.,,,Pagos
+,,,,,,,Fact. Créd.,Cons.,Déb.,Créd.,Compras,Menor.,Espec.,Guber.,Export.,Exterior
+,,,Max,,,,Fiscal Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.
+,,,,,,,,,,,,,,,,
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+5,,,,,a) Valor 0 si fecha de emisión del,,,,,,,,,,,
+,,Sólo para Notas de Crédito que no,,,e-CF afectado es ≤ 30 días,,,,,,,,,,,
+,,tienen derecho a rebajar ITBIS.El,,,,,,,,,,,,,,
+,Indicador Nota de Crédito,,,,calendario.,,,,,,,,,,,
+,mayor a 30 días,indicador tomará valor 1 si la fecha,1,NUM,b) Valor 1 si fecha de emisión del,N,0,0,0,1,0,0,0,0,0,0
+,<IndicadorNotaCredito>,es mayor a 30 días calendario de la,,,e-CF afectado es > 30 días,,,,,,,,,,,
+,,emisión del e-CF afectado.,,,,,,,,,,,,,,
+,,,,,calendario.,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+6,,Identifica a los contribuyentes que,,,,,,,,,,,,,,
+,,han sido previamente autorizados,,,,,,,,,,,,,,
+,,,,,a) Código 1: Envío diferido,,,,,,,,,,,
+,,a tener ventas a través de,,,,,,,,,,,,,,
+,,,,,autorizado.,,,,,,,,,,,
+,,"dispositivos móviles offline, tales",,,,,,,,,,,,,,
+,Indicador Envío Diferido,,,,,,,,,,,,,,,
+,,"como ventas con Handheld, entre",1,NUM,,N,2,2,2,2,0,0,2,2,2,0
+,<IndicadorEnvioDiferido>,,,,b) Valida contribuyente,,,,,,,,,,,
+,,otros.,,,,,,,,,,,,,,
+,,,,,(RNC/Cédula) está autorizado a,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,realizar envíos diferidos.,,,,,,,,,,,
+,,Condicional a que se encuentre,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,autorizado hacer envíos diferidos.,,,,,,,,,,,,,,
+,"Indicador Monto Gravado
+<IndicadorMontoGravado>","Indica si en la línea de detalle, el
+monto se encuentra con ITBIS
+incluido (impuestos adicionales
+no están incluidos en el precio
+del item).
+Condicional a que el bien o
+servicio sea gravado con ITBIS.",1,NUM,"a) Valor 0 si los montos en las
+líneas sección B “Detalle de
+Bienes o Servicios” no tienen
+ITBIS incluido.
+b) Valor 1 si los montos en las
+líneas sección B “Detalle de
+Bienes o Servicios” se
+encuentran con ITBIS incluido.",N,2,2,2,2,2,0,0,2,0,0
+7,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,"Tipo de Ingresos
+<TipoIngresos>","Indica el tipo de ingreso recibido,
+según clasificación del formato de
+envío de ventas de Bienes o
+Servicios.",2,NUM,"a) Código Tipo:
+01: Ingresos por operaciones (No
+financieros).
+02: Ingresos Financieros
+03: Ingresos Extraordinarios
+04: Ingresos por Arrendamientos
+05: Ingresos por Venta de Activo
+Depreciable
+06: Otros Ingresos",N,1,1,1,1,0,0,1,1,1,0
+8,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,

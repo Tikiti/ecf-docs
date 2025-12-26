@@ -1,0 +1,71 @@
+"5","Tipo de valor 
+<TipoValor>","Indica  si  existe  descuento  o 
+recargo 
+aplicado 
+en 
+Porcentaje 
+o  Monto. 
+Condicional  a  que  exista  descuento  o 
+recargo global.","1","ALFA","“%” o “$”","I","2","2","2","2","2","0","2","2","2","0"
+"6","Descuento o Recargo en % 
+<ValorDescuentooRecargo>","Valor  del  Descuento  o  Recargo 
+en 
+porcentaje. 
+Condicional 
+a 
+que 
+descuento o recargo global sea en %.","5","NUM","a) Valor numérico; 3 enteros y 
+2 decimales; >0 (No puede ser 
+negativo).","I","2","2","2","2","2","0","2","2","2","0"
+"7","Monto de Descuento o 
+Recargo 
+<MontoDescuentooRecargo>","Valor  del  descuento  o  recargo.  Si  se 
+refiere al tipo de valor $ se debe indicar 
+el monto.","18","NUM","b
+a)  Valor 
+numérico 
+de 
+16 
+enteros, 2 decimales; ≥0. 
+) Si va el descuento o recargo 
+en  %, 
+debe 
+ir 
+el  monto 
+correspondiente.","I","2","2","2","2","2","0","2","2","2","0"
+"8","Monto en otra moneda de 
+Descuento o Recargo 
+<MontoDescuentooRecargoOt
+raMoneda>","Valor en otra moneda. Aplica en montos 
+de descuento o recargo global.","18","NUM","b
+a)  Valor 
+numérico 
+de 
+16 
+enteros, 2 decimales; ≥0. 
+)   Si 
+va 
+el 
+descuento 
+o 
+recargo en %, debe ir el monto 
+correspondiente.","N","3","3","3","3","3","0","3","3","3","0"
+"9","Indicador de facturación 
+de Descuento o Recargo 
+<IndicadorFacturacionDescuen
+tooRecargo>","I
+Indica si el descuento o recargo afecta a 
+ítems: 
+TBIS 1: ítem gravado a ITBIS tasa1 (18%). 
+ITBIS 2: ítem gravado a ITBIS tasa2 (16%). 
+ITBIS 3: ítem gravado a ITBIS3 tasa3 (0%). 
+E: Exento.  
+ Condicional  a  que  exista  descuento  o 
+recargo global.","1","NUM","1
+a) Indicar si es valor: 
+: ITBIS 1 (18%)  
+2: ITBIS 2 (16%) 
+3: ITBIS 3 (0%) 
+4: Exento (E)","N","2","2","2","2","276","0","2","2","2","0"
+"","FIN ÁREA","DESCUENTO O RECARGO","","","","","","","","","","","","","",""
+"","FIN ÁREA","DESCUENTOS O RECARGOS","","","","","","","","","","","","","",""

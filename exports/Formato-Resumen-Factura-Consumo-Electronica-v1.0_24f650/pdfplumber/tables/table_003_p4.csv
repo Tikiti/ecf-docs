@@ -1,0 +1,50 @@
+,,,,,,Factura de
+,,,,,,
+,,,,,,Consumo
+,,,,,,
+,CAMPOS,DESCRIPCIÓN,Largo,Tipo,Validación,Electrónica
+,,,,,,(<250mil)
+,,,Max,,,
+,,,,,,
+,,,,,,32
+,ÁREA,ENCABEZADO,,,,
+,,,,,,1
+,<Encabezado>,,,,,
+,,,,,,
+,,,,ALFA,,
+,VERSIÓN,Versión del formato utilizado.,,,a) Valor: 1.0,
+1,,,3,,,1
+,,,,NUM,,
+,,,,,,
+,,,,,,
+,,IDENTIFICACIÓN DEL,,,,
+,ÁREA,,,,,1
+,,,,,,
+,<IdDoc>,DOCUMENTO,,,,
+,,Indica si el documento es:,,,a) Código Tipo:,
+,Tipo Comprobante Fiscal,,,,,
+2,Electrónico,Código Tipo:,2,NUM,32: Factura de Consumo Electrónica,1
+,,32: Factura de Consumo,,,,
+,<TipoeCF>,,,,,
+,,Electrónica,,,,
+,,,,,,
+,,,,ALFA,,
+,e-NCF,Secuencia autorizada por la,,,a) Número de secuencia autorizada,
+3,,,13,,,1
+,<eNCF>,DGII.,,NUM,por DGII.,
+,,,,,,
+,,,,,,
+,,,,,Código Tipo:,
+,,,,,01: Ingresos por operaciones (No,
+,,,,,financieros).,
+,,Indica el tipo de ingreso,,,,
+,,,,,02: Ingresos Financieros,
+,Tipo de Ingresos,"recibido, según clasificación",,,,
+4,,,2,NUM,03: Ingresos Extraordinarios,1
+,<TipoIngresos>,del formato de envío de,,,,
+,,,,,04: Ingresos por Arrendamientos,
+,,ventas de Bienes o Servicios.,,,,
+,,,,,05: Ingresos por Venta de Activo,
+,,,,,,
+,,,,,Depreciable,
+,,,,,06: Otros Ingresos,

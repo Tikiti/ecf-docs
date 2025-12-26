@@ -1,0 +1,69 @@
+,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,CAMPOS,DESCRIPCIÓN,Largo,,Validación,,Fact.,,,,,,,,,Pagos
+,,,,Tipo,,,,,,,,,,,,
+,,,,,,I,Créd.,Fact.,,Nota,,Gastos,Regím.,,Export.,Exterior
+,,,Max,,,,Fiscal,Consum.,Nota,Créd.,Compras,Menor.,Espec.,Guber.,Electr.,Electr.
+,,,,,,,,,,,,,,,,
+,,,,,,,Electr.,Electr.,Déb. Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,,
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+4,"Subtotal Monto Gravado
+Total Página
+<SubtotalMontoGravadoPagi
+na>","Total de la suma de valores de monto
+gravado ITBIS a diferentes tasas, de
+las líneas correspondientes a la página
+que se indica.
+Condicional a que exista Subtotal
+Monto gravado1, y/o Subtotal Monto
+gravado 2 y/o Subtotal Monto
+gravado 3 Página.",,,"a) Valor numérico de 16 enteros, 2
+decimales; ≥ 0 (No puede ser
+negativo).
+b) El valor indicado debe ser igual a
+la sumatoria del Subtotal Monto
+gravado ITBIS Tasa1 + Subtotal
+Monto gravado ITBIS Tasa2 +
+Subtotal Monto gravado ITBIS Tasa3
+de la página indicada.",I,2,2,2,2,2,0,0,2,2,0
+,,,18,NUM,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+5,"Subtotal Monto Gravado
+Tasa 1 Página
+<SubtotalMontoGravado1Pa
+gina>","Total de la suma de valores de Ítems
+gravados asignados a ITBIS tasa 1
+(tasa 18%), de las líneas
+correspondientes a la página que se
+indica, menos descuentos más
+recargos.78
+Condicional a que la página contenga
+algún ítem gravado a tasa ITBIS 1.",,,"a) Valor numérico de 16 enteros, 2
+decimales; ≥ 0 (No puede ser
+negativo).
+b) Suma de valores del monto ítem
+con indicador de facturación=1,
+menos descuentos más recargos, de
+las líneas de ítems incluidos en la
+página.",N,2,2,2,2,2,0,0,2,0,0
+,,,18,NUM,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+6,"Subtotal Monto Gravado
+Tasa 2 Página
+<SubtotalMontoGravado2Pa
+gina>","Total de la suma de valores de Ítems
+gravados asignados a ITBIS tasa 2
+(tasa 16%), de las líneas
+correspondientes a la página que se
+indica, menos descuentos más
+recargos.
+Condicional a que la página contenga
+algún ítem gravado a tasa ITBIS 2.",,,"a) Valor numérico de 16 enteros, 2
+decimales; ≥ 0 (No puede ser
+negativo).
+b) Suma de valores del monto ítem
+con indicador de facturación=2,
+menos descuentos más recargos, de
+las líneas de ítems incluidos en la
+página.",N,2,2,2,2,2,0,0,2,0,0
+,,,18,NUM,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,

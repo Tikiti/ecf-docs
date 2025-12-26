@@ -1,0 +1,30 @@
+"114","<MontoAvancePago>","la factura que se emite.","","","decimales. >0 (No puede ser negativo)","","","","","","","","","","",""
+"","","","","","a)Valor  numérico  de  16  enteros,  dos","","","","","","","","","","",""
+"","","","","","decimales. (Puede ser negativo o cero)","","","","","","","","","","",""
+"","","","","","b
+)Valor  a  pagar=  Monto 
+total-Monto","","","","","","","","","","",""
+"","","","","","Avance  de  pago  ±  Saldo  Anterior 
+(±","","","","","","","","","","",""
+"","","","","","atendiendo 
+si  el 
+valor  es  positivo  o","","","","","","","","","","",""
+"","","","","","negativo).","","","","","","","","","","",""
+"","Valor a pagar","","","","","","","","","","","","","","",""
+"","","","","","c
+) Si el campo ‘Indicador Norma 10-07’ de","","","","","","","","","","",""
+"","","Valor cobrado.","18","NUM","","N","3","3","3","3","3","3","3","3","3","3"
+"115","<ValorPagar>","","","","","","","","","","","","","","",""
+"","","","","","la 
+sección  Descuento 
+o 
+Recargo 
+es","","","","","","","","","","",""
+"","","","","","completado, entonces:","","","","","","","","","","",""
+"","","","","","Valor 
+a 
+pagar=  Monto 
+total-Monto","","","","","","","","","","",""
+"","","","","","descuento 31-  Monto  Avance  de  pago  ±","","","","","","","","","","",""
+"","","","","","Saldo Anterior (± atendiendo si el valor es","","","","","","","","","","",""
+"","","","","","positivo o negativo).","","","","","","","","","","",""

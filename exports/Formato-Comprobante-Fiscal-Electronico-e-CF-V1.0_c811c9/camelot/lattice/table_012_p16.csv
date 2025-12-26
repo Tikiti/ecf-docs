@@ -1,0 +1,111 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. Créd. 
+Fiscal 
+Electr. 
+ 
+31","Fact. 
+Consum. 
+Electr. 
+ 
+32","Nota Déb. 
+Electr. 
+ 
+33","Nota 
+Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Guber. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"53","Código Interno del 
+Comprador 
+<CodigoInternoComprador>","Para identificación interna del 
+comprador, por ejemplo, código del 
+cliente, número de medidor, etc.","20","ALFA 
+NUM","a) Sin validación","N","3","3","3","3","3","0","3","3","3","0"
+"54","Responsable de pago 
+<ResponsablePago>","Corresponde a la identificación del 
+que realiza el pago del documento.","20","ALFA","a) Sin validación","N","3","3","3","3","3","0","3","3","3","0"
+"55","Información Adicional 
+Comprador 
+<Informacionadicionalcomprad
+or>","Otra información relativa al 
+comprador.","150","ALFA 
+NUM","a) Sin validación","N","3","3","3","3","3","0","3","3","3","0"
+"","FIN ÁREA","COMPRADOR","","","","","","","","","","","","","",""
+"","ÁREA 
+<InformacionesAdicionales>","INFORMACIONES ADICIONALES","","","","","3","3","3","3","0","0","3","3","3","0"
+"56","Fecha Embarque 
+<FechaEmbarque>","Corresponde 
+a 
+la 
+fecha 
+del 
+embarque.","10","ALFA 
+NUM","a)Fecha válida:  
+Formato (dd-MM-AAAA)","N","3","3","3","3","0","0","3","3","3","0"
+"57","Número de Embarque 
+<NumeroEmbarque>","Dato  correspondiente  al  número  de 
+embarque.","25","ALFA 
+NUM","a) Sin validación","N","3","3","3","3","0","0","3","3","3","0"
+"58","Número de Contenedor 
+<NumeroContenedor >","Dato  correspondiente  al  número  de 
+contenedor.","100","ALFA 
+NUM","a) Sin validación","N","3","3","3","3","0","0","3","3","3","0"
+"59","Número de Referencia 
+<NumeroReferencia>","Dato  correspondiente  al  número  de 
+referencia.","20","NUM","a) Sin validación","N","3","3","3","3","0","0","3","3","3","0"
+"60","Nombre Puerto Embarque 
+<NombrePuertoEmbarque>","Nombre del puerto de embarque de 
+la mercancía.","40","ALFA 
+NUM","a) Sin validación","N","0","0","0","0","0","0","0","0","3","0"
+"61","Condiciones de Entrega 
+<CondicionesEntrega>","S
+Se refiere a los términos comerciales 
+fijados 
+por 
+el 
+comprador 
+y 
+el 
+vendedor referente a las condicones 
+de  entrega  de 
+las  mercancías  y/o 
+productos. 
+e indica si es CIF, FOB, etc.","3","ALFA","a) Sin validación","N","0","0","0","0","0","0","0","0","3","0"
+"62","Total FOB 
+<TotalFob>","Corresponde a la suma del valor FOB 
+de todas las mercancías.","18","NUM","a) Valor numérico de 16 
+enteros, 2 decimales; > 0","N","0","0","0","0","0","0","0","0","3","0"
+"63","Seguro 
+<Seguro>","Corresponde  al  monto  total  de 
+la 
+prima que figura en el documento de 
+embarque 
+o 
+el 
+documento 
+que 
+certifica el valor de la prima asignada 
+por la compañía aseguradora.","18","NUM","a) Valor numérico de 16 
+enteros, 2 decimales; > 0","N","0","0","0","0","0","0","0","0","3","0"

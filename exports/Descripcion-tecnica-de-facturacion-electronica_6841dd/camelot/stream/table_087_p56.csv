@@ -1,0 +1,7 @@
+"","VERIFICAR ESTADO"
+"","Retorna si los servicios de facturación de electrónica se"
+"","encuentran en ventana de mantenimiento. Estatus ="
+"DESCRIPCION",""
+"","“Disponible” significa que los servicios no están en"
+"","mantenimiento y “No Disponible” es que los servicios se"
+"","encuentran en mantenimiento."

@@ -1,0 +1,6 @@
+"","OBTENER ESTATUS"
+"","Retorna una lista de los servicios del ambiente de precertificación"
+"","y producción con su respectivo estatus."
+"DESCRIPCION","Este servicio cuenta con una clave única (APIKEY) para la"
+"","autorización de su uso, el cual es entregado por la autoridad"
+"","tributaria cuando se cumplen ciertos requisitos."

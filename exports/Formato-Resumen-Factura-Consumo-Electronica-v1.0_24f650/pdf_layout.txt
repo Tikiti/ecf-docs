@@ -1,0 +1,431 @@
+REPÚBLICA DOMINICANA
+
+
+
+
+Formato de Resumen Factura de Consumo
+       Electrónica <DOP250,000
+                 (RFCE)
+                       GERENCIA DE FACTURACIÓN
+
+
+
+                        REPÚBLICA DOMINICANA
+                                Versión 1.0
+                               Enero 2020
+1. Introducción
+ Los contribuyentes que emitan facturas de consumo electrónicas menores a DOP$250 mil mediante el Formato de e-CF, deberán enviar a Impuestos
+ Internos las ventas realizadas mediante este tipo de e-CF, en el formato XML que se establece en este documento.
+
+ En relación con la factura de consumo electrónica emitida al receptor, deberá cumplir con las especificaciones del Formato del Comprobante Fiscal
+ Electrónico; asimismo el emisor deberá disponer de un mecanismo electrónico para fines de consulta por parte de sus clientes.
+
+2. Contenido del formato de Factura de Consumo Electrónica <DOP250,000 (envío a DGII)
+                                                                                    Factura de
+                                                             Sección             Consumo < 250mil
+                                                                                       (32)
+
+                                                    Encabezado                           1
+
+                                                    Firma Digital                        1
+
+
+
+       Códigos de obligatoriedad:
+
+       1 - Dato obligatorio: el dato debe estar siempre en el documento, independientemente de las características de la transacción.
+       2 - Dato condicional: el dato no es obligatorio pero pasa a serlo en determinadas operaciones, si se cumple una determinada condición.
+       3- Opcional. El dato es opcional.
+
+
+
+
+                                                                       Pág. 2 de 12
+1.1. Detalle por sección
+
+El contenido de cada sección contendrá el formato y el código de obligatoriedad. A continuación, se especifican:
+
+ Largo Máximo: Tamaño máximo del campo. El largo indicado será el largo máximo.
+
+ Tipo de Documento: Podrá ser alfa (ALFA), numérica (NUM) o alfanumérica (ALFANUM). En la información tipo numérica, los decimales se separan
+  con punto. No debe separarse los miles con otro tipo de carácter.
+
+
+
+
+                                                                Pág. 3 de 12
+    A. Encabezado
+                                                                                                                          Factura de
+                                                                                                                           Consumo
+                                                                                                                          Electrónica
+           CAMPOS                     DESCRIPCIÓN                Largo        Tipo                   Validación            (<250mil)
+                                                                  Max
+                                                                                                                              32
+            ÁREA
+                                                                                                                              1
+        <Encabezado>                  ENCABEZADO
+                                                                              ALFA
+1          VERSIÓN            Versión del formato utilizado.        3                a) Valor: 1.0                            1
+                                                                              NUM
+            ÁREA                    IDENTIFICACIÓN DEL                                                                        1
+           <IdDoc>                      DOCUMENTO
+                              Indica si el documento es:                             a) Código Tipo:
+    Tipo Comprobante Fiscal
+                              Código Tipo:                                           32: Factura de Consumo Electrónica       1
+2         Electrónico                                               2         NUM
+                              32: Factura de Consumo
+           <TipoeCF>
+                              Electrónica
+            e-NCF             Secuencia autorizada por la                     ALFA   a) Número de secuencia autorizada
+3                                                                  13                                                         1
+           <eNCF>             DGII.                                                  por DGII.
+                                                                              NUM
+                                                                                     Código Tipo:
+                                                                                     01: Ingresos por operaciones (No
+                                                                                     financieros).
+                              Indica el tipo de ingreso
+                                                                                     02: Ingresos Financieros
+       Tipo de Ingresos       recibido, según clasificación
+4                                                                   2         NUM    03: Ingresos Extraordinarios             1
+       <TipoIngresos>         del formato de envío de
+                                                                                     04: Ingresos por Arrendamientos
+                              ventas de Bienes o Servicios.
+                                                                                     05: Ingresos por Venta de Activo
+                                                                                     Depreciable
+                                                                                     06: Otros Ingresos
+
+
+                                                               Pág. 4 de 12
+                                                                                                     Código Tipo:
+                Tipo de Pago               Indica el tipo de pago del                                1: Contado
+    5                                                                            1         NUM                                                        1
+                <TipoPago>                 cliente.                                                  2: Crédito
+                                                                                                     3: Gratuito
+                                           Hasta 07 repeticiones.
+        TABLA DE FORMAS DE PAGO 1          Contiene los dos campos                                                                                    3
+                                           siguientes.
+                                                                                                     Código Forma:
+                                                                                                     1: Efectivo
+                                                                                                     2: Cheque/Transferencia/
+                                                                                                     Depósito
+               Forma de Pago               Indica el método en que se
+                                                                                                     3: Tarjeta de Débito/Crédito
+    6           <FormaPago>                pagará la factura.                    2         NUM                                                        3
+                                                                                                     4: Venta a Crédito
+                                                                                                     5: Bonos o Certificados de regalo
+                                                                                                     6: Permuta
+                                                                                                     7: Nota de crédito
+                                                                                                     8: Otras Formas de pago
+                                           Indica el monto asociado para
+                                           cada forma de pago.
+               Monto de Pago                                                                         a) Valor numérico de 16 enteros, 2
+    7                                                                            18        NUM                                                        2
+               <MontoPago>                                                                           decimales; ≥ 0 (Debe ser positivo)
+                                           Condicional a que exista una
+                                           forma de pago.
+                  FIN ÁREA                 IDENTIFICACIÓN DEL DOCUMENTO
+
+                    ÁREA
+                                           EMISOR                                                                                                     1
+                  <Emisor>
+                                                                                                     Validar en el Registro Nacional de
+                 RNC Emisor                Corresponde al RNC del emisor.                            contribuyentes.
+    8                                                                          9 u 11      NUM                                                        1
+                <RNCEmisor>                                                                          Se tiene que validar:
+                                                                                                     a) RNC cumpla con estructura de
+
+1
+ Por definición del XML, para cada elemento debe existir un tag contenedor que agrupe los campos contenidos en una tabla. Ejemplo: en el caso de la <TablaFormasPago>
+se agrupan dentro del tag <FormaDePago> por cada par <FormaPago> y <MontoPago> especificado.
+
+                                                                            Pág. 5 de 12
+                                                                                                        formato.
+                                                                                                        b) RNC esté autorizado como
+                                                                                                        Facturador Electrónico.
+                                                                                                        c) RNC se encuentre en estatus
+                                                                                                        “Activo”.
+                                                                                                        d) RNC no posea marcas de bloqueos.
+         Nombre o Razón Social Emisor         Nombre o Razón Social del                        ALFA
+    9                                                                               150                 a) Sin validación                     1
+            <RazonSocialEmisor>               emisor.                                          NUM
+                                                                                                        Fecha válida:
+                                                                                                        a) Formato
+                  Fecha Emisión                                                                ALFA
+    10                                        Fecha de emisión del e-CF.             10                 dd-MM-AAAA                            1
+                 <FechaEmision>                                                                NUM
+                                                                                                        b) Validar fecha de inicio como
+                                                                                                        facturador electrónico.
+                    FIN ÁREA                  EMISOR
+                      ÁREA
+                                              COMPRADOR                                                                                       3
+                  <Comprador>
+                 RNC Comprador                Corresponde      al    RNC     del
+    11                                        comprador.                           9 u 11      NUM      a) Sin validación                     3
+                <RNCComprador>
+                                              Corresponde al número de
+                                              identificación  cuando     el
+             Identificador Extranjero         comprador es extranjero y no                     ALFA
+    12                                                                               20                 a) Sin validación                     2
+            <IdentificadorExtranjero> 2       tiene RNC/Cédula. Condicional                    NUM
+                                              a que el comprador sea
+                                              extranjero. 3
+              Nombre o Razón Social           Nombre o Razón Social del                        ALFA
+    13                                                                              150                 a) Sin validación                     3
+            <RazonSocialComprador>            comprador.                                       NUM
+                   FIN ÁREA                   COMPRADOR
+                     ÁREA
+                                               TOTALES                                                                                        1
+                   <Totales>
+
+3
+    Si es completado el campo ‘Identificador Extranjero’, el campo ‘RNC Comprador’ debe ir en blanco.
+
+                                                                                Pág. 6 de 12
+                                              Total de la suma de valores de                             a) Valor numérico de 16 enteros, 2
+                                              monto gravado ITBIS a                                      decimales; ≥ 0 (No puede ser negativo).
+                                              diferentes tasas.
+              Monto Gravado Total 4
+    14                                        Condicional a que exista               18         NUM      b) Valor de la suma del Monto Gravado           2
+              <MontoGravadoTotal>
+                                                                                                         ITBIS Tasa 1 + Monto Gravado ITBIS
+                                              Monto gravado1, y/o Monto
+                                                                                                         Tasa 2 + Monto Gravado ITBIS Tasa 3.
+                                              gravado 2 y/o Monto gravado
+                                              3.
+
+                                              Corresponde al total de los
+                                              montos de ITBIS al 18%,
+                                              asignados en la factura de                                 a) Valor numérico de 16 enteros, 2
+           Monto Gravado ITBIS Tasa 1         consumo electrónica.                                       decimales; ≥ 0 (No puede ser negativo).
+    15                                                                               18         NUM                                                      2
+              <MontoGravadoI1>
+                                              Condicional a que en la línea de
+                                              detalle exista algún ítem
+                                              gravado al 18%.
+
+                                              Corresponde al total de los
+                                              montos de ITBIS al 16%,
+                                              asignados en la factura de
+                                                                                                         a) Valor numérico de 16 enteros, 2
+              Monto Gravado ITBIS             consumo electrónica.
+                                                                                                         decimales; ≥ 0 (No puede ser negativo).
+    16              Tasa 2                                                           18         NUM                                                      2
+              <MontoGravadoI2>                Condicional a que en la línea de
+                                              detalle exista algún ítem
+                                              gravado al 16%.
+
+                                              Corresponde al total de los                                a) Valor numérico de 16 enteros, 2
+           Monto Gravado ITBIS Tasa 3
+    17                                        montos de ITBIS a tasa cero (0),       18         NUM      decimales≥ 0 (No puede ser negativo).           2
+              <MontoGravadoI3>
+                                              asignados en la factura de
+
+4
+    En los campos donde existan valores numéricos de 16 enteros y 2 decimales, se debe aplicar la regla de redondeos según el Informe Técnico de e-CF.
+
+
+                                                                                 Pág. 7 de 12
+                          consumo electrónica.
+                          Condicional a que en la línea de
+                          detalle exista algún ítem
+                          gravado a tasa 0.
+
+
+                          Corresponde al total de los
+                          montos exentos, asignados en
+                          la factura de consumo                                   a) Valor numérico de 16 enteros, 2
+      Monto Exento        electrónica.                                            decimales≥ 0 (No puede ser negativo).
+18                                                               18         NUM                                              2
+     <MontoExento>
+                          Condicional a que en la línea de
+                          detalle exista algún ítem
+                          exento.
+
+                          Corresponde a la sumatoria
+                          total de los montos de ITBIS (en                        a) Valor numérico de 16 enteros, 2
+                          sus diferentes tasas), asignados                        decimales; ≥ 0 (No puede ser
+                          en la factura de consumo                                negativo).
+                          electrónica emitida.
+        Total ITBIS                                                               b) Valor de la suma del Total ITBIS
+19                                                               18         NUM                                              2
+       <TotalITBIS>       Condicional   a     que     el                          Tasa1 + Total ITBIS Tasa 2 + Total ITBIS
+                          contribuyente indique que                               Tasa3.
+                          existe montos de ITBIS al
+                          menos a una de las tasas (1, 2
+                          y/o 3).
+
+                          Corresponde al total de los
+                          montos de ITBIS al 18%,
+                                                                                  a) Valor numérico de 16 enteros, dos
+                          asignados en la factura de
+     Total ITBIS Tasa 1                                                           decimales; ≥ 0 (No puede ser
+                          consumo electrónica.
+20     <TotalITBIS1>                                             18         NUM   negativo).                                 2
+                          Condicional a que en la línea de
+                          detalle exista algún ítem
+                          gravado al 18%.
+
+                                                             Pág. 8 de 12
+                                    Corresponde al total de los
+                                    montos de ITBIS al 16%,
+                                    asignados en la factura de
+                                                                                            a) Valor numérico de 16 enteros, dos
+          Total ITBIS Tasa 2        consumo electrónica.
+                                                                                            decimales; ≥ 0 (No puede ser negativo).
+21          <TotalITBIS2>                                                  18         NUM                                             2
+                                    Condicional a que en la línea de
+                                    detalle exista algún ítem
+                                    gravado al 16%
+
+                                    Corresponde al total de los
+                                    montos de ITBIS tasa cero (0%),
+                                    asignados en la factura de
+                                                                                            a) Valor numérico de 16 enteros, dos
+           Total ITBIS Tasa3        consumo electrónica.
+                                                                                            decimales; ≥ 0 (No puede ser negativo).
+22          <TotalITBIS3>                                                  18         NUM                                             2
+                                    Condicional a que en la línea de
+                                    detalle exista algún ítem
+                                    gravado a tasa 0.
+
+                                    Corresponde a la suma de los
+                                    campos       Monto   Impuesto                           a) Valor numérico de 16 enteros, dos
+                                    Selectivo al Consumo Específico                         decimales; >0 (debe ser positivo).
+                                    y Ad Valorem y Monto Otros
+     Monto del Impuesto Adicional   Impuestos          Adicionales,                         b) Valor de la suma del Monto Impuesto
+23    <MontoImpuestoAdicional>      asignados en la factura de             18         NUM   Selectivo al Consumo Específico+          2
+                                    consumo electrónica.                                    Monto      Impuesto      Selectivo Ad
+                                                                                            Valorem+ Monto Otros Impuestos
+                                    Condicional a que exista Monto                          Adicionales.
+                                    Impuesto Selectivo al Consumo.
+
+                                    Condicional a que exista
+              Tabla de              impuestos adicionales en la
+                                                                                                                                      2
+        Impuestos Adicionales       factura de consumo electrónica.
+
+
+                                                                       Pág. 9 de 12
+            <ImpuestosAdicionales> 5          Se     pueden       incluir  20
+                                              repeticiones de pares código –
+                                              valor. Incluye los cinco campos
+                                              siguientes:
+
+                                              Dato correspondiente al Código
+                                              del impuesto adicional de
+                                              acuerdo con la Tabla I
+                                              (Codificación      Tipos      de
+          Código de Impuesto Adicional                                                                     a) Validar con Tabla I (Codificación
+    24                                        Impuestos Adicionales) del              3        NUM                                                2
+                <TipoImpuesto>                                                                             Tipos de Impuestos Adicionales) 6
+                                              formato de comprobante fiscal
+                                              electrónico (e-CF), asignada a la
+                                              factura de consumo electrónica.
+
+                                              Valor del impuesto selectivo al
+                                              consumo      (ISC)   específico
+                                              asociado al código de impuesto
+                                              adicional.
+          Monto Impuesto Selectivo al
+             Consumo Específico                                                                            a) Valor numérico de 16 enteros, dos
+    25                                        Condicional     a    que    el         18        NUM                                                2
+         <MontoImpuestoSelectivoCons                                                                       decimales; >0 (debe ser positivo).
+                                              contribuyente indique que
+               umoEspecifico>
+                                              existe impuesto selectivo al
+                                              consumo específico, en la
+                                              factura de consumo electrónica
+                                              emitida.
+          Monto Impuesto Selectivo al         Valor del impuesto selectivo al
+                  Consumo                     consumo (ISC) Ad-Valorem                                   a) Valor numérico de 16 enteros, dos
+    26           Ad Valorem                   asociado al código de impuesto         18        NUM                                                2
+                                                                                                         decimales; >0 (debe ser positivo).
+         <MontoImpuestoSelectivoCons          adicional.
+              umoAdvalorem>
+
+5
+    Ver nota 2.
+6
+    De acuerdo con la Tabla de ‘Codificación Tipos de Impuestos Adicionales’, incluida en el documento del Formato de e-CF.
+
+                                                                               Pág. 10 de 12
+                                   Condicional    a    que      el
+                                   contribuyente indique que
+                                   existe impuesto selectivo Ad-
+                                   valorem, en la factura de
+                                   consumo electrónica emitida.
+
+                                   Valor de Otros Impuestos
+                                   Adicionales asociado al código
+                                   de impuesto adicional.
+       Monto Otros Impuestos
+                                   Condicional     a    que     el                          a) Valor numérico de 16 enteros, dos
+27           Adicionales                                                  18          NUM                                           2
+                                   contribuyente indique que                                decimales; >0 (debe ser positivo).
+     <OtrosImpuestosAdicionales>
+                                   existe     otros    impuestos
+                                   adicionales, en la factura de
+                                   consumo electrónica emitida.
+
+             FIN TABLA             IMPUESTOS ADICIONALES
+                                                                                            a) Valor numérico de 16 enteros, dos
+                                   Valor de la suma de los campos                           decimales; ≥ 0 (No puede ser
+                                   Monto Gravado Total + Monto                              negativo)
+            Monto Total            exento +Total ITBIS + Monto
+28                                                                        18          NUM                                           1
+           <MontoTotal>            del    Impuesto       adicional,                         b) Valor de la suma del Monto Gravado
+                                   asignados a la factura de                                Total + Monto Exento +Total ITBIS +
+                                   consumo electrónica.                                     Monto del Impuesto Adicional.
+
+                                   Corresponde al total del monto
+                                   no facturable, asignados en la
+                                   factura de consumo electrónica.                          a) Valor numérico de 16 enteros, dos
+         Monto no Facturable       Condicional     a    que     el                          decimales. (Puede ser negativo)
+29                                                                        18          NUM                                           2
+        <MontoNoFacturable>        contribuyente indique que
+                                   existe monto no facturable, en
+                                   la factura de consumo
+                                   electrónica emitida.
+
+
+                                                                      Pág. 11 de 12
+                                                                                          a) Valor numérico de 16 enteros, dos
+                                   Corresponde al total del monto                         decimales. (Puede ser negativo)
+           Monto Período
+30                                 periodo, asignados en la factura      18        NUM                                                  3
+          <MontoPeriodo>                                                                  b)    Monto     período=     Monto
+                                   de consumo electrónica.
+                                                                                          Total+Monto No Facturable.
+
+              FIN ÁREA             TOTALES
+                                   Corresponde a los 6 primeros
+     Código Seguridad Factura de   caracteres del Hash de la firma
+                                   digital correspondiente a la                    ALFA
+31     Consumo DOP$<250 M                                                 6               a) Sin validación                             1
+                                   factura de consumo electrónica                  NUM
+       <CodigoSeguridadeCF>
+                                   emitida, menor a DOP$250 M.
+              FIN ÁREA             ENCABEZADO
+
+
+
+      B. FIRMA DIGITAL
+
+
+            CAMPOS                                                    Largo                                            Obligatoriedad
+                                        DESCRIPCIÓN                           Tipo            Validación
+                                                                       Max
+
+            ÁREA
+                              SIGNATURE                                                                                      1
+         <Signature>
+                              Firma digital   sobre   todo    el
+1        Firma Digital                                                                                                       1
+                              documento.
+           FIN ÁREA           SIGNATURE
+
+
+
+
+                                                                   Pág. 12 de 12
+

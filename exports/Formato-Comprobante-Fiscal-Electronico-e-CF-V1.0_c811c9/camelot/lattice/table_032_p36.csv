@@ -1,0 +1,70 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. 
+Créd. 
+Fiscal 
+Electr. 
+ 
+31","Fact. 
+Consum. 
+Electr. 
+ 
+32","Nota 
+Déb. 
+Electr. 
+ 
+33","Nota Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Guber. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"","ÁREA 
+<DetallesItem>","DETALLES ÍTEM","","","","","1","1","1","1","1","1","1","1","1","1"
+"","ÁREA 
+<Item>","ÍTEM 
+Se pueden incluir hasta 100 
+repeticiones.","","","","","1","1","1","1","1","1","1","1","1","1"
+"1","N° de Línea o N° Secuencial 
+<NumeroLinea>","Línea que numera el ítem.  Desde 1 a 
+100 repeticiones.48","5","NUM","a) Número secuencial de la 
+línea.","N","1","1","1","1","1","1","1","1","1","1"
+"","Tabla de Códigos de Ítem 
+<TablaCodigosItem>","Se  pueden  incluir  5  repeticiones  de 
+pares  código  –  valor.  Incluye  los  dos 
+campos siguientes:","","","","","3","3","3","3","3","3","3","3","3","3"
+"2","Tipo Código 
+<TipoCodigo>","Tipo  de  codificación  utilizada  para  el 
+ítem 
+Standard:  EAN,  PLU,  DUN  o  Interna 
+(Hasta 5 tipos de códigos)","14","ALFA 
+NUM","a)Sin validación.","N","3","3","3","3","3","3","3","3","3","3"
+"3","Código del Ítem 
+<CodigoItem>","Código del ítem de acuerdo a tipo de 
+codificación 
+indicada 
+en 
+campo 
+anterior. 
+(Hasta 5 códigos)","35","ALFA 
+NUM","a)Sin validación.","N","3","3","3","3","3","3","3","3","3","3"
+"","FIN TABLA","CÓDIGOS ÍTEM","","","","","","","","","","","","","",""

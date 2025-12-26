@@ -1,0 +1,106 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. 
+Créd. 
+Fiscal 
+Electr. 
+ 
+31","Fact. 
+Cons. 
+Electr. 
+ 
+32","Nota 
+Déb. 
+Electr. 
+ 
+33","Nota 
+Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Guber. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"9","Tipo de Pago 
+<TipoPago>","Indica el tipo de pago del cliente.  
+Las 
+facturas  por  entrega  gratuita 
+(código  3),  no 
+son 
+válidas  para 
+crédito fiscal.","1","NUM","a) Código Tipo: 
+1: Contado 
+2: Crédito 
+3: Gratuito","N","1","1","1","1","1","3","1","1","1","3"
+"10","Fecha Límite de Pago 
+<FechaLimitePago>","Solo 
+para 
+facturas 
+a 
+crédito. 
+Condicional a que el tipo de pago sea 
+a crédito.","10","ALFA 
+NUM","Fecha válida: 
+a) Formato 
+dd-MM-AAAA 
+b)  Fecha 
+límite  de  pago  debe  ser  ≥ 
+Fecha de emisión.","N","2","2","2","2","2","0","2","2","2","3"
+"11","Término de Pago 
+<TerminoPago>","Indica el tiempo establecido para el 
+pago 
+de 
+la 
+factura 
+y 
+se 
+debe 
+especificar si  el mismo es en horas, 
+días, semanas, meses u otro. 
+Ejemplo:  
+1) 
+72 horas 
+2) 
+120 días 
+3) 
+1 semana 
+4) 
+3 meses","15","ALFA 
+NUM","a) Sin Validación.","N","3","3","3","0","3","0","3","3","3","3"
+"","TABLA DE FORMAS DE 
+PAGO 
+<TablaFormasPago>2","Hasta 07 repeticiones. 
+Contiene los dos campos siguientes.","","","","","3","3","3","0","3","0","3","3","3","3"
+"12","Forma de Pago 
+<FormaPago>","Indica el método en que se pagará la 
+factura.","2","NUM","a) Código Forma: 
+1: Efectivo 
+2: Cheque/Transferencia/ 
+Depósito 
+3: Tarjeta de Débito/Crédito 
+4: Venta a Crédito 
+5: Bonos o Certificados de regalo 
+6: Permuta 
+7: Nota de crédito 
+8: Otras Formas de pago 
+ 
+Si la forma de pago corresponde al tipo 
+5 el e-CF debe ser tipo 32.","N","3","3","3","0","3","0","3","3","3","3"

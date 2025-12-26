@@ -1,0 +1,7 @@
+"o","Monto  de  Descuento  o  Recargo","(si  aplica):  hace  referencia  al  monto  del"
+"","descuento o recargo aplicable.",""
+"","En el caso de que el e-CF sea emitido en otra moneda y se requiera realizar una RI en",""
+"","el tipo de moneda extranjera utilizado, entonces se deberá adicionar a los nombres",""
+"","de los campos de valores en moneda, el código de la moneda extranjera, de acuerdo",""
+"","con la ‘Tabla Codificación Monedas’ indicada en el Formato de e-CF51.",""
+"17.2.3.  Datos adicionales para incluirse en la RI","",""

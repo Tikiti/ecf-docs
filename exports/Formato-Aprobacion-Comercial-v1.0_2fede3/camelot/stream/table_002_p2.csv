@@ -1,0 +1,22 @@
+"1.  Introducción"
+"L
+a  aprobación  o  rechazo  comercial  es  la  respuesta  que  el  comprador  deberá  enviar  al  emisor  como  constancia  de  su"
+"conformidad con la transacción realizada. Al momento de recibir la factura, el comprador (receptor) está obligado a confirmar"
+"al emisor la recepción del documento con una respuesta de recepción1 y de manera opcional podrá remitir la aprobación o"
+"rechazo comercial, de la cual deberá expedir una copia a la DGII.2"
+"E
+l  presente  documento  describe  el  contenido  que  debe  tener  el  formato  XML  de  la  aprobación  comercial,  incluyendo  los"
+"mensajes que serán utilizados por los receptores electrónicos."
+"2.  Contenido del Formato XML de Aprobación Comercial"
+"a
+)  Detalle de Aprobación Comercial: especifica el contenido de la respuesta que el receptor debe enviar al emisor y remitir"
+"copia a la DGII."
+"b)  Firma Digital: que avala la integridad de la respuesta y autenticidad del remitente."
+"3.  Códigos de Obligatoriedad"
+"1
+ - Dato obligatorio: el dato debe estar siempre en el archivo."
+"2 - Dato condicional: el dato no es obligatorio pero pasa a serlo en determinados casos, si se cumple una cierta condición."
+"3 - Dato opcional: el dato es opcional."
+"1 El Acuse de Recibo notifica la recepción de la factura electrónica, es decir, si la misma es recibida o no."
+"2 La DGII recibirá aprobación o rechazo comercial de e-CF previamente aceptadas por la DGII."
+"Pág. 2 de 6"

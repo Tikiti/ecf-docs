@@ -1,0 +1,50 @@
+,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,Fact.,,,,,,,,,
+,CAMPOS,DESCRIPCIÓN,Largo,,,I,Créd.,Fact.,Nota,Nota,,Gastos,Regím.,,,Pagos
+,,,,,Validación,,,,,,,,,,,
+,,,,Tipo,,,Fiscal,Consum.,Déb.,Créd.,Compras,Menor.,Espec.,Guber.,Export.,Exterior
+,,,Max,,,,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.
+,,,,,,,,,,,,,,,,
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+26,"Monto Descuento
+<DescuentoMonto>","Totaliza todos los subdescuentos
+otorgados al ítem en montos.
+Condicional a que exista Monto
+Subdescuento.",18,NUM,"a) Valor numérico de 16 enteros, 2
+decimales; ≥0 (No puede ser
+negativo).
+b)Monto Subdescuento",I,2,2,2,2,2,0,2,2,2,0
+,"Tabla de
+Distribución de
+Subdescuento
+<TablaSubDescuento>66","Condicional a que exista descuento en
+el ítem. Se pueden incluir 12
+repeticiones. Incluye los tres campos
+siguientes:",,,,N,2,2,2,2,2,0,2,2,2,0
+27,"Tipo de Subdescuento
+<TipoSubDescuento>","Indica si el Subdescuento está en
+monto ($) o porcentaje (%).
+Condicional a que exista descuento en
+el ítem.",1,ALFA,"a) ""$"" o ""%""",N,2,2,2,2,2,0,2,2,2,0
+28,"Subdescuento en %
+<SubDescuentoPorcentaj
+e>","Valor del Subdescuento en porcentaje
+%. Condicional a que exista tipo
+Subdescuento en porcentaje (%).",5,NUM,"a) Valor numérico.
+3 enteros y 2 decimales; >0 (No
+puede ser negativo)",N,2,2,2,2,2,0,2,2,2,0
+29,"Monto Subdescuento
+<MontoSubDescuento>","Correspondiente al valor del
+descuento expresado en monto.
+Si va el subdescuento en %, deberá ir el
+monto del subdescuento.",18,NUM,"a) Valor numérico de 16 enteros, 2
+decimales. ≥0 (No puede ser
+negativo).
+b) Si va el subdescuento en %, el
+valor del subdescuento en monto
+deberá ser igual al precio unitario
+de ítem por el subdescuento en
+porcentaje, por la cantidad de
+ítems.",N,2,2,2,2,2,0,2,2,2,0
+,FIN TABLA,SUBDESCUENTO,,,,,,,,,,,,,,

@@ -12,6 +12,210 @@ This document serves as the primary technical guide for the DGII e-CF system, pr
 
 ---
 
+## System Actors
+
+Three primary actors interact in the Dominican Republic's electronic invoicing ecosystem:
+
+### DGII (Dirección General de Impuestos Internos)
+The regulatory authority responsible for:
+- Tax administration and application per Tax Code Articles 32, 34, 35 (Law 11-92)
+- e-CF validation and acceptance/rejection
+- Providing web services for authentication, reception, and queries
+- Maintaining the electronic taxpayer directory
+
+### Electronic Issuer (Emisor Electrónico)
+Any taxpayer **authorized by DGII** to emit electronic fiscal receipts. Requirements:
+- Must possess a **digital certificate for tax processes** (INDOTEL-accredited)
+- Responsible for XML generation, digital signing, and transmission
+- Must implement web services for P2P communication (if also a receiver)
+
+### Electronic Receiver (Receptor Electrónico)
+Any taxpayer who receives e-CFs electronically. Key points:
+- **Every electronic receiver is also an electronic issuer** (dual role requirement)
+- Must implement reception web service to receive e-CFs from other issuers
+- Must send Commercial Approval/Rejection (`Aprobación Comercial`) for received e-CFs
+- Authorized by DGII with same digital certificate requirements
+
+**Non-Electronic Receiver:** Not part of the e-CF system; receives only printed representation (RI) and queries validity via DGII web portal.
+
+---
+
+## Web Services
+
+All communication uses **REST Web Services** with XML payloads. Base URLs:
+
+- **Production**: `https://ecf.dgii.gov.do/ecf/`
+- **Certification**: `https://ecf.dgii.gov.do/certecf/`
+- **Pre-Certification (Testing)**: `https://ecf.dgii.gov.do/testecf/`
+
+### 4.1. Authentication (Autenticación)
+**Purpose**: Obtain a Bearer token (valid 1 hour) for all subsequent API calls.
+
+**Process**:
+1. Request seed: `GET /autenticacion/api/autenticacion/semilla`
+2. Sign seed with your digital certificate
+3. Submit signed seed: `POST /autenticacion/api/autenticacion/autenticar`
+4. Receive JWT token
+
+### 4.2. e-CF Reception (Recepción e-CF)
+**Endpoint**: `POST /recepcion/api/recepcionecf`
+
+**Purpose**: Submit e-CF XML to DGII for validation.
+
+**Returns**: `TrackId` (unique identifier for status queries)
+
+**Possible Responses**:
+- `Aceptado` (Accepted) - e-CF is valid
+- `Aceptado Condicional` (Conditionally Accepted) - Valid but with warnings
+- `Rechazado` (Rejected) - Invalid, not fiscally valid
+- `En Proceso` (Processing) - Validation in progress (~200ms avg)
+
+### 4.3. RFCE Reception (Recepción RFCE)
+**Endpoint**: `POST /recepcionrfce/api/recepcionrfce`
+
+**Purpose**: Submit summary for Consumer Electronic Invoices < RD$250,000.
+
+**Note**: Full e-CF XML is **not sent** to DGII for these invoices. Only a summary (RFCE format) is submitted. The complete e-CF must be stored locally for 10 years.
+
+### 4.4. Commercial Approval Reception (Recepción de Aprobación Comercial)
+**Endpoint**: `POST /aprobacioncomercial/api/aprobacioncomercial`
+
+**Purpose**: Electronic receiver notifies DGII of their acceptance/rejection of a received e-CF.
+
+**Format**: ACECF XML (signed)
+
+### 4.5. e-CF Result Query (Consulta de Resultado) - Issuers
+**Endpoint**: `GET /consultaresultado/api/consultas/estado?trackid={trackid}`
+
+**Purpose**: Check validation status using `TrackId` from reception response.
+
+**Use**: Poll this after submitting e-CF to check if accepted/rejected.
+
+### 4.6. e-CF Status Query (Consulta de Estado) - Receivers
+**Endpoint**: `GET /consultaestado/api/consultas/estado?rncemisor={rnc}&ncfelectronico={encf}&rnccomprador={rnc}&codigoseguridad={code}`
+
+**Purpose**: Verify e-CF validity using visible fields (RNC, e-NCF, security code).
+
+**Use**: Receivers can verify invoices without needing the TrackId.
+
+### 4.7. TrackId Query (Consulta de TrackId)
+**Endpoint**: `GET /consultatrackids/api/trackids/consulta?rncemisor={rnc}&encf={encf}`
+
+**Purpose**: Get all `TrackIds` for a specific e-NCF (if resubmitted multiple times).
+
+### 4.8. Directory Query (Consulta Directorio)
+**Endpoint**: `GET /consultadirectorio/api/consultas/listado`
+
+**Purpose**: Retrieve list of all electronic taxpayers and their web service URLs (reception, approval, optional authentication).
+
+**Returns**: JSON/XML with `urlRecepcion`, `urlAceptacion`, `urlOpcional` for each RNC.
+
+### 4.9. Service Status Query (Consulta Estatus Servicios)
+**Endpoint**: `GET /estatusservicios/api/consultas/estatus`
+
+**Purpose**: Check availability and maintenance windows for DGII services.
+
+### 4.10. e-NCF Annulment (Anulación de e-NCF)
+**Endpoint**: `POST /anulacionrangos/api/operaciones/anularrango`
+
+**Purpose**: Annul unused sequence ranges or e-CFs signed but not sent.
+
+**Format**: ANECF XML
+
+### 4.11. Issuer-Receiver Communication (Comunicación Emisor-Receptor)
+**Availability**: Pre-certification environment only
+
+**Purpose**: DGII-provided simulator to test P2P communication (reception, approval) before going to production.
+
+---
+
+## Operation Models
+
+Understanding how e-CFs flow between actors is critical for implementation.
+
+### Model I: Electronic Issuer → Electronic Receiver
+
+**Mandatory Steps (1-4):**
+1. **Issuer → DGII**: Send e-CF XML
+2. **DGII → Issuer**: Return `TrackId`
+3. **Issuer → Receiver**: Send e-CF XML (P2P)
+4. **Receiver → Issuer**: Send Acknowledgment of Receipt (`Acuse de Recibo` - ARECF XML)
+
+**Optional Steps (5-6):**
+5. **Receiver → Issuer**: Send Commercial Approval/Rejection (ACECF XML)
+6. **Receiver → DGII**: Notify DGII of approval/rejection
+
+**Key Points**:
+- Issuer must send to **both** DGII and receiver
+- Receiver must acknowledge receipt (step 4)
+- Commercial approval is optional but recommended
+- DGII only accepts commercial approvals for e-CFs it has already accepted
+
+### Model II: Electronic Issuer → Non-Electronic Receiver
+
+**Steps:**
+1. **Issuer → DGII**: Send e-CF XML
+2. **DGII → Issuer**: Return `TrackId`
+3. **Issuer → Receiver**: Deliver **Printed Representation (RI)** only
+
+**Receiver Responsibility**:
+- Query e-CF validity on DGII website using QR code or manual entry
+- Report purchase in Format 606 (Costs and Expenses)
+
+### Model III: Consumer Invoice < RD$250,000
+
+**Steps**:
+1. **Issuer**: Generate full e-CF XML, sign, store locally (10-year retention)
+2. **Issuer → DGII**: Send **summary only** (RFCE format, not full XML)
+3. **DGII → Issuer**: Return validation status (Accepted/Rejected/Conditionally Accepted)
+4. **Issuer → Consumer**: Deliver printed representation
+
+**Critical Differences**:
+- Full e-CF is **never sent** to DGII (only summary)
+- No P2P transmission (consumers are non-electronic)
+- QR code uses different URL structure (see Section 17)
+- Max 10,000 line items (vs 1,000 for standard e-CFs)
+
+---
+
+## Corrections and Annulment
+
+### Corrections (Using Credit/Debit Notes)
+
+Use electronic credit notes (`Nota de Crédito Electrónica` - Type 34) or debit notes (`Nota de Débito Electrónica` - Type 33):
+
+**Credit Note Rules**:
+- **Within 30 days**: Can refund both price + ITBIS
+- **After 30 days**: Can only refund price (ITBIS is NOT refundable per Regulation 293-11, Arts. 8 & 28)
+
+**Modification Codes** (in `InformacionReferencia` section):
+| Code | Purpose |
+|------|------|
+| 1 | Annuls the modified NCF |
+| 2 | Corrects text in the modified receipt |
+| 3 | Corrects amounts in the modified NCF |
+| 4 | Replaces NCF emitted in contingency |
+
+### Annulment (Using ANECF)
+
+Use the Annulment web service (4.10) for:
+- e-CFs that were **signed but never sent** (not to DGII, not to receiver)
+- Unused sequence ranges
+
+**Cannot Annul**:
+- e-CFs already sent to DGII or receiver (must use credit note)
+- Sequences where `secuenciaUtilizada = true` in DGII response
+
+**Rejection Scenarios**:
+If e-CF is rejected in Commercial Approval by receiver:
+- Issuer must send credit note to both DGII and receiver
+
+If e-CF is approved by receiver but rejected by DGII:
+- e-CF is invalid (commercial approval also becomes invalid)
+- Issuer must create new e-CF to replace the one given to receiver
+
+---
+
 ## Actors in the System
 
 | Actor | Description |
@@ -21,23 +225,6 @@ This document serves as the primary technical guide for the DGII e-CF system, pr
 | **Non-Electronic Receptor** | Receptor No Electrónico - receives printed representation only |
 
 ---
-
-## Web Services Overview (Section 4)
-
-The DGII provides the following REST API services for e-CF operations:
-
-| Service | Description |
-|---------|-------------|
-| **4.1 Autenticación** | Token generation via signed seed (1-hour validity) |
-| **4.2 Recepción e-CF** | Submit e-CF XML, returns `TrackId` |
-| **4.3 Recepción RFCE** | Submit consumer invoice summary (< RD$250k) |
-| **4.4 Recepción Aprobación Comercial** | Submit ACECF (acceptance/rejection) to DGII |
-| **4.5 Consulta Resultado e-CF** | Query e-CF status by `TrackId` (for issuers) |
-| **4.6 Consulta Estado e-CF** | Query e-CF validity (for receivers) |
-| **4.7 Consulta TrackId e-CF** | Get all TrackIds for an e-NCF |
-| **4.8 Consulta Directorio** | Lookup receiver's service URLs |
-| **4.9 Consulta Estatus Servicios** | Check DGII service availability |
-| **4.10 Anulación e-NCF** | Cancel unused e-NCF sequences |
 
 ## e-CF Types (Tipos de Comprobante)
 
@@ -114,24 +301,51 @@ Individual items or services sold.
 
 Informational subtotals that do not affect the main totalizers.
 
-### Section D: Descuentos o Recargos — Conditional
+### Section D: Descuentos o Recargos (Discounts/Surcharges) — Conditional
 
 Global discounts or charges applied to the entire invoice.
 
 ### Section E: Paginación — Optional
 
-### Section E: Paginación — Optional
+Information about pages and items per page.
 
-Required **only** when the printed representation exceeds one page. It must appear on all pages except the last one (which contains the global totals).
+---
 
-| Element | Description |
-|---------|-------------|
-| `PaginaNo` | Sequential page number (starts at 1) |
-| `SubtotalGravadoPagina` | Sum of taxed amounts on this page |
-| `SubtotalExentoPagina` | Sum of exempt items on this page |
-| `SubtotalItbisPagina` | Sum of ITBIS on this page |
-| `SubtotalImpuestoAdicionalPagina` | Sum of ISC + Other Taxes on this page |
-| `MontoTotalPagina` | Grand total for items on this page |
+## XML Format Requirements
+
+### Character Escaping in ALFANUM Fields
+
+**Critical**: The following characters have special meaning in XML and **must** be escaped:
+
+| Character | Name | Use &#... (Decimal) | Use &#x... (Hex) |
+|-----------|------|---------------------|------------------|
+| `"` | quot | `&#34;` | `&#x22;` |
+| `&` | amp | `&#38;` | `&#x26;` |
+| `'` | apos | `&#39;` | `&#x27;` |
+| `<` | lt | `&#60;` | `&#x3C;` |
+| `>` | gt | `&#62;` | `&#x3E;` |
+
+**Example**:
+```xml
+<!-- WRONG -->
+<NombreItem>Laptop 15" & Mouse</NombreItem>
+
+<!-- CORRECT -->
+<NombreItem>Laptop 15&#34; &#38; Mouse</NombreItem>
+```
+
+### Field Obligatoriness Codes
+
+Each field in the e-CF format has an obligatoriness code:
+
+| Code | Meaning | When Required |
+|------|---------|---------------|
+| `0` | Not applicable | Field must NOT appear in this document type |
+| `1` | Mandatory | Must always be present |
+| `2` | Conditional | Required only if specific condition met (e.g., discounts exist) |
+| `3` | Optional | May be included at issuer's discretion |
+
+**Example**: `<DescuentoORecargo>` is **conditional (2)** - required only if global discounts/surcharges exist.
 
 ---
 
@@ -256,18 +470,6 @@ The printed version of an e-CF must include:
 ## Contingency Operations (Operación en Contingencia)
 
 Defined as exceptional situations preventing normal e-CF emission.
-
-### Notification Requirement
-The issuer **must immediately notify** DGII of the contingency state via:
-1.  **Office Virtual (OFV)**: Contingency Module
-2.  **Contact Center**: Notification of situation and type
-
-### Contingency Types (Tipos de Contingencia)
-
-| Type | Definition | End Condition |
-|------|------------|---------------|
-| **Total Contingency** | System failure affecting **all** operations/branches. | Ends when DGII receives the first e-CF or user notifies resolution. |
-| **Partial Contingency** | System failure affecting **some** branches/POS, while others operate normally. | Ends when user notifies resolution for those specific branches. |
 
 ### Scenario A: No Connection (Falta de Conectividad)
 If you cannot connect to DGII Web Services:

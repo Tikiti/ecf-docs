@@ -1,0 +1,51 @@
+,CAMPOS,DESCRIPCIÓN,Largo,,Validación,,Fact.,,,,,,,,,
+,,,,,,,Créd.,Fact.,Nota,,,Gastos,Regím.,,,Pagos
+,,,,,,I,,,,,,,,,,
+,,,Max,Tipo,,,Fiscal,Consum.,Déb.,Nota Créd.,Compras,Menor.,Espec.,Guber.,Export.,Exterior
+,,,,,,,,,,,,,,,,
+,,,,,,,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+10,"Subtotal ITBIS 1 Página
+<SubtotalItbis1Pagina>","Valor numérico igual al subtotal
+monto gravado 1 por la tasa ITBIS 1,
+de la línea indicada en la página.
+Condicional a que exista Subtotal
+Monto Gravado tasa 1.",,,"a) Valor numérico de 16 enteros,
+dos decimales; ≥ 0 (No puede ser
+negativo).
+b) Subtotal ITBIS Tasa1= Monto
+Gravado ITBIS tasa1 * ITBIS tasa 1,
+de las líneas de ítems incluidos en
+la página.
+Solo forman parte de la base
+imponible del ITBIS los impuestos
+selectivos al consumo con códigos
+desde 006 hasta 039 de la Tabla de
+Codificación de Tipos de Impuestos
+Adicionales.",N,2,2,2,2,2,0,0,2,0,0
+,,,18,NUM,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+11,"Subtotal ITBIS 2 Página
+<SubtotalItbis2Pagina>","Valor numérico igual al subtotal
+monto gravado 2 por la tasa ITBIS 2,
+de la línea indicada en la página.
+Condicional a que exista Subtotal
+Monto Gravado tasa 2.",,,"a) Valor numérico de 16 enteros,
+dos decimales; ≥ 0 (No puede ser
+negativo).
+b) Subtotal ITBIS Tasa2= Monto
+Gravado ITBIS tasa2 * ITBIS tasa 2,
+de las líneas de ítems incluidos en
+la página.",N,2,2,2,2,2,0,0,2,0,0
+,,,18,NUM,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+12,"Subtotal ITBIS 3 Página
+<SubtotalItbis3Pagina>","Valor numérico igual al subtotal
+monto gravado 3 por la tasa ITBIS 3,
+de la línea indicada en la página.
+Condicional a que exista Subtotal
+Monto Gravado tasa 3.",,,"a) Valor numérico de 16 enteros,
+dos decimales; ≥ 0 (No puede ser
+negativo).",N,2,2,2,2,2,0,0,2,2,0
+,,,18,NUM,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,

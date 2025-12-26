@@ -1,0 +1,17 @@
+94,"Monto Gravado ITBIS
+Tasa 2
+<MontoGravadoI2>","Total de la suma de valores de
+Ítems gravados asignados a
+ITBIS tasa 2(tasa 16%), menos
+descuentos más recargos.
+Condicional a que en la línea de
+detalle exista algún ítem
+gravado a tasa ITBIS2.",18,NUM,"a) Valor numérico de 16 enteros, 2
+decimales; ≥ 0 (No puede ser
+negativo).
+b) Suma de valores del monto ítem
+con indicador de facturación=2,
+menos descuentos más recargos.
+c) Si el indicador monto gravado=1, se
+debe dividir el resultado por (1+ ITBIS
+tasa 2).",N,2,2,2,2,2,0,0,2,0,0

@@ -1,0 +1,109 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. Créd. 
+Fiscal Electr. 
+ 
+31","Fact. 
+Consum. 
+Electr. 
+ 
+32","Nota 
+Déb. 
+Electr. 
+ 
+33","Nota 
+Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Guber. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"","FIN ÁREA","RETENCIÓN","","","","","","","","","","","","","",""
+"8","Nombre del Ítem 
+<NombreItem>","Nombre del producto o servicio.","80","ALFA 
+NUM","a) Sin validación.","I","1","1","1","1","1","1","1","1","1","1"
+"9","Indicador Bien o Servicio 
+<IndicadorBienoServicio>","Identifica si el ítem corresponde a Bien 
+o Servicio.","1","NUM","1
+a) Indicar si es Valor: 
+: Bien 
+2:  Servicio","N","1","1","1","1","1","1","1","1","1","154"
+"10","Descripción Adicional 
+<DescripcionItem>","Descripción Adicional del ítem.","1000","ALFA 
+NUM","a)Sin validación","N","3","3","3","3","3","3","3","3","3","3"
+"11","Cantidad 
+<CantidadItem>","Cantidad del ítem55","18","NUM","a) 
+Valor 
+numérico 
+de 
+16 
+enteros,  2  decimales;  >0  (No 
+puede ser negativo).","I","1","1","1","1","1","1","1","1","1","1"
+"12","Unidad de Medida Ítem 
+<UnidadMedida>","Indica 
+la  unidad  de  medida  que  está 
+expresada la cantidad.","2","NUM","a)  Validar  con 
+la  Tabla  de 
+Codificación 
+de  Unidad 
+de 
+medida.","P","3","3","3","3","3","3","3","3","3","3"
+"13","Cantidad de Referencia 
+<CantidadReferencia>","C
+Cantidad para la unidad de medida de 
+referencia (no se usa para el cálculo del 
+Monto Ítem). 
+ondicional a que el ítem esté gravado 
+con  códigos  de  impuestos  adicionales 
+entre 
+006-022 
+en 
+la 
+Tabla 
+de 
+Codificación 
+Tipo 
+de 
+Impuestos 
+Adicional. 56","18","NUM","a) 
+Valor 
+numérico 
+de 
+16 
+(No 
+enteros,  2  decimales;  ≥0 
+puede ser negativo).","N","2","2","2","2","0","0","0","2","0","0"
+"14","Unidad de Referencia 
+<UnidadReferencia>","C
+Indica 
+la 
+unidad 
+de  medida 
+de 
+referencia. 
+ondicional  a  que  esté  completado  el 
+campo Cantidad de referencia.","2","NUM","a)  Validar 
+con 
+la  Tabla 
+IV 
+(Codificación  de  Unidad  de 
+medida).","N","2","2","2","2","0","0","0","2","0","0"

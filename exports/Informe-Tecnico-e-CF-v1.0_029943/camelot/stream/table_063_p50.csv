@@ -1,0 +1,17 @@
+"18.1. 
+Tipos de contingencia"
+"▪ 
+Contingencia total: este estado se refiere a cuando existe una falla de sistema que afecta la"
+"operación total del contribuyente (emisión de e-CF). En este caso, el mismo deberá indicar la"
+"fecha  de 
+inicio  de 
+la  contingencia  y  el  motivo  del  estado.  Este  estado  será 
+inactivado"
+"automáticamente  cuando  la  DGII  reciba  el  primer  e-CF  posterior  a  la  fecha  de  inicio  de  la"
+"contingencia o cuando el contribuyente notifique que la falla fue solucionada, lo que suceda"
+"primero."
+"▪ 
+Contingencia parcial: es cuando existe una falla de sistema que afecta solo una parte de las"
+"operaciones  del  contribuyente,  es  decir,  que  una  o  varias  de  sus  sucursales  o  unidades  de"
+"negocio  no  puede  facturar  electrónicamente  pero  el  resto  continúa  operando  de  forma"
+"habitual, emitiendo comprobantes electrónicos."

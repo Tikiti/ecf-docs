@@ -1,0 +1,55 @@
+,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,CAMPOS,DESCRIPCIÓN,Largo,,Validación,,,,,,,,,,,
+,,,,Tipo,,,Fact. Créd.,Fact.,,Nota,,Gastos,Regím.,,,Pagos
+,,,,,,I,,,,,,,,,,
+,,,Max,,,,Fiscal,Consum.,Nota Déb.,Créd.,Compras,Menor.,Espec.,Guber.,Export.,Exterior
+,,,,,,,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.
+,,,,,,,,,,,,,,,,
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+,ÁREA,,,,,,,,,,,,,,,
+,,INFORMACIÓN DE REFERENCIA.,,,,,2,2,1,1,2,2,2,2,2,2
+,<InformacionReferencia>,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+1,"Número de Comprobante
+Fiscal modificado79
+<NCFModificado>","Es el número del comprobante fiscal
+que será afectado o remplazado por
+una secuencia electrónica.
+Tanto el comprobante afectado o
+reemplazado, como la secuencia
+electrónica, deben estar emitidos por
+el mismo RNC/Cédula.
+Condicional a que la emisión del e-CF
+corresponda a un reemplazo de
+Comprobante Fiscal no electrónico
+emitido en contingencia.",,,"a) Validar que el número
+de comprobante fiscal
+modificado haya sido
+remitido previamente a la
+DGII. Este puede ser tanto
+secuencia electrónica
+como en papel.
+b) Si la emisión del e-CF es
+por Código de
+Modificación 4:
+Reemplazo de un
+comprobante no
+electrónico emitido en
+contingencia, se debe
+validar que el tipo del NCF
+modificado sea el
+equivalente al tipo de e-CF
+que se está emitiendo.",I,2,2,1,1,2,2,2,2,2,2
+,,,11 o 13 o,ALFA,,,,,,,,,,,,
+,,,19,NUM,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+2,"RNC Otro contribuyente
+<RNCOtroContribuyente>","Aplica cuando el RNC del que emite el
+e-CF no coincide con el comprobante
+fiscal modificado (debido a que el RNC
+se encuentre dado de baja por
+disolución, fusión o escisión). En ese
+caso, se debe validar que el campo
+“RNC otro contribuyente” esté
+completado correctamente.",9 u 11,NUM,Validar estructura.,N,2,2,2,2,2,2,2,2,2,2

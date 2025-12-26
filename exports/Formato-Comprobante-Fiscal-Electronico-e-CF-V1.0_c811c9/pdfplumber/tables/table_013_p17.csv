@@ -1,0 +1,61 @@
+,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,Fact.,,,,,,,,,
+,CAMPOS,DESCRIPCIÓN,Largo,Tipo,Validación,I,Créd.,Fact.,Nota,Nota,,Gastos,Regím.,,,Pagos
+,,,,,,,Fiscal,Consum.,Déb.,Créd.,Compras,Menor.,Espec.,Guber.,Export.,Exterior
+,,,Max,,,,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.
+,,,,,,,,,,,,,,,,
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+64,"Flete
+<Flete>","Corresponde al importe pagado por el
+traslado de la mercancía de puertos
+dominicanos al extranjero.",18,NUM,"a) Valor numérico de 16 enteros, 2
+decimales; > 0",N,0,0,0,0,0,0,0,0,3,0
+65,"Otros Gastos
+<OtrosGastos>","Importe sobre gastos por otros
+servicios, hasta el transporte de las
+mercancías en la aduana de destino.",18,NUM,"a) Valor numérico de 16 enteros, 2
+decimales; > 0",N,0,0,0,0,0,0,0,0,3,0
+66,"Total CIF
+<TotalCif>","Corresponde al valor FOB, Flete,
+Seguro y otros gastos.",18,NUM,"a) Valor numérico de 16 enteros, 2
+decimales; > 0",N,0,0,0,0,0,0,0,0,3,0
+67,"Régimen Aduanero
+<RegimenAduanero>","Corresponde al régimen aduanero al
+que se acoge la mercancía exportada,
+según se encuentra tipificada en la
+DGA10.",35,ALFA,a) Sin validación,N,0,0,0,0,0,0,0,0,3,0
+68,"Nombre Puerto Salida
+<NombrePuertoSalida>","Nombre del puerto de donde sale la
+mercancía, distinto al puerto de
+embarque.",40,"ALFA
+NUM",a) Sin validación,N,0,0,0,0,0,0,0,0,3,0
+69,"Nombre Puerto Desembarque
+<NombrePuertoDesembarque>","Nombre del puerto de destino de la
+mercancía.",40,"ALFA
+NUM",a) Sin validación,N,0,0,0,0,0,0,0,0,3,0
+70,"Peso Bruto
+<PesoBruto>","Corresponde al peso bruto del
+contenedor.",18,NUM,"a) Valor numérico de 16 enteros, 2
+decimales; > 0 (No puede ser
+negativo)",N,3,3,3,3,0,0,3,3,3,0
+71,"Peso Neto
+<PesoNeto>","Corresponde a peso neto del
+contenedor.",18,NUM,"a) Valor numérico de 16 enteros, 2
+decimales; > 0 (No puede ser
+negativo)",N,3,3,3,3,0,0,3,3,3,0
+72,"Unidad Peso Bruto
+<UnidadPesoBruto>","Corresponde a la unidad de medida
+en la que se encuentra el peso bruto
+de la mercancía.",2,NUM,"a) Validar con la Tabla IV
+(Codificación de Unidad de medida)",N,3,3,3,3,0,0,3,3,3,0
+73,"Unidad Peso Neto
+<UnidadPesoNeto>","Corresponde a la unidad de medida
+en la que se encuentra el peso neto de
+la mercancía.",2,NUM,"a) Validar con la Tabla IV
+(Codificación de Unidad de medida)",N,3,3,3,3,0,0,3,3,3,0
+74,"Cantidad de Bultos
+<CantidadBulto>","Corresponde a la cantidad de bultos
+que ampara el documento.",18,NUM,"a) Valor numérico de 16 enteros, 2
+decimales; > 0",N,3,3,3,3,0,0,3,3,3,0

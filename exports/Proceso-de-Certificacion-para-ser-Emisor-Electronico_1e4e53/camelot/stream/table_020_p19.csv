@@ -1,0 +1,8 @@
+"","Paso 12. URL Servicios Producción"
+"1.","Completar las URL de los servicios de Autenticación, Recepción y Aprobación"
+"","Comercial que estarán disponibles en el ambiente productivo."
+"E","l formulario donde se indicarán estas URL13  contendrá las siguientes"
+"especificaciones:",""
+"","13 Las URL serán almacenadas en el directorio de servicios mediante un web service que se encargará de comunicar el proceso de"
+"certificación directamente con la Oficina Virtual (OFV).",""
+"","19"

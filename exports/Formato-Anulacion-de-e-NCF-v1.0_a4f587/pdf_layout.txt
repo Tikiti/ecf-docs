@@ -1,0 +1,268 @@
+Bitácora
+
+Versión 1.0
+
+Actualizaciones al 24-05-2022
+Modificaciones no implican cambio de versión
+
+   •   Se elimina de la validación e) de la sección “Detalle de Anulación” lo siguiente: El e-NCF es mayor que el colocado en el campo
+       “Secuencia de e-NCF Desde" de cualquier formato de anulación remitido previamente.
+
+
+
+
+                                                                 Pág 2 de 9
+1. Introducción
+
+  El contribuyente podrá anular secuencias autorizadas de comprobantes fiscales electrónicos, si la factura emitida no ha
+  sido enviada a la DGII ni al receptor o si la secuencia no ha sido utilizada, para lo cual deberá emitir un formato XML
+  de anulación de e-NCF descrito en el presente documento.
+  Si la factura fue enviada a la DGII y/o al receptor, el contribuyente anulará la secuencia emitiendo una Nota de
+  Crédito Electrónica, con las especificaciones establecidas en el formato XML de e-CF.
+
+2. Contenido del archivo anulación de e-NCF
+  a) Encabezado: esta sección contiene los datos de quién anula, la cantidad de secuencias anuladas y la fecha en que
+     se genera el archivo.
+  b) Detalle de Anulación: en esta sección se informan las secuencias de e-NCF que serán anuladas.
+  c) Firma Digital: que avala la integridad del archivo y autenticidad del emisor.
+
+3. Códigos de obligatoriedad
+
+  0 - No corresponde: significa que el dato no debe ir en el archivo.
+  1 - Dato obligatorio: el dato debe estar siempre en el archivo.
+
+
+                              Secciones del Reporte
+                                                               Obligatoriedad de la Sección
+                                      Encabezado                            1
+
+                                Detalle de Anulación                        1
+
+                                     Firma Digital                          1
+
+
+
+  A continuación, se describe el contenido de cada sección, las especificaciones de formato para cada campo y los
+  códigos de obligatoriedad para cada uno, que debe tener el archivo de anulación de secuencias.
+
+
+                                                       Pág 3 de 9
+ 4. Formato Anulación de Secuencias de e-NCF
+
+      a) Encabezado
+
+                                                                       Largo
+No.     Nombre del Campo                   Descripción          Tipo                  Validación               Obligatoriedad
+                                                                       Máx.
+                ÁREA                       ENCABEZADO                                                                1
+            <Encabezado>
+                                       Versión del Formato
+1                Versión                                        NUM       3               Valor: 1.0                 1
+                                      Anulación de e-NCF.
+                                                                                a) RNC cumple con la
+2                                                                                    estructura de formato.
+                                    Corresponde al Número                       b) RNC está autorizado
+            RNC Emisor              de Registro Nacional del    NUM    9 u 11        como         Facturador         1
+            <RncEmisor>            contribuyente que emite la                        Electrónico.
+                                       factura electrónica.                     c)   RNC tiene secuencias
+                                                                                     autorizadas del tipo
+                                                                                     de e- NCF que está
+                                                                                     anulando.
+                                                                                a)    Cantidad de e-NCF
+3                                   Sumatoria de la cantidad                         Anulados=∑ cantidad
+      Cantidad de e-NCF Anulados      de e-NCF que se está      NUM      10          de e- NCF anulados              1
+       <CantidadeNCFAnulados>       reportando en la sección                         por tipo de e-NCF, de
+                                    Detalle, de este formato.                        la sección Detalle.
+
+
+
+                                    Fecha y hora en que se
+4                                    generó el archivo de                       a)    Formato de fecha y
+       Fecha y Hora Generación      anulación de secuencias     ALFA     19          hora cumple con                 1
+         Anulación de e-NCF          de e-NCF, en formato       NUM                  formato      dd-
+       <FechaHoraAnulacioneNCF>      Formato dd-MM-AAAA                              MM-AAAA
+                                           HH:mm:ss                                  HH:mm:ss
+
+
+      FIN ÁREA                     ENCABEZADO
+                                                         Pág 4 de 9
+           b) Detalle de Anulación
+
+
+               Atendiendo al tipo de comprobante fiscal que se desee anular, la sección puede tener hasta 8 repeticiones.
+No.           Campo                       Descripción                   Tipo       Largo               Validación              Obligatoriedad
+                                                                                   Máx.
+                ÁREA                  DETALLE ANULACIÓN                                                                              1
+         <DetalleAnulacion>
+                                             ANULACIÓN                                                                               1
+               ÁREA
+                                    Se p u e d e n i n c l u i r 10
+            <Anulacion>
+                                       hasta repeticiones.
+ 1        Número de Línea            Número de la línea o               NUM          2                                               1
+            <NoLinea>            secuencial. Desde 1 hasta 10
+                                         repeticiones.
+                                                                                           a) El tipo de e-CF es:                    1
+                                                                                             31: Factura de Crédito Fiscal
+                                                                                             Electrónica
+                                                                                             32: Factura de Consumo
+                                                                                             Electrónica
+             Tipo de e-CF              Tipo Comprobante                                      33: Nota de Débito Electrónica
+ 2           <TipoeCF>              Fiscal Electrónico (e-CF)           NUM          2       34: Nota de Crédito Electrónica
+                                                                                             41: Compras Electrónico
+                                                                                             43: Gastos Menores Electrónico
+                                                                                             44: Regímenes Especiales
+                                                                                             Electrónica
+                                                                                             45: Gubernamental
+                                                                                             Electrónico
+                                                                                             46: Comprobante para
+                                                                                             Exportaciones Electrónico
+                                                                                             47: Comprobante para
+                                                                                             Pagos al Exterior
+                                                                                             Electrónico
+         Tabla Rango de         Tabla que contiene un rango de las secuencias anuladas de manera consecutiva, de                     1
+       Secuencias Anuladas      acuerdo con el tipo de e-CF. Se pueden incluir hasta 10,000 repeticiones.
+             de e-NCF
+      <TablaRangoSecuenciasAnul
+              adaseNCF>
+                                                                      Pág 5 de 9
+No.            Campo                           Descripción               Tipo       Largo                         Validación                        Obligatoriedad
+                                                                                    Máx.
+                                                                                                 a) El e-NCF cumple con la estructura de
+                                                                                                     formato de número de comprobante
+                                                                                                     fiscal  (13   posiciones)1.  Ej.:
+                                                                                                     E310000000001.
+
+                                                                                                 b) El primer carácter del e-NCF (Serie)
+                                                                                                     está comprendido entre E-Z2
+
+                                     Se refiere al Número de                                     c) El tipo de e-CF de la secuencia debe
+                                     Comprobante            Fiscal                                   corresponder al indicado            en    el
+                                                                                                     campo ‘Tipo de e-CF’.
+      Secuencia de e-NCF             Electrónico (e-NCF) con el          ALFA
+3     Desde                          secuencial que inicia el            NUM           13
+      <SecuenciaeNCFDesde>
+                                                                                                 d) Se debe colocar la secuencia inicial
+                                     rango de secuencias que                                                                                                 1
+                                                                                                     del rango que será anulado. Ej.: Si el
+                                     será anulado.
+                                                                                                     rango de secuencias que será
+                                                                                                     anulado es desde E310000000001
+                                                                                                     hasta      E310000000005,          se
+                                                                                                     completará el campo ‘Secuencia de
+                                                                                                     e-NCF    Desde’   con    el   e-NCF
+                                                                                                     E310000000001.
+
+                                                                                                 e) El e-NCF es menor o igual que la
+                                                                                                     “Secuencia de e-NCF Hasta” y es
+                                                                                                     mayor a cero (>0).
+
+
+
+
+      1
+        La estructura del número de comprobante fiscal electrónico (e-NCF) está compuesta por una serie o letra entre E-Z (exceptuando la letra P), el tipo de
+      comprobante fiscal especificado con 2 dígitos, seguidos del secuencial de 10 dígitos con valor numérico, los cuales indican la cantidad de comprobantes
+      utilizados.
+      2
+        Se exceptúa la letra P.
+
+                                                                                Pág 6 de 9
+No.                Campo                                  Descripción            Tipo Largo                             Validación                         Obligatoriedad
+                                                                                       Máx.
+                                                                                                       a) El e-NCF cumple con la estructura
+                                            Se refiere al Número de                                        de formato de número de
+                                            Comprobante Fiscal                                             comprobante fiscal (13
+                                            Electrónico (e-NCF) con el                                     posiciones)3. Ej.: E310000000001.
+                                            secuencial que finaliza el          ALFA
+         Secuencia de e-NCF Hasta
+    4                                       rango de secuencias que             NUM          13        b) El e-NCF tiene la misma serie y                             1
+          <SecuenciaeNCFHasta>
+                                            será anulado.                                                  tipo de comprobante fiscal que el
+                                                                                                           colocado en el campo “Secuencia
+                                                                                                           de e-NCF Desde”.
+
+                                                                                                       c) El e-NCF es mayor o igual que el
+                                                                                                           colocado en el campo “Secuencia de
+                                                                                                           e-NCF Desde” y es mayor a cero
+                                                                                                           (>0).
+
+
+        FIN TABLA RANGO SECUENCIAS
+                                            Cantidad de secuencias de           NUM         10
+                                            e-NCF que se está                                         a) ∑ cantidad de e-NCF anulados por
+                                            anulando.                                                    tipo de
+    5      Cantidad de e-NCF                                                                              e-CF.                                                       1
+                Anulados                    En este campo se deberá
+         <CantidadeNCFAnulados>             sumar las secuencias
+                                            colocados en la tabla de
+                                            rangos de secuencias
+                                            anuladas de e-NCF.
+        FIN ÁREA                           ANULACIÓN
+        FIN ÁREA                           DETALLE ANULACIÓN
+
+
+
+
+3
+  La estructura del número de comprobante fiscal electrónico (e-NCF) está compuesta por una serie o letra entre E-Z (exceptuando la letra P, el tipo de
+comprobante fiscal especificado con 2 dígitos, seguidos del secuencial de 10 dígitos con valor numérico, los cuales indican la cantidad de comprobantes utilizados.
+
+
+                                                                               Pág 7 de 9
+    c)   Firma Digital
+No.               Campos               Descripción               Largo
+                                                          Tipo           Validación   Obligatoriedad
+                                                                  Máx.
+
+                   ÁREA         SIGNATURE                                                  1
+                <Signature>
+
+
+1                               Firma digital sobre el
+                Firma Digital                                                              1
+                                archivo de Anulación de
+                                e-NCF.
+                 FIN ÁREA       SIGNATURE
+
+
+
+
+                                            Pág 8 de 9
+  Anexo I.
+Ejemplo del formato de anulación de secuencias de e-NCF en las secciones Encabezado y sección Detalle de
+Anulación.
+
+A. Encabezado
+
+
+  1    Versión                                                                        1.00
+  2    RNC Emisor                                                              123456789
+  3    Cantidad de e-NCF Anulados                                                       84
+  4    Fecha y Hora de la Firma Digital del Archivo de Anulación       01-01-2019 08:50:15
+
+
+B. Detalle de Anulación
+
+
+ 1     Número de Línea                                                                   1
+ 2     Tipo de e-CF                                                                     31
+
+       Tabla Rango de Secuencias Anuladas
+ 3     Secuencia de e-NCF Desde                                           E310000000001
+ 4     Secuencia de e-NCF Hasta                                           E310000000001
+ 3     Secuencia de e-NCF Desde                                           E310000000005
+ 4     \
+       Secuencia de e-NCF Hasta                                           E310000000050
+ 5     Cantidad de e-NCF Anulados                                                    47
+ 1     Número de Línea                                                                2
+ 2     Tipo de e-CF                                                                  44
+      Tabla Rango de Secuencias Anuladas
+ 3     Secuencia de e-NCF Desde                                           E440000000010
+ 4     Secuencia de e-NCF Hasta                                           E440000000046
+ 5     Cantidad de e-NCF Anulados                                                    37
+
+
+
+                                                   Pág 9 de 9
+

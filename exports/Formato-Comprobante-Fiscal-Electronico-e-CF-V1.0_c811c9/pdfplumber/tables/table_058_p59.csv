@@ -1,0 +1,12 @@
+,,,,,
+,CAMPOS,DESCRIPCIÓN,Largo Max,,Validación
+,,,,Tipo,
+,,,,,
+,,,,,
+1,"Fecha y hora de la firma digital del e-CF
+< FechaHoraFirma>","Fecha y hora en formato dd-MM-AAAA HH:mm:ss; Zona horaria
+GMT -4",19,"ALFA
+NUM","a) Fecha y hora válida en formato indicado, dd-
+MM-AAAA HH:mm:ss, respectivamente.
+b) Valida que fecha y hora firma del e-CF=< fecha
+y hora actual."

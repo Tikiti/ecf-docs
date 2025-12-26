@@ -1,0 +1,80 @@
+"","","","","","","","I","","","","","OBLIGATORIEDAD","","","","",""
+"","","","Largo","","","","","","","","","","","","","",""
+"","","","","","","","","Fact. Créd.","Fact.","Nota","Nota","","Gastos","Regím.","","","Pagos"
+"","","","","Tipo","","","","","","","","","","","","",""
+"","CAMPOS","DESCRIPCIÓN","","","","Validación","","","","","","","","","","",""
+"","","","Max","","","","","Fiscal","Consum.","Déb.","Créd.","Compras","Menor.","Espec.","Guber.","Export.","Exterior"
+"","","","","","","","","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr."
+"","","","","","","","","31","32","33","34","41","43","44","45","46","47"
+"","Contacto Comprador","Nombre 
+y 
+teléfono 
+de 
+contacto 
+del","","ALFA","","","","","","","","","","","","",""
+"41","","","80","","a) Sin validación","","N","3","3","3","3","3","0","3","3","3","0"
+"","<ContactoComprador>","comprador.","","NUM","","","","","","","","","","","","",""
+"","","","","","Formato válido: Estructura de","","","","","","","","","","","",""
+"","Correo Comprador","Dato 
+correspondiente 
+al 
+correo","","ALFA","correo electrónico.","","","","","","","","","","","",""
+"42","","","80","","","","N","3","3","3","3","3","0","3","3","3","0"
+"","<CorreoComprador>","electrónico del comprador.","","NUM","(xxxxx@xxx.xx)","","","","","","","","","","","",""
+"","Dirección Comprador","","","ALFA","","","","","","","","","","","","",""
+"43","","Dirección del comprador.","100","","a) Sin validación","","N","3","3","3","3","3","0","3","3","3","0"
+"","<DireccionComprador>","","","NUM","","","","","","","","","","","","",""
+"","","","","","a)  Validar  con  código  de  la","","","","","","","","","","","",""
+"","Municipio Comprador","Dato 
+correspondiente 
+a 
+dirección 
+de","","","","","","","","","","","","","","",""
+"44","","","6","NUM","Tabla 
+III","(Codificación","N","3","3","3","3","3","0","3","3","3","0"
+"","<MunicipioComprador>","comprador.","","","","","","","","","","","","","","",""
+"","","","","","Provincias y Municipios)","","","","","","","","","","","",""
+"","","","","","a)  Validar  con  código  de  la","","","","","","","","","","","",""
+"","Provincia Comprador","Dato 
+correspondiente 
+a 
+dirección 
+de","","","","","","","","","","","","","","",""
+"45","","","6","NUM","Tabla 
+III","(Codificación","N","3","3","3","3","3","0","3","3","3","0"
+"","<ProvinciaComprador>","comprador.","","","","","","","","","","","","","","",""
+"","","","","","Provincias y Municipios)","","","","","","","","","","","",""
+"","País Comprador","Dato correspondiente al país hacia el cual","","","","","","","","","","","","","","",""
+"46","","","60","ALFA","a) Sin validación.","","P","0","0","0","0","0","0","0","0","3","0"
+"","<PaisComprador>","se realiza la facturación.","","","","","","","","","","","","","","",""
+"","Fecha Entrega","","","ALFA","a) Fecha válida:","","","","","","","","","","","",""
+"47","","Corresponde a la fecha de entrega del ítem.","10","","","","N","3","3","3","3","0","0","3","3","3","0"
+"","<FechaEntrega>","","","NUM","Formato (dd-MM-AAAA)","","","","","","","","","","","",""
+"","","Dato  de  contacto  donde  será  realizada  la","","","","","","","","","","","","","","",""
+"","Contacto de Entrega","","","ALFA","","","","","","","","","","","","",""
+"48","","entrega  o 
+envio  del 
+ítem 
+(distinto 
+al","100","","a) Sin validación","","N","3","3","3","3","0","0","3","3","3","0"
+"","<ContactoEntrega>","","","NUM","","","","","","","","","","","","",""
+"","","comprador).","","","","","","","","","","","","","","",""
+"","Dirección de Entrega","Corresponde  a  la  dirección  o  destino  del","","ALFA","","","","","","","","","","","","",""
+"49","","","100","","a) Sin validación","","N","3","3","3","3","0","0","3","3","3","0"
+"","<DireccionEntrega>","contacto de entrega.","","NUM","","","","","","","","","","","","",""
+"","","","","","a)Formato válido:","","","","","","","","","","","",""
+"","Telefóno","Dato 
+del 
+teléfono 
+correspondiente 
+al","","ALFA","","","","","","","","","","","","",""
+"50","","","12","","Estructura de teléfono","","N","3","3","3","3","0","0","3","3","3","0"
+"","<TelefonoAdicional>","contacto de entrega.","","NUM","","","","","","","","","","","","",""
+"","","","","","(xxx-xxx-xxxx)","","","","","","","","","","","",""
+"","","Corresponde a la fecha de la orden de","","","a)Fecha válida:","","","","","","","","","","","",""
+"","Fecha Orden de Compra","","","ALFA","","","","","","","","","","","","",""
+"51","","compra.","10","","Formato (dd-MM-AAAA)","","N","3","3","3","3","0","0","3","3","3","0"
+"","<FechaOrdenCompra>","","","NUM","","","","","","","","","","","","",""
+"","Número de Orden de Compra","Corresponde  al  número  de  orden  de","","ALFA","","","","","","","","","","","","",""
+"52","","","20","","","","N","3","3","3","3","0","0","3","3","3","0"
+"","<NumeroOrdenCompra>","compra.","","NUM","a) Sin Validación","","","","","","","","","","","",""

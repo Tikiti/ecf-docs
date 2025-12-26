@@ -1,0 +1,56 @@
+"No.","Campo","Descripción","Tipo","Largo 
+Máx.","Validación","Obligatoriedad"
+"3","Secuencia de e-NCF 
+Desde 
+<SecuenciaeNCFDesde>","Se  refiere  al  Número  de 
+Comprobante 
+Fiscal 
+Electrónico (e-NCF) con el 
+secuencial que inicia el 
+rango  de secuencias que 
+será  anulado.","ALFA 
+NUM","13","a)  El e-NCF cumple con la estructura de 
+formato  de número de comprobante 
+fiscal 
+(13 
+posiciones)1. 
+Ej.: 
+E310000000001. 
+ 
+b)  El  primer  carácter  del  e-NCF  (Serie) 
+está  comprendido entre E-Z2 
+ 
+c)  El tipo de e-CF de la secuencia debe 
+corresponder 
+al 
+indicado 
+en 
+el 
+campo ‘Tipo de  e-CF’. 
+ 
+d)  Se  debe  colocar  la  secuencia  inicial 
+del  rango  que será anulado. Ej.: Si el 
+rango 
+de 
+secuencias 
+que 
+será 
+anulado  es  desde  E310000000001 
+hasta 
+E310000000005, 
+se 
+completará el campo 
+‘Secuencia  de       
+e-NCF 
+Desde’ 
+con 
+el 
+e-NCF 
+E310000000001. 
+ 
+igual  que 
+la 
+e)  El  e-NCF  es  menor  o 
+“Secuencia  de 
+e-NCF  Hasta”  y  es 
+mayor a cero (>0).","1"

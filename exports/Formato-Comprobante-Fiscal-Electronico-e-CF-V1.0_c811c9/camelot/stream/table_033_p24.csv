@@ -1,0 +1,98 @@
+"","","","","","Adicionales)  y  unidad  de  medida  distinta  de","","","","","","","","","","",""
+"","","","","","granel,  se  debe  multiplicar 
+la  cantidad  de","","","","","","","","","","",""
+"","","","","","referencia  por  los  grados  de  alcohol,  por  la","","","","","","","","","","",""
+"","","","","","tasa  del  impuesto  indicada  en  la  tabla  para","","","","","","","","","","",""
+"","","","","","dicho código, por la subcantidad y cantidad.","","","","","","","","","","",""
+"","","","","","d
+)  Para  los  códigos  del  019  al  022,  se  debe","","","","","","","","","","",""
+"","","","","","calcular  multiplicando 
+la 
+cantidad  por 
+la","","","","","","","","","","",""
+"","","","","","cantidad 
+de 
+referencia, 
+por 
+la 
+tasa 
+del","","","","","","","","","","",""
+"","","","","","impuesto adicional indicado.","","","","","","","","","","",""
+"","","","","","a) Valor 
+numérico 
+de 
+16 
+enteros, 
+dos","","","","","","","","","","",""
+"","","","","","decimales; >0 (debe ser positivo).","","","","","","","","","","",""
+"","","","","","b
+) Si el código del impuesto se encuentra entre","","","","","","","","","","",""
+"","","","","","023  hasta  035  se  debe  verificar  la  unidad  de","","","","","","","","","","",""
+"","","","","","medida del ítem, si es a granel (código 18) se","","","","","","","","","","",""
+"","","","","","deberá 
+calcular  el 
+Impuesto  Selectivo  Ad","","","","","","","","","","",""
+"","","","","","Valorem 
+incrementando  en  un  treinta  por","","","","","","","","","","",""
+"","","","","","ciento 
+(30%)  el  precio  unitario  del 
+ítem","","","","","","","","","","",""
+"","","Valor del impuesto selectivo al consumo","","","(equivalente al precio de lista) por la cantidad","","","","","","","","","","",""
+"","","(ISC)  ad  valorem  asociado  al  código  de","","","ítem 
+por 
+la 
+tasa 
+del 
+impuesto","","","","","","","","","","",""
+"","","impuesto  adicional.  Condicional  a  que","","","correspondiente.","","","","","","","","","","",""
+"","Monto Impuesto Selectivo","","","","","","","","","","","","","","",""
+"","","exista código del 023 al 03924.","","","","","","","","","","","","","",""
+"","al Consumo","","","","c) Para  los  ítems  con    código  entre  023-035","","","","","","","","","","",""
+"","","E","18","NUM","","N","2","2","2","2","0","0","0","2","0","0"
+"","Ad Valorem","","","","(ISC  Ad  valorem) 25 ,  y  unidad  de  medida","","","","","","","","","","",""
+"108","","l cálculo del monto del ISC       ad valorem","","","","","","","","","","","","","",""
+"","<MontoImpuestoSelectivoCons","","","","distinta  de  granel,    se  debe  dividir  el  precio","","","","","","","","","","",""
+"","","dependerá de la tasa correspondiente al","","","","","","","","","","","","","",""
+"","umoAdvalorem>","","","","","","","","","","","","","","",""
+"","","","","","unitario de referencia entre (1+tasa ITBIS tasa","","","","","","","","","","",""
+"","","código 
+del 
+impuesto 
+en 
+la 
+Tabla 
+I","","","","","","","","","","","","","",""
+"","","","","","1).  Este 
+resultado  se  debe 
+restar  del 
+ISC","","","","","","","","","","",""
+"","","(Codificación 
+Tipos 
+de 
+Impuestos","","","","","","","","","","","","","",""
+"","","","","","Especifico Unitario26 y este último resultado se","","","","","","","","","","",""
+"","","Adicionales).","","","","","","","","","","","","","",""
+"","","","","","debe 
+dividir 
+entre 
+(1+tasa 
+del 
+impuesto","","","","","","","","","","",""
+"","","","","","adicional 
+especificado), 
+esto 
+dará 
+como","","","","","","","","","","",""
+"","","","","","resultado la base imponible del impuesto. Esta","","","","","","","","","","",""
+"","","","","","base 
+(ISC  Ad  Valorem  unitario)  se  deberá","","","","","","","","","","",""
+"","","","","","multiplicar por la cantidad, por la cantidad de","","","","","","","","","","",""
+"","","","","","referencia 
+y 
+por 
+la 
+tasa 
+del 
+impuesto","","","","","","","","","","",""
+"","","","","","d
+correspondiente.","","","","","","","","","","",""

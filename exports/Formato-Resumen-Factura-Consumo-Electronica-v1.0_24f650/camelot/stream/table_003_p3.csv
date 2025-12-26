@@ -1,0 +1,8 @@
+"1.1.  Detalle por sección"
+"E
+l contenido de cada sección contendrá el formato y el código de obligatoriedad. A continuación, se especifican:"
+"
+  Largo Máximo: Tamaño máximo del campo. El largo indicado será el largo máximo."
+"  Tipo de Documento: Podrá ser alfa (ALFA), numérica (NUM) o alfanumérica (ALFANUM). En la información tipo numérica, los decimales se separan"
+"con punto. No debe separarse los miles con otro tipo de carácter."
+"Pág. 3 de 12"

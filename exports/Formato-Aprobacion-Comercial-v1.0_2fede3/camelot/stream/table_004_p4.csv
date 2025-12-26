@@ -1,0 +1,47 @@
+"No.","","Campo","Descripción","Tipo","Largo","","Validación","Obligatoriedad"
+"","","","","","Máx.","","",""
+"","ÁREA","","DETALLE APROBACION COMERCIAL","","","","",""
+"","","","","","","","","1"
+"","","<DetalleAprobacionCome","","","","","",""
+"","rcial>","","","","","","",""
+"1","Versión","","Versión del formato de Aprobación","","","","",""
+"","","","","NUM","3","Valor: 1.0","","1"
+"","","","Comercial.","","","","",""
+"2","","","Número  del  Registro  Nacional  del","NUM 9","9 u 11","a)","RNC 
+cumple 
+con 
+la",""
+"","RNC del Emisor","","","","","","",""
+"","","","contribuyente que emite el e-CF.","","","","estructura de formato.",""
+"","<RNCEmisor>","","","","","","",""
+"","","","","","","","","1"
+"","","","","","","","b)  RNC debe coincidir con el",""
+"","","","","","","","RNC del emisor del e-CF.",""
+"3","","","Número 
+Comprobante 
+Fiscal","ALFA","13","a)  e-NCF","cumple 
+con 
+la",""
+"","e-NCF","","","","","","",""
+"","","","Electrónico (e-NCF).","NUM","","","estructura de formato.",""
+"","<eNCF>","","","","","","",""
+"","","","","","","","","1"
+"","","","","","","b)","e-NCF  debe  coincidir  con",""
+"","","","","","","","el e-NCF del e-CF remitido",""
+"","","","","","","","por el emisor electrónico.",""
+"4","","","Fecha de emisión del e-CF.","ALFA","10","a)","Formato 
+fecha 
+cumple",""
+"","Fecha Emisión","","","","","","",""
+"","","","","NUM","","","con 
+estructura 
+dd-MM-",""
+"","<FechaEmision>","","","","","","",""
+"","","","","","","","AAAA.",""
+"","","","","","","b)","Fecha  de  emisión  debe","1"
+"","","","","","","","coincidir en la aprobación",""
+"","","","","","","","comercial  y  en  el  e-CF",""
+"","","","","","","","remitido  por 
+el 
+emisor",""
+"","","","","","","","electrónico.",""

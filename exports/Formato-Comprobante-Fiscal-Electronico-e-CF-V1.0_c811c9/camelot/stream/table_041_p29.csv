@@ -1,0 +1,36 @@
+"","","","","","","","Créd.","Fact.","Nota","Nota","","Gastos","Regím.","","","Pagos"
+"","","","Largo","Tipo","","","","","","","","","","","",""
+"","CAMPOS","DESCRIPCIÓN","","","Validación","","Fiscal","Consum.","Déb.","Créd.","Compras","Menor.","Espec.","Guber.","Export.","Exterior"
+"","","","Max","","","","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr."
+"","","","","","","","31","32","33","34","41","43","44","45","46","47"
+"","","Moneda 
+alternativa 
+en 
+que 
+se","","","a)  Validar 
+con 
+la  Tabla 
+II","","","","","","","","","","",""
+"","","expresan  los  Montos.  Condicional  a","","","(Codificación Monedas).","","","","","","","","","","",""
+"","","que  la  facturación  sea  realizada  en","","","","","","","","","","","","","",""
+"","Código Otra moneda","moneda extranjera.33","","","","","","","","","","","","","",""
+"120","","","3","ALFA","","N","2","2","2","2","2","2","2","2","2","2"
+"","<TipoMoneda>","Este  campo  debe  tener  uno  de 
+los","","","","","","","","","","","","","",""
+"","","valores 
+indicados 
+en 
+la 
+‘Tabla","","","","","","","","","","","","","",""
+"","","Codificación  Monedas’.  Por  ejemplo:","","","","","","","","","","","","","",""
+"","","“USD” o “EUR”, etc.","","","","","","","","","","","","","",""
+"","","","","","a) 
+Valor 
+numérico 
+de 
+3","","","","","","","","","","",""
+"","","Factor de conversión utilizado.","","","","","","","","","","","","","",""
+"","Tipo de Cambio","","","","enteros  y  4  decimales;  >  0.","","","","","","","","","","",""
+"121","","Condicional  a  que  existan  datos  en","7","NUM","","N","2","2","2","2","2","2","2","2","2","2"
+"","<TipoCambio>","","","","(Debe ser positivo)","","","","","","","","","","",""
+"","","código otra moneda.","","","","","","","","","","","","","",""

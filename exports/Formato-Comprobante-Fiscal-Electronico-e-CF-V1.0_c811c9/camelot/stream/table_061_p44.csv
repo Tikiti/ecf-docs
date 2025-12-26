@@ -1,0 +1,82 @@
+"","","","","","","","Créd.","Fact.","Nota","","","Gastos","Regím.","","","Pagos"
+"","","DESCRIPCIÓN","Largo","","","","","","","","","","","","",""
+"","CAMPOS","","","","","","","","","","","","","","",""
+"","","","","","Validación","","Fiscal","Consum.","Déb.","Nota Créd.","Compras","Menor.","Espec.","Guber.","Export.","Exterior"
+"","","","","Tipo","","","","","","","","","","","",""
+"","","","Max","","","I","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr."
+"","","","","","","","31","32","33","34","41","43","44","45","46","47"
+"","","Dato 
+correspondiente 
+al 
+Código 
+del","","","","","","","","","","","","","",""
+"","","impuesto adicional de acuerdo a la Tabla","","","","","","","","","","","","","",""
+"","Código de Impuesto","","","","","","","","","","","","","","",""
+"","","","","","Código  válido  respecto  a 
+la","","","","","","","","","","",""
+"","","de 
+Codificación 
+Tipos 
+de 
+Impuestos","","","","","","","","","","","","","",""
+"","Adicional","","","","","","","","","","","","","","",""
+"34","","","3","NUM","Tabla  I  (Codificación  Tipos  de","N","2","2","2","2","0","0","271","2","0","0"
+"","","Adicionales (Tabla I). Condicional a que el","","","","","","","","","","","","","",""
+"","","","","","Impuestos Adicionales).","","","","","","","","","","",""
+"","<TipoImpuesto>","","","","","","","","","","","","","","",""
+"","","ítem 
+este 
+gravado 
+con 
+Impuesto","","","","","","","","","","","","","",""
+"","","Adicional.70","","","","","","","","","","","","","",""
+"","","IMPUESTOS ADICIONALES","","","","","","","","","","","","","",""
+"","FIN TABLA","","","","","","","","","","","","","","",""
+"","ÁREA","","","","","","","","","","","","","","",""
+"","","OTRA MONEDA DETALLE.","","","","","","","","","","","","","",""
+"","<OtraMonedaDetalle>","","","","","","","","","","","","","","",""
+"","","Indicar precios en monedas alternativas.","","","","","2","2","2","2","2","2","2","2","2","2"
+"","","72","","","","","","","","","","","","","",""
+"","","","","","a) 
+Valor 
+numérico 
+de 
+16","","","","","","","","","","",""
+"","Precio unitario en otra","Dato correspondiente al precio Unitario","","","","","","","","","","","","","",""
+"","","","","","enteros,  4  decimales.  ≥0  (No","","","","","","","","","","",""
+"35","moneda","del Ítem en otra moneda. Condicional a","20","NUM","","N73","2","2","2","2","2","2","2","2","2","2"
+"","","","","","puede ser negativo).","","","","","","","","","","",""
+"","<PrecioOtraMoneda>","que el ítem sea en Otra Moneda.","","","","","","","","","","","","","",""
+"","Descuento en Otra","Corresponde 
+al 
+valor 
+de 
+descuento","","","a) 
+Valor 
+numérico 
+de 
+16","","","","","","","","","","",""
+"36","Moneda","otorgado en Otra Moneda.","18","NUM","enteros,  2  decimales.  ≥0  (No","N","3","3","3","3","3","3","3","3","3","3"
+"","<DescuentoOtraMoneda>","","","","puede ser negativo).","","","","","","","","","","",""
+"","","","","","a) 
+Valor 
+numérico 
+de 
+16","","","","","","","","","","",""
+"","Recargo en Otra Moneda","Corresponde 
+el 
+valor 
+de 
+recargo","","","","","","","","","","","","","",""
+"37","","","18","NUM","enteros,  2  decimales.  ≥0  (No","N","3","3","3","3","3","3","3","3","3","3"
+"","<RecargoOtraMoneda>","otorgado en Otra Moneda.","","","","","","","","","","","","","",""
+"","","","","","puede ser negativo).","","","","","","","","","","",""
+"","","(Precio  Unitario  en  otra  moneda  *","","","a) 
+  Valor  numérico  de  16","","","","","","","","","","",""
+"","Monto Ítem Otra Moneda","","","","","","","","","","","","","","",""
+"","","Cantidad) – Descuento en otra moneda","","","enteros,  2  decimales.  ≥0  (No","","","","","","","","","","",""
+"","<MontoItemOtraMoneda>","+ Recargo en otra moneda.","","","puede ser negativo).","","","","","","","","","","",""
+"38","","","18","NUM","","N","2","2","2","2","2","2","2","2","2","2"
+"","","Condicional  a  que  el  Precio  del  ítem  y","","","b) Valor numérico de acuerdo","","","","","","","","","","",""
+"","","Descuentos  o  Recargo  (si  existen)  sean","","","al campo de Descripción.","","","","","","","","","","",""
+"","","en Otra Moneda.","","","","","","","","","","","","","",""

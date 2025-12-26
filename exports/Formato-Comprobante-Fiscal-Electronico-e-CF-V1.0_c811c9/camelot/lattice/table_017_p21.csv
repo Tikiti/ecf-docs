@@ -1,0 +1,99 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. 
+Créd. 
+Fiscal 
+Electr. 
+ 
+31","Fact. 
+Consum. 
+Electr. 
+ 
+32","Nota 
+Déb. 
+Electr. 
+ 
+33","Nota 
+Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Gub. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"95","Monto Gravado ITBIS 
+Tasa 3 
+<MontoGravadoI3>","C
+Total  de  la  suma  de  valores  de  Ítems 
+gravados asignados a ITBIS tasa 3 (tasa 
+0%), menos descuentos más recargos. 
+ondicional a que en la línea de detalle 
+exista algún ítem gravado a tasa ITBIS3.","18","NUM","b
+a) 
+Valor 
+numérico 
+de 
+16 
+enteros, 
+2 
+decimales≥ 0 (No puede ser negativo). 
+)  Suma  de  valores  del  monto 
+ítem  con 
+indicador 
+de 
+facturación=3, 
+menos 
+descuentos más recargos.","N","2","2","2","2","2","0","0","2","2","0"
+"96","Monto Exento 
+<MontoExento>","C
+Total  de  la  suma  de  valores  de  ítems 
+exentos, 
+menos 
+descuentos 
+más 
+recargos. 
+ondicional a que en la línea de detalle 
+exista algún ítem exento.","18","NUM","b
+a) 
+Valor 
+numérico 
+de 
+16 
+enteros, 
+2 
+decimales. ≥ 0 (No puede ser negativo). 
+)  Suma  de  valores  del  monto 
+ítem  con 
+indicador 
+de 
+facturación=4, 
+menos 
+descuentos más recargos.","I","2","2","2","2","2","214","2","2","0","2"
+"97","ITBIS Tasa 1 
+<ITBIS1>","Tasa de ITBIS 1 (18%). 
+Condicional a que en la línea de detalle 
+exista ítem gravado a tasa 1.","2","NUM","a) 2 enteros en porcentaje Ej.: 18% 
+b) Existe ítem con indicador de facturación=1","N15","2","2","2","2","2","0","0","2","0","0"
+"98","ITBIS Tasa 2 
+<ITBIS2>","Tasa  de  ITBIS  2  (16%).  Condicional  a 
+que en la línea de detalle exista ítem 
+gravado a tasa 2.","2","NUM","a) 2 enteros en porcentaje Ej.: 16%. 
+b) Existe ítem con indicador de facturación=2.","N","2","2","2","2","2","0","0","2","0","0"

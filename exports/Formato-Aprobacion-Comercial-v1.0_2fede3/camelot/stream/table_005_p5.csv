@@ -1,0 +1,23 @@
+"No.","Campo","","Descripción","","","Tipo","Largo","Validación","Obligatoriedad"
+"","","","","","","","Máx.","",""
+"5","Monto Total","","Valor indicado en el campo Monto","","","NUM","18","a)  Monto Total debe coincidir",""
+"","","Total del e-CF.","","","","","","con 
+el 
+valor  del 
+campo",""
+"","<MontoTotal>","","","","","","","",""
+"","","","","","","","","","1"
+"","","","","","","","","Monto 
+Total 
+del 
+e-CF",""
+"","","","","","","","","emitido.",""
+"6","RNC del Comprador","","Número  del  Registro  Nacional  del","","","NUM","9 u 11","a)  RNC 
+cumple 
+con 
+la",""
+"","","contribuyente","que","emite","la","","","estructura de formato.",""
+"","<RNCComprador>","","","","","","","",""
+"","","","Aprobación Comercial del e-CF.","","","","","",""
+"","","","","","","","","","1"
+"","","","","","","","","b)  RNC debe coincidir con RNC",""

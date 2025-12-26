@@ -1,0 +1,8 @@
+"d
+)  Cuando el código del impuesto adicional sea"
+"24 Si en la factura existen códigos de Impuesto Adicional entre 023 al 039, se deberá siempre realizar el cálculo del campo Monto ISC Específico, exceptuando el ítem con unidad de medida 18. Si existen estos códigos y el campo no viene,"
+"se rechaza la factura. Si la unidad de medida corresponde al código 18, se deberá calcular el Impuesto Selectivo al Consumo Ad Valorem incrementando en un treinta por ciento (30%) el precio unitario del ítem (equivalente al precio de"
+"lista)."
+"25 Si el código del impuesto se encuentra entre 023 al 035 se deberá realizar primero el cálculo del Monto ISC Específico para luego realizar el del Monto ISC Ad Valorem, exceptuando cuando la unidad de medida del ítem es a granel"
+"(código 18 de la tabla de Codificación Unidad de Medida)."
+"26 El ISC Especifico Unitario es igual al resultado del Monto ISC específico entre el resultado de la cantidad de ítem multiplicado por la cantidad de referencia."

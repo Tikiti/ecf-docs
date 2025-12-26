@@ -1,0 +1,94 @@
+"","","","","","","","Fact.","","","","","","","","","Pagos"
+"","","","Largo","","","I","Créd.","Fact.","Nota","Nota","","Gastos","Regím.","","Export.","Exterior"
+"","CAMPOS","DESCRIPCIÓN","","","Validación","","","","","","","","","","",""
+"","","","Max","","","","Fiscal","Consum.","Déb.","Créd.","Compras","Menor.","Espec.","Guber.","Electr.","Electr."
+"","","","","Tipo","","","","","","","","","","","",""
+"","","","","","","","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","",""
+"","","","","","","","31","32","33","34","41","43","44","45","46","47"
+"","","Total  de 
+la  suma  de  valores  de","","","","","","","","","","","","","",""
+"","","","","","a) Valor numérico de 16 enteros, 2","","","","","","","","","","",""
+"","","Ítems  gravados  asignados  a  ITBIS","","","","","","","","","","","","","",""
+"","","","","","decimales; 
+≥ 
+0 
+(No 
+puede 
+ser","","","","","","","","","","",""
+"","","tasa  3 
+(tasa  0),  de 
+las 
+líneas","","","","","","","","","","","","","",""
+"","","","","","negativo).","","","","","","","","","","",""
+"","","correspondientes  a  la  página  que","","","","","","","","","","","","","",""
+"","Subtotal Monto Gravado","","","","","","","","","","","","","","",""
+"","","se  indica,  menos  descuentos  más","","","b","","","","","","","","","","",""
+"","Tasa 3 Página","","","",") Suma de valores del monto ítem","","","","","","","","","","",""
+"7","","recargos.","18","NUM","","N","2","2","2","2","2","0","0","2","2","0"
+"","<SubtotalMontoGravado3Pagin","","","","con 
+indicador 
+de 
+facturación=3,","","","","","","","","","","",""
+"","a>","C","","","","","","","","","","","","","",""
+"","","","","","menos descuentos más recargos, de","","","","","","","","","","",""
+"","","ondicional 
+a 
+que 
+la 
+página","","","","","","","","","","","","","",""
+"","","","","","las  líneas  de  ítems  incluidos  en  la","","","","","","","","","","",""
+"","","contenga  algún 
+ítem  gravado  a","","","","","","","","","","","","","",""
+"","","","","","página.","","","","","","","","","","",""
+"","","tasa ITBIS 3.","","","","","","","","","","","","","",""
+"","","","","","a)  Valor  numérico  de  16  enteros,  2","","","","","","","","","","",""
+"","","Total 
+de 
+la 
+suma 
+de 
+valores","","","decimales. 
+≥ 
+0 
+(No 
+puede 
+ser","","","","","","","","","","",""
+"","","correspondientes  a  ítems  exentos","","","negativo).","","","","","","","","","","",""
+"","","indicados en el no. de línea ‘Desde’","","","b","","","","","","","","","","",""
+"","Subtotal Exento Página","","","",") Suma de valores del monto ítem","","","","","","","","","","",""
+"","","‘Hasta’, de la página.","","","","","","","","","","","","","",""
+"8","","","18","NUM","","I","2","2","2","2","2","2","2","2","0","2"
+"","<SubtotalExentoPagina>","","","","","","","","","","","","","","",""
+"","","","","","con 
+indicador 
+de 
+facturación=4,","","","","","","","","","","",""
+"","","C
+ondicional  a  que  en 
+la  página","","","menos descuentos más recargos, de","","","","","","","","","","",""
+"","","contenga algún ítem exento.","","","las  líneas  de  ítems  incluidos  en  la","","","","","","","","","","",""
+"","","","","","página.","","","","","","","","","","",""
+"","","Total  de 
+la  suma  de  valores  de","","","","","","","","","","","","","",""
+"","","Subtotal ITBIS 1, Subtotal ITBIS 2 y","","","","","","","","","","","","","",""
+"","","Subtotal 
+ITBIS  3,  a 
+las  diferentes","","","a)  Valor  numérico  de  16  enteros,  2","","","","","","","","","","",""
+"","","tasas, 
+de 
+las 
+líneas","","","decimales; 
+≥ 
+0 
+(No 
+puede 
+ser","","","","","","","","","","",""
+"","","correspondientes a la página que se","","","negativo).","","","","","","","","","","",""
+"","Subtotal ITBIS Página","","","","","","","","","","","","","","",""
+"9","","indica.","18","NUM","","I","2","2","2","2","2","0","0","2","2","0"
+"","<SubtotalItbisPagina>","","","","b","","","","","","","","","","",""
+"","","","","",")  Suma  de  Subtotal 
+ITBIS  Tasa  1","","","","","","","","","","",""
+"","","ondicional  a  que  exista  Subtotal","","","Página + Subtotal ITBIS Tasa 2 Página","","","","","","","","","","",""
+"","","ITBIS 1, Subtotal ITBIS 2 y Subtotal","","","+ Subtotal ITBIS Tasa 3 Página.","","","","","","","","","","",""
+"","","ITBIS 3 Página.","","","","","","","","","","","","","",""

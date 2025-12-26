@@ -40,6 +40,7 @@ Digital signatures are **mandatory** for all e-CF documents. They guarantee:
 | **Format** | `.p12` or `.pfx` (PKCS#12) |
 | **Contents** | Private key + X.509 certificate chain |
 | **Validity** | Must be valid at signing time |
+| **SN Field** | The "SN" (Serial Number) field in the certificate **must correspond** to the RNC, Cédula, or Pasaporte of the certificate owner |
 
 ---
 
@@ -57,6 +58,9 @@ Digital signatures are **mandatory** for all e-CF documents. They guarantee:
 5. **Compute Signature** - Generate `SignatureValue` and `DigestValue`
 6. **Embed Key Info** - Include X.509 certificate in `<KeyInfo>`
 7. **Finalize** - Append `<Signature>` as last child of root element
+
+> [!CAUTION]
+> **Immutability After Signing**: Once signed, the XML **cannot be modified in any way**. Even adding whitespace will invalidate the signature.
 
 ---
 

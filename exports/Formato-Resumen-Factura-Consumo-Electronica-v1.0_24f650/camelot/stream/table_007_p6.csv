@@ -1,0 +1,52 @@
+"","","","","","formato.",""
+"","","","","","b) RNC esté autorizado como",""
+"","","","","","Facturador Electrónico.",""
+"","","","","","c) RNC se encuentre en estatus",""
+"","","","","","“Activo”.",""
+"","","","","","d) RNC no posea marcas de bloqueos.",""
+"","Nombre o Razón Social Emisor","Nombre  o  Razón  Social  del","","ALFA","",""
+"9","","","150","","a) Sin validación","1"
+"","<RazonSocialEmisor>","emisor.","","NUM","",""
+"","","","","","Fecha válida:",""
+"","","","","","a) Formato",""
+"","Fecha Emisión","","","ALFA","",""
+"10","","Fecha de emisión del e-CF.","10","","dd-MM-AAAA","1"
+"","<FechaEmision>","","","NUM","",""
+"","","","","","b) Validar fecha de inicio como",""
+"","","","","","facturador electrónico.",""
+"","FIN ÁREA","EMISOR","","","",""
+"","ÁREA","","","","",""
+"","","COMPRADOR","","","","3"
+"","<Comprador>","","","","",""
+"","","Corresponde 
+al 
+RNC 
+del","","","",""
+"","RNC Comprador","","","","",""
+"11","","comprador.","9 u 11","NUM","a) Sin validación","3"
+"","<RNCComprador>","","","","",""
+"","","Corresponde 
+al 
+número 
+de","","","",""
+"","","identificación 
+cuando 
+el","","","",""
+"","Identificador Extranjero","comprador  es  extranjero  y  no","","ALFA","",""
+"12","","","20","","a) Sin validación","2"
+"","<IdentificadorExtranjero>2","tiene  RNC/Cédula.  Condicional","","NUM","",""
+"","","a 
+que 
+el 
+comprador 
+sea","","","",""
+"","","extranjero. 3","","","",""
+"","Nombre o Razón Social","Nombre 
+o 
+Razón 
+Social 
+del","","ALFA","",""
+"13","","","150","","a) Sin validación","3"
+"","<RazonSocialComprador>","comprador.","","NUM","",""
+"","FIN ÁREA","COMPRADOR","","","",""
+"","ÁREA","","","","",""

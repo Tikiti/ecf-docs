@@ -1,0 +1,96 @@
+"","","","Largo","Tipo","","","","","","","","","","","",""
+"","CAMPOS","DESCRIPCIÓN","","","Validación","","Fiscal","Consum.","Déb.","Créd.","Compras","Menor.","Espec.","Guber.","Export.","Exterior"
+"","","","","","","","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr."
+"","","","Max","","","","","","","","","","","","",""
+"","","","","","","","31","32","33","34","41","43","44","45","46","47"
+"","","Corresponde al importe pagado por el","","","","","","","","","","","","","",""
+"","Flete","","","","a) Valor numérico de 16 enteros, 2","","","","","","","","","","",""
+"64","","traslado  de  la  mercancía  de  puertos","18","NUM","","N","0","0","0","0","0","0","0","0","3","0"
+"","<Flete>","","","","decimales; > 0","","","","","","","","","","",""
+"","","dominicanos al extranjero.","","","","","","","","","","","","","",""
+"","","Importe 
+sobre 
+gastos 
+por 
+otros","","","","","","","","","","","","","",""
+"","Otros Gastos","","","","a) Valor numérico de 16 enteros, 2","","","","","","","","","","",""
+"65","","servicios,  hasta  el  transporte  de 
+las","18","NUM","","N","0","0","0","0","0","0","0","0","3","0"
+"","<OtrosGastos>","","","","decimales; > 0","","","","","","","","","","",""
+"","","mercancías en la aduana de destino.","","","","","","","","","","","","","",""
+"","Total CIF","Corresponde 
+al 
+valor 
+FOB, 
+Flete,","","","a) Valor numérico de 16 enteros, 2","","","","","","","","","","",""
+"66","","","18","NUM","","N","0","0","0","0","0","0","0","0","3","0"
+"","<TotalCif>","Seguro y otros gastos.","","","decimales; > 0","","","","","","","","","","",""
+"","","Corresponde  al  régimen  aduanero  al","","","","","","","","","","","","","",""
+"","Régimen Aduanero","que se acoge la mercancía exportada,","","","","","","","","","","","","","",""
+"67","","","35","ALFA","a) Sin validación","N","0","0","0","0","0","0","0","0","3","0"
+"","<RegimenAduanero>","según  se  encuentra  tipificada  en 
+la","","","","","","","","","","","","","",""
+"","","DGA10.","","","","","","","","","","","","","",""
+"","","Nombre  del  puerto  de  donde  sale  la","","","","","","","","","","","","","",""
+"","Nombre Puerto Salida","","","ALFA","","","","","","","","","","","",""
+"68","","mercancía, 
+distinto 
+al 
+puerto 
+de","40","","a) Sin validación","N","0","0","0","0","0","0","0","0","3","0"
+"","<NombrePuertoSalida>","","","NUM","","","","","","","","","","","",""
+"","","embarque.","","","","","","","","","","","","","",""
+"","Nombre Puerto Desembarque","Nombre  del  puerto  de  destino  de  la","","ALFA","","","","","","","","","","","",""
+"69","","","40","","a) Sin validación","N","0","0","0","0","0","0","0","0","3","0"
+"","<NombrePuertoDesembarque>","mercancía.","","NUM","","","","","","","","","","","",""
+"","","","","","a) Valor numérico de 16 enteros, 2","","","","","","","","","","",""
+"","Peso Bruto","Corresponde 
+al 
+peso 
+bruto 
+del","","","","","","","","","","","","","",""
+"70","","","18","NUM","decimales; 
+> 
+0 
+(No 
+puede 
+ser","N","3","3","3","3","0","0","3","3","3","0"
+"","<PesoBruto>","contenedor.","","","","","","","","","","","","","",""
+"","","","","","negativo)","","","","","","","","","","",""
+"","","","","","a) Valor numérico de 16 enteros, 2","","","","","","","","","","",""
+"","Peso Neto","Corresponde 
+a 
+peso 
+neto 
+del","","","","","","","","","","","","","",""
+"71","","","18","NUM","decimales; 
+> 
+0 
+(No 
+puede 
+ser","N","3","3","3","3","0","0","3","3","3","0"
+"","<PesoNeto>","contenedor.","","","","","","","","","","","","","",""
+"","","","","","negativo)","","","","","","","","","","",""
+"","","Corresponde  a  la  unidad  de  medida","","","","","","","","","","","","","",""
+"","Unidad Peso Bruto","","","","a) 
+Validar 
+con 
+la 
+Tabla 
+IV","","","","","","","","","","",""
+"72","","en la que se encuentra el peso bruto","2","NUM","","N","3","3","3","3","0","0","3","3","3","0"
+"","<UnidadPesoBruto>","","","","(Codificación de Unidad de medida)","","","","","","","","","","",""
+"","","de la mercancía.","","","","","","","","","","","","","",""
+"","","Corresponde  a  la  unidad  de  medida","","","","","","","","","","","","","",""
+"","Unidad Peso Neto","","","","a) 
+Validar 
+con 
+la 
+Tabla 
+IV","","","","","","","","","","",""
+"73","","en la que se encuentra el peso neto de","2","NUM","","N","3","3","3","3","0","0","3","3","3","0"
+"","<UnidadPesoNeto>","","","","(Codificación de Unidad de medida)","","","","","","","","","","",""
+"","","la mercancía.","","","","","","","","","","","","","",""
+"","Cantidad de Bultos","Corresponde  a  la  cantidad  de  bultos","","","a) Valor numérico de 16 enteros, 2","","","","","","","","","","",""
+"74","","","18","NUM","","N","3","3","3","3","0","0","3","3","3","0"
+"","<CantidadBulto>","que ampara el documento.","","","decimales; > 0","","","","","","","","","","",""

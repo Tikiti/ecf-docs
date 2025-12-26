@@ -1,0 +1,8 @@
+"// crea los nodos de firmas xml"
+"XMLSignature signature = fac.newXMLSignature(si, kinfo);"
+"// en esta etapa dsc modifica el objeto xmlRoot insertándole la firma"
+"signature.sign(dsc);"
+"return xmlRoot;"
+"} catch (Exception e) {"
+"throw e;"
+"}"

@@ -1,0 +1,152 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. 
+Créd. 
+Fiscal 
+Electr. 
+ 
+31","Fact. 
+Consum. 
+Electr. 
+ 
+32","Nota 
+Déb. 
+Electr. 
+ 
+33","Nota 
+Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Gub. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"99","ITBIS Tasa 3 
+<ITBIS3>","Tasa de ITBIS 3 (0%). 
+Condicional a que en la línea de detalle 
+exista ítem gravado a tasa 3.","2","NUM  a) 1 entero en porcentaje Ej.: 0%.","b) 
+Existe 
+ítem 
+con 
+indicador 
+de 
+facturación=3.","N","2","2","2","2","2","0","0","2","2","0"
+"100","Total ITBIS 
+<TotalITBIS>","Total  de  la  suma  de  valores  de  ITBIS  a 
+diferentes 
+tasas.  Condicional 
+a  que 
+exista Total ITBIS Tasa 1, y/o Total ITBIS 
+Tasa 2 y/o Total ITBIS Tasa 3.","18","NUM","a) 
+Valor 
+numérico 
+de 
+16 
+enteros, 
+2 
+decimales; ≥ 0 (No puede ser negativo). 
+b) Suma de Total ITBIS Tasa 1 + Total ITBIS 
+Tasa 2 + Total ITBIS Tasa 3.","I","2","2","2","2","2","0","0","2","2","0"
+"101","Total ITBIS Tasa 1 
+<TotalITBIS1>","S
+Valor numérico igual a Monto Gravado 
+ITBIS 
+Tasa1 
+por 
+la 
+Tasa 
+ITBIS 
+1.  
+Condicional 
+a 
+que 
+exista  Monto 
+Gravado tasa 1 y tasa ITBIS 1. 
+i 
+existen 
+impuestos 
+selectivos 
+al 
+consumo  que  formen  parte  de  la  base 
+imponible del ITBIS, estos se sumaran al 
+monto  gravado  antes  de  multiplicarlo 
+por la tasa de ITBIS.","18","NUM","S
+a)  Valor  numérico  de  16  enteros,  dos 
+decimales; ≥ 0 (No puede ser negativo). 
+b) Total ITBIS Tasa1= Monto Gravado ITBIS 
+tasa1 *ITBIS tasa .  
+olo forman parte de la base imponible del 
+ITBIS  los  impuestos  selectivos  al  consumo 
+con 
+códigos 
+desde 
+006 
+hasta 
+039 
+correspondientes a la Tabla de Codificación 
+de Tipos de Impuestos Adicionales.","N","2","2","2","2","2","0","0","2","0","0"
+"102","Total ITBIS Tasa 2 
+<TotalITBIS2>","Valor numérico igual a Monto Gravado 
+ITBIS Tasa2*tasa ITBIS 2. 
+Condicional 
+a 
+que 
+exista  Monto 
+Gravado tasa 2 y tasa ITBIS 2.","18","NUM","b
+a)  Valor  numérico  de  16  enteros,  dos 
+decimales; ≥ 0 (No puede ser negativo). 
+)  Total  ITBIS  Tasa2=  Monto  Gravado  ITBIS 
+tasa2*ITBIS tasa 2.","N","2","2","2","2","2","0","0","2","0","0"
+"103","Total ITBIS Tasa3 
+<TotalITBIS3>","Valor  numérico  igual  a  Monto  gravado 
+ITBIS Tasa3*tasa ITBIS 3. 
+Condicional a que exista Monto Gravado 
+tasa 3 y tasa ITBIS 3.","18","NUM","a
+   
+)Valor 
+numérico 
+de 
+16 
+enteros, 
+dos 
+decimales; ≥ 0 (No puede ser negativo).","N","2","2","2","2","2","0","0","2","2","0"
+"104","Monto del Impuesto 
+Adicional 
+<MontoImpuestoAdicional>","Sumatoria 
+de 
+los 
+campos  Monto 
+Impuesto 
+Selectivo 
+al 
+Consumo 
+Específico,  Monto 
+Impuesto  Selectivo 
+Ad  Valorem  y  Monto  Otros  Impuestos 
+Adicionales.","18","NUM","a) Valor  numérico  de 
+16 
+enteros,  dos 
+decimales; >0 (debe ser positivo). 
+ 
+b) Monto del Impuesto Adicional=  Monto 
+Impuesto Selectivo al Consumo Específico+ 
+  Monto  Impuesto  Selectivo  Ad  Valorem+ 
+Monto Otros Impuestos Adicionales.","I","2","2","2","2","0","0","216","2","0","0"

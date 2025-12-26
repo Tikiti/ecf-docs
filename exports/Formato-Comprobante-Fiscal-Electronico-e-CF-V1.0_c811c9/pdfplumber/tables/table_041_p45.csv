@@ -1,0 +1,38 @@
+,,,,,,,,,,,,,,,,
+,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,Fact.,,,,,,,,,
+,CAMPOS,DESCRIPCIÓN,Largo,,,,Créd.,Fact.,Nota,,,Gastos,Regím.,,,Pagos
+,,,Max,Tipo,Validación,I,"Fiscal
+Electr.","Consum.
+Electr.","Déb.
+Electr.","Nota Créd.
+Electr.","Compras
+Electr.","Menor.
+Electr.","Espec.
+Electr.","Guber.
+Electr.","Export.
+Electr.","Exterior
+Electr."
+,,,,,,,,,,,,,,,,
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+,FIN ÁREA,OTRA MONEDA DETALLE,,,,,,,,,,,,,,
+39,"Monto Ítem
+(Valor por la línea de
+detalle)
+<MontoItem>","(Precio Unitario del ítem * Cantidad) –
+Monto Descuento + Monto Recargo",18,NUM,"a) Valor numérico de 16
+enteros, 2 decimales; ≥ 0 (No
+puede ser negativo).
+b) Valor numérico, de
+acuerdo con descripción.
+c)Debe ser cero cuando: es
+una Nota de Crédito para
+fines de corrección de
+texto.74
+Cuando es cero puede no
+imprimirse o imprimirse un
+texto explicativo (sin valor,
+sin costo, etc.)",I,1,1,1,1,1,1,1,1,1,1
+,FIN ÁREA,ÍTEM,,,,,,,,,,,,,,
+,FIN ÁREA,DETALLES ÍTEM,,,,,,,,,,,,,,

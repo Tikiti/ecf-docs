@@ -1,0 +1,90 @@
+"","","consumo electrónica.  
+Condicional a que en la línea de 
+detalle 
+exista 
+algún 
+ítem 
+gravado a tasa 0.","","","",""
+"18","Monto Exento 
+<MontoExento>","C
+Corresponde  al 
+total  de 
+los 
+montos exentos, asignados en 
+la 
+factura 
+de 
+consumo 
+electrónica.  
+ondicional a que en la línea de 
+detalle 
+exista 
+algún 
+ítem 
+exento.","18","NUM","a)  Valor  numérico  de  16  enteros,  2 
+decimales≥ 0 (No puede ser negativo).","2"
+"19","Total ITBIS 
+<TotalITBIS>","C
+Corresponde 
+a 
+la 
+sumatoria 
+total de los montos de ITBIS (en 
+sus diferentes tasas), asignados 
+en 
+la 
+factura 
+de 
+consumo 
+electrónica emitida.   
+ondicional 
+a 
+que 
+el 
+contribuyente 
+indique 
+que 
+existe  montos 
+de 
+ITBIS 
+al 
+menos a una de las tasas (1, 2 
+y/o 3).","18","NUM","b
+     
+a)  Valor  numérico  de  16  enteros,  2 
+decimales; 
+≥ 
+0 
+(No 
+puede 
+ser 
+negativo). 
+)  Valor  de 
+la  suma  del  Total 
+ITBIS 
+Tasa1 + Total ITBIS Tasa 2 + Total ITBIS 
+Tasa3.","2"
+"20","Total ITBIS Tasa 1 
+<TotalITBIS1>","C
+Corresponde  al 
+total  de 
+los 
+montos 
+de 
+ITBIS 
+al 
+18%, 
+asignados 
+en 
+la 
+factura 
+de 
+consumo electrónica. 
+ondicional a que en la línea de 
+detalle 
+exista 
+algún 
+ítem 
+gravado al 18%.","18","NUM","a) Valor numérico de 16 enteros, dos 
+decimales; ≥ 0 (No puede ser 
+negativo).","2"

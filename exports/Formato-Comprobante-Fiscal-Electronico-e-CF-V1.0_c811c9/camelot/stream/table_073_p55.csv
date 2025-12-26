@@ -1,0 +1,88 @@
+"","","","","","","","Fact.","","","","","","","","",""
+"","","","Largo","","","I","Créd.","Fact.","Nota","Nota","","Gastos","Regím.","","","Pagos"
+"","CAMPOS","DESCRIPCIÓN","","","Validación","","","","","","","","","","",""
+"","","","Max","","","","Fiscal","Consum.","Déb.","Créd.","Compras","Menor.","Espec.","Guber.","Export.","Exterior"
+"","","","","Tipo","","","","","","","","","","","",""
+"","","","","","","","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr."
+"","","","","","","","31","32","33","34","41","43","44","45","46","47"
+"","","","","","a) Valor numérico de 16 enteros,","","","","","","","","","","",""
+"","","Sumatoria  de 
+los  campos  del  área","","","dos  decimales; 
+>0 
+(debe 
+ser","","","","","","","","","","",""
+"","","Subtotal Impuesto Adicional.","","","positivo).","","","","","","","","","","",""
+"","Subtotal Impuesto Adicional","","","","","","","","","","","","","","",""
+"13","Página","C","18","NUM","b","I","2","2","2","2","0","0","2","2","0","0"
+"","","ondicional 
+a 
+que 
+se 
+complete","","",") Subtotal Impuesto Adicional=","","","","","","","","","","",""
+"","<SubtotalImpuestoAdicionalPagina>","","","","","","","","","","","","","","",""
+"","","campos  del  área  Subtotal  Impuesto","","","Subtotal 
+Impuesto  Selectivo  al","","","","","","","","","","",""
+"","","Adicional.","","","Consumo 
++ 
+Subtotal 
+Otros","","","","","","","","","","",""
+"","","","","","Impuestos Adicionales.","","","","","","","","","","",""
+"","","","","","Condicional a que exista otros(s)","","","","","","","","","","",""
+"","ÁREA","","","","","","","","","","","","","","",""
+"","","","","","impuesto(s) en la línea de detalle","","","","","","","","","","",""
+"","","SUBTOTAL IMPUESTO ADICIONAL","","","","","2","2","2","2","0","0","2","2","0","0"
+"","<SubtotalImpuestoAdicional>","","","","","","","","","","","","","","",""
+"","","","","","de la página, distinto(s) al ITBIS.","","","","","","","","","","",""
+"","","Valor 
+del 
+impuesto 
+selectivo 
+al","","","","","","","","","","","","","",""
+"","","consumo  específico  y  Ad  Valorem,","","","","","","","","","","","","","",""
+"","","correspondientes 
+a 
+los 
+ítems 
+del","","","","","","","","","","","","","",""
+"","","campo ‘No. de línea desde’ a ‘No. de","","","","","","","","","","","","","",""
+"","","","","","a) Valor numérico de 16 enteros,","","","","","","","","","","",""
+"","Subtotal Impuesto Selectivo al","línea hasta’, indicados en la página.","","","","","","","","","","","","","",""
+"","","","","","dos  decimales; 
+>0 
+(debe 
+ser","","","","","","","","","","",""
+"","Consumo Página","","","","","","","","","","","","","","",""
+"14","","C","18","NUM","positivo).","N","2","2","2","2","0","0","0","2","0","0"
+"","<SubtotalImpuestoSelectivoConsum","","","","","","","","","","","","","","",""
+"","","ondicional a que los ítems del campo","","","","","","","","","","","","","",""
+"","oEspecificoPagina>","","","","","","","","","","","","","","",""
+"","","‘No.  de  línea  desde’  a  ‘No.  de  línea","","","","","","","","","","","","","",""
+"","","hasta’, 
+existan 
+gravados 
+con","","","","","","","","","","","","","",""
+"","","Impuestos al Consumo Específico y Ad","","","","","","","","","","","","","",""
+"","","Valorem.","","","","","","","","","","","","","",""
+"","","Valor 
+del 
+impuesto 
+adicional","","","","","","","","","","","","","",""
+"","","(exceptuando el impuesto selectivo al","","","","","","","","","","","","","",""
+"","","consumo  específico  y  Ad  Valorem),","","","","","","","","","","","","","",""
+"","","correspondientes 
+a 
+los 
+ítems 
+del","","","","","","","","","","","","","",""
+"","","campo ‘No. de línea desde’ a ‘No. de","","","","","","","","","","","","","",""
+"","Subtotal Otros Impuestos","","","","a) Valor numérico de 16 enteros,","","","","","","","","","","",""
+"","","línea hasta’, indicados en la página.","","","","","","","","","","","","","",""
+"15","Adicionales Página","","18","NUM","dos  decimales; 
+>0 
+(debe 
+ser","N","2","2","2","2","0","0","2","2","0","0"
+"","<SubtotalOtrosImpuesto>","C","","","positivo","","","","","","","","","","",""
+"","","ondicional a que los ítems del campo","","","","","","","","","","","","","",""
+"","","‘No.  de  línea  desde’  a  ‘No.  de  línea","","","","","","","","","","","","","",""
+"","","hasta’,  existan  gravados  con  Otros","","","","","","","","","","","","","",""
+"","","Impuestos Adicionales.","","","","","","","","","","","","","",""

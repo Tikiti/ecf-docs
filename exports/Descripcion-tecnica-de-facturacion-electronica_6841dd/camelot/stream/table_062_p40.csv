@@ -1,0 +1,6 @@
+"","DIRECTORIO POR RNC"
+"","Retorna las URLs de los servicios de recepción de eCF,"
+"DESCRIPCIÓN","aprobación comercial y autenticación (Opcional) de un"
+"","contribuyente en particular, siempre y cuando este autorizado"
+"","como electrónico."
+"METODO","GET"

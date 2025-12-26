@@ -1,0 +1,86 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. Créd. 
+Fiscal 
+Electr. 
+31","Fact. 
+Consum. 
+Electr. 
+32","Nota 
+Déb. 
+Electr. 
+33","Nota 
+Créd. 
+Electr. 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Guber. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"","Tabla de 
+Distribución de 
+Subcantidad 
+<TablaSubcantidad>57","C
+  S
+Se  deberá 
+incluir  esta  tabla  para 
+fines  del  cálculo  de  los  impuestos 
+selectivos  al  consumo  a  productos 
+derivados  de  alcohol  y  cervezas  y 
+productos del tabaco y cigarrillos.  
+ondicional  a  que  exista 
+código 
+desde 006 hasta 039 según la ‘Tabla 
+de Codificación Tipos de Impuestos 
+Adicionales’.  
+e pueden incluir 5 repeticiones de 
+pares cantidad – código. Incluye los 
+dos campos siguientes:","","","","N","2","2","2","2","0","0","0","2","0","0"
+"15","Subcantidad 
+<Subcantidad>","Cantidad  de  unidades  de  referencia 
+que tiene la unidad del ítem.  
+Condicional 
+a 
+que 
+el 
+ítem 
+esté 
+gravado  con  códigos  de 
+impuestos 
+adicionales desde  006 hasta 022 en 
+la  Tabla  de  Codificación  Tipo  de 
+Impuestos Adicional. 58","19","NUM","a) Valor numérico de 16 enteros, 
+3  decimales;  ≥0  (No  puede  ser 
+negativo).","N","2","2","2","2","0","0","0","2","0","0"
+"16","Código subcantidad 
+<CodigoSubcantidad>","Indica 
+la  unidad  de  medida  de 
+la 
+subcantidad.","2","NUM","a) 
+Validar 
+con 
+la 
+Tabla 
+IV 
+(Codificación 
+de 
+Unidad 
+de 
+medida).","N","2","2","2","2","0","0","0","2","0","0"
+"","FIN TABLA","SUBCANTIDAD","","","","","","","","","","","","","",""

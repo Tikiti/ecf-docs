@@ -1,0 +1,13 @@
+"Respuesta en formato JSON"
+"{  
+ ""codigo"": 1,"
+"""estado"": ""string"","
+"""mensajes"": ["
+"{"
+"""codigo"": ""string"","
+"""valor"": ""string"""
+"}"
+"],"
+"""encf"": ""string"","
+"""secuenciaUtilizada"": true"
+"}"

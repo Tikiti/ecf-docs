@@ -1,0 +1,45 @@
+,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,CAMPOS,DESCRIPCIÓN,Largo,,Validación,,Fact.,,,,,,,,,
+,,,,Tipo,,,,,,,,,,,,
+,,,,,,I,Créd.,Fact.,Nota,Nota,,Gastos,Regím.,,,Pagos
+,,,Max,,,,Fiscal,Consum.,Déb.,Créd.,Compras,Menor.,Espec.,Guber.,Export.,Exterior
+,,,,,,,,,,,,,,,,
+,,,,,,,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+,FIN ÁREA,SUBTOTAL IMPUESTO ADICIONAL,,,,,,,,,,,,,,
+16,"Monto Subtotal Página
+<MontoSubtotalPagina>","Sumatoria de los campos Subtotal
+Monto Gravado Total Pagina,
+Subtotal Exento Pagina, Subtotal
+ITBIS Pagina y
+Subtotal Impuesto Adicional
+Pagina.
+Condicional a que se complete el
+campo Página No.",,,"a) Valor numérico de 16
+enteros, dos decimales; ≥ 0
+(No puede ser negativo).
+b) Valor numérico de acuerdo
+con el total de la sumatoria del
+campo de Descripción.",I,2,2,2,2,2,2,2,2,2,2
+,,,18,NUM,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+17,"Subtotal Monto No
+Facturable Página
+<SubtotalMontoNoFacturablePa
+gina>","Suma de todos los valores
+correspondientes a ítems no
+facturables, que estén indicados
+en el no. de línea ‘Desde’ ‘Hasta’,
+de la página.
+Condicional a que la página incluya
+ítems no facturables.",,,"a) Valor numérico de 16
+enteros, 2 decimales. ≥ 0
+(Debe ser positivo).
+b) Suma de valores del monto
+ítem con indicador de
+facturación=0, menos
+descuentos más recargos.",N,2,2,2,2,0,0,2,2,2,0
+,,,18,NUM,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,FIN ÁREA,PAGINA,,,,,,,,,,,,,,
+,FIN ÁREA,PAGINACIÓN,,,,,,,,,,,,,,

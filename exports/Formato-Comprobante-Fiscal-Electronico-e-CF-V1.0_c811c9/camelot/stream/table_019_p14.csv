@@ -1,0 +1,6 @@
+"comprador."
+"7 Este campo se completa si el e-CF es una factura de consumo electrónica > DOP$250,000 y el comprador no posee RNC/Cédula por ser extranjero. Lo mismo con las notas de crédito/débito electrónicas que afecten e-CF tipo 32 por valor"
+"> DOP$250,000. Cuando exista Identidicador Extranjero se omitirá el campo RNC Comprador."
+"8 Condicional a que el comprador sea extranjero (diplomático). Si el campo ‘Identificador Extranjero’ es completado, el campo RNC comprador no deberá ser completado."
+"9 Según lo establecido en el Art. 10 de la Norma General 05-19, en caso de que las Zonas Francas Comerciales (Aeropuertos y Puertos) realicen transferencias de bienes a No Residentes, se deberá completar el campo ‘Identificador"
+"Extranjero’."

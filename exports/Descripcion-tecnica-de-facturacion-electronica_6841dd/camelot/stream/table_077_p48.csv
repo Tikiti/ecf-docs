@@ -1,0 +1,10 @@
+"Rnc: string"
+"Encf: string"
+"Formato JSON"
+"{  
+ ""rnc"": ""string"","
+"""encf"": ""string"","
+"""estado"": ""string"","
+"""mensajes"": ["
+"""string"""
+"]"

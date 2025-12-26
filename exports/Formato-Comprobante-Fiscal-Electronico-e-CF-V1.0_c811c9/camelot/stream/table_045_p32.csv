@@ -1,0 +1,65 @@
+"","","","Largo","Tipo","","","","","","","","","","","",""
+"","CAMPOS","DESCRIPCIÓN","","","Validación","","Fiscal","Consum.","Déb.","Créd.","Compras","Menor.","Espec.","Guber.","Export.","Exterior"
+"","","","","","","","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr."
+"","","","Max","","","","","","","","","","","","",""
+"","","","","","","","31","32","33","34","41","43","44","45","46","47"
+"","","","","","a) 
+Valor numérico de 16 enteros,","","","","","","","","","","",""
+"","","Valor  numérico 
+igual  a  Monto  Gravado","","","","","","","","","","","","","",""
+"","","","","","dos  decimales≥  0  (No  puede  ser","","","","","","","","","","",""
+"","","ITBIS en Otra Moneda Tasa1*tasa ITBIS 1.","","","","","","","","","","","","","",""
+"","","","","","negativo).","","","","","","","","","","",""
+"","Total ITBIS Tasa 1 en Otra","Condicional  a  que  exista  Monto  gravado","","","","","","","","","","","","","",""
+"128","Moneda","","18","NUM","","N","2","2","2","2","2","0","0","2","0","0"
+"","","ITBIS Tasa 1 Otra Moneda.","","","Total ITBIS Tasa1 en Otra","","","","","","","","","","",""
+"","<TotalITBIS1OtraMoneda>","","","","","","","","","","","","","","",""
+"","","","","","Moneda= Monto Gravado ITBIS","","","","","","","","","","",""
+"","","Condicional  a  que  exista  Monto  Gravado","","","","","","","","","","","","","",""
+"","","","","","tasa1 Otra Moneda*ITBIS tasa","","","","","","","","","","",""
+"","","tasa 1 en Otra Moneda.","","","","","","","","","","","","","",""
+"","","","","","1.37","","","","","","","","","","",""
+"","","","","","a)  Valor numérico de 16 enteros,","","","","","","","","","","",""
+"","","Valor  numérico 
+igual  a  Monto  Gravado","","","dos  decimales;  ≥0  (No  puede  ser","","","","","","","","","","",""
+"","Total ITBIS Tasa 2 en otra","ITBIS en Otra Moneda Tasa2*tasa ITBIS 2.","","","negativo).","","","","","","","","","","",""
+"129","moneda","","18","NUM","","N","2","2","2","2","2","0","0","2","0","0"
+"","","C
+ondicional  a  que  exista  Monto  gravado","","","Total ITBIS Tasa 2 en Otra","","","","","","","","","","",""
+"","<TotalITBIS2OtraMoneda>","","","","","","","","","","","","","","",""
+"","","ITBIS Tasa 2 Otra Moneda.","","","Moneda= Monto Gravado ITBIS","","","","","","","","","","",""
+"","","","","","tasa2 Otra Moneda*ITBIS tasa 2.","","","","","","","","","","",""
+"","","Valor  numérico 
+igual  a  Monto  Gravado","","","a) Valor numérico de 16 enteros,","","","","","","","","","","",""
+"","Total ITBIS Tasa 3 en otra","ITBIS en Otra Moneda Tasa3*tasa ITBIS 3.","","","dos decimales; ≥ 0 (No puede ser","","","","","","","","","","",""
+"130","moneda","","18","NUM","negativo).","N","2","2","2","2","2","0","0","2","2","0"
+"","","C
+ondicional  a  que  exista  Monto  gravado","","","","","","","","","","","","","",""
+"","<TotalITBIS3OtraMoneda>","","","","","","","","","","","","","","",""
+"","","ITBIS Tasa 3 Otra Moneda.","","","","","","","","","","","","","",""
+"","","Sumatoria de los campos Monto Impuesto","","","","","","","","","","","","","",""
+"","","Selectivo  al  Consumo  Específico  en  Otra","","","a) Valor numérico de 16 enteros,","","","","","","","","","","",""
+"","","","","","dos 
+decimales; 
+>0 
+(debe 
+ser","","","","","","","","","","",""
+"","","Moneda,  Monto 
+Impuesto  Selectivo  Ad","","","","","","","","","","","","","",""
+"","","Valorem en Otra Moneda y Monto Otros","","","positivo).","","","","","","","","","","",""
+"","Monto del Impuesto","","","","","","","","","","","","","","",""
+"","","Impuestos Adicionales en Otra Moneda.","","","","","","","","","","","","","",""
+"","","","","","b) Monto del Impuesto Adicional","","","","","","","","","","",""
+"","Adicional en Otra","","","","","","","","","","","","","","",""
+"","","C
+ondicional a que exista datos en código","","","en Otra Moneda=  Monto","","","","","","","","","","",""
+"","Moneda38","","","","","","","","","","","","","","",""
+"131","","","18","NUM","","N","2","2","2","2","0","0","239","2","0","0"
+"","","otra moneda y exista al menos unos de los","","","Impuesto Selectivo al Consumo","","","","","","","","","","",""
+"","<MontoImpuestoAdicionalOt","","","","","","","","","","","","","","",""
+"","","campos  de  Monto  Impuesto  Selectivo  al","","","Específico en Otra Moneda + ","","","","","","","","","","",""
+"","raMoneda>","","","","","","","","","","","","","","",""
+"","","Consumo  Específico  en  Otra  Moneda,","","","Monto Impuesto Selectivo Ad","","","","","","","","","","",""
+"","","Monto Impuesto Selectivo Ad Valorem en","","","Valorem en Otra Moneda +","","","","","","","","","","",""
+"","","Otra Moneda y/o Monto Otros Impuestos","","","Monto Otros Impuestos","","","","","","","","","","",""
+"","","Adicionales en Otra Moneda.","","","Adicionales en Otra Moneda.","","","","","","","","","","",""

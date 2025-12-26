@@ -1,0 +1,61 @@
+"","","","","","","","Créd.","Fact.","Nota","Nota","","","Regím.","","","Pagos"
+"","","","Max","","","I","","","","","","Gastos","","","",""
+"","CAMPOS","DESCRIPCIÓN","","","","","Fiscal","Consum.","Déb.","Créd.","Compras","","Espec.","Guber.","Export.","Exterior"
+"","","","","","","","","","","","","Menor.","","","",""
+"","","","","","","","Electr.","Electr.","Electr.","Electr.","Electr.","","Electr.","Electr.","Electr.","Electr."
+"","","","","","","","","","","","","Electr.","","","",""
+"","","","","","","","31","32","33","34","41","43","44","45","46","47"
+"","","Corresponde  al  porcentaje  de  alcohol","","","","","","","","","","","","","",""
+"","","en  el  volumen  de  concentración  total","","","","","","","","","","","","","",""
+"","","alcohólica por unidad de producto.","","","a) 
+Valor 
+numérico 
+de 
+3","","","","","","","","","","",""
+"","Grados Alcohol en %","Condicional a que el ítem esté gravado","","","enteros 
+y  2  decimales;  >0.","","","","","","","","","","",""
+"17","","","5","NUM","","I","2","2","2","2","0","0","0","2","0","0"
+"","<GradosAlcohol>59","con  códigos  de  impuestos  adicionales","","","(Debe ser positivo)","","","","","","","","","","",""
+"","","006 
+hasta 
+018 
+en 
+la 
+Tabla 
+de","","","","","","","","","","","","","",""
+"","","Codificación 
+Tipo 
+de 
+Impuestos","","","","","","","","","","","","","",""
+"","","Adicional (bebidas alcohólicas).","","","","","","","","","","","","","",""
+"","","Precio 
+unitario 
+para 
+la 
+unidad 
+de","","","","","","","","","","","","","",""
+"","","medida de referencia (no se usa para el","","","","","","","","","","","","","",""
+"","","cálculo del monto Total).","","","","","","","","","","","","","",""
+"","","C","","","a) 
+Valor 
+numérico 
+de 
+16","","","","","","","","","","",""
+"","","ondicional a que el ítem esté gravado","","","","","","","","","","","","","",""
+"","Precio Unitario de Referencia","","","","enteros,  2  decimales.  >0  (No","","","","","","","","","","",""
+"18","","con  códigos  de  impuestos  adicionales","18","NUM","","I","2","2","2","2","0","0","0","2","0","0"
+"","<PrecioUnitarioReferencia>60","","","","puede ser negativo)","","","","","","","","","","",""
+"","","desde  023  hasta  039  en 
+la  Tabla  de","","","","","","","","","","","","","",""
+"","","Codificación 
+Tipo 
+de 
+Impuestos","","","","","","","","","","","","","",""
+"","","Adicional.","","","","","","","","","","","","","",""
+"","Fecha Elaboración","Dato 
+correspondiente  a 
+la 
+fecha  de","","ALFA","a)Fecha válida","","","","","","","","","","",""
+"","","","","","","","3","3","3","3","3","0","3","3","3","0"
+"19","","","10","","","N","","","","","","","","","",""
+"","<FechaElaboracion>","elaboración del ítem.","","NUM","Formato: (dd-MM-AAAA)","","","","","","","","","","",""

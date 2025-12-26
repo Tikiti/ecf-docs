@@ -1,0 +1,6 @@
+"$cryptoSigner = new CryptoSigner($privateKeyStore, $algorithm);"
+"$xmlSigner = new XmlSigner($cryptoSigner);"
+"$xmlSigner->setReferenceUri('');"
+"$signedXml = $xmlSigner->signXml($xml);"
+"return $signedXml;"
+"}"

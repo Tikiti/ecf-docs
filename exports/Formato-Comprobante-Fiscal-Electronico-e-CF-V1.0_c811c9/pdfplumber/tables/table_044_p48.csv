@@ -1,0 +1,15 @@
+,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,CAMPOS,DESCRIPCIÓN,Largo,,Validación,,,,,,,,,,,
+,,,,Tipo,,,Fact. Créd.,Fact.,Nota,Nota,,Gastos,Regím.,,,Pagos
+,,,,,,I,,,,,,,,,,
+,,,Max,,,,Fiscal,Consum.,Déb.,Créd.,Compras,Menor.,Espec.,Guber.,Export.,Exterior
+,,,,,,,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+15,"Líneas
+<Lineas>","Indica la cantidad de líneas que
+se subtotaliza.",2,NUM,"a) De acuerdo a descripción del
+campo.",N,3,3,3,3,3,3,3,3,3,3
+,FIN ÁREA,SUBTOTAL,,,,,,,,,,,,,,
+,FIN ÁREA,SUBTOTALES,,,,,,,,,,,,,,

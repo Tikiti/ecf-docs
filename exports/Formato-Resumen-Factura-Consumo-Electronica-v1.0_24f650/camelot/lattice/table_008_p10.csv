@@ -1,0 +1,67 @@
+"","<ImpuestosAdicionales>5","Se 
+pueden 
+incluir 
+20 
+repeticiones  de  pares  código  – 
+valor.  Incluye  los  cinco  campos 
+siguientes:","","","",""
+"24","Código de Impuesto Adicional 
+<TipoImpuesto>","Dato correspondiente al Código 
+del 
+impuesto 
+adicional 
+de 
+acuerdo 
+con 
+la 
+Tabla 
+I 
+(Codificación 
+Tipos 
+de 
+Impuestos 
+Adicionales) 
+del 
+formato  de  comprobante  fiscal 
+electrónico (e-CF), asignada a la 
+factura de consumo electrónica.","3","NUM","a) Validar con Tabla I (Codificación 
+Tipos de Impuestos Adicionales)6","2"
+"25","Monto Impuesto Selectivo al 
+Consumo Específico  
+<MontoImpuestoSelectivoCons
+umoEspecifico>","C
+Valor  del  impuesto  selectivo  al 
+consumo 
+(ISC) 
+específico 
+asociado al código de impuesto 
+adicional. 
+ondicional 
+a 
+que 
+el 
+contribuyente 
+indique 
+que 
+existe 
+impuesto 
+selectivo 
+al 
+consumo 
+específico, 
+en 
+la 
+factura de consumo electrónica 
+emitida.","18","NUM","a) Valor numérico de 16 enteros, dos 
+decimales; >0 (debe ser positivo).","2"
+"26","Monto Impuesto Selectivo al 
+Consumo 
+ Ad Valorem 
+<MontoImpuestoSelectivoCons
+umoAdvalorem>","Valor  del  impuesto  selectivo  al 
+consumo 
+(ISC) 
+Ad-Valorem 
+asociado al código de impuesto 
+adicional.","18","NUM","a) Valor numérico de 16 enteros, dos 
+decimales; >0 (debe ser positivo).","2"

@@ -1,0 +1,7 @@
+"Cuando el emisor es electrónico pero el receptor no lo es - ver figura II-, el modelo funciona de la",""
+"siguiente manera:",""
+"1)","El emisor envía el e-CF a la DGII, al momento de la emisión del documento."
+"2)","La  DGII  responde  entregando  un  trackId,  que  el  emisor  del  e-CF  puede  utilizar  para"
+"","consultar el estado del documento, a través del servicio web habilitado para estos fines."
+"3)","Luego, el emisor electrónico entrega una representación impresa (RI) del e-CF al receptor"
+"","no electrónico."

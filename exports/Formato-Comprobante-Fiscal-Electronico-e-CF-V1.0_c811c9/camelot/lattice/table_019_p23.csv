@@ -1,0 +1,123 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. 
+Créd. 
+Fiscal 
+Electr. 
+ 
+31","Fact. 
+Consum. 
+Electr. 
+ 
+32","Nota 
+Déb. 
+Electr. 
+ 
+33","Nota 
+Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Gub. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"","Tabla de 
+Impuestos Adicionales 
+<ImpuestosAdicionales>17","Se  pueden 
+incluir  20 
+repeticiones  de 
+pares  código  –  valor. 
+Incluye 
+los  cinco 
+campos siguientes:","","","a) 
+Condicional 
+a 
+que 
+exista 
+otros(s) 
+impuesto(s) en la línea de detalle distinto(s) al 
+ITBIS.","","2","2","2","2","0","0","218","2","0","0"
+"105","Código de Impuesto 
+Adicional 
+<TipoImpuesto>","Dato 
+correspondiente 
+al  Código  del 
+impuesto  adicional  de  acuerdo  con 
+la 
+Tabla I (Codificación Tipos de Impuestos 
+Adicionales).","3","NUM","a)  Validar  con  Tabla  I  (Codificación  Tipos  de 
+Impuestos Adicionales).","N","2","2","2","2","0","0","219","2","0","0"
+"106","Tasa de Impuesto Adicional 
+<TasaImpuestoAdicional>","Dato 
+correspondiente 
+a 
+la 
+Tasa 
+del 
+Impuesto Adicional.  
+Se debe indicar la tasa de Impuesto. 20","5","NUM","b
+a) Validar  con  Tabla  I  (Codificación  Tipos  de 
+Impuestos Adicionales). 
+) Si  la  tasa  corresponde  a  los  códigos  entre 
+006 hasta 022 de la Tabla I (Codificación Tipos 
+de Impuestos Adicionales), se debe validar que 
+coincide  con  la  tasa  vigente  en  el  período  al 
+que corresponda la fecha de emisión del e-CF 
+(campo fecha emision).","N21","2","2","2","2","0","0","2","2","0","0"
+"107","Monto Impuesto Selectivo 
+al Consumo Específico22 
+<MontoImpuestoSelectivoCons
+umoEspecifico>","Valor del impuesto selectivo al consumo 
+(ISC)  específico  asociado  al  código  de 
+impuesto  adicional.  Condicional  a  que 
+exista código del 006 al 02223. 
+El  cálculo  del  monto  del  ISC  específico 
+dependerá de la tasa correspondiente al 
+código  del 
+impuesto 
+en 
+la 
+Tabla 
+I 
+(Codificación 
+Tipos 
+de 
+Impuestos 
+Adicionales).","18","NUM","b
+  c
+a) Valor 
+numérico 
+de 
+16 
+enteros, 
+dos 
+decimales; >0 (debe ser positivo). 
+) Si el código del impuesto se encuentra entre 
+006  hasta  018  se  debe  verificar  la  unidad  de 
+medida del ítem, si es a granel (código 18) no 
+se  deberá  calcular  el 
+Impuesto  Selectivo  al 
+Consumo Específico. 
+) Para los ítems con códigos 006 al 018 de la 
+‘Tabla 
+I 
+(Codificación  Tipos  de 
+Impuestos","N","2","2","2","2","0","0","0","2","0","0"

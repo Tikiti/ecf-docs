@@ -1,0 +1,16 @@
+"o","Precio: hace referencia al campo ‘Precio Unitario"
+"","del Ítem’."
+"o","ISC Específico (si aplica): debe colocar el monto correspondiente de ISC Específico"
+"","de cada bien o servicio."
+"o","ISC  Ad-Valorem 
+(si 
+aplica):  debe 
+colocar  el  monto  de 
+ISC  Ad-Valorem"
+"","correspondiente a cada Ítem."
+"o","ITBIS (si aplica): en esta columna se debe colocar el monto correspondiente al"
+"","ITBIS de cada bien o servicio."
+"o","Descuento (si aplica)48: hace referencia al valor colocado por línea en el campo"
+"","‘Monto Descuento’ del Formato de e-CF."
+"o","Recargo  (si  aplica):  hace  referencia  al  valor  colocado  por  línea  en  el  campo"
+"","‘Monto Recargo’ del Formato de e-CF."

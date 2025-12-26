@@ -1,0 +1,94 @@
+"93","Monto Gravado ITBIS Tasa 1 
+<MontoGravadoI1>","Total  de  la  suma  de  valores  de 
+Ítems 
+gravados 
+asignados 
+a 
+ITBIS  tasa  1  (tasa  18%),  menos 
+descuentos  más 
+recargos.
+12 
+Condicional a que en la línea de 
+detalle 
+exista 
+algún 
+ítem 
+gravado a tasa ITBIS1.","18","NUM","c
+  b
+a)  Valor  numérico  de  16  enteros,  2 
+decimales; 
+≥ 
+0 
+(No 
+puede 
+ser 
+negativo). 
+)  Suma  de  valores  del  monto  ítem 
+con 
+indicador  de 
+facturación=1 13 , 
+menos descuentos más recargos.  
+)  Si  el  indicador  monto  gravado  es 
+=1, se debe dividir la suma de valores 
+del  monto 
+ítem  con 
+indicador  de 
+facturación=1,  entre 
+(1+tasa 
+ITBIS 
+tasa 
+1),  menos 
+descuentos  más 
+recargos.  
+ 
+d) Si el campo ‘Indicador de la norma 
+10-07’ es completado, se debe dividir 
+la suma de valores del monto ítem con 
+indicador 
+de 
+facturación=1, 
+entre 
+(1+tasa ITBIS tasa 1+tasas de códigos 
+de  impuestos  adicionales  002  y  004, 
+asignados 
+al 
+ítem). 
+Si 
+existe 
+descuento,  el  monto  de  descuento 
+correspondiente  no se deberá rebajar 
+del monto gravado ITBIS tasa 1.","N","2","2","2","2","2","0","0","2","0","0"
+"94","Monto Gravado ITBIS  
+Tasa 2 
+<MontoGravadoI2>","C
+Total  de  la  suma  de  valores  de 
+Ítems 
+gravados 
+asignados 
+a 
+ITBIS  tasa  2(tasa  16%),  menos 
+descuentos más recargos. 
+ondicional a que en la línea de 
+detalle 
+exista 
+algún 
+ítem 
+gravado a tasa ITBIS2.","18","NUM","b
+  c
+a)  Valor  numérico  de  16  enteros,  2 
+decimales; 
+≥ 
+0 
+(No 
+puede 
+ser 
+negativo). 
+)  Suma  de  valores  del  monto  ítem 
+con 
+indicador 
+de 
+facturación=2, 
+menos descuentos más recargos.  
+) Si el indicador monto gravado=1, se 
+debe dividir el resultado por (1+ ITBIS 
+tasa 2).","N","2","2","2","2","2","0","0","2","0","0"

@@ -1,0 +1,39 @@
+,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,Fact.,,,,,,,,,
+,CAMPOS,DESCRIPCIÓN,Largo,Tipo,Validación,I,Créd.,Fact.,Nota,Nota,,Gastos,Regím.,,,Pagos
+,,,,,,,Fiscal,Consum.,Déb.,Créd.,Compras,Menor.,Espec.,Guber.,Export.,Exterior
+,,,Max,,,,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.
+,,,,,,,,,,,,,,,,
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+,Tabla de,,,,Condicional a que exista otros(s),,,,,,,,,,,
+,Impuestos Adicionales en Otra,Se pueden incluir 20 repeticiones,,,impuesto(s) en la línea de detalle,,,,,,,,,,,
+,moneda:,de pares código – valor. Incluye los,,,distinto(s) al ITBIS y este,,2,2,2,2,0,0,2,2,0,0
+,<ImpuestosAdicionalesOtraMoneda>,cinco campos siguientes:,,,completado el campo,,,,,,,,,,,
+,40,,,,,,,,,,,,,,,
+,,Dato correspondiente al Código del,,,,,,,,,,,,,,
+,Código de Impuesto adicional en,,,,a) Validar con Tabla I (Codificación,,,,,,,,,,,
+,,impuesto adicional de acuerdo con,,,,,,,,,,,,,,
+132,Otra Moneda,,3,NUM,Tipos de Impuestos Adicionales),N,2,2,2,2,0,0,242,2,0,0
+,,la ‘Tabla de Codificación Tipos de,,,,,,,,,,,,,,
+,<TipoImpuestoOtraMoneda>,,,,,,,,,,,,,,,
+,,Impuestos Adicionales’.41,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,Tasa de Impuesto adicional en,,,,,,,,,,,,,,,
+,,Dato correspondiente a la Tasa del,,,,,,,,,,,,,,
+,Otra Moneda,,,,a) Validar con Tabla I (Codificación,,,,,,,,,,,
+133,,Impuesto Adicional. Se debe indicar,5,NUM,,N 43,2,2,2,2,0,0,2,2,0,0
+,<TasaImpuestoAdicionalOtraMoneda,,,,Tipos de Impuestos Adicionales),,,,,,,,,,,
+,,la tasa de Impuesto.,,,,,,,,,,,,,,
+,>,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,Valor del campo Monto Impuesto,,,"a) Valor numérico de 16 enteros,",,,,,,,,,,,
+,,Selectivo al Consumo Específico,,,dos decimales; >0 (debe ser,,,,,,,,,,,
+,Monto Impuesto Selectivo al,referenciado al tipo de cambio del,,,positivo).,,,,,,,,,,,
+,Consumo Específico en Otra,código Otra Moneda especificado.,,,,,,,,,,,,,,
+134,Moneda,Condicional a que exista código de,18,NUM,b) Valor del campo Monto,N,2,2,2,2,0,0,0,2,0,0
+,<MontoImpuestoSelectivoConsumoE,"impuesto adicional del 006 al 022,",,,Impuesto Selectivo al Consumo,,,,,,,,,,,
+,specificoOtraMoneda>,este completado el campo código,,,Específico dividiendo por la tasa,,,,,,,,,,,
+,,otra moneda y el campo Monto,,,especificada en el campo Tipo de,,,,,,,,,,,
+,,Impuesto Selectivo Específico.44,,,Cambio.,,,,,,,,,,,

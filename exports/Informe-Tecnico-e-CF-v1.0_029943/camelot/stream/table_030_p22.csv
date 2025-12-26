@@ -1,0 +1,48 @@
+"Sección de Encabezado e-CF",""
+"","Monto total según cálculo 
+Monto total según 
+Dif. global según"
+"","emisor e-CF 
+formato e-CF 
+Formato e-CF"
+"Monto Total (3 líneas de ítem según",""
+"","la sección de Detalle) 
+6914.30 
+6911.58 
+2.72"
+"La diferencia se encuentra dentro de la tolerancia global aceptada para el e-CF.",""
+"13. Regla de Redondeo",""
+"La regla del redondeo es la base para establecer las reglas de tolerancia en la cuadratura, pues esta",""
+"establece que los campos de valores numéricos permitan hasta dos (2) cifras de dígitos decimales19,",""
+"las cuales podrán ser redondeadas de la siguiente manera:",""
+"El tercer decimal debe redondear al segundo decimal, dejando así fijo las cifras con dos decimales.",""
+"Cuando el valor numérico del tercer decimal sea menor que 5, se debe mantener el valor del segundo",""
+"decimal, mientras que, si es igual o mayor a 5, se debe incrementar el segundo decimal en una unidad.",""
+"Ejemplo 1: Tercer decimal < 5.",""
+"","750.5212 750.52"
+"Ejemplo 2: Tercer decimal >= 5.",""
+"","750.5276  750.53"
+"14. Impuesto Selectivo al Consumo (ISC) de Alcoholes y Cigarrillos.",""
+"Para el  cálculo  del  Impuesto  Selectivo  al  Consumo  (ISC)  de  Ítems,  que  correspondan  a  alcoholes y",""
+"cigarrillos, se deberá colocar en la sección de Detalle de Bienes y Servicio el código, atendiendo al tipo",""
+"de","impuesto  adicional  especificado  en 
+la  tabla  de  Codificación  Tipos  de  Impuestos  Adicionales"
+"(incluido en el Formato de e-CF) y posterior proceder a realizar el cálculo según las especificaciones",""
+"del área totales de la sección Encabezado.",""
+"Ejemplo:",""
+"","CANTIDAD 
+CÓDIGO INTERNO 
+DESCRIPCIÓN 
+PRECIO 
+PVP"
+"Facturación",""
+"","1 Caja 
+B000783 
+RON 16/700 ML 
+1063.97 
+80.00"
+"19 Se exceptúan de esta regla los campos ‘Precio Unitario Ítem’ y ‘Precio Unitario Ítem Otra Moneda’ de la sección Detalle de",""
+"Bienes o Servicios, donde se permiten cifras con hasta cuatro (4) dígitos decimales, incluyendo el campo ‘Tipo de Cambio’ de",""
+"la  sección  Encabezado  (como  lo  establece  el  Banco  Central)  y  el  campo  ‘Subcantidad’  de  la  sección  Detalle  de  Bienes  o",""
+"Servicios, donde se permiten cifras con hasta tres (3) dígitos decimales.",""
+"","Pág. 21 de 50"

@@ -1,0 +1,133 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. Créd. 
+Fiscal 
+Electr. 
+ 
+31","Fact. 
+Consum. 
+Electr. 
+ 
+32","Nota 
+Déb. 
+Electr. 
+ 
+33","Nota Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Guber. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"123","Monto gravado ITBIS Tasa 1 
+Otra Moneda 
+<MontoGravado1OtraMoneda>","C
+Total  de  la  suma  de  valores  de 
+Ítems 
+gravados 
+asignados 
+a 
+ITBIS  tasa  1  (tasa  18%),  menos 
+descuentos  en  Otra  Moneda 
+más 
+recargos 
+en 
+Otra 
+Moneda35. 
+(Asignados  a  ítem  gravados  en 
+Otra Moneda). 
+ondicional  a  que  exista  datos 
+en código otra moneda y el ítem 
+contenga 
+indicador 
+de 
+facturación igual a 1.","18","NUM","b
+  c
+a)  Valor 
+numérico 
+de 
+16 
+enteros, 2 decimales; ≥ 0 (No 
+puede ser negativo). 
+)  Suma 
+de 
+valores 
+del 
+monto ítem con indicador de 
+facturación=1, 
+menos 
+descuentos  en  Otra  Moneda 
+más 
+recargos 
+en 
+Otra 
+Moneda. 
+) 
+Si 
+el 
+indicador  monto 
+gravado=1, se debe dividir el 
+resultado  por 
+(1+tasa 
+ITBIS 
+tasa 1)","N","2","2","2","2","2","0","0","2","0","0"
+"124","Monto gravado ITBIS Tasa 2 Otra 
+Moneda 
+<MontoGravado2OtraMoneda>","C
+Total  de  la  suma  de  valores  de 
+Ítems 
+gravados 
+asignados 
+a 
+ITBIS  tasa  2  en  Otra  Moneda 
+(tasa  16%),  menos  descuentos 
+en  Otra  Moneda  más  recargos 
+en  Otra  Moneda.  (Asignados  a 
+ítem 
+gravados 
+en 
+Otra 
+Moneda). 
+ondicional  a  que  exista  datos 
+en código otra moneda y el ítem 
+contenga 
+indicador 
+de 
+facturación igual a 2.","18","NUM","b
+a)  Valor 
+numérico 
+de 
+16 
+enteros, 2 decimales; ≥ 0 (No 
+puede ser negativo). 
+) Suma de valores del monto 
+ítem 
+con 
+indicador 
+de 
+facturación=2, 
+menos 
+descuentos  en  Otra  Moneda 
+más 
+recargos 
+en 
+Otra 
+Moneda.","N","2","2","2","2","2","0","0","2","0","0"

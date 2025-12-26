@@ -1,0 +1,55 @@
+,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,,,,,,,,,,,,Gastos,,,,
+,,,Largo,,,,Fact. Créd.,Fact.,Nota,Nota,,Menor.,Regím.,,,Pagos
+,CAMPOS,DESCRIPCIÓN,,Tipo,Validación,I,Fiscal,Consum.,Déb.,Créd.,Compras,,Espec.,Guber.,Export.,Exterior
+,,,Max,,,,,,,,,Electr.,,,,
+,,,,,,,Electr.,Electr.,Electr.,Electr.,Electr.,,Electr.,Electr.,Electr.,Electr.
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,43,,,,
+,,,,,,,31,32,33,34,41,,44,45,46,47
+4,"Indicador de Facturación
+<IndicadorFacturacion>","Indica si el ítem es exento, si es gravado, o
+No facturable., Indicará las distintas tasas:
+0: No Facturable
+ITBIS 1: ítem gravado a ITBIS tasa1 (18%).
+ITBIS 2: ítem gravado a ITBIS tasa2 (16%).
+ITBIS 3: ítem gravado a ITBIS tasa3 (0%).
+E: Exento",1,NUM,"a)Indicar si es valor
+0: No Facturable
+1: ITBIS 1 (18%)
+2: ITBIS 2 (16%)
+3: ITBIS 3 (0%)
+4: Exento (E)",P49,1,1,1,1,1,150,1,1,151,1
+,ÁREA,,,,,,,,,,,,,,,
+,,RETENCIÓN,,,Condicional a que exista retención.,,2,0,2,2,1,0,0,0,0,1
+,<Retencion>,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,Indicador Agente de,Para Agentes de Retención o Percepción.,,,,,,,,,,,,,,
+,,,,,a)Codificación:,,,,,,,,,,,
+,Retención o,Indica para cada transacción si es agente,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+5,Percepción52,retenedor del producto que está,1,NUM,,N,2,0,2,2,1,0,0,0,0,1
+,,,,,1: “R”,,,,,,,,,,,
+,<IndicadorAgenteRete,vendiendo o el servicio. Condicional a que,,,,,,,,,,,,,,
+,,,,,2: “P”,,,,,,,,,,,
+,ncionoPercepcion>,exista retención.,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+6,"Monto ITBIS Retenido
+<MontoITBISRetenido>","Monto del ITBIS correspondiente a la
+retención que será realizado por el
+comprador. Condicional a que exista
+retención.53",18,NUM,"a) Valor numérico de 16 enteros,
+dos decimales, ≥0.",N,2,0,2,2,2,0,0,0,0,0
+7,"Monto Retención Renta
+<MontoISRRetenido>","Monto del Impuesto Sobre la Renta
+correspondiente a la retención realizada de
+la prestación o locación de servicios.
+El e-CF tipo 41 es condicional a que exista
+retención y el ‘Indicador Bien o Servicio’
+sea igual a 2.",18,NUM,"a) Valor numérico de 16 enteros,
+dos decimales, ≥0.
+b) El e-CF tipo 41 es condicional a
+que exista retención y el ‘Indicador
+Bien o Servicio’ sea igual a 2.",N,2,0,2,2,2,0,0,0,0,1

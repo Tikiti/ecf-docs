@@ -1,0 +1,6 @@
+"En cada URL base de los diferentes ambientes se puede encontrar el documento"
+"Swagger (OpenAPI) el cual especifica la lista de recursos disponibles en el API REST y"
+"las operaciones (Métodos) a los que se puede invocar en cada uno de ellos, con sus"
+"parámetros y posibles respuestas."
+"A continuación, podrán identificar la estructura definida para la comunicación o"
+"invocación de los servicios de facturación electrónica según el ambiente:"

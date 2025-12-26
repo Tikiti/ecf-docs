@@ -1,0 +1,149 @@
+Formato Aprobación Comercial
+          (ACECF)
+
+         GERENCIA DE FACTURACIÓN
+           REPÚBLICA DOMINICANA
+
+
+
+
+                Versión 1.0
+
+                Enero 2020
+             1. Introducción
+
+            La aprobación o rechazo comercial es la respuesta que el comprador deberá enviar al emisor como constancia de su
+            conformidad con la transacción realizada. Al momento de recibir la factura, el comprador (receptor) está obligado a confirmar
+            al emisor la recepción del documento con una respuesta de recepción1 y de manera opcional podrá remitir la aprobación o
+            rechazo comercial, de la cual deberá expedir una copia a la DGII.2
+
+            El presente documento describe el contenido que debe tener el formato XML de la aprobación comercial, incluyendo los
+            mensajes que serán utilizados por los receptores electrónicos.
+
+
+
+            2. Contenido del Formato XML de Aprobación Comercial
+
+            a) Detalle de Aprobación Comercial: especifica el contenido de la respuesta que el receptor debe enviar al emisor y remitir
+               copia a la DGII.
+            b) Firma Digital: que avala la integridad de la respuesta y autenticidad del remitente.
+
+
+            3. Códigos de Obligatoriedad
+
+           1 - Dato obligatorio: el dato debe estar siempre en el archivo.
+           2 - Dato condicional: el dato no es obligatorio pero pasa a serlo en determinados casos, si se cumple una cierta condición.
+           3 - Dato opcional: el dato es opcional.
+
+
+1
+    El Acuse de Recibo notifica la recepción de la factura electrónica, es decir, si la misma es recibida o no.
+2
+    La DGII recibirá aprobación o rechazo comercial de e-CF previamente aceptadas por la DGII.
+                                                                               Pág. 2 de 6
+                               Secciones del Archivo           Obligatoriedad de la Sección
+
+                          Detalle Aprobación Comercial                      1
+                          Firma Digital                                     1
+
+
+
+A continuación, se describe el contenido de cada sección, las especificaciones de formato para cada campo y los códigos de
+obligatoriedad para cada uno. Los nombres y características son similares al formato de e-CF.
+
+
+
+
+                                                       Pág. 3 de 6
+4.      Detalle de Aprobación Comercial
+
+No.            Campo                     Descripción                 Tipo   Largo             Validación             Obligatoriedad
+                                                                            Máx.
+      ÁREA                    DETALLE APROBACION COMERCIAL
+      <DetalleAprobacionCome                                                                                               1
+      rcial>
+1     Versión                Versión del formato de Aprobación
+                                                                     NUM      3      Valor: 1.0                            1
+                             Comercial.
+ 2    RNC del Emisor         Número del Registro Nacional del        NUM9   9 u 11   a) RNC cumple con la
+                             contribuyente que emite el e-CF.                           estructura de formato.
+      <RNCEmisor>
+                                                                                     b) RNC debe coincidir con el          1
+                                                                                        RNC del emisor del e-CF.
+
+ 3    e-NCF                    Número Comprobante          Fiscal    ALFA    13      a) e-NCF cumple con la
+                               Electrónico (e-NCF).                  NUM                estructura de formato.
+      <eNCF>
+                                                                                                                           1
+                                                                                     b) e-NCF debe coincidir con
+                                                                                        el e-NCF del e-CF remitido
+                                                                                        por el emisor electrónico.
+ 4    Fecha Emisión           Fecha de emisión del e-CF.             ALFA    10      a) Formato fecha cumple
+                                                                     NUM                con estructura dd-MM-
+      <FechaEmision>                                                                    AAAA.
+
+                                                                                     b) Fecha de emisión debe              1
+                                                                                        coincidir en la aprobación
+                                                                                        comercial y en el e-CF
+                                                                                        remitido por el emisor
+                                                                                        electrónico.
+
+
+
+
+                                                       Pág. 4 de 6
+No.             Campo                     Descripción                 Tipo   Largo             Validación                Obligatoriedad
+                                                                             Máx.
+ 5    Monto Total              Valor indicado en el campo Monto       NUM     18      a) Monto Total debe coincidir
+      <MontoTotal>             Total del e-CF.                                           con el valor del campo
+                                                                                                                               1
+                                                                                         Monto Total del e-CF
+                                                                                         emitido.
+ 6    RNC del Comprador        Número del Registro Nacional del       NUM    9 u 11   a) RNC cumple con             la
+      <RNCComprador>           contribuyente que emite la                                estructura de formato.
+                               Aprobación Comercial del e-CF.                                                                  1
+                                                                                      b) RNC debe coincidir con RNC
+                                                                                         del comprador del e-CF.
+
+ 7    Estado                   Código numérico que indica el          NUM      1      Código numérico del estado de
+                               estado de la Aprobación Comercial.                     la Aprobación Comercial
+      <Estado>                                                                                                                 1
+                                                                                      1: e-CF Aceptado
+                                                                                      2: e-CF Rechazado
+ 8    Detalle    Motivo   del Se indica el motivo de rechazo de       ALFA    250     Sin validación
+      Rechazo                 manera detallada.
+                                                                      NUM
+      <DetalleMotivoRechazo>                                                                                                   2
+                               Condicional a que el campo Estado
+                               sea código 2.
+ 9    Fecha     y     Hora Fecha y hora en formato            dd-                     Fecha y hora cumplen con el
+      Generación Aprobación MM-AAAA HH:mm:ss                                          formato indicado
+                                                                      ALFA
+      Comercial                                                               19                                               1
+                                                                      NUM
+      <FechaHoraAprobacion
+      Comercial>
+      FIN ÁREA                 DETALLE APROBACION COMERCIAL
+
+
+
+
+                                                        Pág. 5 de 6
+5. Firma Digital
+
+
+No.       Campo                   Descripción                  Tipo   Largo   Validación   Obligatoriedad
+                                                                      Máx.
+           ÁREA
+                                  SIGNATURE                                                      1
+        <Signature>
+                        Firma digital sobre el archivo de
+ 1      Firma Digital                                                                            1
+                            Aprobación Comercial
+         FIN ÁREA                 SIGNATURE
+
+
+
+
+                                                 Pág. 6 de 6
+

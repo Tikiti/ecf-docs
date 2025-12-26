@@ -1,0 +1,61 @@
+,CAMPOS,DESCRIPCIÓN,Largo,,Validación,,Fact.,,,,,,,,,Pagos
+,,,,,,,Créd.,Fact.,Nota,Nota,,Gastos,Regím.,,Export.,Exterior
+,,,,,,I,,,,,,,,,,
+,,,Max,Tipo,,,Fiscal,Consum.,Déb.,Créd.,Compras,Menor.,Espec.,Guber.,Electr.,Electr.
+,,,,,,,,,,,,,,,,
+,,,,,,,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,,
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+7,"Subtotal Monto Gravado
+Tasa 3 Página
+<SubtotalMontoGravado3Pagin
+a>","Total de la suma de valores de
+Ítems gravados asignados a ITBIS
+tasa 3 (tasa 0), de las líneas
+correspondientes a la página que
+se indica, menos descuentos más
+recargos.
+Condicional a que la página
+contenga algún ítem gravado a
+tasa ITBIS 3.",,,"a) Valor numérico de 16 enteros, 2
+decimales; ≥ 0 (No puede ser
+negativo).
+b) Suma de valores del monto ítem
+con indicador de facturación=3,
+menos descuentos más recargos, de
+las líneas de ítems incluidos en la
+página.",N,2,2,2,2,2,0,0,2,2,0
+,,,18,NUM,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+8,"Subtotal Exento Página
+<SubtotalExentoPagina>","Total de la suma de valores
+correspondientes a ítems exentos
+indicados en el no. de línea ‘Desde’
+‘Hasta’, de la página.
+Condicional a que en la página
+contenga algún ítem exento.",,,"a) Valor numérico de 16 enteros, 2
+decimales. ≥ 0 (No puede ser
+negativo).
+b) Suma de valores del monto ítem
+con indicador de facturación=4,
+menos descuentos más recargos, de
+las líneas de ítems incluidos en la
+página.",I,2,2,2,2,2,2,2,2,0,2
+,,,18,NUM,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+9,"Subtotal ITBIS Página
+<SubtotalItbisPagina>","Total de la suma de valores de
+Subtotal ITBIS 1, Subtotal ITBIS 2 y
+Subtotal ITBIS 3, a las diferentes
+tasas, de las líneas
+correspondientes a la página que se
+indica.
+Condicional a que exista Subtotal
+ITBIS 1, Subtotal ITBIS 2 y Subtotal
+ITBIS 3 Página.",,,"a) Valor numérico de 16 enteros, 2
+decimales; ≥ 0 (No puede ser
+negativo).
+b) Suma de Subtotal ITBIS Tasa 1
+Página + Subtotal ITBIS Tasa 2 Página
++ Subtotal ITBIS Tasa 3 Página.",I,2,2,2,2,2,0,0,2,2,0
+,,,18,NUM,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,

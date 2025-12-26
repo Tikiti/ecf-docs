@@ -1,0 +1,6 @@
+"•","FechaEmision (dd-MM-aaaa)",""
+"•","MontoTotal",""
+"•","FechaFirma (dd-MM-aaaa HH:mm:ss)",""
+"•","CodigoSeguridad:  corresponde  a","los  primeros  seis 
+(6)  dígitos  del  hash"
+"","generado en el SignatureValue de la ﬁrma digital del e-CF.",""

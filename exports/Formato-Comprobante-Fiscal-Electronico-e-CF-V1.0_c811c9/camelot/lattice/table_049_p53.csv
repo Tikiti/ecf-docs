@@ -1,0 +1,129 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","Fact.   
+Créd.  
+Fiscal  
+Electr. 
+31","Fact. 
+Consum. 
+Electr. 
+32","Nota  
+Déb.  
+Electr. 
+33","Nota 
+Créd. 
+Electr. 
+34","Compras 
+Electr. 
+41","Gastos 
+Menor. 
+Electr. 
+43","Regím. 
+Espec. 
+Electr. 
+44","Guber. 
+Electr. 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"7","Subtotal Monto Gravado 
+Tasa 3 Página 
+<SubtotalMontoGravado3Pagin
+a>","C
+Total  de 
+la  suma  de  valores  de 
+Ítems  gravados  asignados  a  ITBIS 
+tasa  3 
+(tasa  0),  de 
+las 
+líneas 
+correspondientes  a  la  página  que 
+se  indica,  menos  descuentos  más 
+recargos. 
+ondicional 
+a 
+que 
+la 
+página 
+contenga  algún 
+ítem  gravado  a 
+tasa ITBIS 3.","18","NUM","b
+ a) Valor numérico de 16 enteros, 2 
+decimales; 
+≥ 
+0 
+(No 
+puede 
+ser 
+negativo). 
+) Suma de valores del monto ítem 
+con 
+indicador 
+de 
+facturación=3, 
+menos descuentos más recargos, de 
+las  líneas  de  ítems  incluidos  en  la 
+página.","N","2","2","2","2","2","0","0","2","2","0"
+"8","Subtotal Exento Página 
+<SubtotalExentoPagina>","C
+Total 
+de 
+la 
+suma 
+de 
+valores 
+correspondientes  a  ítems  exentos 
+indicados en el no. de línea ‘Desde’ 
+‘Hasta’, de la página. 
+ondicional  a  que  en 
+la  página 
+contenga algún ítem exento.","18","NUM","b
+a)  Valor  numérico  de  16  enteros,  2 
+decimales. 
+≥ 
+0 
+(No 
+puede 
+ser 
+negativo). 
+) Suma de valores del monto ítem 
+con 
+indicador 
+de 
+facturación=4, 
+menos descuentos más recargos, de 
+las  líneas  de  ítems  incluidos  en  la 
+página.","I","2","2","2","2","2","2","2","2","0","2"
+"9","Subtotal ITBIS Página 
+<SubtotalItbisPagina>","C
+Total  de 
+la  suma  de  valores  de 
+Subtotal ITBIS 1, Subtotal ITBIS 2 y 
+Subtotal 
+ITBIS  3,  a 
+las  diferentes 
+tasas, 
+de 
+las 
+líneas 
+correspondientes a la página que se 
+indica. 
+ondicional  a  que  exista  Subtotal 
+ITBIS 1, Subtotal ITBIS 2 y Subtotal 
+ITBIS 3 Página.","18","NUM","b
+a)  Valor  numérico  de  16  enteros,  2 
+decimales; 
+≥ 
+0 
+(No 
+puede 
+ser 
+negativo). 
+)  Suma  de  Subtotal 
+ITBIS  Tasa  1 
+Página + Subtotal ITBIS Tasa 2 Página 
++ Subtotal ITBIS Tasa 3 Página.","I","2","2","2","2","2","0","0","2","2","0"

@@ -50,24 +50,24 @@ The technical tests (Set de Pruebas) validate:
 
 ---
 
-## The 15-Step Certification Flow
+## The 14-Step Certification Flow
 
 ```mermaid
 flowchart TD
     A[1. Registrado] --> B[2. Pruebas Datos e-CF]
-    B --> C[3. Pruebas Aprobación Comercial]
+    B --> C[3. Pruebas Datos AC]
     C --> D[4. Simulación e-CF]
     D --> E[5. Simulación RI]
     E --> F[6. Validación RI]
     F --> G[7. URL Servicios Prueba]
-    G --> H[8. Inicio Prueba Recepción]
+    G --> H[8. Pruebas Comunicación]
     H --> I[9. Recepción e-CF]
     I --> J[10. Inicio Prueba AC]
     J --> K[11. Recepción AC]
     K --> L[12. URL Producción]
     L --> M[13. Declaración Jurada]
     M --> N[14. Verificación Estatus]
-    N --> O[15. Finalizado]
+    N --> O((Certificado))
 ```
 
 ### Step Details
@@ -157,8 +157,10 @@ When sending test documents, you will receive a `trackId`. Querying this ID yiel
 
 ## Legal Framework
 
-- **Law 51-23** - Establishes mandatory adoption calendar
-- **Adoption Timeline**: 12-36 months based on taxpayer category
+- **Ley 32-23** - Ley de Facturación Electrónica de la República Dominicana
+- **Decreto 587-24** - Reglamento para la Aplicación de la Ley 32-23
+- **Norma General 01-2020** - Regulates e-CF issuance and usage
+- **Adoption Timeline**: Based on taxpayer category as per law
 
 ---
 

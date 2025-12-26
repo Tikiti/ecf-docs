@@ -1,0 +1,5 @@
+"49 Se indicará en la representación impresa solo cuando el ítem sea exento."
+"50 El valor del indicador de facturación para los tipos de e-CF 43, 44 y 47 debe ser igual a 4 (Exento)."
+"51 El valor del indicador de facturación para el tipo de e-CF 46 debe ser igual a 3 (ITBIS tasa cero)."
+"52 Régimen de percepción no está vigente."
+"53 Si el campo ‘Indicador de Facturación’ es igual a 4 (exento) y el ‘Indicador de Retención o Percepción’ es igual a 1 (R) se deberá completar el campo ‘Monto ITBIS Retenido’ con valor cero (0)."

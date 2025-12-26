@@ -1,0 +1,75 @@
+"","","Total de la suma de valores de","","","",""
+"","","","","","a)  Valor  numérico  de  16  enteros,  2",""
+"","","monto 
+gravado 
+ITBIS 
+a","","","",""
+"","","","","","decimales; ≥ 0 (No puede ser negativo).",""
+"","","diferentes tasas.","","","",""
+"","Monto Gravado Total4","","","","b",""
+"14","","C","18","NUM",") Valor de la suma del Monto Gravado","2"
+"","<MontoGravadoTotal>","ondicional 
+a 
+que 
+exista","","","",""
+"","","","","","ITBIS  Tasa  1  +  Monto  Gravado  ITBIS",""
+"","","Monto  gravado1,  y/o  Monto","","","",""
+"","","","","","Tasa 2 + Monto Gravado ITBIS Tasa 3.",""
+"","","gravado  2  y/o  Monto  gravado","","","",""
+"","","3.","","","",""
+"","","Corresponde  al 
+total  de 
+los","","","",""
+"","","montos 
+de 
+ITBIS 
+al 
+18%,","","","",""
+"","","asignados 
+en 
+la 
+factura  de","","","",""
+"","","","","","a)  Valor  numérico  de  16  enteros,  2",""
+"","","consumo electrónica.","","","",""
+"","Monto Gravado ITBIS Tasa 1","","","","decimales; ≥ 0 (No puede ser negativo).",""
+"15","","","18","NUM","","2"
+"","<MontoGravadoI1>","C","","","",""
+"","","ondicional a que en la línea de","","","",""
+"","","detalle 
+exista 
+algún 
+ítem","","","",""
+"","","gravado al 18%.","","","",""
+"","","Corresponde  al 
+total  de 
+los","","","",""
+"","","montos 
+de 
+ITBIS 
+al 
+16%,","","","",""
+"","","asignados 
+en 
+la 
+factura  de","","","",""
+"","","","","","a)  Valor  numérico  de  16  enteros,  2",""
+"","Monto Gravado ITBIS","consumo electrónica.","","","",""
+"","","","","","decimales; ≥ 0 (No puede ser negativo).",""
+"16","Tasa 2","","18","NUM","","2"
+"","<MontoGravadoI2>","C
+ondicional a que en la línea de","","","",""
+"","","detalle 
+exista 
+algún 
+ítem","","","",""
+"","","gravado al 16%.","","","",""
+"","","Corresponde  al 
+total  de 
+los","","","a)  Valor  numérico  de  16  enteros,  2",""
+"","Monto Gravado ITBIS Tasa 3","","","","",""
+"17","","montos de ITBIS a tasa cero (0),","18","NUM","decimales≥ 0 (No puede ser negativo).","2"
+"","<MontoGravadoI3>","","","","",""
+"","","asignados 
+en 
+la 
+factura  de","","","",""

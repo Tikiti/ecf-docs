@@ -1,0 +1,114 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. 
+Créd. 
+Fiscal 
+Electr. 
+ 
+31","Fact. 
+Consum. 
+Electr. 
+ 
+32","Nota 
+Déb. 
+Electr. 
+ 
+33","Nota 
+Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Guber. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"111","Monto no Facturable 
+<MontoNoFacturable>","C
+Total de la suma de montos de 
+bienes 
+o 
+servicios 
+con 
+Indicador de facturación=0. 
+ondicional a que en la línea de 
+detalle  exista  algún 
+ítem  con 
+indicador 
+facturación 
+igual  a 
+cero (0).","18","NUM","b
+a)  Valor  numérico  de  16  enteros,  dos 
+decimales. (Puede ser negativo) 
+) Valor numérico de acuerdo con el total 
+sumatoria  monto  ítem  con  indicador  de 
+facturación=0.","N","2","2","2","2","0","0","2","2","2","0"
+"112","Monto Período 
+<MontoPeriodo>","Total  de 
+la  suma  de  Monto 
+Total y Monto no Facturable.","18","NUM","b
+a)  Valor  numérico  de  16  enteros,  dos 
+decimales. (Puede ser negativo) 
+)  Monto  período=  Monto  Total+Monto 
+No Facturable.","N","3","3","3","3","3","3","3","3","3","3"
+"113","Saldo Anterior 
+<SaldoAnterior>","Saldo Anterior. Se incluye sólo 
+con 
+fines 
+de 
+ilustrar 
+con 
+claridad el cobro.","18","NUM","Valor 
+numérico 
+de 
+16 
+enteros, 
+dos 
+decimales. (Puede ser negativo).","N","3","3","3","3","3","3","3","3","3","3"
+"114","Monto Avance de pago 
+<MontoAvancePago>","Pago parcial por adelantado de 
+la factura que se emite.","18","NUM","a) Valor  numérico  de  16  enteros,  dos 
+decimales. >0 (No puede ser negativo)","N","3","3","3","3","3","3","3","3","3","3"
+"115","Valor a pagar 
+<ValorPagar>","Valor cobrado.","18","NUM","b
+  c
+a)Valor  numérico  de  16  enteros,  dos 
+decimales. (Puede ser negativo o cero)  
+)Valor  a  pagar=  Monto 
+total-Monto 
+Avance  de  pago  ±  Saldo  Anterior 
+(± 
+atendiendo 
+si  el 
+valor  es  positivo  o 
+negativo). 
+) Si el campo ‘Indicador Norma 10-07’ de 
+la 
+sección  Descuento 
+o 
+Recargo 
+es 
+completado, entonces: 
+Valor 
+a 
+pagar=  Monto 
+total-Monto 
+descuento 31-  Monto  Avance  de  pago  ± 
+Saldo Anterior (± atendiendo si el valor es 
+positivo o negativo).","N","3","3","3","3","3","3","3","3","3","3"

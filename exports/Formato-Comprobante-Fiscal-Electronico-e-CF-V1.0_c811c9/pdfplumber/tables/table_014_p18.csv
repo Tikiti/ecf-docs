@@ -1,0 +1,64 @@
+,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,Fact.,,,,,,,,,
+,CAMPOS,DESCRIPCIÓN,Largo,Tipo,Validación,I,Créd.,Fact.,Nota,Nota,,Gastos,Regím.,,,Pagos
+,,,,,,,Fiscal,Consum.,Déb.,Créd.,Compras,Menor.,Espec.,Guber.,Export.,Exterior
+,,,Max,,,,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.
+,,,,,,,,,,,,,,,,
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+75,"Unidad Bultos
+<UnidadBulto>","Corresponde a la unidad de medida
+en la que se encuentra los bultos.",2,NUM,"a) Validar con la Tabla IV
+(Codificación de Unidad de medida)",N,3,3,3,3,0,0,3,3,3,0
+76,"Volumen
+<VolumenBulto>","Corresponde al volumen de los
+bultos.",18,NUM,"a) Valor numérico de 16 enteros, 2
+decimales; > 0",N,3,3,3,3,0,0,3,3,3,0
+77,"Unidad Volumen
+<UnidadVolumen>","Corresponde a la unidad de medida
+en la que se encuentra el volumen de
+los bultos.",2,NUM,"a) Validar con la Tabla IV
+(Codificación de Unidad de medida)",N,3,3,3,3,0,0,3,3,3,0
+,FIN ÁREA,INFORMACIONES ADICIONALES,,,,,,,,,,,,,,
+,"ÁREA
+<Transporte>",TRANSPORTE,,,,,3,3,3,3,0,0,3,3,3,0
+78,,,,,Se tiene que validar:,,0,0,0,0,0,0,0,0,3,0
+,Vía Transporte,Se especifica si el transporte es vía,,,01: Terrestre,,,,,,,,,,,
+,,,2,NUM,,N,,,,,,,,,,
+,<ViaTransporte>,"marítima, terrestre o aérea.",,,02: Marítimo,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,03: Aérea,,,,,,,,,,,
+79,"País Origen
+<PaisOrigen>","Corresponde al país de origen de la
+mercancía.",60,ALFA,a) Sin validación,N,0,0,0,0,0,0,0,0,3,0
+80,,Corresponde a la dirección de destino,,,,,0,0,0,0,0,0,0,0,3,0
+,Dirección Destino,donde sera realizado el envío del ítem,,ALFA,,,,,,,,,,,,
+,,,100,,a) Sin validación,N,,,,,,,,,,
+,<DireccionDestino>,(distinto a la dirección del,,NUM,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,comprador).,,,,,,,,,,,,,,
+81,,Corresponde al país destino donde,60,ALFA,a) Sin validación,,0,0,0,0,0,0,0,0,3,3
+,País Destino,,,,,,,,,,,,,,,
+,,sera realizado el envío del ítem,,,,N,,,,,,,,,,
+,<PaisDestino>,,,,,,,,,,,,,,,
+,,(distinto a país del comprador).,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+82,"RNC o Identificación
+Compañía Transportista
+<RNCIdentificacionCompani
+aTransportista>","Corresponde al dato de RNC o de
+Identificación de la compañía que
+realiza el transporte.",20,"ALFA
+NUM",a) Sin validación,N,0,0,0,0,0,0,0,0,3,0
+83,"Nombre Compañía
+Transportista
+<NombreCompaniaTranspor
+tista>","Corresponde al dato del nombre o
+razón social de la compañía que
+realiza el transporte.",150,"ALFA
+NUM",a) Sin validación,N,0,0,0,0,0,0,0,0,3,0
+84,"Número de Viaje
+<NumeroViaje>","Corresponde al número de viaje o el
+número del vuelo.",20,"ALFA
+NUM",a) Sin validación,N,0,0,0,0,0,0,0,0,3,0

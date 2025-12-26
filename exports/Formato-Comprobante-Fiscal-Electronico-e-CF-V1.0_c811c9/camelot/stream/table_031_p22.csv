@@ -1,0 +1,104 @@
+"","","","","","","","Créd.","Fact.","Nota","Nota","","Gastos","Regím.","","","Pagos"
+"","","","Max","","","","","","","","","","","","",""
+"","","","","","","","","","","","","","","","",""
+"","CAMPOS","","","","","","Fiscal","Consum.","Déb.","Créd.","Compras","Menor.","Espec.","Gub.","Export.","Exterior"
+"","","","","","","","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr."
+"","","","","","","","31","32","33","34","41","43","44","45","46","47"
+"","","Tasa de ITBIS 3 (0%).","2","NUM  a) 1 entero en porcentaje Ej.: 0%.","","","","","","","","","","","",""
+"","ITBIS Tasa 3","Condicional a que en la línea de detalle","","","b) 
+Existe 
+ítem 
+con 
+indicador 
+de","","","","","","","","","","",""
+"99","","","","","","N","2","2","2","2","2","0","0","2","2","0"
+"","<ITBIS3>","exista ítem gravado a tasa 3.","","","facturación=3.","","","","","","","","","","",""
+"","","Total  de  la  suma  de  valores  de  ITBIS  a","","","a) 
+Valor 
+numérico 
+de 
+16 
+enteros, 
+2","","","","","","","","","","",""
+"","Total ITBIS","diferentes 
+tasas.  Condicional 
+a  que","","","decimales; ≥ 0 (No puede ser negativo).","","","","","","","","","","",""
+"100","","","18","NUM","","I","2","2","2","2","2","0","0","2","2","0"
+"","<TotalITBIS>","exista Total ITBIS Tasa 1, y/o Total ITBIS","","","b) Suma de Total ITBIS Tasa 1 + Total ITBIS","","","","","","","","","","",""
+"","","Tasa 2 y/o Total ITBIS Tasa 3.","","","Tasa 2 + Total ITBIS Tasa 3.","","","","","","","","","","",""
+"","","","","","a)  Valor  numérico  de  16  enteros,  dos","","","","","","","","","","",""
+"","","Valor numérico igual a Monto Gravado","","","","","","","","","","","","","",""
+"","","","","","decimales; ≥ 0 (No puede ser negativo).","","","","","","","","","","",""
+"","","ITBIS 
+Tasa1 
+por 
+la 
+Tasa 
+ITBIS 
+1.","","","","","","","","","","","","","",""
+"","","","","","b) Total ITBIS Tasa1= Monto Gravado ITBIS","","","","","","","","","","",""
+"","","Condicional 
+a 
+que 
+exista  Monto","","","","","","","","","","","","","",""
+"","","","","","tasa1 *ITBIS tasa .","","","","","","","","","","",""
+"","","Gravado tasa 1 y tasa ITBIS 1.","","","","","","","","","","","","","",""
+"","Total ITBIS Tasa 1","","","","","","","","","","","","","","",""
+"101","<TotalITBIS1>","S","18","NUM","S","N","2","2","2","2","2","0","0","2","0","0"
+"","","i 
+existen 
+impuestos 
+selectivos 
+al","","","olo forman parte de la base imponible del","","","","","","","","","","",""
+"","","consumo  que  formen  parte  de  la  base","","","ITBIS  los  impuestos  selectivos  al  consumo","","","","","","","","","","",""
+"","","imponible del ITBIS, estos se sumaran al","","","con 
+códigos 
+desde 
+006 
+hasta 
+039","","","","","","","","","","",""
+"","","monto  gravado  antes  de  multiplicarlo","","","correspondientes a la Tabla de Codificación","","","","","","","","","","",""
+"","","por la tasa de ITBIS.","","","de Tipos de Impuestos Adicionales.","","","","","","","","","","",""
+"","","","","","a)  Valor  numérico  de  16  enteros,  dos","","","","","","","","","","",""
+"","","Valor numérico igual a Monto Gravado","","","","","","","","","","","","","",""
+"","Total ITBIS Tasa 2","","","","decimales; ≥ 0 (No puede ser negativo).","","","","","","","","","","",""
+"","","ITBIS Tasa2*tasa ITBIS 2.","","","","","","","","","","","","","",""
+"102","<TotalITBIS2>","","18","NUM","","N","2","2","2","2","2","0","0","2","0","0"
+"","","Condicional 
+a 
+que 
+exista  Monto","","","b
+)  Total  ITBIS  Tasa2=  Monto  Gravado  ITBIS","","","","","","","","","","",""
+"","","Gravado tasa 2 y tasa ITBIS 2.","","","tasa2*ITBIS tasa 2.","","","","","","","","","","",""
+"","","Valor  numérico  igual  a  Monto  gravado","","","a","","","","","","","","","","",""
+"","Total ITBIS Tasa3","","","","","","","","","","","","","","",""
+"","","","","",")Valor 
+numérico 
+de 
+16 
+enteros, 
+dos","","","","","","","","","","",""
+"","","ITBIS Tasa3*tasa ITBIS 3.","","","","","","","","","","","","","",""
+"103","<TotalITBIS3>","","18","NUM","","N","2","2","2","2","2","0","0","2","2","0"
+"","","","","","decimales; ≥ 0 (No puede ser negativo).","","","","","","","","","","",""
+"","","Condicional a que exista Monto Gravado","","","","","","","","","","","","","",""
+"","","tasa 3 y tasa ITBIS 3.","","","","","","","","","","","","","",""
+"","","","","","a) Valor  numérico  de 
+16 
+enteros,  dos","","","","","","","","","","",""
+"","","Sumatoria 
+de 
+los 
+campos  Monto","","","decimales; >0 (debe ser positivo).","","","","","","","","","","",""
+"","Monto del Impuesto","","","","","","","","","","","","","","",""
+"","","Impuesto 
+Selectivo 
+al 
+Consumo","","","","","","","","","","","","","",""
+"","Adicional","","","","","","","","","","","","","","",""
+"104","","Específico,  Monto 
+Impuesto  Selectivo","18","NUM","b) Monto del Impuesto Adicional=  Monto","I","2","2","2","2","0","0","216","2","0","0"
+"","<MontoImpuestoAdicional>","","","","","","","","","","","","","","",""
+"","","Ad  Valorem  y  Monto  Otros  Impuestos","","","Impuesto Selectivo al Consumo Específico+","","","","","","","","","","",""
+"","","Adicionales.","","","  Monto  Impuesto  Selectivo  Ad  Valorem+","","","","","","","","","","",""
+"","","","","","Monto Otros Impuestos Adicionales.","","","","","","","","","","",""

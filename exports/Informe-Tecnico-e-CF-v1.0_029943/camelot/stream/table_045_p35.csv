@@ -1,0 +1,9 @@
+"o","Propina legal (si aplica): corresponde a la Propina Legal. Hace referencia al monto"
+"","impuesto adicional cuando este posea el código del impuesto."
+"o","Total: hace referencia al valor del campo ‘Monto Total’ del Formato de e-CF."
+"o","Descripción de Descuento o Recargo (si aplica)50."
+"o","Descuento o Recargo en % (si aplica): hace referencia al valor en porcentaje del"
+"","descuento o recargo, cuando este es global."
+"o","Monto  de  Descuento  o  Recargo 
+(si  aplica):  hace  referencia  al  monto  del"
+"","descuento o recargo aplicable."

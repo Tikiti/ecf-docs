@@ -1,0 +1,145 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. 
+  Créd.  
+Fiscal  
+Electr. 
+31","Fact. 
+Consum. 
+Electr. 
+32","Nota  
+Déb. Electr. 
+33","Nota 
+Créd. 
+Electr. 
+34","Compras 
+Electr. 
+41","Gastos 
+Menor. 
+Electr. 
+43","Regím. 
+Espec. 
+Electr. 
+44","Guber. 
+Electr. 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"4","Subtotal Monto Gravado 
+Total Página 
+<SubtotalMontoGravadoPagi
+na>","C
+Total de la suma de valores de monto 
+gravado  ITBIS  a  diferentes  tasas,  de 
+las líneas correspondientes a la página 
+que se indica. 
+ondicional  a  que  exista 
+Subtotal 
+Monto gravado1, y/o Subtotal Monto 
+gravado 
+2 
+y/o 
+Subtotal  Monto 
+gravado 3 Página.","18","NUM","a)  Valor  numérico  de  16  enteros,  2 
+decimales; 
+≥ 
+0 
+(No 
+puede 
+ser 
+negativo).  
+b) El valor indicado debe ser igual a 
+la 
+sumatoria  del  Subtotal  Monto 
+gravado 
+ITBIS 
+Tasa1 
++ 
+Subtotal 
+Monto 
+gravado 
+ITBIS 
+Tasa2 
++ 
+Subtotal Monto gravado ITBIS Tasa3 
+de la página indicada.","I","2","2","2","2","2","0","0","2","2","0"
+"5","Subtotal Monto Gravado 
+Tasa 1 Página 
+<SubtotalMontoGravado1Pa
+gina>","C
+     
+Total de la suma de valores de Ítems 
+gravados  asignados  a 
+ITBIS  tasa  1 
+(tasa 
+18%), 
+de 
+las 
+líneas 
+correspondientes a la página que se 
+indica, 
+menos 
+descuentos 
+más 
+recargos.78  
+ondicional a que la página contenga 
+algún ítem gravado a tasa ITBIS 1.","18","NUM","b
+  
+a)  Valor  numérico  de  16  enteros,  2 
+decimales; 
+≥ 
+0 
+(No 
+puede 
+ser 
+negativo). 
+) Suma de valores del monto ítem 
+con 
+indicador 
+de 
+facturación=1, 
+menos descuentos más recargos, de 
+las  líneas  de  ítems  incluidos  en  la 
+página.","N","2","2","2","2","2","0","0","2","0","0"
+"6","Subtotal Monto Gravado 
+Tasa 2 Página 
+<SubtotalMontoGravado2Pa
+gina>","C
+Total de la suma de valores de Ítems 
+gravados  asignados  a 
+ITBIS  tasa  2 
+(tasa 
+16%), 
+de 
+las 
+líneas 
+correspondientes a la página que se 
+indica, 
+menos 
+descuentos 
+más 
+recargos. 
+ondicional a que la página contenga 
+algún ítem gravado a tasa ITBIS 2.","18","NUM","b
+  
+a)  Valor  numérico  de  16  enteros,  2 
+decimales; 
+≥ 
+0 
+(No 
+puede 
+ser 
+negativo). 
+) Suma de valores del monto ítem 
+con 
+indicador 
+de 
+facturación=2, 
+menos descuentos más recargos, de 
+las  líneas  de  ítems  incluidos  en  la 
+página.","N","2","2","2","2","2","0","0","2","0","0"

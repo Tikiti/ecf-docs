@@ -1,0 +1,16 @@
+"Sección","","Descripción","Requisito","","","e-CF","",""
+"F. Información de","","En 
+esta 
+sección 
+se 
+deben","Obligatorio y","","Obligatorio  solo  para  Notas","","",""
+"Referencia","","detallar los e-CF modificados o","condicional.","de","Crédito","","y","Débito"
+"","","reemplazados con e-CF.","","","Electrónica cuando modifica","","",""
+"","","","","","un  documento  en  papel  o","","",""
+"","","","","uno","","electrónico.","","Es"
+"","","","","","condicional para el resto de","","",""
+"","","","","","los e-CF, cuando se trate de","","",""
+"","","","","","una  sustitución  de  un  NCF","","",""
+"","","","","por","un","e-CF","(casos","de"
+"","","","","","contingencia).","","",""
+"H.  Fecha  y  Hora  de","la","Indica  la  fecha  y  hora  de  la","Obligatorio","","","Todos","",""

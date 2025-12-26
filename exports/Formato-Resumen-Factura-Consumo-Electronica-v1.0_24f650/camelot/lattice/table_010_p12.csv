@@ -1,0 +1,25 @@
+"30","Monto Período 
+<MontoPeriodo>","Corresponde al total del monto 
+periodo, asignados en la factura 
+de consumo electrónica.","18","NUM","b
+a)  Valor  numérico  de  16  enteros,  dos 
+decimales. (Puede ser negativo) 
+) 
+Monto 
+período= 
+Monto 
+Total+Monto No Facturable.","3"
+"","FIN ÁREA","TOTALES","","","",""
+"31","Código Seguridad Factura de 
+Consumo DOP$<250 M 
+<CodigoSeguridadeCF>","Corresponde  a 
+los  6  primeros 
+caracteres del Hash de la firma 
+digital 
+correspondiente 
+a 
+la 
+factura de consumo electrónica 
+emitida, menor a DOP$250 M.","6","ALFA 
+NUM","a) Sin validación","1"
+"","FIN ÁREA","ENCABEZADO","","","",""

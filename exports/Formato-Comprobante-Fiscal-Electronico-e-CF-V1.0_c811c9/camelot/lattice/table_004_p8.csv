@@ -1,0 +1,131 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","OBLIGATORIEDAD","","","","","","","","",""
+"","","","","","","","Fact. Créd. 
+Fiscal Electr. 
+ 
+31","Fact. 
+Cons. 
+Electr. 
+ 
+32","Nota 
+Déb. 
+Electr. 
+ 
+33","Nota 
+Créd. 
+Electr. 
+ 
+34","Compras 
+Electr. 
+ 
+41","Gastos 
+Menor. 
+Electr. 
+ 
+43","Regím. 
+Espec. 
+Electr. 
+ 
+44","Guber. 
+Electr. 
+ 
+45","Export. 
+Electr. 
+ 
+46","Pagos 
+Exterior 
+Electr. 
+ 
+47"
+"5","Indicador Nota de Crédito 
+mayor a 30 días 
+<IndicadorNotaCredito>","Sólo para Notas de Crédito que no 
+tienen  derecho  a  rebajar  ITBIS.El 
+indicador tomará valor 1 si la fecha 
+es mayor a 30 días calendario de la 
+emisión del e-CF afectado.","1","NUM","a) Valor 0 si fecha de emisión del 
+e-CF 
+afectado 
+es 
+≤ 
+30 
+días 
+calendario.  
+b) Valor 1 si fecha de emisión del 
+e-CF 
+afectado 
+es 
+> 
+30 
+días 
+calendario.","N","0","0","0","1","0","0","0","0","0","0"
+"6","Indicador Envío Diferido 
+<IndicadorEnvioDiferido>","Identifica a los contribuyentes que 
+han  sido  previamente  autorizados 
+a 
+tener 
+ventas 
+a 
+través 
+de 
+dispositivos  móviles  offline,  tales 
+como  ventas  con  Handheld,  entre 
+otros.  
+  
+Condicional  a  que  se  encuentre 
+autorizado hacer envíos diferidos.","1","NUM","a) 
+Código 
+1: 
+Envío 
+diferido 
+autorizado.  
+  
+b) 
+Valida 
+contribuyente 
+(RNC/Cédula)  está  autorizado  a 
+realizar envíos diferidos.","N","2","2","2","2","0","0","2","2","2","0"
+"7","Indicador Monto Gravado 
+<IndicadorMontoGravado>","Indica si en la línea de detalle, el 
+monto  se  encuentra  con  ITBIS 
+incluido  (impuestos  adicionales 
+no  están  incluidos  en  el  precio 
+del item).  
+Condicional  a  que  el  bien  o 
+servicio sea gravado con ITBIS.","1","NUM","b
+a)  Valor  0  si  los  montos  en  las 
+líneas 
+sección  B 
+“Detalle 
+de 
+Bienes  o  Servicios”  no 
+tienen 
+ITBIS incluido. 
+)  Valor  1  si  los  montos  en  las 
+líneas 
+sección  B 
+“Detalle 
+de 
+Bienes 
+o 
+Servicios” 
+se 
+encuentran con ITBIS incluido.","N","2","2","2","2","2","0","0","2","0","0"
+"8","Tipo de Ingresos 
+<TipoIngresos>","Indica  el  tipo  de  ingreso  recibido, 
+según clasificación del formato de 
+envío 
+de 
+ventas 
+de 
+Bienes 
+o 
+Servicios.","2","NUM","a) Código Tipo: 
+01: Ingresos por operaciones (No 
+financieros). 
+02: Ingresos Financieros 
+03: Ingresos Extraordinarios 
+04: Ingresos por Arrendamientos 
+05: Ingresos por Venta de Activo 
+Depreciable 
+06: Otros Ingresos","N","1","1","1","1","0","0","1","1","1","0"

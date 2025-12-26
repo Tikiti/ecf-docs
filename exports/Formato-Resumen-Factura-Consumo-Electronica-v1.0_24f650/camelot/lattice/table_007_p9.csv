@@ -1,0 +1,85 @@
+"21","Total ITBIS Tasa 2 
+<TotalITBIS2>","C
+Corresponde  al 
+total  de 
+los 
+montos 
+de 
+ITBIS 
+al 
+16%, 
+asignados 
+en 
+la 
+factura 
+de 
+consumo electrónica. 
+ondicional a que en la línea de 
+detalle 
+exista 
+algún 
+ítem 
+gravado al 16%","18","NUM","a)  Valor  numérico  de  16  enteros,  dos 
+decimales; ≥ 0 (No puede ser negativo).","2"
+"22","Total ITBIS Tasa3 
+<TotalITBIS3>","C
+Corresponde  al 
+total  de 
+los 
+montos de ITBIS tasa cero (0%), 
+asignados 
+en 
+la 
+factura 
+de 
+consumo electrónica. 
+ondicional a que en la línea de 
+detalle 
+exista 
+algún 
+ítem 
+gravado a tasa 0.","18","NUM","a)  Valor  numérico  de  16  enteros,  dos 
+decimales; ≥ 0 (No puede ser negativo).","2"
+"23","Monto del Impuesto Adicional 
+<MontoImpuestoAdicional>","C
+Corresponde  a  la  suma  de  los 
+campos 
+Monto 
+Impuesto 
+Selectivo al Consumo Específico 
+y  Ad  Valorem  y  Monto  Otros 
+Impuestos 
+Adicionales, 
+asignados 
+en 
+la 
+factura 
+de 
+consumo electrónica. 
+ondicional a que exista Monto 
+Impuesto Selectivo al Consumo.","18","NUM","b
+a) Valor  numérico  de  16  enteros,  dos 
+decimales; >0 (debe ser positivo). 
+) Valor de la suma del Monto Impuesto 
+Selectivo 
+al 
+Consumo 
+Específico+ 
+Monto 
+Impuesto 
+Selectivo 
+Ad 
+Valorem+  Monto 
+Otros 
+Impuestos 
+Adicionales.","2"
+"","Tabla de 
+Impuestos Adicionales","Condicional 
+a 
+que 
+exista 
+impuestos 
+adicionales 
+en 
+la 
+factura de consumo electrónica.","","","","2"

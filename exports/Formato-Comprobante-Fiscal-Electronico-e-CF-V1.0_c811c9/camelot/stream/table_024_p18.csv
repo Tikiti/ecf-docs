@@ -1,0 +1,42 @@
+"","País Origen","Corresponde  al  país  de  origen  de  la","","","","","","","","","","","","",""
+"79","","","60","ALFA","a) Sin validación","N","0","0","0","0","0","0","0","0","3"
+"","<PaisOrigen>","mercancía.","","","","","","","","","","","","",""
+"","","Corresponde a la dirección de destino","","","","","","","","","","","","",""
+"","Dirección Destino","donde sera realizado el envío del ítem","","ALFA","","","","","","","","","","",""
+"80","","","100","","a) Sin validación","N","0","0","0","0","0","0","0","0","3"
+"","<DireccionDestino>","(distinto 
+a 
+la 
+dirección 
+del","","NUM","","","","","","","","","","",""
+"","","comprador).","","","","","","","","","","","","",""
+"","","Corresponde  al  país  destino  donde","","","","","","","","","","","","",""
+"","País Destino","","","","","","","","","","","","","",""
+"81","","sera 
+realizado 
+el 
+envío  del 
+ítem","60","ALFA","a) Sin validación","N","0","0","0","0","0","0","0","0","3"
+"","<PaisDestino>","","","","","","","","","","","","","",""
+"","","(distinto a país del comprador).","","","","","","","","","","","","",""
+"","RNC o Identificación","","","","","","","","","","","","","",""
+"","","Corresponde  al  dato  de  RNC  o  de","","","","","","","","","","","","",""
+"","Compañía Transportista","","","ALFA","","","","","","","","","","",""
+"82","","Identificación  de 
+la  compañía  que","20","","a) Sin validación","N","0","0","0","0","0","0","0","0","3"
+"","<RNCIdentificacionCompani","","","NUM","","","","","","","","","","",""
+"","","realiza el transporte.","","","","","","","","","","","","",""
+"","aTransportista>","","","","","","","","","","","","","",""
+"","Nombre Compañía","","","","","","","","","","","","","",""
+"","","Corresponde  al  dato  del  nombre  o","","","","","","","","","","","","",""
+"","Transportista","","","ALFA","","","","","","","","","","",""
+"83","","razón 
+social  de 
+la 
+compañía  que","150","","a) Sin validación","N","0","0","0","0","0","0","0","0","3"
+"","<NombreCompaniaTranspor","","","NUM","","","","","","","","","","",""
+"","","realiza el transporte.","","","","","","","","","","","","",""
+"","tista>","","","","","","","","","","","","","",""
+"","Número de Viaje","Corresponde al número de viaje o el","","ALFA","","","","","","","","","","",""
+"84","","","20","","a) Sin validación","N","0","0","0","0","0","0","0","0","3"
+"","<NumeroViaje>","número del vuelo.","","NUM","","","","","","","","","","",""

@@ -1,0 +1,54 @@
+,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,DESCRIPCIÓN,Largo,,Validación,,,,,,,,,,,
+,,,,Tipo,,,Fact.,,,,,,,,,
+,CAMPOS,,Max,,,I,Créd.,Fact.,,Nota,,Gastos,Regím.,,,Pagos
+,,,,,,,Fiscal,Consum.,Nota Déb.,Créd.,Compras,Menor.,Espec.,Guber.,Export.,Exterior
+,,,,,,,,,,,,,,,,
+,,,,,,,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.
+,,,,,,,,,,,,,,,,
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+35,"Ruta de Venta
+<RutaVenta>","Corresponde a la ruta de venta del
+vendedor.",20,"ALFA
+NUM",a) Sin validación,N,3,3,3,3,0,0,3,3,3,0
+36,"Información adicional Emisor
+<InformacionAdicionalEmisor>",Otra información relativa al Emisor.,250,"ALFA
+NUM",a) Sin validación,N,3,3,3,3,3,3,3,3,3,3
+37,"Fecha Emisión
+<FechaEmision>",Fecha de emisión del e-CF.,10,"ALFA
+NUM","Fecha válida:
+a) Formato
+dd-MM-AAAA
+b) Validar fecha de inicio como
+facturador electrónico.",I,1,1,1,1,1,1,1,1,1,1
+,FIN ÁREA,EMISOR,,,,,,,,,,,,,,
+,ÁREA,,,,,,,,,,,,,,,
+,,COMPRADOR,,,,,1,1,2,2,1,0,1,1,1,3
+,<Comprador>,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+38,"RNC Comprador
+<RNCComprador>","Corresponde al RNC del comprador.
+Condicional a que el monto total del e-
+CF tipo 32 sea igual o superiores a DOP$
+250M.4
+En caso de que el e-CF sea tipo 46, el
+campo es condicional a que la Zona
+Franca Comercial (Aeropuertos y
+Puertos) realice transferencia de bienes
+a Residentes y el campo ‘Identificador
+Extranjero’ esté vacío.",9 u 11,NUM,"a) Validar estructura.
+b) Si el e-CF es tipo 32 y el
+monto total es ≥
+DOP$250,000.00 se debe
+identificar RNC Comprador.
+c) Si el e-CF tipo 33 y tipo 34
+modifica un e-CF tipo 32 con
+monto total ≥ DOP$250,000.00
+se debe identificar el RNC
+Comprador.
+d) Si el e-CF es tipo 32 y el
+comprador es extranjero, este
+campo puede ir en blanco y
+completar el campo
+Identificador Extranjero.",I,1,2,2,2,1,0,25,1,26,0

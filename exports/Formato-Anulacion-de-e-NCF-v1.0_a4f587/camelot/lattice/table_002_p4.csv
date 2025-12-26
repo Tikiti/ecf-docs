@@ -1,0 +1,63 @@
+"No.","Nombre del Campo","Descripción","Tipo","Largo 
+Máx.","Validación","Obligatoriedad"
+"","ÁREA 
+<Encabezado>","ENCABEZADO","","","","1"
+"1","Versión","Versión del Formato 
+Anulación  de   e-NCF.","NUM","3","Valor: 1.0","1"
+"2","R
+ 
+NC Emisor 
+<RncEmisor>","Corresponde  al  Número 
+de  Registro Nacional del 
+contribuyente  que  emite  la 
+factura electrónica.","NUM","9 u 11","RNC 
+cumple 
+con 
+la 
+a) 
+estructura de formato. 
+está 
+autorizado 
+b)  RNC 
+como 
+Facturador 
+Electrónico. 
+RNC 
+tiene  secuencias 
+c) 
+autorizadas 
+del 
+tipo 
+de 
+e-  NCF  que  está 
+anulando.","1"
+"3","Cantidad de e-NCF Anulados 
+<CantidadeNCFAnulados>","Sumatoria de la cantidad 
+de e-NCF que se está 
+reportando en  la  sección 
+Detalle,  de  este  formato.","NUM","10","a) 
+Cantidad 
+de 
+e-NCF 
+Anulados=∑ 
+cantidad 
+de  e-  NCF 
+anulados 
+por  tipo  de  e-NCF, de 
+la sección  Detalle.","1"
+"4","F
+ 
+echa y Hora Generación 
+Anulación de e-NCF 
+<FechaHoraAnulacioneNCF>","Fecha y hora en que se 
+generó  el archivo de 
+anulación de  secuencias 
+de e-NCF, en  formato 
+Formato dd-MM-AAAA 
+HH:mm:ss","ALFA 
+NUM","19","a)    Formato de fecha y 
+hora  cumple con 
+formato        dd-
+MM-AAAA 
+HH:mm:ss","1"
+"","FIN ÁREA","ENCABEZADO","","","",""

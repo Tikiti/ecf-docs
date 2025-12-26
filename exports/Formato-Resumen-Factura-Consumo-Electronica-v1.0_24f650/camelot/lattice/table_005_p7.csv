@@ -1,0 +1,75 @@
+"14","Monto Gravado Total4 
+<MontoGravadoTotal>","C
+Total de la suma de valores de 
+monto 
+gravado 
+ITBIS 
+a 
+diferentes tasas. 
+ondicional 
+a 
+que 
+exista 
+Monto  gravado1,  y/o  Monto 
+gravado  2  y/o  Monto  gravado 
+3.","18","NUM","b
+a)  Valor  numérico  de  16  enteros,  2 
+decimales; ≥ 0 (No puede ser negativo). 
+) Valor de la suma del Monto Gravado 
+ITBIS  Tasa  1  +  Monto  Gravado  ITBIS 
+Tasa 2 + Monto Gravado ITBIS Tasa 3.","2"
+"15","Monto Gravado ITBIS Tasa 1 
+<MontoGravadoI1>","C
+Corresponde  al 
+total  de 
+los 
+montos 
+de 
+ITBIS 
+al 
+18%, 
+asignados 
+en 
+la 
+factura  de 
+consumo electrónica.  
+ondicional a que en la línea de 
+detalle 
+exista 
+algún 
+ítem 
+gravado al 18%.","18","NUM","a)  Valor  numérico  de  16  enteros,  2 
+decimales; ≥ 0 (No puede ser negativo).","2"
+"16","Monto Gravado ITBIS  
+Tasa 2 
+<MontoGravadoI2>","C
+Corresponde  al 
+total  de 
+los 
+montos 
+de 
+ITBIS 
+al 
+16%, 
+asignados 
+en 
+la 
+factura  de 
+consumo electrónica.  
+ondicional a que en la línea de 
+detalle 
+exista 
+algún 
+ítem 
+gravado al 16%.","18","NUM","a)  Valor  numérico  de  16  enteros,  2 
+decimales; ≥ 0 (No puede ser negativo).","2"
+"17","Monto Gravado ITBIS Tasa 3 
+<MontoGravadoI3>","Corresponde  al 
+total  de 
+los 
+montos de ITBIS a tasa cero (0), 
+asignados 
+en 
+la 
+factura  de","18","NUM","a)  Valor  numérico  de  16  enteros,  2 
+decimales≥ 0 (No puede ser negativo).","2"

@@ -1,0 +1,68 @@
+,,,,,,,OBLIGATORIEDAD,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
+,CAMPOS,DESCRIPCIÓN,Largo,Tipo,Validación,I,Fact. Créd.,Fact.,Nota,Nota,,Gastos,Regím.,,,Pagos
+,,,,,,,Fiscal,Consum.,Déb.,Créd.,Compras,Menor.,Espec.,Guber.,Export.,Exterior
+,,,Max,,,,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.,Electr.
+,,,,,,,,,,,,,,,,
+,,,,,,,31,32,33,34,41,43,44,45,46,47
+128,"Total ITBIS Tasa 1 en Otra
+Moneda
+<TotalITBIS1OtraMoneda>","Valor numérico igual a Monto Gravado
+ITBIS en Otra Moneda Tasa1*tasa ITBIS 1.
+Condicional a que exista Monto gravado
+ITBIS Tasa 1 Otra Moneda.
+Condicional a que exista Monto Gravado
+tasa 1 en Otra Moneda.",18,NUM,"a) Valor numérico de 16 enteros,
+dos decimales≥ 0 (No puede ser
+negativo).
+Total ITBIS Tasa1 en Otra
+Moneda= Monto Gravado ITBIS
+tasa1 Otra Moneda*ITBIS tasa
+1.37",N,2,2,2,2,2,0,0,2,0,0
+129,"Total ITBIS Tasa 2 en otra
+moneda
+<TotalITBIS2OtraMoneda>","Valor numérico igual a Monto Gravado
+ITBIS en Otra Moneda Tasa2*tasa ITBIS 2.
+Condicional a que exista Monto gravado
+ITBIS Tasa 2 Otra Moneda.",18,NUM,"a) Valor numérico de 16 enteros,
+dos decimales; ≥0 (No puede ser
+negativo).
+Total ITBIS Tasa 2 en Otra
+Moneda= Monto Gravado ITBIS
+tasa2 Otra Moneda*ITBIS tasa 2.",N,2,2,2,2,2,0,0,2,0,0
+130,"Total ITBIS Tasa 3 en otra
+moneda
+<TotalITBIS3OtraMoneda>","Valor numérico igual a Monto Gravado
+ITBIS en Otra Moneda Tasa3*tasa ITBIS 3.
+Condicional a que exista Monto gravado
+ITBIS Tasa 3 Otra Moneda.",18,NUM,"a) Valor numérico de 16 enteros,
+dos decimales; ≥ 0 (No puede ser
+negativo).",N,2,2,2,2,2,0,0,2,2,0
+131,"Monto del Impuesto
+Adicional en Otra
+Moneda38
+<MontoImpuestoAdicionalOt
+raMoneda>","Sumatoria de los campos Monto Impuesto
+Selectivo al Consumo Específico en Otra
+Moneda, Monto Impuesto Selectivo Ad
+Valorem en Otra Moneda y Monto Otros
+Impuestos Adicionales en Otra Moneda.
+Condicional a que exista datos en código
+otra moneda y exista al menos unos de los
+campos de Monto Impuesto Selectivo al
+Consumo Específico en Otra Moneda,
+Monto Impuesto Selectivo Ad Valorem en
+Otra Moneda y/o Monto Otros Impuestos
+Adicionales en Otra Moneda.",18,NUM,"a) Valor numérico de 16 enteros,
+dos decimales; >0 (debe ser
+positivo).
+b) Monto del Impuesto Adicional
+en Otra Moneda=  Monto
+Impuesto Selectivo al Consumo
+Específico en Otra Moneda + 
+Monto Impuesto Selectivo Ad
+Valorem en Otra Moneda +
+Monto Otros Impuestos
+Adicionales en Otra Moneda.",N,2,2,2,2,0,0,239,2,0,0

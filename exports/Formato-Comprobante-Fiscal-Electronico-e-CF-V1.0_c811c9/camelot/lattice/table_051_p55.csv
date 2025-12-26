@@ -1,0 +1,116 @@
+"","CAMPOS","DESCRIPCIÓN","Largo 
+Max","Tipo","Validación","I","Fact.  
+ Créd.  
+Fiscal  
+Electr. 
+31","Fact. 
+Consum. 
+Electr. 
+32","Nota 
+Déb. 
+Electr. 
+33","Nota 
+Créd. 
+Electr. 
+34","Compras 
+Electr. 
+41","Gastos 
+Menor. 
+Electr. 
+43","Regím. 
+Espec. 
+Electr. 
+44","Guber. 
+Electr. 
+45","Export. 
+Electr. 
+46","Pagos 
+Exterior 
+Electr. 
+47"
+"13","Subtotal Impuesto Adicional 
+Página 
+<SubtotalImpuestoAdicionalPagina>","C
+Sumatoria  de 
+los  campos  del  área 
+Subtotal Impuesto Adicional.  
+ondicional 
+a 
+que 
+se 
+complete 
+campos  del  área  Subtotal  Impuesto 
+Adicional.","18","NUM","b
+a) Valor numérico de 16 enteros, 
+dos  decimales; 
+>0 
+(debe 
+ser 
+positivo). 
+) Subtotal Impuesto Adicional= 
+Subtotal 
+Impuesto  Selectivo  al 
+Consumo 
++ 
+Subtotal 
+Otros 
+Impuestos Adicionales.","I","2","2","2","2","0","0","2","2","0","0"
+"","ÁREA 
+<SubtotalImpuestoAdicional>","SUBTOTAL IMPUESTO ADICIONAL","","","Condicional a que exista otros(s) 
+impuesto(s) en la línea de detalle 
+de la página, distinto(s) al ITBIS.","","2","2","2","2","0","0","2","2","0","0"
+"14","Subtotal Impuesto Selectivo al 
+Consumo Página 
+<SubtotalImpuestoSelectivoConsum
+oEspecificoPagina>","C
+Valor 
+del 
+impuesto 
+selectivo 
+al 
+consumo  específico  y  Ad  Valorem, 
+correspondientes 
+a 
+los 
+ítems 
+del 
+campo ‘No. de línea desde’ a ‘No. de 
+línea hasta’, indicados en la página. 
+ondicional a que los ítems del campo 
+‘No.  de  línea  desde’  a  ‘No.  de  línea 
+hasta’, 
+existan 
+gravados 
+con 
+Impuestos al Consumo Específico y Ad 
+Valorem.","18","NUM","a) Valor numérico de 16 enteros, 
+dos  decimales; 
+>0 
+(debe 
+ser 
+positivo).","N","2","2","2","2","0","0","0","2","0","0"
+"15","Subtotal Otros Impuestos 
+Adicionales Página 
+<SubtotalOtrosImpuesto>","C
+Valor 
+del 
+impuesto 
+adicional 
+(exceptuando el impuesto selectivo al 
+consumo  específico  y  Ad  Valorem), 
+correspondientes 
+a 
+los 
+ítems 
+del 
+campo ‘No. de línea desde’ a ‘No. de 
+línea hasta’, indicados en la página. 
+ondicional a que los ítems del campo 
+‘No.  de  línea  desde’  a  ‘No.  de  línea 
+hasta’,  existan  gravados  con  Otros 
+Impuestos Adicionales.","18","NUM","a) Valor numérico de 16 enteros, 
+dos  decimales; 
+>0 
+(debe 
+ser 
+positivo","N","2","2","2","2","0","0","2","2","0","0"

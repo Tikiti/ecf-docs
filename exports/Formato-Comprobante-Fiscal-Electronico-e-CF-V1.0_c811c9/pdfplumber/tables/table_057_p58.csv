@@ -1,0 +1,49 @@
+,,"Condicional a que el comprobante
+modificado no coincida con el RNC
+Emisor del e-CF (debido a que el RNC
+se encuentre dado de baja (por
+disolución, fusión o escisión).",,,,,,,,,,,,,,
+3,"Fecha NCF Modificado
+<FechaNCFModificado>","Fecha del número de comprobante
+fiscal modificado. Condicional a que la
+emisión del e-CF corresponda a un
+reemplazo de Comprobante Fiscal no
+electrónico emitido en contingencia.",10,"ALFA
+NUM","Validar
+a) Formato: (dd-MM-
+AAAA).
+b) Fecha de emisión del
+comprobante fiscal.",N,2,2,1,1,2,2,2,2,2,2
+4,"Código de Modificación
+<CodigoModificacion>","Código utilizado para indicar si el e-CF
+del comprobante fiscal modificado es
+con la finalidad de:
+a) Anulación total
+b) Corrección montos
+c) Corrección Texto
+d) Reemplazo NCF emitido en
+contingencia
+e) Referenciar Factura de Consumo
+Electrónica.
+a), b) y c) solo aplican para Nota de
+Crédito o Débito Electrónica.
+Condicional a que el código de
+modificación sea igual a 4.",1,NUM,"a) Código tipo80:
+1: Anula el NCF
+modificado
+2: Corrige Texto del
+Comprobante Fiscal
+modificado
+3: Corrige montos del NCF
+modificado
+4: Reemplazo NCF
+emitido en contingencia
+5: Referencia Factura
+Consumo Electrónica.81",P,2,2,1,1,2,2,2,2,2,2
+5,"Razón Modificación
+<RazonModificacion>","Campo para describir los datos
+modificados o la razón de la emisión
+de la Nota de Crédito o Débito
+Electrónica.
+Ejemplo: “error en precio”.",90,ALFA,a) Sin validación,N,0,0,3,3,0,0,0,0,0,0
+,FIN ÁREA,INFORMACIÓN DE REFERENCIA,,,,,,,,,,,,,,

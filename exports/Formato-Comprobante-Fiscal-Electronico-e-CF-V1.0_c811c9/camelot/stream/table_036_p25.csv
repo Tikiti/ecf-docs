@@ -1,0 +1,97 @@
+"","","","","","","","multiplicar por la cantidad, por la cantidad de","","","","","","","","","","",""
+"","","","","","","","referencia 
+y 
+por 
+la 
+tasa 
+del 
+impuesto","","","","","","","","","","",""
+"","","","","","","","correspondiente.","","","","","","","","","","",""
+"","","","","","","","a) 
+Valor 
+numérico 
+de 
+16 
+enteros, 
+dos","","","","","","","","","","",""
+"","","","","","","","decimales; >0 (debe ser positivo).","","","","","","","","","","",""
+"","","","","","","","b) 
+  Si  el  código  del 
+impuesto  se  encuentra","","","","","","","","","","",""
+"","","","","","","","entre  001  al  005,  se  deben  multiplicar 
+los","","","","","","","","","","",""
+"","","","","","","","montos  ítems  por  la  tasa  correspondiente  al","","","","","","","","","","",""
+"","","","","","","","código de impuesto adicional.","","","","","","","","","","",""
+"","","","","","","","c)  Para  los  códigos  001,  002,  003  y  004,  si  el","","","","","","","","","","",""
+"","","","","","","","indicador monto gravado=1, se debe dividir el","","","","","","","","","","",""
+"","","","","","","","monto  de  ítem  entre  (1+  ITBIS  tasa  1),  y  el","","","","","","","","","","",""
+"","","","Valor del impuesto adicional asociado al","","","","","","","","","","","","","","",""
+"","","","","","","","resultado 
+multiplicar 
+por 
+la 
+tasa","","","","","","","","","","",""
+"","","código 
+de","","impuesto 
+adicional.","","","","","","","","","","","","","",""
+"","","","","","","","correspondiente 
+al 
+código 
+de 
+impuesto","","","","","","","","","","",""
+"","","","Condicional a que exista código del 001","","","","","","","","","","","","","","",""
+"","","","","","","","adicional.","","","","","","","","","","",""
+"","","al 005.","","","","","","","","","","","","","","","",""
+"","","","","","","","d)  Para  los  códigos  002  y  004,  si  el  campo","","","","","","","","","","",""
+"","Monto Otros Impuestos","","","","","","27","","","","","","","","","","",""
+"","","E","","","","","‘Indicador  Norma  10-07’
+ de 
+la 
+sección","","","","","","","","","","",""
+"109","Adicionales","l 
+cálculo","del  monto","del 
+impuesto","18","NUM","","N N","2","2","2","2","0","0","229","2","0","0"
+"","","","","","","","Descuentos  o  Recargos  es  completado,  se","","","","","","","","","","",""
+"","<OtrosImpuestosAdicionales>","adicional","dependerá","de 
+la 
+tasa","","","","","","","","","","","","","",""
+"","","","","","","","debe dividir la suma de los valores del monto","","","","","","","","","","",""
+"","","","correspondiente al código del impuesto","","","","","","","","","","","","","","",""
+"","","","","","","","ítem  con 
+indicador  de  facturación=1,  entre","","","","","","","","","","",""
+"","","en 
+la  Tabla","I","(Codificación  Tipos  de","","","","","","","","","","","","","",""
+"","","","","","","","(1+tasa 
+ITBIS 
+tasa  1+ 
+tasa  del  código  de","","","","","","","","","","",""
+"","","","Impuestos Adicionales).","","","","","","","","","","","","","","",""
+"","","","","","","","impuesto  adicional  002  +  tasa  del  código  de","","","","","","","","","","",""
+"","","","","","","","impuesto 
+adicional 
+004), 
+para 
+luego","","","","","","","","","","",""
+"","","","","","","","multiplicar 
+este 
+resultado 
+por 
+la 
+tasa","","","","","","","","","","",""
+"","","","","","","","correspondiente 
+al 
+código 
+de 
+impuesto","","","","","","","","","","",""
+"","","","","","","","adicional.","","","","","","","","","","",""
+"","","","","","","","e) 
+Si 
+existe 
+descuento 
+global 
+se 
+debe","","","","","","","","","","",""
+"","","","","","","","multiplicar  el  porcentaje  del  monto  ítem  por","","","","","","","","","","",""
+"","","","","","","","línea28 por el Monto Descuento (global), esto","","","","","","","","","","",""
+"","","","","","","","dará  como  resultado  el  monto  de  descuento","","","","","","","","","","",""
+"","","","","","","","aplicable para cada línea de detalle.","","","","","","","","","","",""

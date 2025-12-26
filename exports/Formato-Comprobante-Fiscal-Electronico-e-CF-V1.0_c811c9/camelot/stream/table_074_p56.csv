@@ -1,0 +1,60 @@
+"","CAMPOS","DESCRIPCIÓN","","Tipo","Validación","","","","","","","","","","",""
+"","","","Max","","","","Fiscal","Consum.","Déb.","Créd.","Compras","Menor.","Espec.","Guber.","Export.","Exterior"
+"","","","","","","","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr.","Electr."
+"","","","","","","","31","32","33","34","41","43","44","45","46","47"
+"","FIN ÁREA","SUBTOTAL IMPUESTO ADICIONAL","","","","","","","","","","","","","",""
+"","","Sumatoria  de  los  campos  Subtotal","","","","","","","","","","","","","",""
+"","","Monto 
+Gravado 
+Total 
+Pagina,","","",") 
+Valor 
+numérico 
+de 
+16","","","","","","","","","","",""
+"","","Subtotal  Exento  Pagina,  Subtotal","","","enteros,  dos  decimales;  ≥  0","","","","","","","","","","",""
+"","","ITBIS Pagina y","","","(No puede ser negativo).","","","","","","","","","","",""
+"","Monto Subtotal Página","","","","","","","","","","","","","","",""
+"16","","Subtotal 
+Impuesto 
+Adicional","18","NUM","","I","2","2","2","2","2","2","2","2","2","2"
+"","<MontoSubtotalPagina>","","","","b","","","","","","","","","","",""
+"","","Pagina.","","",") Valor numérico de acuerdo","","","","","","","","","","",""
+"","","","","","con el total de la sumatoria del","","","","","","","","","","",""
+"","","ondicional  a  que  se  complete  el","","","campo de Descripción.","","","","","","","","","","",""
+"","","campo Página No.","","","","","","","","","","","","","",""
+"","","","","","a
+) 
+Valor 
+numérico 
+de 
+16","","","","","","","","","","",""
+"","","Suma 
+de 
+todos 
+los 
+valores","","","","","","","","","","","","","",""
+"","","","","","enteros,  2  decimales. 
+≥  0","","","","","","","","","","",""
+"","","correspondientes 
+a 
+ítems 
+no","","","","","","","","","","","","","",""
+"","","","","","(Debe ser positivo).","","","","","","","","","","",""
+"","Subtotal Monto No","facturables,  que  estén 
+indicados","","","","","","","","","","","","","",""
+"","Facturable Página","en el no. de línea ‘Desde’ ‘Hasta’,","","","b","","","","","","","","","","",""
+"17","","","18","NUM",") Suma de valores del monto","N","2","2","2","2","0","0","2","2","2","0"
+"","<SubtotalMontoNoFacturablePa","de la página.","","","","","","","","","","","","","",""
+"","","","","","ítem 
+con 
+indicador 
+de","","","","","","","","","","",""
+"","gina>","","","","","","","","","","","","","","",""
+"","","C","","","facturación=0, 
+menos","","","","","","","","","","",""
+"","","ondicional a que la página incluya","","","","","","","","","","","","","",""
+"","","","","","descuentos más recargos.","","","","","","","","","","",""
+"","","ítems no facturables.","","","","","","","","","","","","","",""
+"","FIN ÁREA","PAGINA","","","","","","","","","","","","","",""
+"","FIN ÁREA","PAGINACIÓN","","","","","","","","","","","","","",""

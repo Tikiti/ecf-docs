@@ -1,0 +1,54 @@
+"","","","","","formato. 
+b) RNC esté autorizado como 
+Facturador Electrónico. 
+c) RNC se encuentre en estatus 
+“Activo”. 
+d) RNC no posea marcas de bloqueos.",""
+"9","Nombre o Razón Social Emisor 
+<RazonSocialEmisor>","Nombre  o  Razón  Social  del 
+emisor.","150","ALFA 
+ NUM","a) Sin validación","1"
+"10","Fecha Emisión 
+<FechaEmision>","Fecha de emisión del e-CF.","10","ALFA 
+NUM","Fecha válida: 
+a) Formato 
+dd-MM-AAAA  
+b) Validar fecha de inicio como 
+facturador electrónico.","1"
+"","FIN ÁREA","EMISOR","","","",""
+"","ÁREA 
+<Comprador>","COMPRADOR","","","","3"
+"11","RNC Comprador 
+<RNCComprador>","Corresponde 
+al 
+RNC 
+del 
+comprador.","9 u 11","NUM","a) Sin validación","3"
+"12","Identificador Extranjero 
+<IdentificadorExtranjero>2","Corresponde 
+al 
+número 
+de 
+identificación 
+cuando 
+el 
+comprador  es  extranjero  y  no 
+tiene  RNC/Cédula.  Condicional 
+a 
+que 
+el 
+comprador 
+sea 
+extranjero. 3","20","ALFA 
+NUM","a) Sin validación","2"
+"13","Nombre o Razón Social 
+<RazonSocialComprador>","Nombre 
+o 
+Razón 
+Social 
+del 
+comprador.","150","ALFA  
+NUM","a) Sin validación","3"
+"","FIN ÁREA","COMPRADOR","","","",""
+"","ÁREA 
+<Totales>","TOTALES","","","","1"

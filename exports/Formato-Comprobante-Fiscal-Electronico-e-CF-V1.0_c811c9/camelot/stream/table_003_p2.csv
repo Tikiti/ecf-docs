@@ -1,0 +1,22 @@
+"","Actualizaciones al 06-05-2022",""
+"","Modiﬁcaciones no implican cambio de versión.",""
+"","1.","Se actualiza la tabla IV. Codiﬁcación Unidad de Medida, para agregar los 
+pos de medidas ""Gross Register Tonnage (Toneladas de Registro Bruto)"", ""Pie cuadrado"","
+"","","""Pasajero"", ""Pulgadas"" y ""Parqueo Barcos en Muelle""."
+"A","ctualizaciones al 19-11-2021",""
+"","Modiﬁcaciones no implican cambio de versión.",""
+"","1.","Se actualizan en el Área Comprador <Comprador> los códigos de obligatoriedad de 1 a 2, correspondiente a los 
+pos de e-CF Nota de Crédito Electrónica y Nota de"
+"","","Débito Electrónica de la sección Encabezado."
+"A","ctualizaciones al 04-11-2021",""
+"","Modiﬁcaciones no implican cambio de versión.",""
+"","1.","Se actualiza la tabla IV. Codiﬁcación Unidad de Medida, para agregar el 
+po de medida ""Quintal""."
+"A","ctualizaciones al 29-06-2021:",""
+"","Modiﬁcaciones no implican cambio de versión.",""
+"","1.","Se actualiza la ‘Tabla III. Codiﬁcación Provincias y Municipios’, para separar por columnas los códigos de las Provincias y Municipios."
+"A","ctualizaciones al 10-11-2020:",""
+"","Modiﬁcaciones no implican cambio de versión.",""
+"","1.","Se actualizan los tags <Liquidacion> y <Mineria> de la sección Detalle de Bienes o Servicios, para eliminar acentos."
+"","2.","Se actualiza la descripción de los campos ‘Tabla de Distribución de Subrecargo’ y ‘Tipo Subrecargo’, de la sección Detalle de Bienes o Servicios."
+"","3.","Se actualiza el tag <DescripcionDescuentooRecargo> de la sección Descuentos o Recargos."

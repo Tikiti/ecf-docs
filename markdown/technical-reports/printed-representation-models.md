@@ -103,7 +103,7 @@ Every printed representation must include:
 The QR code must contain a URL with the following parameters (in exact order):
 
 ```
-https://ecf.dgii.gov.do/{ambiente}/consultatimbre?
+https://ecf.dgii.gov.do/{ambiente}/ConsultaTimbre?
   RncEmisor={RNCEmisor}&
   RncComprador={RNCComprador}&
   ENCF={eNCF}&
