@@ -501,12 +501,12 @@ Propina Legal = 1,000 × 0.10 = RD$100.00
 
 | # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----|
-| 110 | `<MontoTotal>` | Grand total | 18 | DEC | ≥0, sum of components | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 110 | `<MontoTotal>`³⁰ | Grand total | 18 | DEC | ≥0, sum of components | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | 111 | `<MontoNoFacturable>` | Non-billable amounts | 18 | DEC | Can be negative | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 2 | 0 |
 | 112 | `<MontoPeriodo>` | Period amount | 18 | DEC | MontoTotal+MontoNoFacturable | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | 113 | `<SaldoAnterior>` | Previous balance | 18 | DEC | Can be ± (positive or negative) | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | 114 | `<MontoAvancePago>` | Advance payment amount | 18 | DEC | >0 (must be positive) | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
-| 115 | `<ValorPagar>` | Amount to pay | 18 | DEC | Can be ± or 0 | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 115 | `<ValorPagar>`³¹ | Amount to pay | 18 | DEC | Can be ± or 0 | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | 116 | `<TotalITBISRetenido>` | ITBIS withheld total | 18 | DEC | ≥0 | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
 | 117 | `<TotalISRRetencion>` | ISR withheld total | 18 | DEC | ≥0 | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 |
 | 118 | `<TotalITBISPercepcion>` | ITBIS perceived total | 18 | DEC | >0 (must be positive) | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
