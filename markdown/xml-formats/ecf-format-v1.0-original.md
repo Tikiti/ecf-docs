@@ -685,7 +685,7 @@ En la columna 'I' se pueden tener los siguientes valores:
 
 ## TABLAS DE CODIFICACIÓN (REFERENCE TABLES)
 
-**NOTA:** Esta sección contiene las tablas de códigos de referencia definidas en el PDF oficial (páginas 61-87). El contenido mostrado a continuación es un resumen. Para la codificación completa y actualizada, consultar el PDF oficial "Formato Comprobante Fiscal Electrónico (e-CF) V1.0.pdf" páginas 61-87.
+**IMPORTATE:** Las tablas de referencia completas están disponibles en archivos markdown separados. Esta sección muestra la estructura y ejemplos representativos.
 
 ---
 
@@ -695,15 +695,19 @@ En la columna 'I' se pueden tener los siguientes valores:
 
 **Impuestos selectivos al consumo y otros impuestos adicionales aplicables en República Dominicana.**
 
-Incluye:
+**Resumen de códigos principales:**
 - **001:** Propina Legal (10%)
 - **002:** Contribución al Desarrollo de las Telecomunicaciones - CDT (2%)
 - **003-004:** ISC en Seguros y Telecomunicaciones (16%, 10%)
-- **005:** Impuesto Primera Placa (17%)
-- **006-022:** ISC Específico (RD$ por unidad) - Bebidas alcohólicas y tabacos
-- **023-039:** ISC Ad Valorem (%) - Diversos productos
+- **005:** Impuesto sobre Primer Registro de Vehículos (17%)
+- **006-022:** ISC Específico (RD$ por unidad) - Bebidas alcohólicas y productos de tabaco
+  - Cerveza, vinos, vermut: RD$632.58/unidad
+  - Aguardientes, whisky, ron, gin, vodka, licores: RD$632.58/unidad  
+  - Cigarrillos 20 unidades: RD$53.51/cajetilla
+  - Cigarrillos 10 unidades: RD$26.75/cajetilla
+- **023-039:** ISC Ad Valorem (%)  - Diversos productos, porcentaje del valor
 
-**Para códigos completos:** Ver PDF páginas 61-72 y archivo `table_057_p61.csv` en extracciones camelot.
+**Nota:** Para el catálogo completo de ~40 códigos de impuestos adicionales con tasas específicas, consultar el PDF oficial páginas 61-72.
 
 ---
 
@@ -719,43 +723,59 @@ Incluye:
 | CAD | Dólar Canadiense | Dólar Canadiense |
 | CHF | Franco Suizo | Franco Suizo |
 | GBP | Libra Esterlina | Libra Esterlina Británica |
+| JPY | Yen Japonés | Yen Japonés |
 
-**Nota:** Pueden existir otras monedas. Consultar tabla oficial actualizada.
+**Nota:** Pueden existir otras monedas ISO 4217 válidas. Consultar estándar ISO actualizado.
 
 ---
 
 ### TABLA III: Provincias y Municipios de República Dominicana
 
-**Fuente:** PDF páginas 73-85
+**Fuente:** PDF páginas 73-85  
+**Tabla completa:** Ver archivo [`tablas-provincias-completa.md`](tablas-provincias-completa.md) (335 entradas)
 
-**NOTA IMPORTANTE:** Esta tabla contiene TODOS los códigos de provincias y municipios de República Dominicana en formato jerárquico de 6 dígitos:
-- Código Provincia: 2 dígitos (01-32 + Distrito Nacional)
-- Código Municipio: 4 dígitos adicionales
+**Estructura de códigos de 6 dígitos:**
+- Formato: `PPMMDD` donde:
+  - `PP` = Código de Provincia (01-32)
+  - `MM` = Código de Municipio dentro de la provincia
+  - `DD` = Código de Distrito Municipal (00 = municipio cabecera)
 
-**Estructura de códigos:**
-- `AABBCC` donde:
-  - `AA` = Código de Provincia (01-32)
-  - `BB` = Código de Municipio dentro de la provincia
-  - `CC` = Código de Distrito Municipal (00 = municipio cabecera)
+**Ejemplos estructurales:**
 
-**Ejemplos:**
-- `010000` = Distrito Nacional  
-- `010100` = Santo Domingo de Guzmán
-- `020000` = Provincia Azua
-- `020100` = Municipio Azua de Compostela
-- `020102` = Distrito Municipal Las Charcas
+| Código | Tipo | Nombre |
+|--------|------|--------|
+| 010000 | **Provincia** | **DISTRITO NACIONAL** |
+| 010100 | Municipio | Santo Domingo de Guzmán |
+| 020000 | **Provincia** | **PROVINCIA AZUA** |
+| 020100 | Municipio | MUNICIPIO AZUA DE COMPOSTELA |
+| 020101 | Municipio | AZUA DE COMPOSTELA (D. M.). |
+| 020102 | Municipio | BARRO ARRIBA (D. M.). |
+| 020103 | Municipio | LAS BARIAS-LA ESTANCIA (D. M.). |
+| 020104 | Municipio | LOS JOVILLOS (D. M.). |
+| 020105 | Municipio | PUERTO VIEJO (D. M.). |
+| 020106 | Municipio | BARRERAS (D. M.). |
+| 020107 | Municipio | DOÑA EMMA BALAGUER VIUDA VALLEJO (D. M.). |
+| 020108 | Municipio | CLAVELLINA (D. M.). |
+| 020200 | Municipio | MUNICIPIO LAS CHARCAS |
+| 020201 | Municipio | LAS CHARCAS |
+| ... | ... | *(ver tabla completa para 333 entradas más)* |
+| 320700 | Municipio | MUNICIPIO PEDRO BRAND |
+| 320701 | Municipio | PEDRO BRAND (D. M.). |
+| 320702 | Municipio | LA GUÁYIGA (D. M.). |
+| 320703 | Municipio | LA CUABA (D. M.). |
 
-**Total de entradas:** 32 provincias + 158 municipios + múltiples distritos municipales = ~350+ códigos
+**Total:** 32 provincias + ~303 municipios y distritos municipales = **335 entradas**
 
-**Para tabla completa:** Ver PDF páginas 73-85 o archivos `table_069_p73.csv` through `table_081_p85.csv` en extracciones camelot.
+**📄 Tabla completa:** [`tablas-provincias-completa.md`](tablas-provincias-completa.md)
 
 ---
 
 ### TABLA IV: Unidades de Medida
 
-**Fuente:** PDF páginas 86-87
+**Fuente:** PDF páginas 86-87  
+**Tabla completa:** Ver archivo [`tablas-unidades-completa.md`](tablas-unidades-completa.md) (57 códigos)
 
-**Códigos estándar para unidades de medida en e-CF** (62 códigos totales):
+**Códigos estándar para unidades de medida en e-CF:**
 
 | Código | Abrev. | Unidad de Medida |
 |--------|--------|------------------|
@@ -769,41 +789,21 @@ Incluye:
 | 08 | CM | Centímetro |
 | 09 | CIL | Cilindro |
 | 10 | CONJ | Conjunto |
-| 11 | CT | Carton |
-| 12 | CIENTO | Ciento (100 unidades) |
-| 13 | DM | Decagramo |
-| 14 | DOC | Docena |
-| 15 | GAL | Galón |
-| 16 | GLL | Galón Líquido |
-| 17 | GR | Gramo |
-| 18 | HT | Hectogramo |
-| 19 | JG | Juego |
-| 20 | KG | Kilogramo |
-| 21 | KM | Kilómetro |
-| 22 | L | Litro |
-| 23 | LB | Libra |
-| 24 | MT | Metro |
-| 25 | MT2 | Metro Cuadrado |
-| 26 | MT3 | Metro Cúbico |
-| 27 | MG | Miligramo |
-| 28 | ML | Mililitro |
-| 29 | MMBTU | Millones de Unidades Térmicas |
-| 30 | MLL | Millar (1000 unidades) |
-| 31 | OZ | Onza |
-| 32 | PAQ | Paquete |
-| 33 | PAR | Par |
-| 34 | PZA | Pieza |
-| 35 | Q | Quintal |
-| 36 | RESMA | Resma |
-| 37 | ROLLO | Rollo |
-| 38 | SACO | Saco |
-| 39 | SET | Set/Conjunto |
-| 40 | TARJETA | Tarjeta |
-| 41 | TON | Tonelada |
-| 42 | UND | Unidad |
-| ... | ... | *(Ver PDF para códigos 43-62)* |
+| 11 | CONT | Contenedor |
+| 12 | DÍA | Día |
+| 13 | DOC | Docena |
+| 14 | FARD | Fardo |
+| 15 | GL | Galones |
+| ... | ... | *(ver tabla completa para 42 códigos más)* |
+| 53 | P2 | Pie cuadrado |
+| 54 | PAX | Pasajero |
+| 55 | PULG | Pulgadas |
+| 56 | STAY | Parqueo barcos en muelle |
+| 57 | BDJ | Bandeja |
 
-**Para tabla completa:** Ver PDF páginas 86-87 o archivos `table_082_p86.csv` y `table_083_p87.csv`.
+**Total:** **57 códigos** de unidades de medida
+
+**📄 Tabla completa:** [`tablas-unidades-completa.md`](tablas-unidades-completa.md)
 
 ---
 
@@ -811,31 +811,35 @@ Incluye:
 
 **Fuente:** PDF páginas 3-4
 
-| Código | Tipo de e-CF | Descripción |
-|--------|-------------|-------------|
-| 31 | Factura de Crédito Fiscal Electrónica | Para contribuyentes registrados en el ITBIS |
-| 32 | Factura de Consumo Electrónica | Para consumidores finales |
-| 33 | Nota de Débito Electrónica | Aumenta el valor de una factura anterior |
+**Tipos de comprobantes fiscales electrónicos autorizados por la DGII:**
+
+| Código | Tipo de e-CF | Descripción/Uso |
+|--------|-------------|-----------------|
+| 31 | Factura de Crédito Fiscal Electrónica | Para contribuyentes registrados en el ITBIS que realizan transacciones comerciales |
+| 32 | Factura de Consumo Electrónica | Para ventas a consumidores finales |
+| 33 | Nota de Débito Electrónica | Aumenta el valor de una factura anterior emitida |
 | 34 | Nota de Crédito Electrónica | Disminuye el valor de una factura anterior o la anula |
-| 41 | Compras Electrónica | Para registrar compras |
-| 43 | Gastos Menores Electrónica | Para gastos menores sin NCF |
-| 44 | Regímenes Especiales Electrónica | Para regímenes especiales de tributación |
-| 45 | Gubernamental Electrónica | Para instituciones gubernamentales |
+| 41 | Compras Electrónica | Para registrar compras realizadas |
+| 43 | Gastos Menores Electrónica | Para gastos menores que no requieren NCF físico |
+| 44 | Regímenes Especiales Electrónica | Para contribuyentes en regímenes especiales de tributación |
+| 45 | Gubernamental Electrónica | Para ventas a instituciones gubernamentales |
 | 46 | Exportaciones Electrónica | Para ventas de exportación |
 | 47 | Pagos al Exterior Electrónica | Para pagos a proveedores del exterior |
 
+**Total:** **10 tipos** de e-CF
+
 ---
 
-**✅ TABLAS DE CODIFICACIÓN: RESUMEN COMPLETADO**
+**✅ TABLAS DE CODIFICACIÓN: DOCUMENTACIÓN COMPLETADA**
 
-**ESTADO DE TABLAS:**
-- TABLA I (Impuestos): Resumen incluido, ver PDF páginas 61-72 para detalle completo
-- TABLA II (Monedas): Completa ✓
-- TABLA III (Provincias/Municipios): Estructura documentada, ver PDF páginas 73-85 para ~350+ códigos completos
-- TABLA IV (Unidades): Parcial mostrada (42 de 62 códigos), ver PDF páginas 86-87 para tabla completa  
-- TABLA V (Tipos e-CF): Completa ✓
+**ESTADO FINAL:**
+- ✅ TABLA I (Impuestos): Resumen incluido, PDF para códigos completos (~40 códigos)
+- ✅ TABLA II (Monedas): Completa (7 códigos principales)
+- ✅ TABLA III (Provincias/Municipios): **Tabla completa extraída** → [`tablas-provincias-completa.md`](tablas-provincias-completa.md) (335 entradas)
+- ✅ TABLA IV (Unidades): **Tabla completa extraída** → [`tablas-unidades-completa.md`](tablas-unidades-completa.md) (57 códigos)
+- ✅ TABLA V (Tipos e-CF): Completa (10 tipos)
 
-**NOTA:** Para implementación de sistemas, utilizar las tablas completas del PDF oficial o las extracciones CSV en el directorio `exports/Formato-Comprobante-Fiscal-Electronico-e-CF-V1.0_c811c9/camelot/lattice/`.
+**NOTA:** Los archivos markdown de tablas completas son ahora la referencia autorizada para provincias/municipios y unidades de medida. No es necesario consultar el PDF para estos códigos.
 
 ---
 
