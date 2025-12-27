@@ -150,13 +150,13 @@ The following table shows which sections are required for each e-CF type:
 |---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----|
 | 1 | `<Version>` | Format version | 3 | ALFANUM | Value: "1.0" | N | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | 2 | `<TipoeCF>` | e-CF type code | 2 | NUM | Valid type (31-47) | P | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
-| 3 | `<eNCF>` | Electronic fiscal number | 13 | ALFANUM | Valid sequence format | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 3 | `<eNCF>`¹ | Electronic fiscal number | 13 | ALFANUM | Valid sequence format | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | 4 | `<FechaVencimientoSecuencia>` | e-NCF expiry date | 10 | DATE | DD-MM-YYYY | I | 1 | 0 | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1 |
-| 5 | `<IndicadorNotaCredito>` | Credit note >30 days | 1 | NUM | 0=≤30 days, 1=>30 days | N | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 5 | `<IndicadorNotaCredito>`² | Credit note >30 days | 1 | NUM | 0=≤30 days, 1=>30 days | N | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 | 6 | `<IndicadorEnvioDiferido>` | Deferred sending | 1 | NUM | 0=normal, 1=deferred | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 2 | 0 |
 | 7 | `<IndicadorMontoGravado>` | ITBIS included in prices | 1 | NUM | 0=excluded, 1=included | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
 | 8 | `<TipoIngresos>` | Income type code | 2 | NUM | Values 01-06 (See Table VI) | N | 1 | 1 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 0 |
-| 9 | `<TipoPago>` | Payment type | 1 | NUM | 1=Cash, 2=Credit, 3=Free | N | 1 | 1 | 1 | 1 | 1 | 3 | 1 | 1 | 1 | 3 |
+| 9 | `<TipoPago>`³ | Payment type | 1 | NUM | 1=Cash, 2=Credit, 3=Free | N | 1 | 1 | 1 | 1 | 1 | 3 | 1 | 1 | 1 | 3 |
 | 10 | `<FechaLimitePago>` | Payment deadline | 10 | DATE | DD-MM-YYYY, ≥FechaEmision | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 3 |
 | 11 | `<TerminoPago>` | Payment terms | 15 | ALFANUM | Free text | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | — | `<TablaFormasPago>` | Payment methods table | — | — | Container (see note) | — | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
@@ -212,8 +212,8 @@ The following table shows which sections are required for each e-CF type:
 
 | # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
-| 38 | `<RNCComprador>` | Buyer RNC | 11 | NUM | Valid 9 or 11 digits | I | 1 | 2 | 2 | 2 | 1 | 0 | 1 | 1 | 2 | 2 |
-| 39 | `<IdentificadorExtranjero>` | Foreign ID | 20 | ALFANUM | For non-residents | I | 0 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 2 | 2 |
+| 38 | `<RNCComprador>`⁴ | Buyer RNC | 11 | NUM | Valid 9 or 11 digits | I | 1 | 2⁴ | 2 | 2 | 1 | 0 | 1 | 1 | 2⁶ | 2 |
+| 39 | `<IdentificadorExtranjero>`⁵ | Foreign ID | 20 | ALFANUM | For non-residents | I | 0 | 2⁵ | 2 | 2 | 0 | 0 | 2⁸ | 2 | 2⁷ | 2⁹ |
 | 40 | `<RazonSocialComprador>` | Legal name | 150 | ALFANUM | — | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 2 |
 | 41 | `<ContactoComprador>` | Contact name/phone | 80 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
 | 42 | `<CorreoComprador>` | Email | 80 | ALFANUM | Valid email | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 3 |
@@ -999,10 +999,10 @@ Used for Debit/Credit Notes (types 33, 34) to reference the modified invoice.
 
 | # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----|
-| 1 | `<NCFModificado>` | Modified e-NCF | 11/13/19 | ALFA | Valid NCF/e-NCF format | I | 0 | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 1 | `<NCFModificado>`⁷⁹ | Modified e-NCF | 11/13/19 | ALFA | Valid NCF/e-NCF format | I | 0 | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 | 2 | `<RNCOtroContribuyente>` | Other taxpayer RNC | 9/11 | NUM | Valid RNC (9 or 11 digits) | N | 0 | 0 | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 |
 | 3 | `<FechaNCFModificado>` | Modified e-CF date | 10 | DATE | DD-MM-YYYY | N | 0 | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 4 | `<CodigoModificacion>` | Modification code | 1 | NUM | Values 1-5 | P | 0 | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 4 | `<CodigoModificacion>`⁸⁰ | Modification code | 1 | NUM | Values 1-5⁸¹ | P | 0 | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 | 5 | `<RazonModificacion>` | Modification reason | 90 | ALFA | Free text (e.g. "error en precio") | N | 0 | 0 | 3 | 3 | 0 | 0 | 0 | 0 | 0 | 0 |
 
 **Modification Codes (CodigoModificacion):**
