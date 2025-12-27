@@ -798,3 +798,251 @@ Used for Debit/Credit Notes (types 33, 34) to reference the modified invoice.
 **Total:** 32 provinces + ~540 municipalities and municipal districts = **572 entries**
 
 **📄 Complete table:** [`tablas-provincias-completa.md`](tablas-provincias-completa.md)
+
+---
+
+### TABLE IV: Units of Measure (Complete)
+
+**Source:** PDF pages 86-87
+
+**Complete coding of units of measure for e-CF** (57 codes):
+
+| Code | Abbreviation | Unit of Measure |
+|--------|-------------|------------------|
+| 01 | BARR | Barrel |
+| 02 | BOL | Bag |
+| 03 | BOT | Canister |
+| 04 | BULTO | Bundles |
+| 05 | BOTELLA | Bottle |
+| 06 | CAJ | Box/Crate |
+| 07 | CAJETILLA | Pack |
+| 08 | CM | Centimeter |
+| 09 | CIL | Cylinder |
+| 10 | CONJ | Set |
+| 11 | CONT | Container |
+| 12 | DÍA | Day |
+| 13 | DOC | Dozen |
+| 14 | FARD | Bale |
+| 15 | GL | Gallons |
+| 16 | GRAD | Degree |
+| 17 | GR | Gram |
+| 18 | GRAN | Bulk |
+| 19 | HOR | Hour |
+| 20 | HUAC | Crate |
+| 21 | KG | Kilogram |
+| 22 | kWh | Kilowatt Hour |
+| 23 | LB | Pound |
+| 24 | LITRO | Liter |
+| 25 | LOT | Lot |
+| 26 | M | Meter |
+| 27 | M2 | Square Meter |
+| 28 | M3 | Cubic Meter |
+| 29 | MMBTU | Million Thermal Units |
+| 30 | MIN | Minute |
+| 31 | PAQ | Package |
+| 32 | PAR | Pair |
+| 33 | PIE | Foot |
+| 34 | PZA | Piece |
+| 35 | ROL | Roll |
+| 36 | SOBR | Envelope |
+| 37 | SEG | Second |
+| 38 | TANQUE | Tank |
+| 39 | TONE | Ton |
+| 40 | TUB | Tube |
+| 41 | YD | Yard |
+| 42 | YD2 | Square Yard |
+| 43 | UND | Unit |
+| 44 | EA | Element |
+| 45 | MILLAR | Thousand |
+| 46 | SAC | Sack |
+| 47 | LAT | Can |
+| 48 | DIS | Display |
+| 49 | BID | Drum |
+| 50 | RAC | Ration |
+| 51 | Q | Quintal |
+| 52 | GRT | Gross Register Tonnage |
+| 53 | P2 | Square Foot |
+| 54 | PAX | Passenger |
+| 55 | PULG | Inches |
+| 56 | STAY | Boat dock parking |
+| 57 | BDJ | Tray |
+
+**Total:** 57 complete codes
+
+---
+
+### Footnotes - Section A (HEADER)
+
+**¹¹** Conditional on taxed amount existing with at least one of the ITBIS rates.
+
+**¹²** Discounts and surcharges must be proportional to each ITBIS rate.
+
+**¹³** Billing indicator: Indicates the ITBIS rate applicable to the item (1=ITBIS 18%, 2=ITBIS 16%, 3=ITBIS 0%, 4=Exempt).
+
+**¹⁴** For e-CF type 43 (Minor Expenses), if exempt amount exists, it must be greater than zero.
+
+**¹⁵** The ITBIS rate must be printed in the printed representation format only if it applies to the document.
+
+**¹⁶** For e-CF type 44 (Special Regimes), conditional on additional taxes existing in the detail.
+
+**¹⁷** By XML definition, for each element there must be a container tag that groups the fields. In this case, each code-rate-amount combination is grouped under a table element.
+
+**¹⁸** For e-CF type 44 (Special Regimes), conditional on additional taxes other than ITBIS existing.
+
+**¹⁹** For e-CF type 44 (Special Regimes), the code must be validated against Additional Taxes Table I.
+
+**²⁰** The tax rate must be indicated in decimal or percentage format as appropriate for the tax type.
+
+**²¹** For tax types with codes 006-022, the rate must be validated against the rates in effect on the e-CF issuance date.
+
+**²²** Specific Selective Consumption Tax (ISC): Tax calculated on physical units (liters, units, etc.) at a fixed rate per unit.
+
+**²³** Codes 006-022 correspond to Specific ISC in Table I (Additional Tax Types Coding).
+
+**²⁴** Codes 023-039 correspond to Ad Valorem ISC in Table I (Additional Tax Types Coding).
+
+**²⁵** Ad Valorem ISC: Selective Consumption Tax calculated as a percentage of the sale price.
+
+**²⁶** Unit Specific ISC: Value of the specific selective consumption tax calculated per unit of measure.
+
+**²⁷** The 'Standard 10-07 Indicator' field is located in section D. Discounts or Surcharges.
+
+**²⁸** The percentage of item amount per line is calculated by dividing the item amount by the total amount of all items.
+
+**²⁹** For e-CF type 44 (Special Regimes), it must be printed if it applies to the document.
+
+**³⁰** For e-CF type 34 (Electronic Credit Note), the total amount cannot exceed the total amount of the e-CF being modified.
+
+**³¹** The 'Discount amount' field is located in section D. Discounts or Surcharges.
+
+**³²** ITBIS Perceived: Tax on Transfer of Industrialized Goods and Services that is collected in advance.
+
+**³³** Billing in another currency requires completing all conditional fields in this section.
+
+**³⁴** Conditional field visible in printed representation only if there are amounts in other currency.
+
+**³⁵** Discounts and surcharges in Other Currency must be calculated using the specified exchange rate.
+
+**³⁶** For e-CF type 43 (Minor Expenses), if the exempt amount in other currency exists, it must be greater than zero.
+
+**³⁷** Only selective consumption taxes with codes from 006 to 039 in other currency are part of the ITBIS tax base.
+
+**³⁸** Additional Tax Amount in Other Currency is the sum of Specific ISC, Ad Valorem ISC and Other Additional Taxes, all converted to foreign currency.
+
+**³⁹** For e-CF type 44 (Special Regimes), conditional on additional taxes existing in other currency.
+
+**⁴⁰** The additional taxes table in other currency follows the same rules as the table in local currency, but with converted values.
+
+**⁴¹** The additional tax code must be the same as used in local currency.
+
+**⁴²** For e-CF type 44, the code must be validated against Additional Taxes Table I.
+
+**⁴³** The additional tax rate in other currency must be printed if it applies to the document.
+
+**⁴⁴** The Specific ISC amount in other currency is calculated by dividing the local currency amount by the exchange rate.
+
+**⁴⁵** The Ad Valorem ISC amount in other currency is calculated by dividing the local currency amount by the exchange rate.
+
+**⁴⁶** The amount of other additional taxes in other currency is calculated by dividing the local currency amount by the exchange rate.
+
+**⁴⁷** For e-CF type 44, it must be printed if it applies and there is an amount in other currency.
+
+---
+
+### Footnotes - Section B (GOODS OR SERVICES DETAIL)
+
+**⁴⁸** The line number must be sequential starting at 1 and can go up to 100 items per e-CF.
+
+**⁴⁹** The billing indicator must be printed in words in the printed representation.
+
+**⁵⁰** For e-CF type 43 (Minor Expenses), only values 1 or 4 are allowed.
+
+**⁵¹** For e-CF type 46 (Exports), only values 1, 3 or 4 are allowed.
+
+**⁵²** The withholding or perception agent indicator: 1=Withholding ("R"), 2=Perception ("P").
+
+**⁵³** The ITBIS amount withheld at item level is added to the Total ITBIS Amount Withheld field in the header.
+
+**⁵⁴** For e-CF type 47 (Foreign Payments), it is mandatory to indicate if it is goods or service.
+
+**⁵⁵** The item quantity is multiplied by the unit price to obtain the item amount.
+
+**⁵⁶** The reference quantity is used to calculate selective consumption taxes (ISC) for certain products.
+
+**⁵⁷** The subquantity table is necessary to calculate ISC on products derived from alcohol, beer, tobacco and cigarettes.
+
+**⁵⁸** The subquantity represents the reference units of measure contained in the item unit.
+
+**⁵⁹** Alcohol degrees are used to calculate ISC on alcoholic beverages (codes 006-018).
+
+**⁶⁰** Reference unit price is used to calculate Ad Valorem ISC on products with codes 023-039.
+
+**⁶¹** Net weight in kilograms is specific to mining sector transactions.
+
+**⁶²** Net weight of the mineral can be expressed in different units of measure.
+
+**⁶³** Affiliation type indicates if the mining recipient is affiliated (1) or not affiliated (2) to the issuer.
+
+**⁶⁴** The mineral settlement can be provisional (1) or final (2), affecting the accounting treatment.
+
+**⁶⁵** The item unit price is multiplied by the quantity to calculate the gross amount before discounts and surcharges.
+
+**⁶⁶** The subdiscounts table can include up to 12 different types of discounts applied to the item.
+
+**⁶⁷** The subsurcharges table can include up to 12 different types of surcharges applied to the item.
+
+**⁶⁸** The additional taxes table at item level allows specifying up to 2 tax codes that affect the item.
+
+**⁶⁹** For e-CF type 44 (Special Regimes), it is mandatory when the item has additional taxes.
+
+**⁷⁰** The additional tax code at item level must be validated against Additional Taxes Table I and can be different from the header tax.
+
+**⁷¹** For e-CF type 44, it must be validated that the code corresponds to a valid additional tax.
+
+**⁷²** The other currency area in the detail is conditional on a currency type having been specified in the header.
+
+**⁷³** The unit price in other currency must be printed if the item is priced in foreign currency.
+
+**⁷⁴** In Credit Notes for text correction (without affecting amounts), the Item Amount can be zero.
+
+---
+
+### Footnotes - Section D (DISCOUNTS OR SURCHARGES)
+
+**⁷⁵** Global discounts or surcharges apply to the total e-CF, not to individual items.
+
+**⁷⁶** For e-CF type 41 (Purchases), the billing indicator must be specified if discount or surcharge applies.
+
+---
+
+### Footnotes - Section E (PAGINATION)
+
+**⁷⁸** Discounts and surcharges in the page subtotal must reflect those applied to items included on that specific page.
+
+---
+
+### Footnotes - Section F (REFERENCE INFORMATION)
+
+**⁷⁹** The modified NCF is used when an e-CF cancels, corrects or replaces a previous tax receipt.
+
+**⁸⁰** Modification codes allow specifying the type of correction: 1=Cancellation, 2=Text correction, 3=Amount correction, 4=Contingency replacement, 5=Consumer invoice reference.
+
+**⁸¹** Code 5 (Electronic Consumer Invoice Reference) is used specifically to reference an existing electronic consumer invoice.
+
+**⁸²** Specific ISC (codes 006-022) is calculated as a fixed amount per unit of measure, applicable mainly to alcoholic beverages and tobacco products, with rates periodically updated by DGII.
+
+**⁸³** XDR (Special Drawing Right) is an international reserve asset created by the IMF. VEF (Venezuelan Strong Bolívar) may be subject to changes according to current exchange regulations.
+
+---
+
+**General Directorate of Internal Taxes (DGII)**  
+**Dominican Republic**
+
+**Published:** October 2025  
+**Document Version:** 1.0
+
+---
+
+*This document constitutes the official technical specification for the Electronic Tax Receipt Format (e-CF) V1.0 authorized by the General Directorate of Internal Taxes (DGII) of the Dominican Republic.*
+
+---
