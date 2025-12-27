@@ -166,14 +166,14 @@ En la columna 'I' se pueden tener los siguientes valores:
 
 | # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----|
-| | **ÁREA ENCABEZADO `<Encabezado>`** | | | | | | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** |
+| | ÁREA ENCABEZADO `<Encabezado>` | | | | | | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | 1 | VERSIÓN | Versión del formato utilizado. | 3 | ALFA NUM | Valor: 1.0 | N | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 
 ### ÁREA: IDENTIFICACIÓN DEL DOCUMENTO `<IdDoc>`
 
 | # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----|
-| | **ÁREA IDENTIFICACIÓN DEL DOCUMENTO `<IdDoc>`** | | | | | | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** |
+| | ÁREA IDENTIFICACIÓN DEL DOCUMENTO `<IdDoc>` | | | | | | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | 2 | Tipo Comprobante Fiscal Electrónico `<TipoeCF>` | Indica si el documento es:<br>Código Tipo:<br><br>31: Factura de Crédito Fiscal Electrónica<br>32: Factura de Consumo Electrónica<br>33: Nota de Débito Electrónica<br>34: Nota de Crédito Electrónica<br>41: Compras Electrónico<br>43: Gastos Menores Electrónico<br>44: Regímenes Especiales Electrónica<br>45: Gubernamental Electrónico<br>46: Comprobante para Exportaciones Electrónico<br>47: Comprobante para Pagos al Exterior Electrónico | 2 | NUM | a) De acuerdo a la codificación del campo de Descripción. | P | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | 3 | e-NCF `<eNCF>` | Secuencia autorizada por la DGII. | 13 | ALFA NUM | a) Validar con No. Secuencia autorizada por DGII. | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | 4 | Fecha Vencimiento `<FechaVencimientoSecuencia>` | Fecha de vencimiento de la secuencia de e-NCF. | 10 | ALFA NUM | Fecha válida:<br>a) Formato (dd-MM-AAAA)<br>b) Validar con fecha de vencimiento de la autorización de la secuencia. | I | 1 | 0 | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1 |
@@ -184,7 +184,7 @@ En la columna 'I' se pueden tener los siguientes valores:
 | 9 | Tipo de Pago `<TipoPago>` | Indica el tipo de pago del cliente.<br>Las facturas por entrega gratuita (código 3), no son válidas para crédito fiscal. | 1 | NUM | a) Código Tipo:<br>1: Contado<br>2: Crédito<br>3: Gratuito | N | 1 | 1 | 1 | 1 | 1 | 3 | 1 | 1 | 1 | 3 |
 | 10 | Fecha Límite de Pago `<FechaLimitePago>` | Solo para facturas a crédito.<br>Condicional a que el tipo de pago sea a crédito. | 10 | ALFA NUM | Fecha válida:<br>a) Formato dd-MM-AAAA<br>b) Fecha límite de pago debe ser ≥ Fecha de emisión. | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 3 |
 | 11 | Término de Pago `<TerminoPago>` | Indica el tiempo establecido para el pago de la factura y se debe especificar si el mismo es en horas, días, semanas, meses u otro.<br>Ejemplo:<br>1) 72 horas<br>2) 120 días<br>3) 1 semana<br>4) 3 meses | 15 | ALFA NUM | a) Sin Validación. | N | 3 | 3 | 3 | 0 | 3 | 0 | 3 | 3 | 3 | 3 |
-| | **TABLA DE FORMAS DE PAGO `<TablaFormasPago>`²** | Hasta 07 repeticiones.<br>Contiene los dos campos siguientes. | | | | | **3** | **3** | **3** | **0** | **3** | **0** | **3** | **3** | **3** | **3** |
+| | **TABLA DE FORMAS DE PAGO `<TablaFormasPago>`²** | Hasta 07 repeticiones.<br>Contiene los dos campos siguientes. | | | | | 3 | 3 | 3 | 0 | 3 | 0 | 3 | 3 | 3 | 3 |
 | 12 | Forma de Pago `<FormaPago>` | Indica el método en que se pagará la factura. | 2 | NUM | a) Código Forma:<br>1: Efectivo<br>2: Cheque/Transferencia/ Depósito<br>3: Tarjeta de Débito/Crédito<br>4: Venta a Crédito<br>5: Bonos o Certificados de regalo<br>6: Permuta<br>7: Nota de crédito<br>8: Otras Formas de pago<br><br>Si la forma de pago corresponde al tipo 5 el e-CF debe ser tipo 32. | N | 3 | 3 | 3 | 0 | 3 | 0 | 3 | 3 | 3 | 3 |
 
 ---
@@ -205,7 +205,7 @@ En la columna 'I' se pueden tener los siguientes valores:
 | 17 | Fecha desde `<FechaDesde>` | Período de facturación para Servicios Periódicos Ej. Energía eléctrica, telefónica, otros.<br>Fecha desde<br>(Fecha inicial del servicio facturado). | 10 | ALFA NUM | Fecha válida:<br>a) Formato dd-MM-AAAA<br>b) Menor o igual que "Fecha hasta".<br>De acuerdo al Formato del campo de descripción. | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 3 |
 | 18 | Fecha hasta `<FechaHasta>` | Período de facturación para Servicios Periódicos. Fecha hasta<br>(Fecha final del servicio facturado). | 10 | ALFA NUM | Fecha válida:<br>a) Formato dd-MM-AAAA<br>b) Mayor o igual a "Fecha desde".<br>De acuerdo al Formato del campo de Descripción. | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 3 |
 | 19 | Total Páginas `<TotalPaginas>` | Indica el total de páginas en la que será impreso el e-CF.<br>Cuenta las veces que se repite el campo Página No. de la sección Paginación.<br>Condicional a que exista paginación. | 3 | NUM | a) Valor numérico hasta 3 enteros, > 1 (Debe ser positivo).<br>b) Total de veces que se repite el campo 'Página No.' de la sección Paginación. | I | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
-| | **FIN ÁREA** | **IDENTIFICACIÓN DEL DOCUMENTO** | | | | | | | | | | | | | | |
+| | FIN ÁREA | **IDENTIFICACIÓN DEL DOCUMENTO** | | | | | | | | | | | | | | |
 
 ---
 
@@ -217,7 +217,7 @@ En la columna 'I' se pueden tener los siguientes valores:
 
 | # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----|
-| | **ÁREA EMISOR `<Emisor>`** | | | | | | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** |
+| | ÁREA EMISOR `<Emisor>` | | | | | | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | 20 | RNC Emisor `<RNCEmisor>` | Corresponde al RNC del emisor. | 9 u 11 | NUM | Validar en el Registro Nacional de contribuyentes.<br>Se tiene que validar:<br>a) RNC cumpla con estructura de formato.<br>b) RNC esté autorizado como Facturador Electrónico.<br>c) RNC se encuentre en estatus "Activo".<br>d) RNC no posea marcas de bloqueos. | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | 21 | Nombre o Razón Social Emisor `<RazonSocialEmisor>` | Nombre o Razón Social del emisor. | 150 | ALFA NUM | a) Sin validación | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | 22 | Nombre Comercial `<NombreComercial>` | Nombre Comercial. | 150 | ALFA NUM | a) Sin validación | I | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
@@ -225,7 +225,7 @@ En la columna 'I' se pueden tener los siguientes valores:
 | 24 | Dirección de Emisor `<DireccionEmisor>` | Datos correspondientes a Domicilio de operación del Emisor. | 100 | ALFA NUM | a) Sin validación | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | 25 | Municipio `<Municipio>` | Dato correspondiente al domicilio de operación del Emisor. | 6 | NUM | a) Validar con código de la Tabla III (Codificación Provincias Y Municipios) | P | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | 26 | Provincia `<Provincia>` | Dato correspondiente al domicilio de operación del Emisor. | 6 | NUM | a) Validar con código de la Tabla III (Codificación Provincias Y Municipios | P | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
-| | **Tabla de Teléfono Emisor `<TablaTelefonoEmisor>`** | Se pueden incluir 3 repeticiones. | | | | | **3** | **3** | **3** | **3** | **3** | **3** | **3** | **3** | **3** | **3** |
+| | **Tabla de Teléfono Emisor `<TablaTelefonoEmisor>`** | Se pueden incluir 3 repeticiones. | | | | | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | 27 | Teléfono Emisor `<TelefonoEmisor>` | Dato correspondiente al teléfono de contacto del emisor. | 12 | ALFA NUM | Formato válido:<br>Estructura de teléfono<br>(xxx-xxx-xxxx) | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | | **FIN TABLA** | **TELÉFONO EMISOR** | | | | | | | | | | | | | | |
 | 28 | Correo Electrónico Emisor `<CorreoEmisor>` | Dato correspondiente al correo electrónico del emisor. | 80 | ALFA NUM | Formato válido: Estructura de correo electrónico<br>(xxxxx@xxx.xx) | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
@@ -238,7 +238,7 @@ En la columna 'I' se pueden tener los siguientes valores:
 | 35 | Ruta de Venta `<RutaVenta>` | Corresponde a la ruta de venta del vendedor. | 20 | ALFA NUM | a) Sin validación | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
 | 36 | Información adicional Emisor `<InformacionAdicionalEmisor>` | Otra información relativa al Emisor. | 250 | ALFA NUM | a) Sin validación | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | 37 | Fecha Emisión `<FechaEmision>` | Fecha de emisión del e-CF. | 10 | ALFA NUM | Fecha válida:<br>a) Formato dd-MM-AAAA<br>b) Validar fecha de inicio como facturador electrónico. | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
-| | **FIN ÁREA** | **EMISOR** | | | | | | | | | | | | | | |
+| | FIN ÁREA | **EMISOR** | | | | | | | | | | | | | | |
 
 ---
 
@@ -246,7 +246,7 @@ En la columna 'I' se pueden tener los siguientes valores:
 
 | # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----|
-| | **ÁREA COMPRADOR `<Comprador>`** | | | | | | **1** | **1** | **2** | **2** | **1** | **0** | **1** | **1** | **1** | **3** |
+| | ÁREA COMPRADOR `<Comprador>` | | | | | | 1 | 1 | 2 | 2 | 1 | 0 | 1 | 1 | 1 | 3 |
 | 38 | RNC Comprador `<RNCComprador>` | Corresponde al RNC del comprador.<br><br>Condicional a que el monto total del e-CF tipo 32 sea igual o superiores a DOP$ 250M.⁴<br><br>En caso de que el e-CF sea tipo 46, el campo es condicional a que la Zona Franca Comercial (Aeropuertos y Puertos) realice transferencia de bienes a Residentes y el campo 'Identificador Extranjero' esté vacío. | 9 u 11 | NUM | a) Validar estructura.<br><br>b) Si el e-CF es tipo 32 y el monto total es ≥ DOP$250,000.00 se debe identificar RNC Comprador.<br><br>c) Si el e-CF tipo 33 y tipo 34 modifica un e-CF tipo 32 con monto total ≥ DOP$250,000.00 se debe identificar el RNC Comprador.<br><br>d) Si el e-CF es tipo 32 y el comprador es extranjero, este campo puede ir en blanco y completar el campo Identificador Extranjero. | I | 1 | 2 | 2 | 2 | 1 | 0 | 2⁵ | 1 | 2⁶ | 0 |
 | 39 | Identificador Extranjero `<IdentificadorExtranjero>`⁷ | Corresponde al número de identificación cuando el comprador es extranjero y no tiene RNC/Cédula.<br><br>Condicional a que el e-CF es tipo 32>DOP$250,000.00 (aplica también para las notas de crédito/débito que hagan referencia a ese tipo de e-CF), y el campo RNC Comprador esté vacío.<br><br>En caso de que el e-CF sea tipo 46, el campo es condicional a que la Zona Franca Comercial (Aeropuertos y Puertos) realice transferencia de bienes a No Residentes y el campo 'RNC Comprador' esté vacío. | 20 | ALFA NUM | a) El e-CF de consumo electrónica es > DOP$250,000.00 (aplica también para las notas de crédito/débito que hagan referencia a ese tipo de e-CF).<br><br>b) El campo RNC Comprador está en blanco. | I | 0 | 2 | 2 | 2 | 0 | 0 | 2⁸ | 0 | 2⁹ | 3 |
 | 40 | Nombre o Razón Social Comprador `<RazonSocialComprador>` | Nombre o Razón Social del comprador.<br><br>En caso de que el e-CF sea tipo 46, el campo es condicional a que exista el campo 'RNC Comprador' o 'Identificador Extranjero'. | 150 | ALFA NUM | a) Si el e-CF es tipo 32 y el monto total es ≥ DOP$250,000.00 se debe indicar el nombre o razón social comprador.<br><br>b) Si el e-CF tipo 33 y tipo 34 modifica un e-CF tipo 32 con monto total ≥ DOP$250,000.00, se debe indicar nombre o razón social comprador. | I | 1 | 2 | 2 | 2 | 1 | 0 | 1 | 1 | 1 | 3 |
@@ -265,7 +265,7 @@ En la columna 'I' se pueden tener los siguientes valores:
 | 53 | Código Interno del Comprador `<CodigoInternoComprador>` | Para identificación interna del comprador, por ejemplo, código del cliente, número de medidor, etc. | 20 | ALFA NUM | a) Sin validación | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
 | 54 | Responsable de pago `<ResponsablePago>` | Corresponde a la identificación del que realiza el pago del documento. | 20 | ALFA | a) Sin validación | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
 | 55 | Información Adicional Comprador `<Informacionadicionalcomprador>` | Otra información relativa al comprador. | 150 | ALFA NUM | a) Sin validación | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
-| | **FIN ÁREA** | **COMPRADOR** | | | | | | | | | | | | | | |
+| | FIN ÁREA | **COMPRADOR** | | | | | | | | | | | | | | |
 
 ---
 
@@ -287,7 +287,7 @@ En la columna 'I' se pueden tener los siguientes valores:
 
 | # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----|
-| | **ÁREA INFORMACIONES ADICIONALES `<InformacionesAdicionales>`** | | | | | | **3** | **3** | **3** | **3** | **0** | **0** | **3** | **3** | **3** | **0** |
+| | ÁREA INFORMACIONES ADICIONALES `<InformacionesAdicionales>` | | | | | | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
 | 56 | Fecha Embarque `<FechaEmbarque>` | Corresponde a la fecha del embarque. | 10 | ALFA NUM | a)Fecha válida:<br>Formato (dd-MM-AAAA) | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
 | 57 | Número de Embarque `<NumeroEmbarque>` | Dato correspondiente al número de embarque. | 25 | ALFA NUM | a) Sin validación | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
 | 58 | Número de Contenedor `<NumeroContenedor>` | Dato correspondiente al número de contenedor. | 100 | ALFA NUM | a) Sin validación | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
@@ -310,7 +310,7 @@ En la columna 'I' se pueden tener los siguientes valores:
 | 75 | Unidad Bultos `<UnidadBulto>` | Corresponde a la unidad de medida en la que se encuentra los bultos. | 2 | NUM | a) Validar con la Tabla IV (Codificación de Unidad de medida) | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
 | 76 | Volumen `<VolumenBulto>` | Corresponde al volumen de los bultos. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; > 0 | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
 | 77 | Unidad Volumen `<UnidadVolumen>` | Corresponde a la unidad de medida en la que se encuentra el volumen de los bultos. | 2 | NUM | a) Validar con la Tabla IV (Codificación de Unidad de medida) | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
-| | **FIN ÁREA** | **INFORMACIONES ADICIONALES** | | | | | | | | | | | | | | |
+| | FIN ÁREA | **INFORMACIONES ADICIONALES** | | | | | | | | | | | | | | |
 
 ---
 
@@ -318,7 +318,7 @@ En la columna 'I' se pueden tener los siguientes valores:
 
 | # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----|
-| | **ÁREA TRANSPORTE `<Transporte>`** | | | | | | **3** | **3** | **3** | **3** | **0** | **0** | **3** | **3** | **3** | **0** |
+| | ÁREA TRANSPORTE `<Transporte>` | | | | | | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
 | 78 | Vía Transporte `<ViaTransporte>` | Se especifica si el transporte es vía marítima, terrestre o aérea. | 2 | NUM | Se tiene que validar:<br>01: Terrestre<br>02: Marítimo<br>03: Aérea | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
 | 79 | País Origen `<PaisOrigen>` | Corresponde al país de origen de la mercancía. | 60 | ALFA | a) Sin validación | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
 | 80 | Dirección Destino `<DireccionDestino>` | Corresponde a la dirección de destino donde sera realizado el envío del ítem (distinto a la dirección del comprador). | 100 | ALFA NUM | a) Sin validación | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
@@ -326,7 +326,7 @@ En la columna 'I' se pueden tener los siguientes valores:
 | 82 | RNC o Identificación Compañía Transportista `<RNCIdentificacionCompaniaTransportista>` | Corresponde al dato de RNC o de Identificación de la compañía que realiza el transporte. | 20 | ALFA NUM | a) Sin validación | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
 | 83 | Nombre Compañía Transportista `<NombreCompaniaTransportista>` | Corresponde al dato del nombre o razón social de la compañía que realiza el transporte. | 150 | ALFA NUM | a) Sin validación | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
 | 84 | Número de Viaje `<NumeroViaje>` | Corresponde al número de viaje o el número del vuelo. | 20 | ALFA NUM | a) Sin validación | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
-| | **FIN ÁREA** | **TRANSPORTE** | | | | | | | | | | | | | | |
+| | FIN ÁREA | **TRANSPORTE** | | | | | | | | | | | | | | |
 
 ---
 
@@ -341,7 +341,7 @@ En la columna 'I' se pueden tener los siguientes valores:
 | 89 | Ruta de Transporte `<RutaTransporte>` | Corresponde a la ruta establecida de transporte. | 20 | ALFA NUM | a) Sin validación | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
 | 90 | Zona de Tranporte `<ZonaTransporte>` | Corresponde a la zona de transporte. | 20 | ALFA NUM | a) Sin validación | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
 | 91 | Número Albarán `<NumeroAlbaran>` | Corresponde al número de albarán de entrega. | 20 | ALFA NUM | a) Sin validación | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
-| | **FIN ÁREA** | **TRANSPORTE** | | | | | | | | | | | | | | |
+| | FIN ÁREA | **TRANSPORTE** | | | | | | | | | | | | | | |
 
 ---
 
@@ -349,7 +349,7 @@ En la columna 'I' se pueden tener los siguientes valores:
 
 | # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----|
-| | **ÁREA TOTALES `<Totales>`** | | | | | | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** |
+| | ÁREA TOTALES `<Totales>` | | | | | | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | 92 | Monto Gravado Total¹¹ `<MontoGravadoTotal>` | Total de la suma de valores de monto gravado ITBIS a diferentes tasas.<br>Condicional a que exista Monto gravado1, y/o Monto gravado 2 y/o Monto gravado 3. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥ 0 (No puede ser negativo).<br>b) Valor numérico de la sumatoria del total Monto gravado ITBIS Tasa1 + Monto gravado ITBIS Tasa 2 + Monto gravado ITBIS Tasa3. | I | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
 | 93 | Monto Gravado ITBIS Tasa 1 `<MontoGravadoI1>` | Total de la suma de valores de Ítems gravados asignados a ITBIS tasa 1 (tasa 18%), menos descuentos más recargos.¹²<br>Condicional a que en la línea de detalle exista algún ítem gravado a tasa ITBIS1. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥ 0 (No puede ser negativo).<br>b) Suma de valores del monto ítem con indicador de facturación=1¹³, menos descuentos más recargos.<br>c) Si el indicador monto gravado es =1, se debe dividir la suma de valores del monto ítem con indicador de facturación=1, entre (1+tasa ITBIS tasa 1), menos descuentos más recargos.<br>d) Si el campo 'Indicador de la norma 10-07' es completado, se debe dividir la suma de valores del monto ítem con indicador de facturación=1, entre (1+tasa ITBIS tasa 1+tasas de códigos de impuestos adicionales 002 y 004, asignados al ítem). Si existe descuento, el monto de descuento correspondiente no se deberá rebajar del monto gravado ITBIS tasa 1. | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
 | 94 | Monto Gravado ITBIS Tasa 2 `<MontoGravadoI2>` | Total de la suma de valores de Ítems gravados asignados a ITBIS tasa 2(tasa 16%), menos descuentos más recargos.<br>Condicional a que en la línea de detalle exista algún ítem gravado a tasa ITBIS2. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥ 0 (No puede ser negativo).<br>b) Suma de valores del monto ítem con indicador de facturación=2, menos descuentos más recargos.<br>c) Si el indicador monto gravado=1, se debe dividir el resultado por (1+ ITBIS tasa 2). | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
@@ -363,7 +363,7 @@ En la columna 'I' se pueden tener los siguientes valores:
 | 102 | Total ITBIS Tasa 2 `<TotalITBIS2>` | Valor numérico igual a Monto Gravado ITBIS Tasa2*tasa ITBIS 2.<br>Condicional a que exista Monto Gravado tasa 2 y tasa ITBIS 2. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; ≥ 0 (No puede ser negativo).<br>b) Total ITBIS Tasa2= Monto Gravado ITBIS tasa2*ITBIS tasa 2. | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
 | 103 | Total ITBIS Tasa3 `<TotalITBIS3>` | Valor numérico igual a Monto gravado ITBIS Tasa3*tasa ITBIS 3.<br>Condicional a que exista Monto Gravado tasa 3 y tasa ITBIS 3. | 18 | NUM | a)Valor numérico de 16 enteros, dos decimales; ≥ 0 (No puede ser negativo). | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
 | 104 | Monto del Impuesto Adicional `<MontoImpuestoAdicional>` | Sumatoria de los campos Monto Impuesto Selectivo al Consumo Específico, Monto Impuesto Selectivo Ad Valorem y Monto Otros Impuestos Adicionales. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; >0 (debe ser positivo).<br>b) Monto del Impuesto Adicional= Monto Impuesto Selectivo al Consumo Específico+ Monto Impuesto Selectivo Ad Valorem+ Monto Otros Impuestos Adicionales. | I | 2 | 2 | 2 | 2 | 0 | 0 | 2¹⁶ | 2 | 0 | 0 |
-| | **Tabla de Impuestos Adicionales `<ImpuestosAdicionales>`¹⁷** | Se pueden incluir 20 repeticiones de pares código – valor.<br>Incluye los cinco campos siguientes: | | | a) Condicional a que exista otros(s) impuesto(s) en la línea de detalle distinto(s) al ITBIS. | | **2** | **2** | **2** | **2** | **0** | **0** | **2¹⁸** | **2** | **0** | **0** |
+| | **Tabla de Impuestos Adicionales `<ImpuestosAdicionales>`¹⁷** | Se pueden incluir 20 repeticiones de pares código – valor.<br>Incluye los cinco campos siguientes: | | | a) Condicional a que exista otros(s) impuesto(s) en la línea de detalle distinto(s) al ITBIS. | | 2 | 2 | 2 | 2 | 0 | 0 | **2¹⁸** | 2 | 0 | 0 |
 | 105 | Código de Impuesto Adicional `<TipoImpuesto>` | Dato correspondiente al Código del impuesto adicional de acuerdo con la Tabla I (Codificación Tipos de Impuestos Adicionales). | 3 | NUM | a) Validar con Tabla I (Codificación Tipos de Impuestos Adicionales). | N | 2 | 2 | 2 | 2 | 0 | 0 | 2¹⁹ | 2 | 0 | 0 |
 | 106 | Tasa de Impuesto Adicional `<TasaImpuestoAdicional>` | Dato correspondiente a la Tasa del Impuesto Adicional.<br>Se debe indicar la tasa de Impuesto.²⁰ | 5 | NUM | a) Validar con Tabla I (Codificación Tipos de Impuestos Adicionales).<br>b) Si la tasa corresponde a los códigos entre 006 hasta 022 de la Tabla I (Codificación Tipos de Impuestos Adicionales), se debe validar que coincide con la tasa vigente en el período al que corresponda la fecha de emisión del e-CF (campo fecha emision). | N²¹ | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
 | 107 | Monto Impuesto Selectivo al Consumo Específico²² `<MontoImpuestoSelectivoConsumoEspecifico>` | Valor del impuesto selectivo al consumo (ISC) específico asociado al código de impuesto adicional. Condicional a que exista código del 006 al 022²³.<br>El cálculo del monto del ISC específico dependerá de la tasa correspondiente al código del impuesto en la Tabla I (Codificación Tipos de Impuestos Adicionales). | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; >0 (debe ser positivo).<br>b) Si el código del impuesto se encuentra entre 006 hasta 018 se debe verificar la unidad de medida del ítem, si es a granel (código 18) no se deberá calcular el Impuesto Selectivo al Consumo Específico.<br>c) Para los ítems con códigos 006 al 018 de la 'Tabla I (Codificación Tipos de Impuestos Adicionales)' y unidad de medida distinta de granel, se debe multiplicar la cantidad de referencia por los grados de alcohol, por la tasa del impuesto indicada en la tabla para dicho código, por la subcantidad y cantidad.<br>d) Para los códigos del 019 al 022, se debe calcular multiplicando la cantidad por la cantidad de referencia, por la tasa del impuesto adicional indicado. | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
@@ -372,7 +372,7 @@ En la columna 'I' se pueden tener los siguientes valores:
 | | **FIN TABLA** | **IMPUESTOS ADICIONALES** | | | | | | | | | | | | | | |
 
 
-**⚠️ Continuation from field 109 - Adding fields 110-119 to complete A.2 ÁREA TOTALES**
+**⚠️ Continuation from field 109 - Adding fields 110-119 to complete A.2 ÁREA TOTALES
 
 *(Continuación de Tabla ÁREA TOTALES)*
 
@@ -388,21 +388,21 @@ En la columna 'I' se pueden tener los siguientes valores:
 | 117 | Total Monto Retención Renta `<TotalISRRetencion>` | Monto del Impuesto Sobre la Renta correspondiente a la retención realizada de la prestación o locación de servicios. Condicional a que en la línea de detalle exista retención. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales, ≥0 (No puede ser negativo)<br>b) Monto Retención Renta de la sección Detalle de B. o S. | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 |
 | 118 | Total Monto ITBIS Percibido³² `<TotalITBISPercepcion>` | Monto del ITBIS que el contribuyente cobra a terceros como adelanto del impuesto que éste percibirá en sus operaciones. Condicional a que en la línea de detalle exista percepción. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales, >0 (No puede ser negativo) | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
 | 119 | Total Monto Percepción Renta `<TotalISRPercepcion>` | Monto del Impuesto Sobre la Renta que el contribuyente cobra a terceros como adelanto del impuesto que éste percibirá en sus operaciones. Condicional a que en la línea de detalle exista percepción. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; >0 (No puede ser negativo) | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
-| | **FIN ÁREA** | **TOTALES ENCABEZADO** | | | | | | | | | | | | | | |
+| | FIN ÁREA | **TOTALES ENCABEZADO** | | | | | | | | | | | | | | |
 
 ---
 
-**✅ A.2 ÁREA TOTALES COMPLETADO** (Fields 92-119 = 28 fields)
+**✅ A.2 ÁREA TOTALES COMPLETADO (Fields 92-119 = 28 fields)
 
 ---
 
 ### A.7 ÁREA: OTRA MONEDA `<OtraMoneda>`
 
-**Condicional a que la facturación sea en Otra Moneda.**
+Condicional a que la facturación sea en Otra Moneda.**
 
 | # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----| 
-| | **ÁREA OTRA MONEDA ENCABEZADO `<OtraMoneda>`** | Condicional a que la facturación sea en Otra Moneda. | | | | | **2** | **2** | **2** | **2** | **2** | **2** | **2** | **2** | **2** | **2** |
+| | ÁREA OTRA MONEDA ENCABEZADO `<OtraMoneda>` | Condicional a que la facturación sea en Otra Moneda. | | | | | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | 120 | Código Otra moneda `<TipoMoneda>` | Moneda alternativa en que se expresan los Montos. Condicional a que la facturación sea realizada en moneda extranjera.³³<br>Este campo debe tener uno de los valores indicados en la 'Tabla Codificación Monedas'. Por ejemplo: "USD" o "EUR", etc. | 3 | ALFA | a) Validar con la Tabla II (Codificación Monedas). | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | 121 | Tipo de Cambio `<TipoCambio>` | Factor de conversión utilizado.<br>Condicional a que existan datos en código otra moneda. | 7 | NUM | a) Valor numérico de 3 enteros y 4 decimales; > 0. (Debe ser positivo) | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | 122 | Monto gravado total Otra Moneda `<MontoGravadoTotalOtraMoneda>` | Total de la suma de valores de Monto gravado ITBIS Otra Moneda a diferentes tasas.<br>Condicional a que exista datos en código otra moneda y Monto gravado ITBIS en otra moneda a distintas tasas (18%, 16% y 0%). | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥ 0 (No puede ser negativo)<br>b) Valor numérico de la sumatoria del total Monto gravado ITBIS Tasa1 Otra Moneda + Monto gravado ITBIS Tasa 2 Otra Moneda +Monto gravado ITBIS Tasa3 Otra Moneda. | N³⁴ | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
@@ -415,7 +415,7 @@ En la columna 'I' se pueden tener los siguientes valores:
 | 129 | Total ITBIS Tasa 2 en otra moneda `<TotalITBIS2OtraMoneda>` | Valor numérico igual a Monto Gravado ITBIS en Otra Moneda Tasa2*tasa ITBIS 2.<br>Condicional a que exista Monto gravado ITBIS Tasa 2 Otra Moneda. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; ≥0 (No puede ser negativo).<br>Total ITBIS Tasa 2 en Otra Moneda= Monto Gravado ITBIS tasa2 Otra Moneda*ITBIS tasa 2. | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
 | 130 | Total ITBIS Tasa 3 en otra moneda `<TotalITBIS3OtraMoneda>` | Valor numérico igual a Monto Gravado ITBIS en Otra Moneda Tasa3*tasa ITBIS 3. Condicional a que exista Monto gravado ITBIS Tasa 3 Otra Moneda. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; ≥ 0 (No puede ser negativo). | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
 | 131 | Monto del Impuesto Adicional en Otra Moneda³⁸ `<MontoImpuestoAdicionalOtraMoneda>` | Sumatoria de los campos Monto Impuesto Selectivo al Consumo Específico en Otra Moneda, Monto Impuesto Selectivo Ad Valorem en Otra Moneda y Monto Otros Impuestos Adicionales en Otra Moneda.<br>Condicional a que exista datos en código otra moneda y exista al menos unos de los campos de Monto Impuesto Selectivo al Consumo Específico en Otra Moneda, Monto Impuesto Selectivo Ad Valorem en Otra Moneda y/o Monto Otros Impuestos Adicionales en Otra Moneda. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; >0 (debe ser positivo).<br>b) Monto del Impuesto Adicional en Otra Moneda= Monto Impuesto Selectivo al Consumo Específico en Otra Moneda + Monto Impuesto Selectivo Ad Valorem en Otra Moneda + Monto Otros Impuestos Adicionales en Otra Moneda. | N | 2 | 2 | 2 | 2 | 0 | 0 | 2³⁹ | 2 | 0 | 0 |
-| | **Tabla de Impuestos Adicionales en Otra moneda: `<ImpuestosAdicionalesOtraMoneda>`⁴⁰** | Se pueden incluir 20 repeticiones de pares código – valor. Incluye los cinco campos siguientes: | | | Condicional a que exista otros(s) impuesto(s) en la línea de detalle distinto(s) al ITBIS y este completado el campo | | **2** | **2** | **2** | **2** | **0** | **0** | **2** | **2** | **0** | **0** |
+| | **Tabla de Impuestos Adicionales en Otra moneda: `<ImpuestosAdicionalesOtraMoneda>`⁴⁰** | Se pueden incluir 20 repeticiones de pares código – valor. Incluye los cinco campos siguientes: | | | Condicional a que exista otros(s) impuesto(s) en la línea de detalle distinto(s) al ITBIS y este completado el campo | | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
 | 132 | Código de Impuesto adicional en Otra Moneda `<TipoImpuestoOtraMoneda>` | Dato correspondiente al Código del impuesto adicional de acuerdo con la 'Tabla de Codificación Tipos de Impuestos Adicionales'.⁴¹ | 3 | NUM | a) Validar con Tabla I (Codificación Tipos de Impuestos Adicionales) | N | 2 | 2 | 2 | 2 | 0 | 0 | 2⁴² | 2 | 0 | 0 |
 | 133 | Tasa de Impuesto adicional en Otra Moneda `<TasaImpuestoAdicionalOtraMoneda>` | Dato correspondiente a la Tasa del Impuesto Adicional. Se debe indicar la tasa de Impuesto. | 5 | NUM | a) Validar con Tabla I (Codificación Tipos de Impuestos Adicionales) | N⁴³ | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
 | 134 | Monto Impuesto Selectivo al Consumo Específico en Otra Moneda `<MontoImpuestoSelectivoConsumoEspecificoOtraMoneda>` | Valor del campo Monto Impuesto Selectivo al Consumo Específico referenciado al tipo de cambio del código Otra Moneda especificado. Condicional a que exista código de impuesto adicional del 006 al 022, este completado el campo código otra moneda y el campo Monto Impuesto Selectivo Específico.⁴⁴ | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; >0 (debe ser positivo).<br>b) Valor del campo Monto Impuesto Selectivo al Consumo Específico dividiendo por la tasa especificada en el campo Tipo de Cambio. | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
@@ -423,11 +423,11 @@ En la columna 'I' se pueden tener los siguientes valores:
 | 136 | Monto Otros Impuestos Adicionales en Otra Moneda `<OtrosImpuestosAdicionalesOtraMoneda>` | Valor del Monto Impuesto Adicionales referenciado al tipo de cambio del código Otra Moneda especificado.<br>Condicional a que exista código de impuesto adicional del 001 al 005, este completado el campo código otra moneda y el campo Monto Otros Impuestos Adicionales.⁴⁶ | 18 | NUM | b) Valor numérico de 16 enteros, dos decimales; >0 (debe ser positivo).<br>c) Valor del campo Monto Otros Impuesto Adicional dividiendo por la tasa especificada en el campo Tipo de Cambio. | N | 2 | 2 | 2 | 2 | 0 | 0 | 2⁴⁷ | 2 | 0 | 0 |
 | | **FIN TABLA** | **IMPUESTOS ADICIONALES** | | | | | | | | | | | | | | |
 | 137 | Monto Total en Otra Moneda `<MontoTotalOtraMoneda>` | Monto gravado total en Otra Moneda + Monto exento en Otra Moneda+ Total ITBIS en Otra Moneda+ Monto del Impuesto Adicional en Otra Moneda.<br>Condicional a que exista al menos un monto en otra moneda. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; ≥ 0 (no puede ser negativo).<br>b) Valor numérico de acuerdo con el total sumatoria del campo de Descripción. | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
-| | **FIN ÁREA** | **OTRA MONEDA ENCABEZADO** | | | | | | | | | | | | | | |
+| | FIN ÁREA | **OTRA MONEDA ENCABEZADO** | | | | | | | | | | | | | | |
 
 ---
 
-**✅ A.7 ÁREA OTRA MONEDA COMPLETADO** (Fields 120-137 = 18 fields)
+**✅ A.7 ÁREA OTRA MONEDA COMPLETADO (Fields 120-137 = 18 fields)
 
 ---
 
@@ -435,27 +435,27 @@ En la columna 'I' se pueden tener los siguientes valores:
 
 ### ÁREA: DETALLES ÍTEM `<DetallesItem>`
 
-**Este ÁREA es obligatoria para todos los tipos de e-CF.**
+Este ÁREA es obligatoria para todos los tipos de e-CF.
 
 ### ÁREA: ÍTEM `<Item>`
 
-**Se pueden incluir hasta 100 repeticiones.**
+Se pueden incluir hasta 100 repeticiones.**
 
 | # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----| 
-| | **ÁREA DETALLES ÍTEM `<DetallesItem>`** | | | | | | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** |
-| | **ÁREA ÍTEM `<Item>`** | Se pueden incluir hasta 100 repeticiones. | | | | | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** |
+| | ÁREA DETALLES ÍTEM `<DetallesItem>` | | | | | | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| | ÁREA ÍTEM `<Item>` | Se pueden incluir hasta 100 repeticiones. | | | | | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | 1 | N° de Línea o N° Secuencial `<NumeroLinea>` | Línea que numera el ítem. Desde 1 a 100 repeticiones.⁴⁸ | 5 | NUM | a) Número secuencial de la línea. | N | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
-| | **Tabla de Códigos de Ítem `<TablaCodigosItem>`** | Se pueden incluir 5 repeticiones de pares código – valor. Incluye los dos campos siguientes: | | | | | **3** | **3** | **3** | **3** | **3** | **3** | **3** | **3** | **3** | **3** |
+| | **Tabla de Códigos de Ítem `<TablaCodigosItem>`** | Se pueden incluir 5 repeticiones de pares código – valor. Incluye los dos campos siguientes: | | | | | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | 2 | Tipo Código `<TipoCodigo>` | Tipo de codificación utilizada para el ítem<br>Standard: EAN, PLU, DUN o Interna<br>(Hasta 5 tipos de códigos) | 14 | ALFANUM | a) Sin validación. | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | 3 | Código del Ítem `<CodigoItem>` | Código del ítem de acuerdo a tipo de codificación indicada en campo anterior.<br>(Hasta 5 códigos) | 35 | ALFANUM | a) Sin validación. | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | | **FIN TABLA** | **CÓDIGOS ÍTEM** | | | | | | | | | | | | | | |
 | 4 | Indicador de Facturación `<IndicadorFacturacion>` | Indica si el ítem es exento, si es gravado, o No facturable. Indicará las distintas tasas:<br>0: No Facturable<br>ITBIS 1: ítem gravado a ITBIS tasa1 (18%).<br>ITBIS 2: ítem gravado a ITBIS tasa2 (16%).<br>ITBIS 3: ítem gravado a ITBIS tasa3 (0%).<br>E: Exento | 1 | NUM | a) Indicar si es valor<br>0: No Facturable<br>1: ITBIS 1 (18%)<br>2: ITBIS 2 (16%)<br>3: ITBIS 3 (0%)<br>4: Exento (E) | P⁴⁹ | 1 | 1 | 1 | 1 | 1 | 1⁵⁰ | 1 | 1 | 1⁵¹ | 1 |
-| | **ÁREA `<Retencion>`** | **RETENCIÓN** | | | Condicional a que exista retención. | | **2** | **0** | **2** | **2** | **1** | **0** | **0** | **0** | **0** | **1** |
+| | ÁREA `<Retencion>` | **RETENCIÓN** | | | Condicional a que exista retención. | | 2 | 0 | 2 | 2 | 1 | 0 | 0 | 0 | 0 | 1 |
 | 5 | Indicador Agente de Retención o Percepción⁵² `<IndicadorAgenteRetencionoPercepcion>` | Para Agentes de Retención o Percepción. Indica para cada transacción si es agente retenedor del producto que está vendiendo o el servicio. Condicional a que exista retención. | 1 | NUM | a) Codificación:<br>1: "R"<br>2: "P" | N | 2 | 0 | 2 | 2 | 1 | 0 | 0 | 0 | 0 | 1 |
 | 6 | Monto ITBIS Retenido `<MontoITBISRetenido>` | Monto del ITBIS correspondiente a la retención que será realizado por el comprador. Condicional a que exista retención.⁵³ | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales, ≥0. | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
 | 7 | Monto Retención Renta `<MontoISRRetenido>` | Monto del Impuesto Sobre la Renta correspondiente a la retención realizada de la prestación o locación de servicios.<br>El e-CF tipo 41 es condicional a que exista retención y el 'Indicador Bien o Servicio' sea igual a 2. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales, ≥0.<br>b) El e-CF tipo 41 es condicional a que exista retención y el 'Indicador Bien o Servicio' sea igual a 2. | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 1 |
-| | **FIN ÁREA** | **RETENCIÓN** | | | | | | | | | | | | | | |
+| | FIN ÁREA | **RETENCIÓN** | | | | | | | | | | | | | | |
 | 8 | Nombre del Ítem `<NombreItem>` | Nombre del producto o servicio. | 80 | ALFANUM | a) Sin validación. | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | 9 | Indicador Bien o Servicio `<IndicadorBienoServicio>` | Identifica si el ítem corresponde a Bien o Servicio. | 1 | NUM | a) Indicar si es Valor:<br>1: Bien<br>2: Servicio | N | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1⁵⁴ |
 | 10 | Descripción Adicional `<DescripcionItem>` | Descripción Adicional del ítem. | 1000 | ALFANUM | a) Sin validación | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
@@ -463,7 +463,7 @@ En la columna 'I' se pueden tener los siguientes valores:
 | 12 | Unidad de Medida Ítem `<UnidadMedida>` | Indica la unidad de medida que está expresada la cantidad. | 2 | NUM | a) Validar con la Tabla de Codificación de Unidad de medida. | P | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | 13 | Cantidad de Referencia `<CantidadReferencia>` | Cantidad para la unidad de medida de referencia (no se usa para el cálculo del Monto Ítem).<br>Condicional a que el ítem esté gravado con códigos de impuestos adicionales entre 006-022 en la Tabla de Codificación Tipo de Impuestos Adicional.⁵⁶ | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0 (No puede ser negativo). | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
 | 14 | Unidad de Referencia `<UnidadReferencia>` | Indica la unidad de medida de referencia.<br>Condicional a que esté completado el campo Cantidad de referencia. | 2 | NUM | a) Validar con la Tabla IV (Codificación de Unidad de medida). | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
-| | **Tabla de Distribución de Subcantidad `<TablaSubcantidad>`⁵⁷** | Se deberá incluir esta tabla para fines del cálculo de los impuestos selectivos al consumo a productos derivados de alcohol y cervezas y productos del tabaco y cigarrillos.<br>Condicional a que exista código desde 006 hasta 039 según la 'Tabla de Codificación Tipos de Impuestos Adicionales'.<br>Se pueden incluir 5 repeticiones de pares cantidad – código. Incluye los dos campos siguientes: | | | | N | **2** | **2** | **2** | **2** | **0** | **0** | **0** | **2** | **0** | **0** |
+| | **Tabla de Distribución de Subcantidad `<TablaSubcantidad>`⁵⁷** | Se deberá incluir esta tabla para fines del cálculo de los impuestos selectivos al consumo a productos derivados de alcohol y cervezas y productos del tabaco y cigarrillos.<br>Condicional a que exista código desde 006 hasta 039 según la 'Tabla de Codificación Tipos de Impuestos Adicionales'.<br>Se pueden incluir 5 repeticiones de pares cantidad – código. Incluye los dos campos siguientes: | | | | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
 | 15 | Subcantidad `<Subcantidad>` | Cantidad de unidades de referencia que tiene la unidad del ítem.<br>Condicional a que el ítem esté gravado con códigos de impuestos adicionales desde 006 hasta 022 en la Tabla de Codificación Tipo de Impuestos Adicional.⁵⁸ | 19 | NUM | a) Valor numérico de 16 enteros, 3 decimales; ≥0 (No puede ser negativo). | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
 | 16 | Código subcantidad `<CodigoSubcantidad>` | Indica la unidad de medida de la subcantidad. | 2 | NUM | a) Validar con la Tabla IV (Codificación de Unidad de medida). | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
 | | **FIN TABLA** | **SUBCANTIDAD** | | | | | | | | | | | | | | |
@@ -471,37 +471,37 @@ En la columna 'I' se pueden tener los siguientes valores:
 | 18 | Precio Unitario de Referencia⁶⁰ `<PrecioUnitarioReferencia>` | Precio unitario para la unidad de medida de referencia (no se usa para el cálculo del monto Total).<br>Condicional a que el ítem esté gravado con códigos de impuestos adicionales desde 023 hasta 039 en la Tabla de Codificación Tipo de Impuestos Adicional. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales. >0 (No puede ser negativo) | I | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
 | 19 | Fecha Elaboración `<FechaElaboracion>` | Dato correspondiente a la fecha de elaboración del ítem. | 10 | ALFANUM | a) Fecha válida<br>Formato: (dd-MM-AAAA) | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
 | 20 | Fecha Vencimiento `<FechaVencimientoItem>` | Dato correspondiente a la fecha de vencimiento del ítem. | 10 | ALFANUM | a) Fecha válida<br>Formato: (dd-MM-AAAA) | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
-| | **ÁREA `<Mineria>`** | **MINERÍA.**<br>Condicional a que exista facturación relacionado al sector minería. | | | | | **0** | **2** | **2** | **2** | **0** | **0** | **0** | **0** | **2** | **0** |
+| | ÁREA `<Mineria>` | **MINERÍA.**<br>Condicional a que exista facturación relacionado al sector minería. | | | | | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
 | 21 | Peso Neto Kilogramo `<PesoNetoKilogramo>` | Indica el peso neto en kilogramo del mineral.⁶¹ | 19 | NUM | a) Valor numérico de 16 enteros, 3 decimales; ≥0 (No puede ser negativo). | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
 | 22 | Peso Neto `<PesoNetoMineria>` | Indica el peso neto del mineral.⁶² | 19 | NUM | a) Valor numérico de 16 enteros, 3 decimales; ≥0 (No puede ser negativo). | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
 | 23 | Tipo Afiliación `<TipoAfiliacion>` | Indica si el destinatario es o no afiliada.⁶³ | 1 | NUM | a) Indica si es valor:<br>1: Afiliada<br>2: No afiliada | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
 | 24 | Liquidación `<Liquidacion>` | Indica si la liquidación del mineral es provisional o final.⁶⁴ | 1 | NUM | a) Indica si es valor:<br>1: Provisional<br>2: Final | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
-| | **FIN ÁREA** | **MINERÍA** | | | | | | | | | | | | | | |
+| | FIN ÁREA | **MINERÍA** | | | | | | | | | | | | | | |
 | 25 | Precio Unitario del Ítem⁶⁵ `<PrecioUnitarioItem>` | Dato correspondiente al precio unitario del ítem. | 20 | NUM | a) Valor numérico de 16 enteros, 4 decimales; ≥0 (No puede ser negativo). | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | 26 | Monto Descuento `<DescuentoMonto>` | Totaliza todos los subdescuentos otorgados al ítem en montos. Condicional a que exista Monto Subdescuento. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0 (No puede ser negativo).<br>b) Monto Subdescuento | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
-| | **Tabla de Distribución de Subdescuento `<TablaSubDescuento>`⁶⁶** | Condicional a que exista descuento en el ítem. Se pueden incluir 12 repeticiones. Incluye los tres campos siguientes: | | | | N | **2** | **2** | **2** | **2** | **2** | **0** | **2** | **2** | **2** | **0** |
+| | **Tabla de Distribución de Subdescuento `<TablaSubDescuento>`⁶⁶** | Condicional a que exista descuento en el ítem. Se pueden incluir 12 repeticiones. Incluye los tres campos siguientes: | | | | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 | 27 | Tipo de Subdescuento `<TipoSubDescuento>` | Indica si el Subdescuento está en monto ($) o porcentaje (%). Condicional a que exista descuento en el ítem. | 1 | ALFA | a) "$" o "%" | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 | 28 | Subdescuento en % `<SubDescuentoPorcentaje>` | Valor del Subdescuento en porcentaje %. Condicional a que exista tipo Subdescuento en porcentaje (%). | 5 | NUM | a) Valor numérico. 3 enteros y 2 decimales; >0 (No puede ser negativo) | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 | 29 | Monto Subdescuento `<MontoSubDescuento>` | Correspondiente al valor del descuento expresado en monto.<br>Si va el subdescuento en %, deberá ir el monto del subdescuento. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales. ≥0 (No puede ser negativo).<br>b) Si va el subdescuento en %, el valor del subdescuento en monto deberá ser igual al precio unitario de ítem por el subdescuento en porcentaje, por la cantidad de ítems. | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 | | **FIN TABLA** | **SUBDESCUENTO** | | | | | | | | | | | | | | |
 | 30 | Monto Recargo `<RecargoMonto>` | Totaliza todos los Subrecargos otorgados al ítem en montos. Condicional a que exista Monto Subrecargo. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0 (No puede ser negativo).<br>b) Monto Subrecargo. | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
-| | **Tabla de Distribución de Subrecargo `<TablaSubRecargo>`⁶⁷** | Condicional a que exista recargo en el ítem. Se pueden incluir 12 repeticiones de pares Tipo – Valor. Incluye los tres campos siguientes: | | | | N | **2** | **2** | **2** | **2** | **2** | **0** | **2** | **2** | **2** | **0** |
+| | **Tabla de Distribución de Subrecargo `<TablaSubRecargo>`⁶⁷** | Condicional a que exista recargo en el ítem. Se pueden incluir 12 repeticiones de pares Tipo – Valor. Incluye los tres campos siguientes: | | | | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 | 31 | Tipo Subrecargo `<TipoSubRecargo>` | Indica si el Subrecargo está en $ o %. Condicional a que exista recargo en el ítem. | 1 | ALFA | "$" o "%" | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 | 32 | Subrecargo en % `<SubRecargoPorcentaje>` | Valor del Subrecargo en porcentaje %. Condicional a que exista tipo Subrecargo en porcentaje (%). | 5 | NUM | a) Valor numérico, 3 enteros y 2 decimales; >0 (No puede ser negativo) | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 | 33 | Monto Subrecargo `<MontoSubRecargo>` | Correspondiente al valor del Subrecargo expresado en monto. Condicional a que exista subrecargo.<br>Si va el subrecargo en %, deberá ir el monto del subrecargo. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0 (No puede ser negativo).<br>b) Si va el subrecargo en %, el valor del subrecargo en monto deberá ser igual al precio unitario del ítem por el valor del subrecargo en porcentaje, por la cantidad de ítems. | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 | | **FIN TABLA** | **SUBRECARGO** | | | | | | | | | | | | | | |
-| | **Tabla de Códigos de Impuestos Adicionales `<TablaImpuestoAdicional>`⁶⁸** | Se pueden incluir 2 repeticiones de códigos de impuesto. | | | | | **2** | **2** | **2** | **2** | **0** | **0** | **2⁶⁹** | **2** | **0** | **0** |
+| | **Tabla de Códigos de Impuestos Adicionales `<TablaImpuestoAdicional>`⁶⁸** | Se pueden incluir 2 repeticiones de códigos de impuesto. | | | | | 2 | 2 | 2 | 2 | 0 | 0 | **2⁶⁹** | 2 | 0 | 0 |
 | 34 | Código de Impuesto Adicional `<TipoImpuesto>` | Dato correspondiente al Código del impuesto adicional de acuerdo a la Tabla de Codificación Tipos de Impuestos Adicionales (Tabla I). Condicional a que el ítem este gravado con Impuesto Adicional.⁷⁰ | 3 | NUM | Código válido respecto a la Tabla I (Codificación Tipos de Impuestos Adicionales). | N | 2 | 2 | 2 | 2 | 0 | 0 | 2⁷¹ | 2 | 0 | 0 |
 | | **FIN TABLA** | **IMPUESTOS ADICIONALES** | | | | | | | | | | | | | | |
-| | **ÁREA `<OtraMonedaDetalle>`** | **OTRA MONEDA DETALLE.**<br>Indicar precios en monedas alternativas.⁷² | | | | | **2** | **2** | **2** | **2** | **2** | **2** | **2** | **2** | **2** | **2** |
+| | ÁREA `<OtraMonedaDetalle>` | **OTRA MONEDA DETALLE.**<br>Indicar precios en monedas alternativas.⁷² | | | | | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | 35 | Precio unitario en otra moneda `<PrecioOtraMoneda>` | Dato correspondiente al precio Unitario del Ítem en otra moneda. Condicional a que el ítem sea en Otra Moneda. | 20 | NUM | a) Valor numérico de 16 enteros, 4 decimales. ≥0 (No puede ser negativo). | N⁷³ | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | 36 | Descuento en Otra Moneda `<DescuentoOtraMoneda>` | Corresponde al valor de descuento otorgado en Otra Moneda. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales. ≥0 (No puede ser negativo). | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | 37 | Recargo en Otra Moneda `<RecargoOtraMoneda>` | Corresponde el valor de recargo otorgado en Otra Moneda. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales. ≥0 (No puede ser negativo). | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | 38 | Monto Ítem Otra Moneda `<MontoItemOtraMoneda>` | (Precio Unitario en otra moneda * Cantidad) – Descuento en otra moneda + Recargo en otra moneda.<br>Condicional a que el Precio del ítem y Descuentos o Recargo (si existen) sean en Otra Moneda. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales. ≥0 (No puede ser negativo).<br>b) Valor numérico de acuerdo al campo de Descripción. | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
-| | **FIN ÁREA** | **OTRA MONEDA DETALLE** | | | | | | | | | | | | | | |
+| | FIN ÁREA | **OTRA MONEDA DETALLE** | | | | | | | | | | | | | | |
 | 39 | Monto Ítem (Valor por la línea de detalle) `<MontoItem>` | (Precio Unitario del ítem * Cantidad) – Monto Descuento + Monto Recargo | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥ 0 (No puede ser negativo).<br>b) Valor numérico, de acuerdo con descripción.<br>c) Debe ser cero cuando: es una Nota de Crédito para fines de corrección de texto.⁷⁴<br>Cuando es cero puede no imprimirse o imprimirse un texto explicativo (sin valor, sin costo, etc.) | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
-| | **FIN ÁREA** | **ÍTEM** | | | | | | | | | | | | | | |
-| | **FIN ÁREA** | **DETALLES ÍTEM** | | | | | | | | | | | | | | |
+| | FIN ÁREA | **ÍTEM** | | | | | | | | | | | | | | |
+| | FIN ÁREA | **DETALLES ÍTEM** | | | | | | | | | | | | | | |
 
 ---
 
@@ -513,16 +513,16 @@ En la columna 'I' se pueden tener los siguientes valores:
 
 ### ÁREA: SUBTOTALES `<Subtotales>`
 
-**Sección opcional para agrupar ítems informativamente. Obligatoriedad código 3 para todos los e-CF.**
+Sección opcional para agrupar ítems informativamente. Obligatoriedad código 3 para todos los e-CF.**
 
 ### ÁREA: SUBTOTAL `<Subtotal>`
 
-**Se pueden incluir hasta 20 repeticiones.**
+Se pueden incluir hasta 20 repeticiones.**
 
 | # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----| 
-| | **ÁREA SUBTOTALES `<Subtotales>`** | | | | | | **3** | **3** | **3** | **3** | **3** | **3** | **3** | **3** | **3** | **3** |
-| | **ÁREA SUBTOTAL `<Subtotal>`** | Se pueden incluir hasta 20 repeticiones. | | | | | **3** | **3** | **3** | **3** | **3** | **3** | **3** | **3** | **3** | **3** |
+| | ÁREA SUBTOTALES `<Subtotales>` | | | | | | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| | ÁREA SUBTOTAL `<Subtotal>` | Se pueden incluir hasta 20 repeticiones. | | | | | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | 1 | Número Subtotal `<NumeroSubTotal>` | Número de Subtotal | 2 | NUM | a) Número secuencial de acuerdo al número de subtotales | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | 2 | Descripción `<DescripcionSubtotal>` | Título del Subtotal | 40 | ALFA | a) Sin validación. | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | 3 | Orden `<Orden>` | Ubicación para Impresión. De uso para el contribuyente como ayuda para indicar cómo imprimirá Subtotales. | 2 | NUM | a) Sin validación. | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
@@ -538,8 +538,8 @@ En la columna 'I' se pueden tener los siguientes valores:
 | 13 | Subtotal Exento `<SubTotalExento>` | Valor Exento del Subtotal. Aplica en subtotales en DOP$ u otra moneda. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0 | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 0 | 3 |
 | 14 | Monto del Subtotal `<MontoSubTotal>` | Valor de la línea de subtotal. Corresponde a la sumatoria de Subtotal Monto Gravado ITBIS Total, Subtotal ITBIS, Subtotal Impuestos adicionales y/o Subtotal Exento. Aplica en subtotales en DOP$ u otra moneda. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0 | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | 15 | Líneas `<Lineas>` | Indica la cantidad de líneas que se subtotaliza. | 2 | NUM | a) De acuerdo a descripción del campo. | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
-| | **FIN ÁREA** | **SUBTOTAL** | | | | | | | | | | | | | | |
-| | **FIN ÁREA** | **SUBTOTALES** | | | | | | | | | | | | | | |
+| | FIN ÁREA | **SUBTOTAL** | | | | | | | | | | | | | | |
+| | FIN ÁREA | **SUBTOTALES** | | | | | | | | | | | | | | |
 
 ---
 
@@ -551,16 +551,16 @@ En la columna 'I' se pueden tener los siguientes valores:
 
 ### ÁREA: DESCUENTOS O RECARGOS `<DescuentosORecargos>`
 
-**Descuentos o recargos globales aplicados al e-CF completo (no a ítems individuales).**
+Descuentos o recargos globales aplicados al e-CF completo (no a ítems individuales).**
 
 ### ÁREA: DESCUENTO O RECARGO `<DescuentoORecargo>`
 
-**Se pueden incluir hasta 20 repeticiones.**
+Se pueden incluir hasta 20 repeticiones.**
 
 | # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----| 
-| | **ÁREA DESCUENTOS O RECARGOS `<DescuentosORecargos>`** | | | | | | **2** | **2** | **2** | **2** | **2** | **0** | **2** | **2** | **2** | **0** |
-| | **ÁREA DESCUENTO O RECARGO `<DescuentoORecargo>`** | Se pueden incluir hasta 20 repeticiones. | | | | | **2** | **2** | **2** | **2** | **2** | **0** | **2** | **2** | **2** | **0** |
+| | ÁREA DESCUENTOS O RECARGOS `<DescuentosORecargos>` | | | | | | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| | ÁREA DESCUENTO O RECARGO `<DescuentoORecargo>` | Se pueden incluir hasta 20 repeticiones. | | | | | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 | 1 | N° de Línea o N° Secuencial `<NumeroLinea>` | Número de descuento o recargo. De 1 a 20 repeticiones. Condicional a que exista Descuento o Recargo global.⁷⁵ | 2 | NUM | a) Número secuencial de la línea. | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 | 2 | Tipo de Ajuste `<TipoAjuste>` | D(descuento) o R(recargo).<br>Condicional a que se aplique descuento global o recargo global. | 1 | ALFA | D o R | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 | 3 | Indicador Norma 10-07 `<IndicadorNorma1007>` | Indica si el descuento que se aplica es según lo establecido en la norma 10-07. | 1 | NUM | a) Valor 1 si corresponde aplicar el descuento según lo establecido en la norma 10-07. | N | 3 | 3 | 3 | 3 | 0 | 0 | 0 | 3 | 0 | 0 |
@@ -570,8 +570,8 @@ En la columna 'I' se pueden tener los siguientes valores:
 | 7 | Monto de Descuento o Recargo `<MontoDescuentooRecargo>` | Valor del descuento o recargo. Si se refiere al tipo de valor $ se debe indicar el monto. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0.<br>b) Si va el descuento o recargo en %, debe ir el monto correspondiente. | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 | 8 | Monto en otra moneda de Descuento o Recargo `<MontoDescuentooRecargoOtraMoneda>` | Valor en otra moneda. Aplica en montos de descuento o recargo global. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0.<br>b) Si va el descuento o recargo en %, debe ir el monto correspondiente. | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
 | 9 | Indicador de facturación de Descuento o Recargo `<IndicadorFacturacionDescuentooRecargo>` | Indica si el descuento o recargo afecta a ítems:<br>ITBIS 1: ítem gravado a ITBIS tasa1 (18%).<br>ITBIS 2: ítem gravado a ITBIS tasa2 (16%).<br>ITBIS 3: ítem gravado a ITBIS3 tasa3 (0%).<br>E: Exento.<br>Condicional a que exista descuento o recargo global. | 1 | NUM | a) Indicar si es valor:<br>1: ITBIS 1 (18%)<br>2: ITBIS 2 (16%)<br>3: ITBIS 3 (0%)<br>4: Exento (E) | N | 2 | 2 | 2 | 2 | 2⁷⁶ | 0 | 2 | 2 | 2 | 0 |
-| | **FIN ÁREA** | **DESCUENTO O RECARGO** | | | | | | | | | | | | | | |
-| | **FIN ÁREA** | **DESCUENTOS O RECARGOS** | | | | | | | | | | | | | | |
+| | FIN ÁREA | **DESCUENTO O RECARGO** | | | | | | | | | | | | | | |
+| | FIN ÁREA | **DESCUENTOS O RECARGOS** | | | | | | | | | | | | | | |
 
 ---
 
@@ -583,16 +583,16 @@ En la columna 'I' se pueden tener los siguientes valores:
 
 ### ÁREA: PAGINACIÓN `<Paginacion>`
 
-**Para e-CF con más de 100 ítems que requieren múltiples páginas.**
+Para e-CF con más de 100 ítems que requieren múltiples páginas.**
 
 ### ÁREA: PÁGINA `<Pagina>`
 
-**Deberá repetirse para el total de páginas especificadas.**
+Deberá repetirse para el total de páginas especificadas.**
 
 | # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----| 
-| | **ÁREA PAGINACIÓN `<Paginacion>`** | | | | | | **2** | **2** | **2** | **2** | **2** | **2** | **2** | **2** | **2** || **2** |
-| | **ÁREA PÁGINA `<Pagina>`** | Deberá repetirse para el total de páginas especificadas. | | | | | **2** | **2** | **2** | **2** | **2** | **2** | **2** | **2** | **2** | **2** |
+| | ÁREA PAGINACIÓN `<Paginacion>` | | | | | | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 || 2 |
+| | ÁREA PÁGINA `<Pagina>` | Deberá repetirse para el total de páginas especificadas. | | | | | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | 1 | Página No. `<PaginaNo>` | Indica la numeración de la página que contiene los datos del e-CF al realizar una representación impresa, siempre y cuando sea mayor a una página. | 3 | NUM | a) Debe estar entre 1 y 100.<br>b) El número indicado de página debe estar en orden secuencial. | I | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | 2 | No. Línea Desde `<NoLineaDesde>` | Indica el no. de la línea de detalle del primer ítem que contiene la página.<br>Condicional a que sea completado el campo Página No. | 3 | NUM | a) Número de línea que corresponde al primer ítem que será incluido en la página.<br>b) Valor numérico hasta 3 enteros.<br>c) El valor indicado debe ser menor o igual al colocado en el campo 'No. Línea Hasta' y debe ser mayor a cero (>0). | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | 3 | No. Línea Hasta `<NoLineaHasta>` | Indica el no. de la línea de detalle del último ítem que será incluido en la página.<br>Condicional a que sea completado el campo No. Línea Desde. | 3 | NUM | a) Número de línea que corresponde al último ítem que será incluido en la página.<br>b) Valor numérico hasta 3 enteros.<br>c) El valor indicado debe ser mayor o igual al colocado en el campo 'No. Línea Desde' y debe ser mayor a cero (>0). | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
@@ -606,8 +606,8 @@ En la columna 'I' se pueden tener los siguientes valores:
 | 11 | Subtotal ITBIS 2 Página `<SubtotalItbis2Pagina>` | Valor numérico igual al subtotal monto gravado 2 por la tasa ITBIS 2, de la línea indicada en la página.<br>Condicional a que exista Subtotal Monto Gravado tasa 2. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; ≥ 0 (No puede ser negativo).<br>b) Subtotal ITBIS Tasa2= Monto Gravado ITBIS tasa2 * ITBIS tasa 2, de las líneas de ítems incluidos en la página. | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
 | 12 | Subtotal ITBIS 3 Página `<SubtotalItbis3Pagina>` | Valor numérico igual al subtotal monto gravado 3 por la tasa ITBIS 3, de la línea indicada en la página.<br>Condicional a que exista Subtotal Monto Gravadotasa 3. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; ≥ 0 (No puede ser negativo). | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
 | 13 | Subtotal Impuesto Adicional Página `<SubtotalImpuestoAdicionalPagina>` | Sumatoria de los campos del área Subtotal Impuesto Adicional.<br>Condicional a que se complete campos del área Subtotal Impuesto Adicional. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; >0 (debe ser positivo).<br>b) Subtotal Impuesto Adicional= Subtotal Impuesto Selectivo al Consumo + Subtotal Otros Impuestos Adicionales. | I | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
-| | **FIN ÁREA** | **PÁGINA** | | | | | | | | | | | | | | |
-| | **FIN ÁREA** | **PAGINACIÓN** | | | | | | | | | | | | | | |
+| | FIN ÁREA | **PÁGINA** | | | | | | | | | | | | | | |
+| | FIN ÁREA | **PAGINACIÓN** | | | | | | | | | | | | | | |
 
 ---
 
@@ -622,19 +622,19 @@ En la columna 'I' se pueden tener los siguientes valores:
 
 ## F. INFORMACIÓN DE REFERENCIA
 
-**ÁREA: Información de Referencia `<InformacionReferencia>`**
+ÁREA: Información de Referencia `<InformacionReferencia>`
 
 **Campos de referencia a documentos relacionados y otra información necesaria para vincular el e-CF con documentos anteriores.**
 
 | # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----| 
-| | **ÁREA Información de Referencia `<InformacionReferencia>`** | | | | | | **2** | **2** | **1** | **1** | **2** | **2** | **2** | **2** | **2** | **2** |
+| | ÁREA Información de Referencia `<InformacionReferencia>` | | | | | | 2 | 2 | 1 | 1 | 2 | 2 | 2 | 2 | 2 | 2 |
 | 1 | Número de Comprobante Fiscal modificado⁷⁹ `<NCFModificado>` | Es el número del comprobante fiscal que será afectado o remplazado por una secuencia electrónica. Tanto el comprobante afectado o reemplazado, como la secuencia electrónica, deben estar emitidos por el mismo RNC/Cédula.<br>Condicional a que la emisión del e-CF corresponda a un reemplazo de Comprobante Fiscal no electrónico emitido en contingencia. | 11 o 13 o 19 | ALFANUM | a) Validar que el número de comprobante fiscal modificado haya sido remitido previamente a la DGII. Este puede ser tanto secuencia electrónica como en papel.<br>b) Si la emisión del e-CF es por Código de Modificación 4: Reemplazo de un comprobante no electrónico emitido en contingencia, se debe validar que el tipo del NCF modificado sea el equivalente al tipo de e-CF que se está emitiendo. | I | 2 | 2 | 1 | 1 | 2 | 2 | 2 | 2 | 2 | 2 |
 | 2 | RNC Otro contribuyente `<RNCOtroContribuyente>` | Aplica cuando el RNC del que emite el e-CF no coincide con el comprobante fiscal modificado (debido a que el RNC se encuentre dado de baja por disolución, fusión o escisión). En ese caso, se debe validar que el campo "RNC otro contribuyente" esté completado correctamente.<br>Condicional a que el comprobante modificado no coincida con el RNC Emisor del e-CF (debido a que el RNC se encuentre dado de baja (por disolución, fusión o escisión). | 9 u 11 | NUM | Validar estructura. | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | 3 | Fecha NCF Modificado `<FechaNCFModificado>` | Fecha del número de comprobante fiscal modificado. Condicional a que la emisión del e-CF corresponda a un reemplazo de Comprobante Fiscal no electrónico emitido en contingencia. | 10 | ALFANUM | Validar<br>a) Formato: (dd-MM-AAAA).<br>b) Fecha de emisión del comprobante fiscal. | N | 2 | 2 | 1 | 1 | 2 | 2 | 2 | 2 | 2 | 2 |
 | 4 | Código de Modificación⁸⁰ `<CodigoModificacion>` | Código utilizado para indicar si el e-CF del comprobante fiscal modificado es con la finalidad de:<br>a) Anulación total<br>b) Corrección montos<br>c) Corrección Texto<br>d) Reemplazo NCF emitido en contingencia<br>e) Referenciar Factura de Consumo Electrónica.<br>a), b) y c) solo aplican para Nota de Crédito o Débito Electrónica.<br>Condicional a que el código de modificación sea igual a 4. | 1 | NUM | a) Código tipo⁸⁰:<br>1: Anula el NCF modificado<br>2: Corrige Texto del Comprobante Fiscal modificado<br>3: Corrige montos del NCF modificado<br>4: Reemplazo NCF emitido en contingencia<br>5: Referencia Factura Consumo Electrónica.⁸¹ | P | 2 | 2 | 1 | 1 | 2 | 2 | 2 | 2 | 2 | 2 |
 | 5 | Razón Modificación `<RazonModificacion>` | Campo para describir los datos modificados o la razón de la emisión de la Nota de Crédito o Débito Electrónica.<br>Ejemplo: "error en precio". | 90 | ALFA | a) Sin validación | N | 0 | 0 | 3 | 3 | 0 | 0 | 0 | 0 | 0 | 0 |
-| | **FIN ÁREA** | **INFORMACIÓN DE REFERENCIA** | | | | | | | | | | | | | | |
+| | FIN ÁREA | **INFORMACIÓN DE REFERENCIA** | | | | | | | | | | | | | | |
 
 ---
 
@@ -644,16 +644,16 @@ En la columna 'I' se pueden tener los siguientes valores:
 
 ## G. FECHA Y FIRMA DIGITAL
 
-**ÁREA: Signature `<Signature>`**
+ÁREA: Signature `<Signature>`
 
 **Información de firma digital y timestamp del e-CF.**
 
 | # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | Obligatoriedad |
 |---|--------|-------------|-----------|------|------------|----------------|
-| | **ÁREA Signature `<Signature>`** | | | | | **1** |
+| | ÁREA Signature `<Signature>` | | | | | 1 |
 | 1 | Fecha y hora de la firma digital del e-CF `<FechaHoraFirma>` | Fecha y hora en formato dd-MM-AAAA HH:mm:ss; Zona horaria GMT -4 | 19 | ALFANUM | a) Fecha y hora válida en formato indicado, dd-MM-AAAA HH:mm:ss, respectivamente.<br>b) Valida que fecha y hora firma del e-CF=< fecha y hora actual. | 1 |
 | 2 | Firma Digital | Firma digital sobre todo el documento. (Encabezado, Detalle, Descuentos - Recargos, Paginación, Información de Referencia, Fecha y Hora de Firma del e-CF). | - | - | - | 1 |
-| | **FIN ÁREA** | **SIGNATURE** | | | | |
+| | FIN ÁREA | **SIGNATURE** | | | | |
 
 ---
 
@@ -663,15 +663,15 @@ En la columna 'I' se pueden tener los siguientes valores:
 
 ## H. NOTAS ADICIONALES  
 
-**ÁREA: Notas `<Notas>`**
+ÁREA: Notas `<Notas>`
 
 **Notas adicionales de formato libre para información complementaria.**
 
 | # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | Obligatoriedad |
 |---|--------|-------------|-----------|------|------------|----------------|
-| | **ÁREA Notas `<Notas>`** | | | | | **3** |
+| | ÁREA Notas `<Notas>` | | | | | 3 |
 | 1 | Nota `<Nota>` | Campo de texto libre para información adicional no estructurada. | 4000 | ALFANUM | a) Sin validación específica | 3 |
-| | **FIN ÁREA** | **NOTAS** | | | | |
+| | FIN ÁREA | **NOTAS** | | | | |
 
 ---
 
