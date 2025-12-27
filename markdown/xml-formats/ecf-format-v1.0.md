@@ -231,11 +231,30 @@ The following table shows which sections are required for each e-CF type:
 | 55 | `<Informacionadicionalcomprador>` | Notes | 150 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
 
 > [!IMPORTANT]
-> **Buyer Identification Rules:**
+> **Buyer Identification Rules (Reglas de Identificación del Comprador)**:
 > - Type 31 (Crédito Fiscal): `RNCComprador` always mandatory
 > - Type 32 (Consumo) ≥ RD$250,000: `RNCComprador` or `IdentificadorExtranjero` mandatory
 > - Type 32 (Consumo) < RD$250,000: `RNCComprador` optional
 > - Type 46 (Exports): Use `RNCComprador` for residents, `IdentificadorExtranjero` for non-residents
+
+> [!NOTE]
+> **Detailed Buyer Identification Footnotes:**
+>
+> **Footnote 4** (Field 38 `RNCComprador`): If the total amount of the electronic consumer invoice (Type 32) is **less than DOP$250,000**, the 'Buyer RNC' field is **optional**. Above this threshold, buyer identification becomes **mandatory**.
+>
+> **Footnote 5** (Field 38-39): Conditional on the buyer having RNC/ID. If the buyer is **foreign (diplomatic)**, the `RNCComprador` field must be **left blank** and the `IdentificadorExtranjero` field must be **completed** instead.
+>
+> **Footnote 6** (Field 38 - Type 46): According to **Article 10 of General Standard 05-19**, when **Commercial Free Zones (Airports and Ports)** make transfers of goods to **Residents**, the `RNCComprador` field **must be completed**.
+>
+> **Footnote 7** (Field 39 `IdentificadorExtranjero`): This field is completed ONLY if:
+> - The e-CF is an electronic consumer invoice (Type 32) **> DOP$250,000** AND
+> - The buyer **does not have RNC/ID** (is foreign)
+> - The same applies to electronic credit/debit notes (Types 33/34) that affect Type 32 e-CF with value > DOP$250,000
+> - When `IdentificadorExtranjero` exists, the `RNCComprador` field must be **omitted**.
+>
+> **Footnote 8** (Field 39 - Type 44): Conditional on the buyer being **foreign (diplomatic)**. If the `IdentificadorExtranjero` field is completed, the `RNCComprador` field should **not be completed** (mutually exclusive).
+>
+> **Footnote 9** (Field 39 - Type 46): According to **Article 10 of General Standard 05-19**, when **Commercial Free Zones (Airports and Ports)** make transfers of goods to **Non-Residents**, the `IdentificadorExtranjero` field **must be completed**.
 
 ---
 
@@ -643,6 +662,33 @@ Each `<Item>` element describes one line item (good or service). Up to 100 items
 > [!WARNING]
 > If `IndicadorFacturacion=4` (Exento) AND `IndicadorAgenteRetencionoPercepcion=1` (R), then `MontoITBISRetenido` **must be 0**.
 
+> [!NOTE]
+> **Key Item Detail Footnotes (Notas Claves de Detalle de Ítem):**
+>
+> **Footnote 48** (Field 1 `NumeroLinea`): Line number must be **sequential starting at 1** and can go up to:
+> - **100 items**: General limit for all e-CF types
+> - **1,000 items**: Type 32 (Consumer) ≥ DOP$250,000
+> - **10,000 items**: Type 32 (Consumer) < DOP$250,000
+>
+> **Footnote 49** (Field 4 `IndicadorFacturacion`): The billing indicator must be **printed in words** in the printed representation:
+> - `0` → "No Facturable"
+> - `1` → "Gravado ITBIS 18%"
+> - `2` → "Gravado ITBIS 16%"
+> - `3` → "Gravado ITBIS 0%"
+> - `4` → "Exento"
+>
+> **Footnote 50** (Field 4 - Type 43): For e-CF type 43 (Minor Expenses / Gastos Menores), only values **1 or 4** are allowed (ITBIS 18% or Exempt).
+>
+> **Footnote 51** (Field 4 - Type 46): For e-CF type 46 (Exports / Exportaciones), only values **1, 3 or 4** are allowed (ITBIS 18%, 0%, or Exempt).
+>
+> **Footnote 52** (Field 5 `IndicadorAgenteRetencionoPercepcion`): Agent indicator meanings:
+> - `1` = **Retención (R)** - Withholding agent
+> - `2` = **Percepción (P)** - Perception agent
+>
+> **Footnote 53** (Field 6 `MontoITBISRetenido`): The ITBIS withheld at **item level** is summed to populate the header's `TotalITBISRetenido` field (Field 116 in Section A.6).
+>
+> **Footnote 54** (Field 9 `IndicadorBienoServicio` - Type 47): For e-CF type 47 (Foreign Payments / Pagos al Exterior), it is **mandatory** to indicate if the item is goods (1) or service (2). For services, this field **must = 2**.
+
 ---
 
 ### B.3 Item Details (Fields 8-14)
@@ -677,6 +723,26 @@ For alcohol, tobacco products with ISC codes 006-022 (specific) and 023-039 (ad-
 > [!NOTE]
 > **Field 15 (Subcantidad)**: For alcohol = absolute alcohol content in liters. For tobacco = cigarette units per pack.
 > **Field 18 (PrecioUnitarioReferencia)**: For ISC Ad-Valorem (codes 023-039), this is the retail price (PVP) used as tax base.
+
+> [!NOTE]
+> **ISC-Specific Footnotes (Notas Específicas ISC):**
+>
+> **Footnote 55** (Field 11 `CantidadItem`): The item quantity is **multiplied by the unit price** to obtain the item amount before discounts/surcharges.
+>
+> **Footnote 56** (Field 13 `CantidadReferencia`): Reference quantity is used to calculate **selective consumption taxes (ISC)** for certain products. Required for tax codes **006-022** (ISC  Específico).
+>
+> **Footnote 57** (Field 15 `Subcantidad` - Table): The subquantity table is **necessary** to calculate ISC on products derived from:
+> - **Alcoholand beer** (codes 006-012)
+> - **Tobacco and cigarettes** (codes 019-022)
+> - This field is **only required** when invoicing goods at the **producer or manufacturer level**.
+>
+> **Footnote 58** (Field 15 `Subcantidad`): The subquantity represents the **reference units of measure** contained in the item unit. Examples:
+> - **Alcohol**: Liters of absolute alcohol per bottle/container
+> - **Tobacco**: Number of cigarettes per pack (cajetilla)
+>
+> **Footnote 59** (Field 17 `GradosAlcohol`): Alcohol degrees (%) are used to calculate ISC on **alcoholic beverages** with tax codes **006-018**. This is the percentage of absolute alcohol in the total volume per unit. Example: 40% alcohol = value "40".
+>
+> **Footnote 60** (Field 18 `PrecioUnitarioReferencia`): Reference unit price is used to calculate **ISC Ad-Valorem** on products with codes **023-039**. This is the retail price (PVP / Precio de Venta al Público) that serves as the tax base.
 
 ---
 
