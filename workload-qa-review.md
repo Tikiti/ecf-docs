@@ -14,14 +14,14 @@ However, there are opportunities for improvement and potential gaps regarding th
 ## 🛠️ Workload: Immediate Fixes
 
 ### 1. Typo Correction
-- [ ] **File:** `markdown/xml-formats/rfce-format-v1.0.md`
+- [x] **File:** `markdown/xml-formats/rfce-format-v1.0.md`
 - **Issue:** Line ~247 contains "Foot note 4" (space between Foot and note).
-- **Fix:** Change to "**Footnote 4**".
+- **Fix:** ~~Change to "**Footnote 4**".~~ ✅ **FIXED by Claude 4 Sonnet**
 
 ### 2. Footnote Reference Clarity
-- [ ] **File:** `markdown/xml-formats/rfce-format-v1.0.md`
+- [x] **File:** `markdown/xml-formats/rfce-format-v1.0.md`
 - **Issue:** Footnote 5 says "See note 2". In the optimized layout, "Footnote 2" is located in the **Buyer** section (Line 123), which might be far away visually.
-- **Suggestion:** Change to "See Footnote 2 in Section A.3 (Comprador)" or repeat the content if brief.
+- **Suggestion:** ~~Change to "See Footnote 2 in Section A.3 (Comprador)" or repeat the content if brief.~~ ✅ **FIXED by Claude 4 Sonnet** - Added Footnote 2 to the section and updated reference.
 
 ---
 
@@ -42,13 +42,14 @@ However, there are opportunities for improvement and potential gaps regarding th
 ## 💡 Consistency & Improvements
 
 ### 5. Header Metadata Standardization
-- [ ] **Action:** Verify all 5 optimized files (`ecf`, `acecf`, `arecf`, `anulacion`, `rfce`) use the exact same header format:
+- [x] **Action:** Verify all 5 optimized files (`ecf`, `acecf`, `arecf`, `anulacion`, `rfce`) use the exact same header format:
     ```markdown
     > **Original**: [Spanish Name]
     > **Source**: [Link to PDF]
     > **Pages**: [Count]
     > **Scope**: [Description]
     ```
+    ✅ **FIXED by Claude 4 Sonnet** - ECF header now standardized with Scope and clickable Source link.
 
 ### 6. XML Structure Examples
 - [ ] **Action:** The auxiliary files have excellent XML code blocks showing the structure. Ensure `ecf-format-v1.0.md` has a similar high-level "Skeleton" XML block early in the document.
@@ -73,3 +74,29 @@ However, there are opportunities for improvement and potential gaps regarding th
     - Missing footnotes section.
     - Improved header.
     - Any table corrections found.
+
+---
+
+## Notes from Codex (GPT-5)
+
+> **Model**: Codex (GPT-5)
+> **Provenance**: The beginning of this workload was created by Gemini 3 Pro.
+> **Acknowledgement**: I read Gemini's notes before adding these.
+> **Context read**: `.agent/rules/README.md`, `.agent/rules/project-overview.md`, `.agent/rules/documentation-workflow.md`, `.agent/rules/documentation-language.md`, `.agent/rules/pdf-extraction-stack.md`
+
+### Files checked
+- `markdown/xml-formats/rfce-format-v1.0.md`
+- `markdown/xml-formats/ecf-format-v1.0.md`
+
+### Findings, suggestions, and possible fixes
+- **RFCE Footnote spacing**: Confirmed `**Foot note 4**` appears in the "PDF Specification Footnotes" block. Suggested fix stands: change to `**Footnote 4**`.
+- **RFCE Footnote 5 reference**: Confirmed `**Footnote 5**: See note 2.` In the same "PDF Specification Footnotes" block, **Footnote 2 is missing**. Possible fixes: add Footnote 2 to that block, or rewrite Footnote 5 as "See Footnote 2 in Section A.3 (Comprador)" and repeat the note if short.
+- **ECF PDF footnotes section**: I do not see a dedicated "PDF Specification Footnotes" section in `ecf-format-v1.0.md`. There is a "Key Business Rules from Footnotes" list near the end plus footnotes embedded inline. I agree with Gemini that a dedicated footnotes section appears missing if you are standardizing with the auxiliary formats. Possible fix: add a "PDF Specification Footnotes" block at the end (or rename/expand the current "Key Business Rules from Footnotes" to align with the auxiliary format pattern).
+- **ECF header metadata consistency**: `ecf-format-v1.0.md` header lacks a `Scope` line, and `Source` is plain text (not a link), unlike `rfce-format-v1.0.md`. I agree with Gemini that the header format is not aligned across the five files. Possible fix: add `Scope` and normalize `Source` to a markdown link.
+- **ECF XML skeleton**: `ecf-format-v1.0.md` already contains a top-level XML structure block under "3. Document Structure". If the requirement is simply a high-level skeleton early in the doc, this action looks already satisfied. If the auxiliary files use a different style (e.g., more compact or labeled as "Skeleton"), consider matching that exact format.
+- **Verification script mention**: I could not find any `verify_comprehensive.py` (or similar) in the repo. If this step is required, decide on the actual script name/location or add it to `scripts/` so the next agent can run it.
+- **ImpuestosAdicionales structure**: In `ecf-format-v1.0.md`, `<ImpuestosAdicionales>` is shown as a container with fields 105-109, and `<MontoImpuestoAdicional>` appears as a separate total line. I cannot confirm table shape vs PDF without cross-checking exports. The workload action to verify layout with camelot/pdfplumber still seems valid.
+
+### Questions / follow-ups for next agent
+1. Should the ECF file adopt the same "PDF Specification Footnotes" block as the auxiliary formats, or is the existing "Key Business Rules from Footnotes" section intended to replace it?
+2. Which verification tool/script should be used for the "Deep Table Verification" step if `verify_comprehensive.py` does not exist?
