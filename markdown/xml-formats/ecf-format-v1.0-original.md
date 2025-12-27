@@ -885,12 +885,36 @@ Deberá repetirse para el total de páginas especificadas.**
 - ✅ TABLA V (Tipos e-CF): Completa (10 tipos)
 
 **NOTA:** El archivo markdown [`tablas-provincias-completa.md`](tablas-provincias-completa.md) contiene la tabla completa de provincias y municipios. Para unidades de medida, todos los 57 códigos están incluidos en este documento.
-
 ---
 
 **🎊 DOCUMENTO FORMATO e-CF V1.0 COMPLETADO 🎊**
 
-**Este documento representa la especificación completa del Formato Comprobante Fiscal Electrónico (e-CF) V1.0 de la DGII de República Dominicana en formato Markdown con TRUE 1:1 representación en español del PDF oficial.**
+**Este documento representa la especificación completa del Formato Comprobante Fiscal Electrónico (e-CF) V1.0**
+
+---
+
+## Bitácora
+
+**Versión 1.0**
+
+### Actualizaciones al 09-10-2025
+**Modificaciones no implican cambio de versión.**
+
+1. Se actualiza la tabla II. Codificación Monedas, para agregar el tipo de moneda "Peso Colombiano"
+
+### Actualizaciones al 17-09-2024
+**Modificaciones no implican cambio de versión.**
+
+1. Se actualiza la tabla II. Codificación Monedas, para agregar los tipos de monedas "Gourde Haitiana" y "Peso Mexicano"
+2. Se actualiza la tabla IV. Codificación Unidad de Medida, para agregar los tipos de medidas "Hectárea", "Mililitro", "Miligramo", "Onzas" y "Onzas Troy"
+
+### Actualizaciones al 30-08-2022
+**Modificaciones no implican cambio de versión.**
+
+1. Se actualiza la tabla IV. Codificación Unidad de Medida, para agregar el tipo de medida "Bandeja"
+
+---
+de la DGII de República Dominicana en formato Markdown con TRUE 1:1 representación en español del PDF oficial.**
 
 - **Total campos:** 225 campos  
 - **Total secciones:** 8 (A-H) + Tablas  
