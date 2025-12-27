@@ -498,6 +498,219 @@ Se pueden incluir hasta 100 repeticiones.**
 
 ---
 
+
+---
+
+| 36 | `<DescuentoOtraMoneda>` | Descuento (ME) | 18 | NUM | ≥0, 2 decimales | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 37 | `<RecargoOtraMoneda>` | Recargo (ME) | 18 | NUM | ≥0, 2 decimales | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 38 | `<MontoItemOtraMoneda>` | Total de línea (ME) | 18 | NUM | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+
+---
+
+### B.12 Total de Línea (Campo 39)
+
+| # | Elemento | Descripción | Máx | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 39 | `<MontoItem>` | Total de línea | 18 | NUM | =(Precio×Cant)−Descuento+Recargo | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+
+> [!NOTE]
+> `MontoItem` puede ser **0** para notas de crédito de corrección de texto (cuando `CodigoModificacion=2` en Información de Referencia).
+
+---
+
+## Sección C: Subtotales Informativos
+
+Subtotales informativos opcionales (no afectan los totales principales). Se pueden incluir hasta 20 entradas `<Subtotal>`.
+
+**Estructura XML:**
+```xml
+<Subtotales>
+  <Subtotal>...</Subtotal>
+  <Subtotal>...</Subtotal>
+</Subtotales>
+```
+
+| # | Elemento | Descripción | Máx | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 1 | `<NumeroSubTotal>` | Número de subtotal | 2 | NUM | Secuencial 1 a n | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 2 | `<DescripcionSubtotal>` | Título | 40 | ALFA | — | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 3 | `<Orden>` | Orden de visualización | 2 | NUM | — | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 4 | `<SubTotalMontoGravadoTotal>` | Subtotal total gravado | 18 | NUM | ≥0, 2 decimales | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 0 |
+| 5 | `<SubTotalMontoGravadoI1>` | Subtotal al 18% | 18 | NUM | ≥0, 2 decimales | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 0 | 0 |
+| 6 | `<SubTotalMontoGravadoI2>` | Subtotal al 16% | 18 | NUM | ≥0, 2 decimales | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 0 | 0 |
+| 7 | `<SubTotalMontoGravadoI3>` | Subtotal al 0% | 18 | NUM | ≥0, 2 decimales | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 0 |
+| 8 | `<SubTotaITBIS>` | Subtotal ITBIS | 18 | NUM | ≥0, 2 decimales | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 0 |
+| 9 | `<SubTotaITBIS1>` | Subtotal ITBIS 18% | 18 | NUM | ≥0, 2 decimales | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 0 | 0 |
+| 10 | `<SubTotaITBIS2>` | Subtotal ITBIS 16% | 18 | NUM | ≥0, 2 decimales | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 0 | 0 |
+| 11 | `<SubTotaITBIS3>` | Subtotal ITBIS 0% | 18 | NUM | ≥0, 2 decimales | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 0 |
+| 12 | `<SubTotalImpuestoAdicional>` | Subtotal impuestos adicionales | 18 | NUM | >0, 2 decimales | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 0 | 0 |
+| 13 | `<SubTotalExento>` | Subtotal exento | 18 | NUM | ≥0, 2 decimales | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 0 | 3 |
+| 14 | `<MontoSubTotal>` | Monto de subtotal | 18 | NUM | ≥0, 2 decimales | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 15 | `<Lineas>` | Conteo de líneas en subtotal | 2 | NUM | >0 | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+
+
+---
+
+## Sección D: DescuentosORecargos (Descuentos o Recargos Globales)
+
+Descuentos/recargos globales que aplican a toda la factura (no por ítem). Se pueden incluir hasta 20 entradas `<DescuentoORecargo>`.
+
+**Estructura XML:**
+```xml
+<DescuentosORecargos>
+  <DescuentoORecargo>...</DescuentoORecargo>
+  <DescuentoORecargo>...</DescuentoORecargo>
+</DescuentosORecargos>
+```
+
+| # | Elemento | Descripción | Máx | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 1 | `<NumeroLinea>` | Número de línea | 2 | NUM | 1-20 | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 2 | `<TipoAjuste>` | D (Descuento) o R (Recargo) | 1 | ALFA | — | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 3 | `<IndicadorNorma1007>` | Indicador Norma 10-07 | 1 | NUM | 1=Sí | N | 3 | 3 | 3 | 3 | 0 | 0 | 0 | 3 | 0 | 0 |
+| 4 | `<DescripcionDescuentooRecargo>` | Descripción | 45 | ALFA | — | I | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| 5 | `<TipoValor>` | Tipo de valor (% o $) | 1 | ALFA | "%" o "$" | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 6 | `<ValorDescuentooRecargo>` | Porcentaje de descuento/recargo | 5 | NUM | >0, 3 ent + 2 dec | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 7 | `<MontoDescuentooRecargo>` | Monto de descuento/recargo | 18 | NUM | ≥0, 2 decimales | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 8 | `<MontoDescuentooRecargoOtraMoneda>` | Monto (moneda extranjera) | 18 | NUM | ≥0, 2 decimales | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| 9 | `<IndicadorFacturacionDescuentooRecargo>` | Indicador de impuesto | 1 | NUM | 1=ITBIS1, 2=ITBIS2, 3=ITBIS3, 4=Exento | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+
+
+**Valores de TipoDescuentoRecargo:**
+
+| Código | Descripción |
+|--------|-------------|
+| `1` | Descuento |
+| `2` | Recargo |
+
+**Valores de TipoValor (campo ALFA):**
+
+| Código | Descripción |
+|--------|-------------|
+| `%` | Porcentaje |
+| `$` | Monto (Cantidad fija) |
+
+> [!WARNING]
+> **Usar caracteres literales**: `TipoValor` es un campo ALFA. Enviar los caracteres reales `%` o `$`, no valores numéricos. El PDF define explícitamente estos como "%" o "$".
+
+**Valores de IndicadorFacturacionDescuentooRecargo:**
+
+| Código | Descripción |
+|--------|-------------|
+| `1` | ITBIS Tasa 1 (18%) |
+| `2` | ITBIS Tasa 2 (16%) |
+| `3` | ITBIS Tasa 3 (0%) |
+| `4` | Exento (mostrado como "E" en documentación DGII, pero enviar valor `4`) |
+
+> [!CAUTION]
+> **No enviar "E"**: Aunque la documentación DGII etiqueta Exento como "E", el campo es tipo NUM. Debe enviar el valor numérico `4`, no la letra "E".
+
+---
+
+## Sección E: Paginacion (Paginación)
+
+Para representación impresa, indica qué ítems aparecen en cada página.
+
+> [!NOTE]
+> Cada elemento `<Pagina>` está envuelto dentro del contenedor `<Paginacion>`.
+> Estructura: `<Paginacion><Pagina>...</Pagina></Paginacion>`
+
+| # | Elemento | Descripción | Máx | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----:|
+| 1 | `<PaginaNo>` | Número de página | 3 | NUM | 1-100, secuencial | I | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 2 | `<NoLineaDesde>` | Línea inicial | 3 | NUM | >0, ≤NoLineaHasta | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 3 | `<NoLineaHasta>` | Línea final | 3 | NUM | >0, ≥NoLineaDesde | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 4 | `<SubtotalMontoGravadoPagina>` | Subtotal gravado de página | 18 | NUM | ≥0, 2 decimales | I | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 5 | `<SubtotalMontoGravado1Pagina>` | Subtotal página 18% | 18 | NUM | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 6 | `<SubtotalMontoGravado2Pagina>` | Subtotal página 16% | 18 | NUM | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 7 | `<SubtotalMontoGravado3Pagina>` | Subtotal página 0% | 18 | NUM | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 8 | `<SubtotalExentoPagina>` | Subtotal exento de página | 18 | NUM | ≥0, 2 decimales | I | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 0 | 2 |
+| 9 | `<SubtotalItbisPagina>` | Subtotal ITBIS de página | 18 | NUM | ≥0, 2 decimales | I | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 10 | `<SubtotalItbis1Pagina>` | ITBIS página 18% | 18 | NUM | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 11 | `<SubtotalItbis2Pagina>` | ITBIS página 16% | 18 | NUM | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 12 | `<SubtotalItbis3Pagina>` | ITBIS página 0% | 18 | NUM | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 13 | `<SubtotalImpuestoAdicionalPagina>` | Impuestos adicionales de página | 18 | NUM | >0, 2 decimales | I | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+| — | `<SubtotalImpuestoAdicional>` | Contenedor impuestos adicionales (AREA) | — | — | — | — | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+| 14 | `<SubtotalImpuestoSelectivoConsumoEspecificoPagina>` | ISC específico de página | 18 | NUM | >0, 2 decimales | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 15 | `<SubtotalOtrosImpuesto>` | Otros impuestos de página | 18 | NUM | >0, 2 decimales | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+| 16 | `<MontoSubtotalPagina>` | Subtotal de página | 18 | NUM | ≥0, 2 decimales | I | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 17 | `<SubtotalMontoNoFacturablePagina>` | No facturable de página | 18 | NUM | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+
+> [!WARNING]
+> **Etiquetas de paginación en moneda extranjera**: Las etiquetas `SubtotalMontoGravadoPaginaOtraMoneda` y `MontoSubtotalPaginaOtraMoneda` de versiones anteriores pueden no estar presentes en todas las versiones del PDF. Verificar contra su versión específica del PDF antes de implementar.
+
+> [!TIP]
+> **Tipo "NUM" para campos monetarios**: El PDF usa NUM para todos los campos monetarios. Cuando el campo contiene decimales, la validación especifica "2 decimales". Esta es la convención DGII.
+
+---
+
+## Sección F: InformacionReferencia (Información de Referencia)
+
+Usado para Notas de Débito/Crédito (tipos 33, 34) para referenciar la factura modificada.
+
+| # | Elemento | Descripción | Máx | Tipo | Validacion | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----:|
+| 1 | `<NCFModificado>` | e-NCF modificado | 11/13/19 | ALFA | Formato NCF/e-NCF válido | I | 0 | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 2 | `<RNCOtroContribuyente>` | RNC de otro contribuyente | 9/11 | NUM | RNC válido (9 u 11 dígitos) | N | 0 | 0 | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 3 | `<FechaNCFModificado>` | Fecha del e-CF modificado | 10 | DATE | DD-MM-YYYY | N | 0 | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 4 | `<CodigoModificacion>` | Código de modificación | 1 | NUM | Valores 1-5 | P | 0 | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 5 | `<RazonModificacion>` | Razón de modificación | 90 | ALFA | Texto libre (ej. "error en precio") | N | 0 | 0 | 3 | 3 | 0 | 0 | 0 | 0 | 0 | 0 |
+
+**Códigos de Modificación (CodigoModificacion):**
+
+| Código | Descripción | Aplica A |
+|--------|-------------|----------|
+| `1` | Anula documento completo | Nota Crédito/Débito |
+| `2` | Corrige texto | Nota Crédito/Débito |
+| `3` | Corrige montos | Nota Crédito/Débito |
+| `4` | Reemplazo NCF emitido en contingencia | Nota Crédito/Débito |
+| `5` | Referencia Factura de Consumo Electrónica | Solo Factura Crédito Fiscal |
+
+> [!NOTE]
+> **Nota al pie 80**: Los códigos 1, 2, 3 se aplican solo cuando se emite una nota de crédito o débito.
+> 
+
+---
+
+
+## G. FECHA Y FIRMA DIGITAL
+
+**ÁREA: Signature `<Signature>`**
+
+**Información de firma digital y timestamp del e-CF.**
+
+| # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | Obligatoriedad |
+|---|--------|-------------|-----------|------|------------|----------------|
+| | **ÁREA Signature `<Signature>`** | | | | | **1** |
+| 1 | Fecha y hora de la firma digital del e-CF `<FechaHoraFirma>` | Fecha y hora en formato dd-MM-AAAA HH:mm:ss; Zona horaria GMT -4 | 19 | ALFANUM | a) Fecha y hora válida en formato indicado, dd-MM-AAAA HH:mm:ss, respectivamente.<br>b) Valida que fecha y hora firma del e-CF=< fecha y hora actual. | 1 |
+| 2 | Firma Digital | Firma digital sobre todo el documento. (Encabezado, Detalle, Descuentos - Recargos, Paginación, Información de Referencia, Fecha y Hora de Firma del e-CF). | - | - | - | 1 |
+| | **FIN ÁREA** | **SIGNATURE** | | | | |
+
+---
+
+
+---
+
+## H. NOTAS ADICIONALES  
+
+**ÁREA: Notas `<Notas>`**
+
+**Notas adicionales de formato libre para información complementaria.**
+
+| # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | Obligatoriedad |
+|---|--------|-------------|-----------|------|------------|----------------|
+| | **ÁREA Notas `<Notas>`** | | | | | **3** |
+| 1 | Nota `<Nota>` | Campo de texto libre para información adicional no estructurada. | 4000 | ALFANUM | a) Sin validación específica | 3 |
+| | **FIN ÁREA** | **NOTAS** | | | | |
+
+---
+
+
+---
+
+
+---
+
 ## TABLAS DE CODIFICACIÓN (REFERENCE TABLES)
 
 **IMPORTATE:** Las tablas de referencia completas están disponibles en archivos markdown separados. Esta sección muestra la estructura y ejemplos representativos.
@@ -707,10 +920,6 @@ Se pueden incluir hasta 100 repeticiones.**
 **Este documento representa la especificación completa del Formato Comprobante Fiscal Electrónico (e-CF) V1.0**
 
 ---
-
-## Bitácora
-
-**Versión 1.0**
 
 ### Actualizaciones al 09-10-2025
 **Modificaciones no implican cambio de versión.**
