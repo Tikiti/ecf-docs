@@ -713,19 +713,31 @@ En la columna 'I' se pueden tener los siguientes valores:
 
 ### TABLA II: Codificación de Monedas (ISO 4217)
 
-**Fuente:** PDF página 72
+**Fuente:** PDF página 63
 
-| Código | Moneda | Descripción |
-|--------|--------|-------------|
-| USD | Dólar Estadounidense | Dólar de los Estados Unidos |
-| EUR | Euro | Euro Europeo |
-| DOP | Peso Dominicano | Peso Dominicano (moneda local) |
-| CAD | Dólar Canadiense | Dólar Canadiense |
-| CHF | Franco Suizo | Franco Suizo |
-| GBP | Libra Esterlina | Libra Esterlina Británica |
-| JPY | Yen Japonés | Yen Japonés |
+**Códigos de monedas autorizados para e-CF:**
 
-**Nota:** Pueden existir otras monedas ISO 4217 válidas. Consultar estándar ISO actualizado.
+| Código ISO | Moneda |
+|------------|--------|
+| BRL | Real Brasileño |
+| CAD | Dólar Canadiense |
+| CHF | Franco Suizo |
+| CHY | Yuan Chino |
+| COP | Peso Colombiano |
+| DKK | Corona Danesa |
+| EUR | Euro |
+| GBP | Libra Esterlina |
+| HTG | Gourde Haitiana |
+| JPY | Yen Japonés |
+| MXN | Peso Mexicano |
+| NOK | Corona Noruega |
+| SCP | Libra Escocesa |
+| SEK | Corona Sueca |
+| USD | Dólar Estadounidense |
+| VEF | Bolívar Fuerte Venezolano⁸³ |
+| XDR | Derecho Especial de Giro⁸³ |
+
+**Total:** 17 monedas autorizadas
 
 ---
 
@@ -867,7 +879,7 @@ En la columna 'I' se pueden tener los siguientes valores:
 
 **ESTADO FINAL:**
 - ✅ TABLA I (Impuestos): Resumen incluido, PDF para códigos completos (~40 códigos)
-- ✅ TABLA II (Monedas): Completa (7 códigos principales)
+- ✅ TABLA II (Monedas): **Completa** (17 monedas autorizadas)
 - ✅ TABLA III (Provincias/Municipios): **Tabla completa extraída** → [`tablas-provincias-completa.md`](tablas-provincias-completa.md) (335 entradas)
 - ✅ TABLA IV (Unidades): **Completa en este documento** (57 códigos)
 - ✅ TABLA V (Tipos e-CF): Completa (10 tipos)
@@ -1044,6 +1056,8 @@ En la columna 'I' se pueden tener los siguientes valores:
 **⁸¹** El código 5 (Referencia Factura Consumo Electrónica) se usa específicamente para referenciar una factura de consumo electrónica existente.
 
 **⁸²** ISC Específico (códigos 006-022) se calcula como un monto fijo por unidad de medida, aplicable principalmente a bebidas alcohólicas y productos de tabaco, con tasas actualizadas periódicamente por la DGII.
+
+**⁸³** XDR (Derecho Especial de Giro) es un activo de reserva internacional creado por el FMI. VEF (Bolívar Fuerte Venezolano) puede estar sujeto a cambios según regulaciones cambiarias vigentes.
 
 ---
 
