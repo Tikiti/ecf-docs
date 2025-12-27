@@ -770,15 +770,14 @@ En la columna 'I' se pueden tener los siguientes valores:
 
 ---
 
-### TABLA IV: Unidades de Medida
+### TABLA IV: Unidades de Medida (Completa)
 
-**Fuente:** PDF páginas 86-87  
-**Tabla completa:** Ver archivo [`tablas-unidades-completa.md`](tablas-unidades-completa.md) (57 códigos)
+**Fuente:** PDF páginas 86-87
 
-**Códigos estándar para unidades de medida en e-CF:**
+**Codificación completa de unidades de medida para e-CF** (57 códigos):
 
-| Código | Abrev. | Unidad de Medida |
-|--------|--------|------------------|
+| Código | Abreviatura | Unidad de Medida |
+|--------|-------------|------------------|
 | 01 | BARR | Barril |
 | 02 | BOL | Bolsa |
 | 03 | BOT | Bote |
@@ -794,16 +793,50 @@ En la columna 'I' se pueden tener los siguientes valores:
 | 13 | DOC | Docena |
 | 14 | FARD | Fardo |
 | 15 | GL | Galones |
-| ... | ... | *(ver tabla completa para 42 códigos más)* |
+| 16 | GRAD | Grado |
+| 17 | GR | Gramo |
+| 18 | GRAN | Granel |
+| 19 | HOR | Hora |
+| 20 | HUAC | Huacal |
+| 21 | KG | Kilogramo |
+| 22 | kWh | Kilovatio Hora |
+| 23 | LB | Libra |
+| 24 | LITRO | Litro |
+| 25 | LOT | Lote |
+| 26 | M | Metro |
+| 27 | M2 | Metro Cuadrado |
+| 28 | M3 | Metro Cúbico |
+| 29 | MMBTU | Millones de Unidades Térmicas |
+| 30 | MIN | Minuto |
+| 31 | PAQ | Paquete |
+| 32 | PAR | Par |
+| 33 | PIE | Pie |
+| 34 | PZA | Pieza |
+| 35 | ROL | Rollo |
+| 36 | SOBR | Sobre |
+| 37 | SEG | Segundo |
+| 38 | TANQUE | Tanque |
+| 39 | TONE | Tonelada |
+| 40 | TUB | Tubo |
+| 41 | YD | Yarda |
+| 42 | YD2 | Yarda cuadrada |
+| 43 | UND | Unidad |
+| 44 | EA | Elemento |
+| 45 | MILLAR | Millar |
+| 46 | SAC | Saco |
+| 47 | LAT | Lata |
+| 48 | DIS | Display |
+| 49 | BID | Bidón |
+| 50 | RAC | Ración |
+| 51 | Q | Quintal |
+| 52 | GRT | Gross Register Tonnage (Toneladas de registro bruto) |
 | 53 | P2 | Pie cuadrado |
 | 54 | PAX | Pasajero |
 | 55 | PULG | Pulgadas |
 | 56 | STAY | Parqueo barcos en muelle |
 | 57 | BDJ | Bandeja |
 
-**Total:** **57 códigos** de unidades de medida
-
-**📄 Tabla completa:** [`tablas-unidades-completa.md`](tablas-unidades-completa.md)
+**Total:** 57 códigos completos
 
 ---
 
@@ -836,10 +869,10 @@ En la columna 'I' se pueden tener los siguientes valores:
 - ✅ TABLA I (Impuestos): Resumen incluido, PDF para códigos completos (~40 códigos)
 - ✅ TABLA II (Monedas): Completa (7 códigos principales)
 - ✅ TABLA III (Provincias/Municipios): **Tabla completa extraída** → [`tablas-provincias-completa.md`](tablas-provincias-completa.md) (335 entradas)
-- ✅ TABLA IV (Unidades): **Tabla completa extraída** → [`tablas-unidades-completa.md`](tablas-unidades-completa.md) (57 códigos)
+- ✅ TABLA IV (Unidades): **Completa en este documento** (57 códigos)
 - ✅ TABLA V (Tipos e-CF): Completa (10 tipos)
 
-**NOTA:** Los archivos markdown de tablas completas son ahora la referencia autorizada para provincias/municipios y unidades de medida. No es necesario consultar el PDF para estos códigos.
+**NOTA:** El archivo markdown [`tablas-provincias-completa.md`](tablas-provincias-completa.md) contiene la tabla completa de provincias y municipios. Para unidades de medida, todos los 57 códigos están incluidos en este documento.
 
 ---
 
