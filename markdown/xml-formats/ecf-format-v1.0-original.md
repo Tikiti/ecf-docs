@@ -518,7 +518,7 @@ Se pueden incluir hasta 100 repeticiones.**
 
 ---
 
-## Sección C: Subtotales Informativos
+## C. SUBTOTALES INFORMATIVOS
 
 Subtotales informativos opcionales (no afectan los totales principales). Se pueden incluir hasta 20 entradas `<Subtotal>`.
 
@@ -551,7 +551,7 @@ Subtotales informativos opcionales (no afectan los totales principales). Se pued
 
 ---
 
-## Sección D: DescuentosORecargos (Descuentos o Recargos Globales)
+## D. DESCUENTOS O RECARGOS
 
 Descuentos/recargos globales que aplican a toda la factura (no por ítem). Se pueden incluir hasta 20 entradas `<DescuentoORecargo>`.
 
@@ -607,7 +607,7 @@ Descuentos/recargos globales que aplican a toda la factura (no por ítem). Se pu
 
 ---
 
-## Sección E: Paginacion (Paginación)
+## E. PAGINACIÓN
 
 Para representación impresa, indica qué ítems aparecen en cada página.
 
@@ -644,7 +644,7 @@ Para representación impresa, indica qué ítems aparecen en cada página.
 
 ---
 
-## Sección F: InformacionReferencia (Información de Referencia)
+## F. INFORMACIÓN DE REFERENCIA
 
 Usado para Notas de Débito/Crédito (tipos 33, 34) para referenciar la factura modificada.
 
@@ -688,9 +688,6 @@ Usado para Notas de Débito/Crédito (tipos 33, 34) para referenciar la factura 
 
 ---
 
-
----
-
 ## H. NOTAS ADICIONALES  
 
 **ÁREA: Notas `<Notas>`**
@@ -705,15 +702,9 @@ Usado para Notas de Débito/Crédito (tipos 33, 34) para referenciar la factura 
 
 ---
 
-
----
-
-
----
-
 ## TABLAS DE CODIFICACIÓN (REFERENCE TABLES)
 
-**IMPORTATE:** Las tablas de referencia completas están disponibles en archivos markdown separados. Esta sección muestra la estructura y ejemplos representativos.
+**IMPORTANTE:** Las tablas de referencia completas están disponibles en archivos markdown separados. Esta sección muestra la estructura y ejemplos representativos.
 
 ---
 
@@ -772,7 +763,7 @@ Usado para Notas de Débito/Crédito (tipos 33, 34) para referenciar la factura 
 ### TABLA III: Provincias y Municipios de República Dominicana
 
 **Fuente:** PDF páginas 73-85  
-**Tabla completa:** Ver archivo [`tablas-provincias-completa.md`](tablas-provincias-completa.md) (335 entradas)
+**Tabla completa:** Ver archivo [`tablas-provincias-completa.md`](tablas-provincias-completa.md) (572 entradas)
 
 **Estructura de códigos de 6 dígitos:**
 - Formato: `PPMMDD` donde:
