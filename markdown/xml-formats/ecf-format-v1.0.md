@@ -334,9 +334,9 @@ This section is primarily used for **Type 46 (Exports)** and shipping-related in
 | 102 | `<TotalITBIS2>` | ITBIS at 16% | 18 | DEC | MontoGravadoI2 × 0.16 | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
 | 103 | `<TotalITBIS3>` | ITBIS at 0% | 18 | DEC | MontoGravadoI3 × 0 = 0 | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
 | 104 | `<MontoImpuestoAdicional>` | Total additional taxes | 18 | DEC | Sum of ISC + Others | I | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
-| — | `<ImpuestosAdicionales>`¹⁷ | Container (up to 20 reps)¹⁸ | — | — | Conditional on other taxes existing | — | 2 | 2 | 2 | 2 | 0 | 0 | **2¹⁸** | 2 | 0 | 0 |
-| 105 | `<TipoImpuesto>`¹⁹ | Tax type code | 3 | NUM | Table I (001-039) | N | 2 | 2 | 2 | 2 | 0 | 0 | 2¹⁹ | 2 | 0 | 0 |
-| 106 | `<TasaImpuestoAdicional>`²⁰ | Tax rate²⁰ | 5 | NUM | Per Table I²¹ | N²¹ | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+| — | `<ImpuestosAdicionales>`¹⁷ | Container (up to 20 reps) | — | — | Conditional on other taxes existing | — | 2 | 2 | 2 | 2 | 0 | 0 | **2¹⁸** | 2 | 0 | 0 |
+| 105 | `<TipoImpuesto>` | Tax type code | 3 | NUM | Table I (001-039) | N | 2 | 2 | 2 | 2 | 0 | 0 | 2¹⁹ | 2 | 0 | 0 |
+| 106 | `<TasaImpuestoAdicional>` | Tax rate²⁰ | 5 | NUM | Per Table I | N²¹ | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
 | 107 | `<MontoImpuestoSelectivoConsumoEspecifico>`²² | ISC Specific²³ | 18 | DEC | >0, see ISC formulas below | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
 | 108 | `<MontoImpuestoSelectivoConsumoAdvalorem>`²⁴ | ISC Ad-Valorem²⁵ | 18 | DEC | >0, **Granel 30% rule**²⁶ | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
 | 109 | `<OtrosImpuestosAdicionales>`²⁷ | Other taxes (001-005)²⁸ | 18 | DEC | >0, see formulas | N²⁹ | 2 | 2 | 2 | 2 | 0 | 0 | 2²⁹ | 2 | 0 | 0 |
@@ -604,7 +604,7 @@ When transactions are in foreign currency, this section mirrors the Totales stru
 | 123 | `<MontoGravado1OtraMoneda>`³⁵ | Amount at ITBIS 18% (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
 | 124 | `<MontoGravado2OtraMoneda>` | Amount at ITBIS 16% (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
 | 125 | `<MontoGravado3OtraMoneda>` | Amount at ITBIS 0% (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
-| 126 | `<MontoExentoOtraMoneda>`³⁶ | Exempt (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 2³⁶ | 2 | 2 | 0 | 2 |
+| 126 | `<MontoExentoOtraMoneda>` | Exempt (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 2³⁶ | 2 | 2 | 0 | 2 |
 | 127 | `<TotalITBISOtraMoneda>` | Total ITBIS (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
 | 128 | `<TotalITBIS1OtraMoneda>`³⁷ | ITBIS 18% (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
 | 129 | `<TotalITBIS2OtraMoneda>` | ITBIS 16% (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
@@ -612,7 +612,7 @@ When transactions are in foreign currency, this section mirrors the Totales stru
 | 131 | `<MontoImpuestoAdicionalOtraMoneda>`³⁸ | Addtl taxes (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 0 | 0 | 2³⁹ | 2 | 0 | 0 |
 | — | `<ImpuestosAdicionalesOtraMoneda>`⁴⁰ | Container (up to 20 reps) | — | — | Conditional on ISC in FC | — | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
 | 132 | `<TipoImpuestoOtraMoneda>`⁴¹ | Tax type code (FC) | 3 | NUM | Table I (001-039) | N | 2 | 2 | 2 | 2 | 0 | 0 | 2⁴² | 2 | 0 | 0 |
-| 133 | `<TasaImpuestoAdicionalOtraMoneda>`⁴³ | Tax rate (FC) | 5 | NUM | Per Table I | N⁴³ | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+| 133 | `<TasaImpuestoAdicionalOtraMoneda>` | Tax rate (FC) | 5 | NUM | Per Table I | N⁴³ | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
 | 134 | `<MontoImpuestoSelectivoConsumoEspecificoOtraMoneda>`⁴⁴ | ISC Specific (FC) | 18 | DEC | >0, ISC÷ExchangeRate | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
 | 135 | `<MontoImpuestoSelectivoConsumoAdvaloremOtraMoneda>`⁴⁵ | ISC Ad-Valorem (FC) | 18 | DEC | >0, ISC÷ExchangeRate | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
 | 136 | `<OtrosImpuestosAdicionalesOtraMoneda>`⁴⁶ | Other addtl taxes (FC) | 18 | DEC | >0, ISC÷ExchangeRate | N | 2 | 2 | 2 | 2 | 0 | 0 | 2⁴⁷ | 2 | 0 | 0 |
@@ -834,7 +834,7 @@ Foreign currency detail at item level.
 | # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
 | — | `<OtraMonedaDetalle>`⁷² | — | — | — | Container (FC detail) | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
-| 35 | `<PrecioOtraMoneda>`⁷³ | Unit price (FC) | 20 | NUM | ≥0, 4 decimals | N⁷³ | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 35 | `<PrecioOtraMoneda>` | Unit price (FC) | 20 | NUM | ≥0, 4 decimals | N⁷³ | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | 36 | `<DescuentoOtraMoneda>` | Discount (FC) | 18 | NUM | ≥0, 2 decimals | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | 37 | `<RecargoOtraMoneda>` | Surcharge (FC) | 18 | NUM | ≥0, 2 decimals | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | 38 | `<MontoItemOtraMoneda>` | Line total (FC) | 18 | NUM | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
@@ -907,7 +907,7 @@ Global discounts/surcharges that apply to the entire invoice⁷⁵ (not per item
 | 6 | `<ValorDescuentooRecargo>` | Discount/surcharge % | 5 | NUM | >0, 3 int + 2 dec | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 | 7 | `<MontoDescuentooRecargo>` | Discount/surcharge amount | 18 | NUM | ≥0, 2 decimals | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 | 8 | `<MontoDescuentooRecargoOtraMoneda>` | Amount (foreign currency) | 18 | NUM | ≥0, 2 decimals | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
-| 9 | `<IndicadorFacturacionDescuentooRecargo>`⁷⁶ | Tax indicator | 1 | NUM | 1=ITBIS1, 2=ITBIS2, 3=ITBIS3, 4=Exento | N | 2 | 2 | 2 | 2 | 2⁷⁶ | 0 | 2 | 2 | 2 | 0 |
+| 9 | `<IndicadorFacturacionDescuentooRecargo>` | Tax indicator | 1 | NUM | 1=ITBIS1, 2=ITBIS2, 3=ITBIS3, 4=Exento | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 
 
 **TipoDescuentoRecargo Values:**
