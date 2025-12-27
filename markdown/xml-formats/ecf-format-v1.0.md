@@ -620,6 +620,19 @@ When transactions are in foreign currency, this section mirrors the Totales stru
 > [!NOTE]
 > **OtraMoneda ImpuestosAdicionales**: When invoicing in foreign currency with additional taxes (ISC, etc.), this structure mirrors the DOP `ImpuestosAdicionales` structure but in the foreign currency amounts. **Up to 20 repetitions** of `<ImpuestosAdicionalesOtraMoneda>` entries are allowed.
 
+> [!NOTE]
+> **Foreign Currency Footnotes (Notas de Moneda Extranjera):**
+>
+> **Footnote 33** (A.7 Section): Billing in another currency (**facturación en moneda extranjera**) requires completing **all conditional fields** in this section. You must provide both the currency code and exchange rate, and populate all applicable amount fields in the foreign currency.
+>
+> **Footnote 34** (All `OtraMoneda` fields): Conditional fields in this section are **visible in printed representation only if** there are amounts in other currency. If no foreign currency transaction exists, omit this entire section.
+>
+> **Footnote 35** (FC Discounts/Surcharges): Discounts and surcharges in Other Currency (`DescuentoOtraMoneda`, `RecargoOtraMoneda`) must be calculated using the **specified exchange rate** (`TipoCambio`). Apply the exchange rate consistently across all FC amounts.
+>
+> **Footnote 36** (Field 126 `MontoExentoOtraMoneda` - Type 43): For e-CF type 43 (Minor Expenses), if the exempt amount in other currency exists, it **must be greater than zero**. Cannot be zero if field is present.
+>
+> **Footnote 37** (ISC in FC): Only **selective consumption taxes with codes 006-039** form part of the ITBIS tax base in other currency. The same ISC calculation rules apply, but amounts are converted using the exchange rate.
+
 
 ---
 
@@ -924,6 +937,21 @@ Global discounts/surcharges that apply to the entire invoice (not per item). Up 
 
 > [!CAUTION]
 > **Do not send "E"**: Although DGII documentation labels Exento as "E", the field is NUM type. You must send the numeric value `4`, not the letter "E".
+
+> [!NOTE]
+> **Section D & F Footnotes:**
+>
+> **Footnote 75** (Section D): Global discounts or surcharges apply to the **entire e-CF total**, not to individual items. These are enterprise-level adjustments that affect the final amount to pay.
+>
+> **Footnote 79** (Section F `NCFModificado`): The modified NCF is used when an e-CF **cancels, corrects, or replaces** a previous tax receipt. This establishes the legal relationship between the current document and the original.
+>
+> **Footnote 80** (Section F `CodigoModificacion`): Modification codes specify the type of correction:
+> - `1` = **Anulación** (Full cancellation of document)
+> - `2` = **Corrección de texto** (Text correction only, no amounts change)
+> - `3` = **Corrección de montos** (Amount correction)
+> - `4` = **Reemplazo NCF contingencia** (Contingency NCF replacement)
+> - `5` = **Referencia Factura Consumo** (Reference to consumer invoice - FCF only)
+> - Codes 1-3 apply **only** when issuing credit/debit notes (Types 33/34)
 
 ---
 

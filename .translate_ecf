@@ -1,0 +1,69 @@
+#!/usr/bin/env python3
+"""
+Translate ecf-format-v1.0-original.md (Spanish) to ecf-format-v1.0-complete.md (English)
+Preserves XML tags, technical terms, and table structures.
+"""
+
+# Translation dictionary for common terms
+TRANSLATIONS = {
+    # Headers
+    "ÁREA": "AREA",
+    "CAMPOS": "FIELDS",
+    "DESCRIPCIÓN": "DESCRIPTION",
+    "Largo Max": "Max Length",
+    "Tipo": "Type",
+    "Validación": "Validation",
+    "FIN ÁREA": "END AREA",
+    "FIN TABLA": "END TABLE",
+    
+    # Common phrases
+    "Corresponde al": "Corresponds to the",
+    "Corresponde a": "Corresponds to",
+    "Dato correspondiente": "Corresponding data",
+    "Indica si": "Indicates if",
+    "Indica el": "Indicates the",
+    "Indica la": "Indicates the",
+    "Indica": "Indicates",
+    "Sin validación": "No validation",
+    "Fecha válida": "Valid date",
+    "Valor numérico": "Numeric value",
+    "Código Tipo": "Type Code",
+    
+    # Field types remain technical
+    "Actividad Económica": "Economic Activity",
+    "Nombre Comercial": "Trade Name",
+    "Razón Social": "Business Name",
+    "Dirección": "Address",
+    "Teléfono": "Phone",
+    "Correo Electrónico": "Email",
+    "Provincia": "Province",
+    "Municipio": "Municipality",
+    
+    # Document sections
+    "ENCABEZADO": "HEADER",
+    "IDENTIFICACIÓN DEL DOCUMENTO": "DOCUMENT IDENTIFICATION",
+    "EMISOR": "ISSUER",
+    "COMPRADOR": "BUYER",
+    
+    # Payment terms
+    "Contado": "Cash",
+    "Crédito": "Credit",
+    "Gratuito": "Free",
+    "Efectivo": "Cash",
+    "Cheque": "Check",
+    "Transferencia": "Transfer",
+    "Depósito": "Deposit",
+    "Tarjeta de Débito/Crédito": "Debit/Credit Card",
+    "Venta a Crédito": "Credit Sale",
+    
+    # Validation terms
+    "Debe ser positivo": "Must be positive",
+    "No puede ser negativo": "Cannot be negative",
+    "Mayor o igual": "Greater than or equal",
+    "Menor o igual": "Less than or equal",
+    "enteros": "integers",
+    "decimales": "decimals",
+}
+
+print("Translation dictionary created.")
+print(f"Total phrases: {len(TRANSLATIONS)}")
