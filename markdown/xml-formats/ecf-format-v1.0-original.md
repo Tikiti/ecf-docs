@@ -685,28 +685,31 @@ En la columna 'I' se pueden tener los siguientes valores:
 
 ## TABLAS DE CODIFICACIÓN (REFERENCE TABLES)
 
+**NOTA:** Esta sección contiene las tablas de códigos de referencia definidas en el PDF oficial (páginas 61-87). El contenido mostrado a continuación es un resumen. Para la codificación completa y actualizada, consultar el PDF oficial "Formato Comprobante Fiscal Electrónico (e-CF) V1.0.pdf" páginas 61-87.
+
+---
+
 ### TABLA I: Codificación de Tipos de Impuestos Adicionales
+
+**Fuente:** PDF páginas 61-72
 
 **Impuestos selectivos al consumo y otros impuestos adicionales aplicables en República Dominicana.**
 
-| CÓDIGO | Tipo Impuesto | Abreviatura | Descripción | Tasa |
-|--------|--------------|-------------|-------------|------|
-| 001 | Propina Legal | Propina Legal | Propina Legal | 10% |
-| 002 | Contribución al Desarrollo de las Telecomunicaciones | CDT | Contribución al Desarrollo de las Telecomunicaciones Ley 153-98 Art. 45 | 2% |
-| 003-004 | Impuesto Selectivo al Consumo | ISC | Servicios Seguros en general | 16% |
-| | | | Servicios de Telecomunicaciones | 10% |
-| 005 | Impuesto sobre el Primer Registro de Vehículos | - | Expedición de la primera placa | 17% |
-| 006-022 | Impuesto Selectivo al Consumo Específico⁸² | ISC Específico | **Bebidas Alcohólicas y Tabaco (RD$ por unidad):** | |
-| | | | Cerveza, Vinos, Vermut, Bebidas fermentadas | RD$632.58/unidad |
-| | | | Alcohol Etílico (≥80% y <80%) | RD$632.58/unidad |
-| | | | Aguardientes, Whisky, Ron, Gin, Vodka, Licores | RD$632.58/unidad |
-| | | | Cigarrillos 20 unidades | RD$53.51/cajetilla |
-| | | | Cigarrillos 10 unidades | RD$26.75/cajetilla |
-| 023-039 | Impuesto Selectivo al Consumo Ad Valorem | ISC Ad Valorem | Varios productos (porcentaje del valor) | Varía por código |
+Incluye:
+- **001:** Propina Legal (10%)
+- **002:** Contribución al Desarrollo de las Telecomunicaciones - CDT (2%)
+- **003-004:** ISC en Seguros y Telecomunicaciones (16%, 10%)
+- **005:** Impuesto Primera Placa (17%)
+- **006-022:** ISC Específico (RD$ por unidad) - Bebidas alcohólicas y tabacos
+- **023-039:** ISC Ad Valorem (%) - Diversos productos
+
+**Para códigos completos:** Ver PDF páginas 61-72 y archivo `table_057_p61.csv` en extracciones camelot.
 
 ---
 
 ### TABLA II: Codificación de Monedas (ISO 4217)
+
+**Fuente:** PDF página 72
 
 | Código | Moneda | Descripción |
 |--------|--------|-------------|
@@ -717,68 +720,122 @@ En la columna 'I' se pueden tener los siguientes valores:
 | CHF | Franco Suizo | Franco Suizo |
 | GBP | Libra Esterlina | Libra Esterlina Británica |
 
+**Nota:** Pueden existir otras monedas. Consultar tabla oficial actualizada.
+
 ---
 
 ### TABLA III: Provincias y Municipios de República Dominicana
 
-**Codificación jerárquica (32 provincias + Distrito Nacional).**
+**Fuente:** PDF páginas 73-85
 
-| Código | Provincia/Municipio |
-|--------|---------------------|
-| 01 | **Distrito Nacional** |
-| 01-01 | Santo Domingo de Guzmán |
-| 02 | **Azua** |
-| 02-01 | Azua de Compostela |
-| 02-02 | Las Charcas |
-| 03 | **Baoruco** |
-| 04 | **Barahona** |
-| ... | *(continúa con todas las provincias y municipios)* |
+**NOTA IMPORTANTE:** Esta tabla contiene TODOS los códigos de provincias y municipios de República Dominicana en formato jerárquico de 6 dígitos:
+- Código Provincia: 2 dígitos (01-32 + Distrito Nacional)
+- Código Municipio: 4 dígitos adicionales
+
+**Estructura de códigos:**
+- `AABBCC` donde:
+  - `AA` = Código de Provincia (01-32)
+  - `BB` = Código de Municipio dentro de la provincia
+  - `CC` = Código de Distrito Municipal (00 = municipio cabecera)
+
+**Ejemplos:**
+- `010000` = Distrito Nacional  
+- `010100` = Santo Domingo de Guzmán
+- `020000` = Provincia Azua
+- `020100` = Municipio Azua de Compostela
+- `020102` = Distrito Municipal Las Charcas
+
+**Total de entradas:** 32 provincias + 158 municipios + múltiples distritos municipales = ~350+ códigos
+
+**Para tabla completa:** Ver PDF páginas 73-85 o archivos `table_069_p73.csv` through `table_081_p85.csv` en extracciones camelot.
 
 ---
 
 ### TABLA IV: Unidades de Medida
 
-| Código | Unidad | Descripción |
-|--------|--------|-------------|
-| 01 | Unidad | Unidad individual |
-| 02 | Docena | 12 undades |
-| 03 | Ciento | 100 unidades |
-| 04 | Millar | 1000 unidades |
-| 05 | Kilogramo | kg |
-| 06 | Gramo | g |
-| 07 | Libra | lb |
-| 08 | Tonelada | t |
-| 09 | Litro | l |
-| 10 | Galón | gal |
-| 11 | Barril | bbl |
-| 12 | Metro | m |
-| 13 | Metro Cuadrado | m² |
-| 14 | Metro Cúbico | m³ |
-| 15 | Onza | oz |
-| 16 | Caja | caja |
-| 17 | Paquete | paquete |
-| 18 | A Granel | Sin empaquetar |
+**Fuente:** PDF páginas 86-87
+
+**Códigos estándar para unidades de medida en e-CF** (62 códigos totales):
+
+| Código | Abrev. | Unidad de Medida |
+|--------|--------|------------------|
+| 01 | BARR | Barril |
+| 02 | BOL | Bolsa |
+| 03 | BOT | Bote |
+| 04 | BULTO | Bultos |
+| 05 | BOTELLA | Botella |
+| 06 | CAJ | Caja/Cajón |
+| 07 | CAJETILLA | Cajetilla |
+| 08 | CM | Centímetro |
+| 09 | CIL | Cilindro |
+| 10 | CONJ | Conjunto |
+| 11 | CT | Carton |
+| 12 | CIENTO | Ciento (100 unidades) |
+| 13 | DM | Decagramo |
+| 14 | DOC | Docena |
+| 15 | GAL | Galón |
+| 16 | GLL | Galón Líquido |
+| 17 | GR | Gramo |
+| 18 | HT | Hectogramo |
+| 19 | JG | Juego |
+| 20 | KG | Kilogramo |
+| 21 | KM | Kilómetro |
+| 22 | L | Litro |
+| 23 | LB | Libra |
+| 24 | MT | Metro |
+| 25 | MT2 | Metro Cuadrado |
+| 26 | MT3 | Metro Cúbico |
+| 27 | MG | Miligramo |
+| 28 | ML | Mililitro |
+| 29 | MMBTU | Millones de Unidades Térmicas |
+| 30 | MLL | Millar (1000 unidades) |
+| 31 | OZ | Onza |
+| 32 | PAQ | Paquete |
+| 33 | PAR | Par |
+| 34 | PZA | Pieza |
+| 35 | Q | Quintal |
+| 36 | RESMA | Resma |
+| 37 | ROLLO | Rollo |
+| 38 | SACO | Saco |
+| 39 | SET | Set/Conjunto |
+| 40 | TARJETA | Tarjeta |
+| 41 | TON | Tonelada |
+| 42 | UND | Unidad |
+| ... | ... | *(Ver PDF para códigos 43-62)* |
+
+**Para tabla completa:** Ver PDF páginas 86-87 o archivos `table_082_p86.csv` y `table_083_p87.csv`.
 
 ---
 
-### TABLA V: Tipos de e-CF
+### TABLA V: Tipos de e-CF (Comprobantes Fiscales Electrónicos)
 
-| Código | Tipo de e-CF | Uso |
-|--------|-------------|-----|
-| 31 | Factura de Crédito Fiscal Electrónica | Contribuyentes registrados en ITBIS |
-| 32 | Factura de Consumo Electrónica | Consumidores finales |
-| 33 | Nota de Débito Electrónica | Aumenta valor factura anterior |
-| 34 | Nota de Crédito Electrónica | Disminuye/anula factura anterior |
-| 41 | Compras Electrónica | Registro de compras |
-| 43 | Gastos Menores Electrónica | Gastos menores sin NCF |
-| 44 | Regímenes Especiales Electrónica | Regímenes especiales |
-| 45 | Gubernamental Electrónica | Instituciones gubernamentales |
-| 46 | Exportaciones Electrónica | Ventas de exportación |
-| 47 | Pagos al Exterior Electrónica | Pagos a proveedores del exterior |
+**Fuente:** PDF páginas 3-4
+
+| Código | Tipo de e-CF | Descripción |
+|--------|-------------|-------------|
+| 31 | Factura de Crédito Fiscal Electrónica | Para contribuyentes registrados en el ITBIS |
+| 32 | Factura de Consumo Electrónica | Para consumidores finales |
+| 33 | Nota de Débito Electrónica | Aumenta el valor de una factura anterior |
+| 34 | Nota de Crédito Electrónica | Disminuye el valor de una factura anterior o la anula |
+| 41 | Compras Electrónica | Para registrar compras |
+| 43 | Gastos Menores Electrónica | Para gastos menores sin NCF |
+| 44 | Regímenes Especiales Electrónica | Para regímenes especiales de tributación |
+| 45 | Gubernamental Electrónica | Para instituciones gubernamentales |
+| 46 | Exportaciones Electrónica | Para ventas de exportación |
+| 47 | Pagos al Exterior Electrónica | Para pagos a proveedores del exterior |
 
 ---
 
-**✅ TABLAS DE CODIFICACIÓN COMPLETADAS!**
+**✅ TABLAS DE CODIFICACIÓN: RESUMEN COMPLETADO**
+
+**ESTADO DE TABLAS:**
+- TABLA I (Impuestos): Resumen incluido, ver PDF páginas 61-72 para detalle completo
+- TABLA II (Monedas): Completa ✓
+- TABLA III (Provincias/Municipios): Estructura documentada, ver PDF páginas 73-85 para ~350+ códigos completos
+- TABLA IV (Unidades): Parcial mostrada (42 de 62 códigos), ver PDF páginas 86-87 para tabla completa  
+- TABLA V (Tipos e-CF): Completa ✓
+
+**NOTA:** Para implementación de sistemas, utilizar las tablas completas del PDF oficial o las extracciones CSV en el directorio `exports/Formato-Comprobante-Fiscal-Electronico-e-CF-V1.0_c811c9/camelot/lattice/`.
 
 ---
 
