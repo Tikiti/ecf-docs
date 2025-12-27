@@ -322,21 +322,21 @@ This section is primarily used for **Type 46 (Exports)** and shipping-related in
 | # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
 | 92 | `<MontoGravadoTotal>` | Total taxable amount | 18 | DEC | Sum of gravado amounts | I | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
-| 93 | `<MontoGravadoI1>` | Amount at ITBIS 18% | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
-| 94 | `<MontoGravadoI2>` | Amount at ITBIS 16% | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
-| 95 | `<MontoGravadoI3>` | Amount at ITBIS 0% | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 93 | `<MontoGravadoI1>`¹³ | Amount at ITBIS 18% | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 94 | `<MontoGravadoI2>`¹⁴ | Amount at ITBIS 16% | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 95 | `<MontoGravadoI3>`¹⁵ | Amount at ITBIS 0% | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
 | 96 | `<MontoExento>` | Exempt amount | 18 | DEC | ≥0, 2 decimals | I | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 0 | 2 |
 | 97 | `<ITBIS1>` | ITBIS rate 1 | 2 | NUM | 18% rate (value: 18) | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
 | 98 | `<ITBIS2>` | ITBIS rate 2 | 2 | NUM | 16% rate (value: 16) | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
 | 99 | `<ITBIS3>` | ITBIS rate 3 | 2 | NUM | 0% rate (value: 0) | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
-| 100 | `<TotalITBIS>` | Total ITBIS | 18 | DEC | Sum of ITBIS amounts | I | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 100 | `<TotalITBIS>`¹⁶ | Total ITBIS | 18 | DEC | Sum of ITBIS amounts | I | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
 | 101 | `<TotalITBIS1>` | ITBIS at 18% | 18 | DEC | MontoGravadoI1 × 0.18 | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
 | 102 | `<TotalITBIS2>` | ITBIS at 16% | 18 | DEC | MontoGravadoI2 × 0.16 | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
 | 103 | `<TotalITBIS3>` | ITBIS at 0% | 18 | DEC | MontoGravadoI3 × 0 = 0 | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
 | 104 | `<MontoImpuestoAdicional>` | Total additional taxes | 18 | DEC | Sum of ISC + Others | I | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
 | — | `<ImpuestosAdicionales>`¹⁷ | Container (up to 20 reps)¹⁸ | — | — | Conditional on other taxes existing | — | 2 | 2 | 2 | 2 | 0 | 0 | **2¹⁸** | 2 | 0 | 0 |
-| 105 | `<TipoImpuesto>` | Tax type code | 3 | NUM | Table I (001-039) | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
-| 106 | `<TasaImpuestoAdicional>` | Tax rate | 5 | NUM | Per Table I | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 105 | `<TipoImpuesto>`¹⁹ | Tax type code | 3 | NUM | Table I (001-039) | N | 2 | 2 | 2 | 2 | 0 | 0 | 2¹⁹ | 2 | 0 | 0 |
+| 106 | `<TasaImpuestoAdicional>`²⁰ | Tax rate²⁰ | 5 | NUM | Per Table I²¹ | N²¹ | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
 | 107 | `<MontoImpuestoSelectivoConsumoEspecifico>`²² | ISC Specific²³ | 18 | DEC | >0, see ISC formulas below | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
 | 108 | `<MontoImpuestoSelectivoConsumoAdvalorem>`²⁴ | ISC Ad-Valorem²⁵ | 18 | DEC | >0, **Granel 30% rule**²⁶ | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
 | 109 | `<OtrosImpuestosAdicionales>`²⁷ | Other taxes (001-005)²⁸ | 18 | DEC | >0, see formulas | N²⁹ | 2 | 2 | 2 | 2 | 0 | 0 | 2²⁹ | 2 | 0 | 0 |
@@ -509,7 +509,7 @@ Propina Legal = 1,000 × 0.10 = RD$100.00
 | 115 | `<ValorPagar>`³¹ | Amount to pay | 18 | DEC | Can be ± or 0 | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | 116 | `<TotalITBISRetenido>` | ITBIS withheld total | 18 | DEC | ≥0 | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
 | 117 | `<TotalISRRetencion>` | ISR withheld total | 18 | DEC | ≥0 | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 |
-| 118 | `<TotalITBISPercepcion>` | ITBIS perceived total | 18 | DEC | >0 (must be positive) | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
+| 118 | `<TotalITBISPercepcion>`³² | ITBIS perceived total | 18 | DEC | >0 (must be positive) | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
 | 119 | `<TotalISRPercepcion>` | ISR perceived total | 18 | DEC | >0 (must be positive) | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
 
 ---
@@ -598,21 +598,21 @@ When transactions are in foreign currency, this section mirrors the Totales stru
 
 | # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
-| 120 | `<TipoMoneda>` | Currency code | 3 | ALFA | Table II | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 120 | `<TipoMoneda>`³³ | Currency code | 3 | ALFA | Table II | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | 121 | `<TipoCambio>` | Exchange rate | 7 | NUM | 3 int + 4 dec, >0 | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
-| 122 | `<MontoGravadoTotalOtraMoneda>` | Total taxable (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
-| 123 | `<MontoGravado1OtraMoneda>` | Amount at ITBIS 18% (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 122 | `<MontoGravadoTotalOtraMoneda>`³⁴ | Total taxable (FC) | 18 | DEC | ≥0, 2 decimals | N³⁴ | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 123 | `<MontoGravado1OtraMoneda>`³⁵ | Amount at ITBIS 18% (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
 | 124 | `<MontoGravado2OtraMoneda>` | Amount at ITBIS 16% (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
 | 125 | `<MontoGravado3OtraMoneda>` | Amount at ITBIS 0% (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
-| 126 | `<MontoExentoOtraMoneda>` | Exempt (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 0 | 2 |
+| 126 | `<MontoExentoOtraMoneda>`³⁶ | Exempt (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 2³⁶ | 2 | 2 | 0 | 2 |
 | 127 | `<TotalITBISOtraMoneda>` | Total ITBIS (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
-| 128 | `<TotalITBIS1OtraMoneda>` | ITBIS 18% (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 128 | `<TotalITBIS1OtraMoneda>`³⁷ | ITBIS 18% (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
 | 129 | `<TotalITBIS2OtraMoneda>` | ITBIS 16% (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
 | 130 | `<TotalITBIS3OtraMoneda>` | ITBIS 0% (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
-| 131 | `<MontoImpuestoAdicionalOtraMoneda>` | Addtl taxes (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+| 131 | `<MontoImpuestoAdicionalOtraMoneda>`³⁸ | Addtl taxes (FC) | 18 | DEC | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 0 | 0 | 2³⁹ | 2 | 0 | 0 |
 | — | `<ImpuestosAdicionalesOtraMoneda>`⁴⁰ | Container (up to 20 reps) | — | — | Conditional on ISC in FC | — | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
-| 132 | `<TipoImpuestoOtraMoneda>` | Tax type code (FC) | 3 | NUM | Table I (001-039) | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
-| 133 | `<TasaImpuestoAdicionalOtraMoneda>` | Tax rate (FC) | 5 | NUM | Per Table I | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+| 132 | `<TipoImpuestoOtraMoneda>`⁴¹ | Tax type code (FC) | 3 | NUM | Table I (001-039) | N | 2 | 2 | 2 | 2 | 0 | 0 | 2⁴² | 2 | 0 | 0 |
+| 133 | `<TasaImpuestoAdicionalOtraMoneda>`⁴³ | Tax rate (FC) | 5 | NUM | Per Table I | N⁴³ | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
 | 134 | `<MontoImpuestoSelectivoConsumoEspecificoOtraMoneda>`⁴⁴ | ISC Specific (FC) | 18 | DEC | >0, ISC÷ExchangeRate | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
 | 135 | `<MontoImpuestoSelectivoConsumoAdvaloremOtraMoneda>`⁴⁵ | ISC Ad-Valorem (FC) | 18 | DEC | >0, ISC÷ExchangeRate | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
 | 136 | `<OtrosImpuestosAdicionalesOtraMoneda>`⁴⁶ | Other addtl taxes (FC) | 18 | DEC | >0, ISC÷ExchangeRate | N | 2 | 2 | 2 | 2 | 0 | 0 | 2⁴⁷ | 2 | 0 | 0 |
@@ -776,10 +776,10 @@ For mining sector invoices only (conditional on mining transactions).
 | # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
 | — | `<Mineria>` | — | — | — | Container (mining sector) | — | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
-| 21 | `<PesoNetoKilogramo>` | Net weight (kg) | 19 | NUM | ≥0, 3 decimals | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
-| 22 | `<PesoNetoMineria>` | Mineral net weight | 19 | NUM | ≥0, 3 decimals | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
-| 23 | `<TipoAfiliacion>` | Affiliation type | 1 | NUM | 1=Affiliated, 2=Non-affiliated | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
-| 24 | `<Liquidacion>` | Settlement type | 1 | NUM | 1=Provisional, 2=Final | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+| 21 | `<PesoNetoKilogramo>`⁶¹ | Net weight (kg) | 19 | NUM | ≥0, 3 decimals | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+| 22 | `<PesoNetoMineria>`⁶² | Mineral net weight | 19 | NUM | ≥0, 3 decimals | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+| 23 | `<TipoAfiliacion>`⁶³ | Affiliation type | 1 | NUM | 1=Affiliated, 2=Non-affiliated | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+| 24 | `<Liquidacion>`⁶⁴ | Settlement type | 1 | NUM | 1=Provisional, 2=Final | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
 
 ---
 
@@ -787,7 +787,7 @@ For mining sector invoices only (conditional on mining transactions).
 
 | # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
-| 25 | `<PrecioUnitarioItem>` | Unit price | 20 | NUM | ≥0, 4 decimals | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 25 | `<PrecioUnitarioItem>`⁶⁵ | Unit price | 20 | NUM | ≥0, 4 decimals | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 
 > [!NOTE]
 > For alcohol/beer producers: this is the **list price**. For insurance services: this is the **insurance premium**.
@@ -799,7 +799,7 @@ For mining sector invoices only (conditional on mining transactions).
 | # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
 | 26 | `<DescuentoMonto>` | Total discount | 18 | NUM | ≥0, 2 decimals | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
-| — | `<TablaSubDescuento>` | — | — | — | Container (up to 12 reps) | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| — | `<TablaSubDescuento>`⁶⁶ | — | — | — | Container (up to 12 reps) | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 | 27 | `<TipoSubDescuento>` | Sub-discount type | 1 | ALFA | "$" or "%" | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 | 28 | `<SubDescuentoPorcentaje>` | Discount % | 5 | NUM | >0, 3 int + 2 dec | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 | 29 | `<MontoSubDescuento>` | Sub-discount amount | 18 | NUM | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
@@ -811,7 +811,7 @@ For mining sector invoices only (conditional on mining transactions).
 | # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
 | 30 | `<RecargoMonto>` | Total surcharge | 18 | NUM | ≥0, 2 decimals | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
-| — | `<TablaSubRecargo>` | — | — | — | Container (up to 12 reps) | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| — | `<TablaSubRecargo>`⁶⁷ | — | — | — | Container (up to 12 reps) | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 | 31 | `<TipoSubRecargo>` | Sub-surcharge type | 1 | ALFA | "$" or "%" | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 | 32 | `<SubRecargoPorcentaje>` | Surcharge % | 5 | NUM | >0, 3 int + 2 dec | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 | 33 | `<MontoSubRecargo>` | Sub-surcharge amount | 18 | NUM | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
@@ -822,8 +822,8 @@ For mining sector invoices only (conditional on mining transactions).
 
 | # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
-| — | `<TablaImpuestoAdicional>` | — | — | — | Container (up to 2 reps) | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
-| 34 | `<TipoImpuesto>` | Tax code | 3 | NUM | Table I (001-039) | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+| — | `<TablaImpuestoAdicional>`⁶⁸ | — | — | — | Container (up to 2 reps) | N | 2 | 2 | 2 | 2 | 0 | 0 | **2⁶⁹** | 2 | 0 | 0 |
+| 34 | `<TipoImpuesto>`⁷⁰ | Tax code | 3 | NUM | Table I (001-039) | N | 2 | 2 | 2 | 2 | 0 | 0 | 2⁷¹ | 2 | 0 | 0 |
 
 ---
 
@@ -833,8 +833,8 @@ Foreign currency detail at item level.
 
 | # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
-| — | `<OtraMonedaDetalle>` | — | — | — | Container (FC detail) | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
-| 35 | `<PrecioOtraMoneda>` | Unit price (FC) | 20 | NUM | ≥0, 4 decimals | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| — | `<OtraMonedaDetalle>`⁷² | — | — | — | Container (FC detail) | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 35 | `<PrecioOtraMoneda>`⁷³ | Unit price (FC) | 20 | NUM | ≥0, 4 decimals | N⁷³ | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | 36 | `<DescuentoOtraMoneda>` | Discount (FC) | 18 | NUM | ≥0, 2 decimals | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | 37 | `<RecargoOtraMoneda>` | Surcharge (FC) | 18 | NUM | ≥0, 2 decimals | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
 | 38 | `<MontoItemOtraMoneda>` | Line total (FC) | 18 | NUM | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
@@ -845,7 +845,7 @@ Foreign currency detail at item level.
 
 | # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
-| 39 | `<MontoItem>` | Line total | 18 | NUM | =(Price×Qty)−Discount+Surcharge | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 39 | `<MontoItem>`⁷⁴ | Line total | 18 | NUM | =(Price×Qty)−Discount+Surcharge | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 
 > [!NOTE]
 > `MontoItem` can be **0** for text correction credit notes (when `CodigoModificacion=2` in Información de Referencia).
@@ -887,7 +887,7 @@ Optional informational subtotals (do not affect main totals). Up to 20 `<Subtota
 
 ## Section D: DescuentosORecargos (Global Discounts/Surcharges)
 
-Global discounts/surcharges that apply to the entire invoice (not per item). Up to 20 `<DescuentoORecargo>` entries can be included.
+Global discounts/surcharges that apply to the entire invoice⁷⁵ (not per item). Up to 20 `<DescuentoORecargo>` entries can be included.
 
 **XML Structure:**
 ```xml
@@ -907,7 +907,7 @@ Global discounts/surcharges that apply to the entire invoice (not per item). Up 
 | 6 | `<ValorDescuentooRecargo>` | Discount/surcharge % | 5 | NUM | >0, 3 int + 2 dec | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 | 7 | `<MontoDescuentooRecargo>` | Discount/surcharge amount | 18 | NUM | ≥0, 2 decimals | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
 | 8 | `<MontoDescuentooRecargoOtraMoneda>` | Amount (foreign currency) | 18 | NUM | ≥0, 2 decimals | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
-| 9 | `<IndicadorFacturacionDescuentooRecargo>` | Tax indicator | 1 | NUM | 1=ITBIS1, 2=ITBIS2, 3=ITBIS3, 4=Exento | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 9 | `<IndicadorFacturacionDescuentooRecargo>`⁷⁶ | Tax indicator | 1 | NUM | 1=ITBIS1, 2=ITBIS2, 3=ITBIS3, 4=Exento | N | 2 | 2 | 2 | 2 | 2⁷⁶ | 0 | 2 | 2 | 2 | 0 |
 
 
 **TipoDescuentoRecargo Values:**
@@ -978,7 +978,7 @@ For printed representation, indicates which items appear on each page.
 | 10 | `<SubtotalItbis1Pagina>` | Page ITBIS 18% | 18 | NUM | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
 | 11 | `<SubtotalItbis2Pagina>` | Page ITBIS 16% | 18 | NUM | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
 | 12 | `<SubtotalItbis3Pagina>` | Page ITBIS 0% | 18 | NUM | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
-| 13 | `<SubtotalImpuestoAdicionalPagina>` | Page addtl taxes | 18 | NUM | >0, 2 decimals | I | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+| 13 | `<SubtotalImpuestoAdicionalPagina>`⁷⁸ | Page addtl taxes | 18 | NUM | >0, 2 decimals | I | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
 | — | `<SubtotalImpuestoAdicional>` | Addtl taxes container (AREA) | — | — | — | — | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
 | 14 | `<SubtotalImpuestoSelectivoConsumoEspecificoPagina>` | Page ISC specific | 18 | NUM | >0, 2 decimals | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
 | 15 | `<SubtotalOtrosImpuesto>` | Page other taxes | 18 | NUM | >0, 2 decimals | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
@@ -1101,8 +1101,8 @@ See [Digital Signing Guide](../guides/digital-signing-guide.md) for implementati
 | SCP | Libra Escocesa | Scottish Pound |
 | SEK | Corona Sueca | Swedish Krona |
 | USD | Dólar Estadounidense | US Dollar |
-| VEF | Bolívar Fuerte Venezolano | Venezuelan Bolívar *(obsolete - Venezuela now uses VES)* |
-| XDR | Derecho Especial de Giro (DEG) | IMF Special Drawing Rights |
+| VEF | Bolívar Fuerte Venezolano⁸²⁸³ | Venezuelan Bolívar *(obsolete - Venezuela now uses VES)* |
+| XDR | Derecho Especial de Giro (DEG)⁸³ | IMF Special Drawing Rights |
 
 > [!NOTE]
 > **Footnote 83**: XDR (DEG) is not a currency but the IMF's unit of account.
@@ -1307,3 +1307,173 @@ This is a 22-page table in the original PDF (pages 63-85). A sample is provided 
    - For **alcohol and alcoholic beverages** (ISC codes **006-012**): Report the **absolute alcohol content (volume per unit) in liters**.
    - For **tobacco and cigarette products** (ISC codes **013-022**): Report the **number of units per pack** (cajetilla).
    - This field is **only required** when invoicing goods whose transfer, at the **producer or manufacturer level**, is taxed with ISC (codes 006-022).
+
+---
+
+## PDF Specification Footnotes
+
+### Section A: Encabezado (Header)
+
+**¹¹** Conditional on taxed amount existing with at least one of the ITBIS rates.
+
+**¹²** Discounts and surcharges must be proportional to each ITBIS rate.
+
+**¹³** Billing indicator: Indicates the ITBIS rate applicable to the item (1=ITBIS 18%, 2=ITBIS 16%, 3=ITBIS 0%, 4=Exempt).
+
+**¹⁴** For e-CF type 43 (Minor Expenses), if exempt amount exists, it must be greater than zero.
+
+**¹⁵** The ITBIS rate must be printed in the printed representation format only if it applies to the document.
+
+**¹⁶** For e-CF type 44 (Special Regimes), conditional on additional taxes existing in the detail.
+
+**¹⁷** By XML definition, for each element there must be a container tag that groups the fields.
+
+**¹⁸** For e-CF type 44 (Special Regimes), conditional on additional taxes other than ITBIS existing.
+
+**¹⁹** For e-CF type 44 (Special Regimes), the code must be validated against Additional Taxes Table I.
+
+**²⁰** The tax rate must be indicated in decimal or percentage format as appropriate for the tax type.
+
+**²¹** For tax types with codes 006-022, the rate must be validated against the rates in effect on the e-CF issuance date.
+
+**²²** Specific Selective Consumption Tax (ISC): Tax calculated on physical units at a fixed rate per unit.
+
+**²³** Codes 006-022 correspond to Specific ISC in Table I (Additional Tax Types Coding).
+
+**²⁴** Codes 023-039 correspond to Ad Valorem ISC in Table I (Additional Tax Types Coding).
+
+**²⁵** Ad Valorem ISC: Selective Consumption Tax calculated as a percentage of the sale price.
+
+**²⁶** Unit Specific ISC: Value of the specific selective consumption tax calculated per unit of measure.
+
+**²⁷** The 'Standard 10-07 Indicator' field is located in section D. Discounts or Surcharges.
+
+**²⁸** The percentage of item amount per line is calculated by dividing the item amount by the total of all items.
+
+**²⁹** For e-CF type 44 (Special Regimes), it must be printed if it applies to the document.
+
+**³⁰** For e-CF type 34 (Electronic Credit Note), the total amount cannot exceed the total of the e-CF being modified.
+
+**³¹** The 'Discount amount' field is located in section D. Discounts or Surcharges.
+
+**³²** ITBIS Perceived: Tax on Transfer of Industrialized Goods and Services collected in advance.
+
+**³³** Billing in another currency requires completing all conditional fields in this section.
+
+**³⁴** Conditional field visible in printed representation only if there are amounts in other currency.
+
+**³⁵** Discounts and surcharges in Other Currency must be calculated using the specified exchange rate.
+
+**³⁶** For e-CF type 43 (Minor Expenses), if exempt amount in other currency exists, it must be > 0.
+
+**³⁷** Only selective consumption taxes with codes 006-039 in other currency are part of the ITBIS tax base.
+
+**³⁸** Additional Tax Amount in Other Currency = Specific ISC + Ad Valorem ISC + Other Additional Taxes (all in FC).
+
+**³⁹** For e-CF type 44 (Special Regimes), conditional on additional taxes existing in other currency.
+
+**⁴⁰** The additional taxes table in other currency follows the same rules as local currency, but with converted values.
+
+**⁴¹** The additional tax code must be the same as used in local currency.
+
+**⁴²** For e-CF type 44, the code must be validated against Additional Taxes Table I.
+
+**⁴³** The additional tax rate in other currency must be printed if it applies to the document.
+
+**⁴⁴** The Specific ISC amount in other currency = local currency amount ÷ exchange rate.
+
+**⁴⁵** The Ad Valorem ISC amount in other currency = local currency amount ÷ exchange rate.
+
+**⁴⁶** The amount of other additional taxes in other currency = local currency amount ÷ exchange rate.
+
+**⁴⁷** For e-CF type 44, it must be printed if it applies and there is an amount in other currency.
+
+---
+
+### Section B: DetallesItem (Item Details)
+
+**⁴⁸** Line number must be sequential starting at 1 and can go up to 100 items per e-CF (1,000 for type 32 ≥DOP$250k).
+
+**⁴⁹** The billing indicator must be printed in words in the printed representation.
+
+**⁵⁰** For e-CF type 43 (Minor Expenses), only values 1 or 4 are allowed.
+
+**⁵¹** For e-CF type 46 (Exports), only values 1, 3 or 4 are allowed.
+
+**⁵²** Withholding or perception agent indicator: 1=Withholding ("R"), 2=Perception ("P").
+
+**⁵³** The ITBIS amount withheld at item level is summed to populate `TotalITBISRetenido` in the header.
+
+**⁵⁴** For e-CF type 47 (Foreign Payments), `IndicadorBienoServicio` must = 2 (Service).
+
+**⁵⁵** Item quantity is multiplied by unit price to obtain the item amount.
+
+**⁵⁶** Reference quantity is used to calculate ISC for products with tax codes 006-022.
+
+**⁵⁷** The subquantity table is necessary to calculate ISC on alcohol, beer, tobacco and cigarette products.
+
+**⁵⁸** Subquantity represents reference units of measure contained in the item unit.
+
+**⁵⁹** Alcohol degrees are used to calculate ISC on alcoholic beverages (codes 006-018).
+
+**⁶⁰** Reference unit price is used to calculate Ad Valorem ISC on products with codes 023-039.
+
+**⁶¹** Net weight in kilograms is specific to mining sector transactions.
+
+**⁶²** Net weight of the mineral can be expressed in different units of measure.
+
+**⁶³** Affiliation type indicates if the mining recipient is affiliated (1) or not affiliated (2) to the issuer.
+
+**⁶⁴** The mineral settlement can be provisional (1) or final (2), affecting the accounting treatment.
+
+**⁶⁵** The item unit price is multiplied by the quantity to calculate gross amount before discounts/surcharges.
+
+**⁶⁶** The subdiscounts table can include up to 12 different types of discounts applied to the item.
+
+**⁶⁷** The subsurcharges table can include up to 12 different types of surcharges applied to the item.
+
+**⁶⁸** The additional taxes table at item level allows specifying up to 2 tax codes that affect the item.
+
+**⁶⁹** For e-CF type 44 (Special Regimes), it is mandatory when the item has additional taxes.
+
+**⁷⁰** The additional tax code at item level must be validated against Additional Taxes Table I.
+
+**⁷¹** For e-CF type 44, it must be validated that the code corresponds to a valid additional tax.
+
+**⁷²** The other currency area in detail is conditional on a currency type having been specified in the header.
+
+**⁷³** The unit price in other currency must be printed if the item is priced in foreign currency.
+
+**⁷⁴** In Credit Notes for text correction (without affecting amounts), Item Amount can be zero.
+
+---
+
+### Section D: DescuentosORecargos (Discounts or Surcharges)
+
+**⁷⁵** Global discounts or surcharges apply to the total e-CF, not to individual items.
+
+**⁷⁶** For e-CF type 41 (Purchases), the billing indicator must be specified if discount/surcharge applies.
+
+---
+
+### Section E: Paginacion (Pagination)
+
+**⁷⁸** Discounts and surcharges in page subtotal must reflect those applied to items on that specific page.
+
+---
+
+### Section F: InformacionReferencia (Reference Information)
+
+**⁷⁹** The modified NCF is used when an e-CF cancels, corrects or replaces a previous tax receipt.
+
+**⁸⁰** Modification codes: 1=Cancellation, 2=Text correction, 3=Amount correction, 4=Contingency replacement, 5=Consumer invoice reference.
+
+**⁸¹** Code 5 (Electronic Consumer Invoice Reference) is used specifically to reference an existing consumer invoice.
+
+---
+
+### Currency and Tax Tables
+
+**⁸²** Specific ISC (codes 006-022) is calculated as a fixed amount per unit of measure, applicable mainly to alcoholic beverages and tobacco products, with rates periodically updated by DGII.
+
+**⁸³** XDR (Special Drawing Right) is an international reserve asset created by the IMF. VEF (Venezuelan Strong Bolívar) may be subject to changes according to current exchange regulations.
