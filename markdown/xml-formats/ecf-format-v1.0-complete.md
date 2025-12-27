@@ -240,3 +240,109 @@ In column 'I' the following values can be found:
 | | END AREA | **ISSUER** | | | | | | | | | | | | | | |
 
 ---
+### AREA: BUYER `<Comprador>`
+
+| # | FIELDS | DESCRIPTION | Max Length | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----| 
+| | BUYER AREA `<Comprador>` | | | | | | 1 | 1 | 2 | 2 | 1 | 0 | 1 | 1 | 1 | 3 |
+| 38 | Buyer RNC `<RNCComprador>` | Corresponds to the buyer's RNC.<br><br>Conditional on the total amount of the type 32 e-CF being equal to or greater than DOP$ 250K.⁴<br><br>In case the e-CF is type 46, the field is conditional on the Commercial Free Zone (Airports and Ports) making a transfer of goods to Residents and the 'Foreign Identifier' field being empty. | 9 or 11 | NUM | a) Validate structure.<br><br>b) If the e-CF is type 32 and the total amount is ≥ DOP$250,000.00, the Buyer RNC must be identified.<br><br>c) If the e-CF type 33 and type 34 modifies an e-CF type 32 with total amount ≥ DOP$250,000.00, the Buyer RNC must be identified.<br><br>d) If the e-CF is type 32 and the buyer is foreign, this field can be left blank and the Foreign Identifier field completed. | I | 1 | 2 | 2 | 2 | 1 | 0 | 2⁵ | 1 | 2⁶ | 0 |
+| 39 | Foreign Identifier `<IdentificadorExtranjero>`⁷ | Corresponds to the identification number when the buyer is foreign and does not have RNC/ID.<br><br>Conditional on the e-CF being type 32>DOP$250,000.00 (also applies to credit/debit notes that reference that type of e-CF), and the Buyer RNC field being empty.<br><br>In case the e-CF is type 46, the field is conditional on the Commercial Free Zone (Airports and Ports) making a transfer of goods to Non-Residents and the 'Buyer RNC' field being empty. | 20 | ALPHA NUM | a) The electronic consumer e-CF is > DOP$250,000.00 (also applies to credit/debit notes that reference that type of e-CF).<br><br>b) The Buyer RNC field is blank. | I | 0 | 2 | 2 | 2 | 0 | 0 | 2⁸ | 0 | 2⁹ | 3 |
+| 40 | Buyer Name or Business Name `<RazonSocialComprador>` | Buyer's Name or Business Name.<br><br>In case the e-CF is type 46, the field is conditional on the 'Buyer RNC' or 'Foreign Identifier' field existing. | 150 | ALPHA NUM | a) If the e-CF is type 32 and the total amount is ≥ DOP$250,000.00, the buyer's name or business name must be indicated.<br><br>b) If the e-CF type 33 and type 34 modifies an e-CF type 32 with total amount ≥ DOP$250,000.00, the buyer's name or business name must be indicated. | I | 1 | 2 | 2 | 2 | 1 | 0 | 1 | 1 | 1 | 3 |
+| 41 | Buyer Contact `<ContactoComprador>` | Buyer's contact name and phone. | 80 | ALPHA NUM | a) No validation | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| 42 | Buyer Email `<CorreoComprador>` | Data corresponding to the buyer's email. | 80 | ALPHA NUM | Valid format: Email structure.<br>(xxxxx@xxx.xx) | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| 43 | Buyer Address `<DireccionComprador>` | Buyer's address. | 100 | ALPHA NUM | a) No validation | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| 44 | Buyer Municipality `<MunicipioComprador>` | Data corresponding to buyer's address. | 6 | NUM | a) Validate with Table III code (Provinces and Municipalities Coding) | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| 45 | Buyer Province `<ProvinciaComprador>` | Data corresponding to buyer's address. | 6 | NUM | a) Validate with Table III code (Provinces and Municipalities Coding) | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| 46 | Buyer Country `<PaisComprador>` | Data corresponding to the country to which the billing is made. | 60 | ALPHA | a) No validation. | P | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 47 | Delivery Date `<FechaEntrega>` | Corresponds to the item delivery date. | 10 | ALPHA NUM | a) Valid date:<br>Format (dd-MM-YYYY) | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 48 | Delivery Contact `<ContactoEntrega>` | Contact information where the item will be delivered or sent (different from the buyer). | 100 | ALPHA NUM | a) No validation | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 49 | Delivery Address `<DireccionEntrega>` | Corresponds to the address or destination of the delivery contact. | 100 | ALPHA NUM | a) No validation | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 50 | Phone `<TelefonoAdicional>` | Phone data corresponding to the delivery contact. | 12 | ALPHA NUM | a)Valid format:<br>Phone structure<br>(xxx-xxx-xxxx) | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 51 | Purchase Order Date `<FechaOrdenCompra>` | Corresponds to the purchase order date. | 10 | ALPHA NUM | a)Valid date:<br>Format (dd-MM-YYYY) | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 52 | Purchase Order Number `<NumeroOrdenCompra>` | Corresponds to the purchase order number. | 20 | ALPHA NUM | a) No Validation | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 53 | Buyer Internal Code `<CodigoInternoComprador>` | For internal buyer identification, for example, customer code, meter number, etc. | 20 | ALPHA NUM | a) No validation | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| 54 | Payment Responsible `<ResponsablePago>` | Corresponds to the identification of who makes the document payment. | 20 | ALPHA | a) No validation | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| 55 | Additional Buyer Information `<Informacionadicionalcomprador>` | Other information related to the buyer. | 150 | ALPHA NUM | a) No validation | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| | END AREA | **BUYER** | | | | | | | | | | | | | | |
+
+---
+
+**⁴** If the total amount of the electronic consumer invoice is less than DOP$250 thousand, the 'Buyer RNC' field will be completed optionally.
+
+**⁵** Conditional on the buyer having RNC/ID. If the buyer is foreign (diplomatic), the 'Buyer RNC' field must be left blank and the 'Foreign Identifier' field completed.
+
+**⁶** According to Article 10 of General Standard 05-19, in case Commercial Free Zones (Airports and Ports) make transfers of goods to Residents, the 'Buyer RNC' field must be completed.
+
+**⁷** This field is completed if the e-CF is an electronic consumer invoice > DOP$250,000 and the buyer does not have RNC/ID for being foreign. The same applies to electronic credit/debit notes that affect type 32 e-CF with value > DOP$250,000. When Foreign Identifier exists, the Buyer RNC field will be omitted.
+
+**⁸** Conditional on the buyer being foreign (diplomatic). If the 'Foreign Identifier' field is completed, the Buyer RNC field should not be completed.
+
+**⁹** According to Article 10 of General Standard 05-19, in case Commercial Free Zones (Airports and Ports) make
+
+ transfers of goods to Non-Residents, the 'Foreign Identifier' field must be completed.
+
+---
+
+### AREA: ADDITIONAL INFORMATION `<InformacionesAdicionales>`
+
+| # | FIELDS | DESCRIPTION | Max Length | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----| 
+| | ADDITIONAL INFORMATION AREA `<InformacionesAdicionales>` | | | | | | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 56 | Shipment Date `<FechaEmbarque>` | Corresponds to the shipment date. | 10 | ALPHA NUM | a)Valid date:<br>Format (dd-MM-YYYY) | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 57 | Shipment Number `<NumeroEmbarque>` | Data corresponding to the shipment number. | 25 | ALPHA NUM | a) No validation | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 58 | Container Number `<NumeroContenedor>` | Data corresponding to the container number. | 100 | ALPHA NUM | a) No validation | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 59 | Reference Number `<NumeroReferencia>` | Data corresponding to the reference number. | 20 | NUM | a) No validation | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 60 | Loading Port Name `<NombrePuertoEmbarque>` | Name of the loading port for the goods. | 40 | ALPHA NUM | a) No validation | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 61 | Delivery Terms `<CondicionesEntrega>` | Refers to the commercial terms set by the buyer and seller regarding the delivery conditions of the goods and/or products.<br><br>Indicates if it is CIF, FOB, etc. | 3 | ALPHA | a) No validation | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 62 | Total FOB `<TotalFob>` | Corresponds to the sum of the FOB value of all goods. | 18 | NUM | a) Numeric value of 16 integers, 2 decimals; > 0 | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 63 | Insurance `<Seguro>` | Corresponds to the total amount of the premium stated in the shipping document or the document certifying the premium value assigned by the insurance company. | 18 | NUM | a) Numeric value of 16 integers, 2 decimals; > 0 | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 64 | Freight `<Flete>` | Corresponds to the amount paid for the transportation of goods from Dominican ports abroad. | 18 | NUM | a) Numeric value of 16 integers, 2 decimals; > 0 | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 65 | Other Expenses `<OtrosGastos>` | Amount for expenses for other services, up to the transportation of goods at the destination customs. | 18 | NUM | a) Numeric value of 16 integers, 2 decimals; > 0 | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 66 | Total CIF `<TotalCif>` | Corresponds to the FOB value, Freight, Insurance and other expenses. | 18 | NUM | a) Numeric value of 16 integers, 2 decimals; > 0 | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 67 | Customs Regime `<RegimenAduanero>` | Corresponds to the customs regime under which the exported goods fall, as defined in DGA10. | 35 | ALPHA | a) No validation | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 68 | Departure Port Name `<NombrePuertoSalida>` | Name of the port from which the goods depart, different from the loading port. | 40 | ALPHA NUM | a) No validation | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 69 | Unloading Port Name `<NombrePuertoDesembarque>` | Name of the destination port for the goods. | 40 | ALPHA NUM | a) No validation | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 70 | Gross Weight `<PesoBruto>` | Corresponds to the gross weight of the container. | 18 | NUM | a) Numeric value of 16 integers, 2 decimals; > 0 (Cannot be negative) | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 71 | Net Weight `<PesoNeto>` | Corresponds to the net weight of the container. | 18 | NUM | a) Numeric value of 16 integers, 2 decimals; > 0 (Cannot be negative) | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 72 | Gross Weight Unit `<UnidadPesoBruto>` | Corresponds to the unit of measure for the gross weight of the goods. | 2 | NUM | a) Validate with Table IV (Unit of Measure Coding) | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 73 | Net Weight Unit `<UnidadPesoNeto>` | Corresponds to the unit of measure for the net weight of the goods. | 2 | NUM | a) Validate with Table IV (Unit of Measure Coding) | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 74 | Number of Packages `<CantidadBulto>` | Corresponds to the number of packages covered by the document. | 18 | NUM | a) Numeric value of 16 integers, 2 decimals; > 0 | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 75 | Package Unit `<UnidadBulto>` | Corresponds to the unit of measure for the packages. | 2 | NUM | a) Validate with Table IV (Unit of Measure Coding) | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 76 | Volume `<VolumenBulto>` | Corresponds to the volume of the packages. | 18 | NUM | a) Numeric value of 16 integers, 2 decimals; > 0 | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 77 | Volume Unit `<UnidadVolumen>` | Corresponds to the unit of measure for the volume of the packages. | 2 | NUM | a) Validate with Table IV (Unit of Measure Coding) | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| | END AREA | **ADDITIONAL INFORMATION** | | | | | | | | | | | | | | |
+
+---
+
+### AREA: TRANSPORT `<Transporte>`
+
+| # | FIELDS | DESCRIPTION | Max Length | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----| 
+| | TRANSPORT AREA `<Transporte>` | | | | | | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 78 | Transport Route `<ViaTransporte>` | Specifies whether transport is by sea, land or air. | 2 | NUM | Must validate:<br>01: Land<br>02: Maritime<br>03: Air | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 79 | Country of Origin `<PaisOrigen>` | Corresponds to the country of origin of the goods. | 60 | ALPHA | a) No validation | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 80 | Destination Address `<DireccionDestino>` | Corresponds to the destination address where the item will be sent (different from the buyer's address). | 100 | ALPHA NUM | a) No validation | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 81 | Destination Country `<PaisDestino>` | Corresponds to the destination country where the item will be sent (different from the buyer's country). | 60 | ALPHA | a) No validation | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 3 |
+| 82 | RNC or Transport Company ID `<RNCIdentificacionCompaniaTransportista>` | Corresponds to the RNC or Identification data of the company performing the transport. | 20 | ALPHA NUM | a) No validation | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 83 | Transport Company Name `<NombreCompaniaTransportista>` | Corresponds to the name or business name of the company performing the transport. | 150 | ALPHA NUM | a) No validation | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| 84 | Trip Number `<NumeroViaje>` | Corresponds to the trip number or flight number. | 20 | ALPHA NUM | a) No validation | N | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 |
+| | END AREA | **TRANSPORT** | | | | | | | | | | | | | | |
+
+---
+
+*(Continuation of TRANSPORT AREA)*
+
+| # | FIELDS | DESCRIPTION | Max Length | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----| 
+| 85 | Driver `<Conductor>` | Corresponds to the driver's code or name. | 20 | ALPHA NUM | a) No validation | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 86 | Document `<DocumentoTransporte>` | Corresponds to the driver's transport document. | 20 | NUM | a) No validation | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 87 | File `<Ficha>` | Corresponds to the transport file. | 10 | ALPHA NUM | a) No validation | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 88 | License Plate `<Placa>` | Corresponds to the transport vehicle's license plate number. | 7 | ALPHA NUM | a) No validation | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 89 | Transport Route `<RutaTransporte>` | Corresponds to the established transport route. | 20 | ALPHA NUM | a) No validation | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 90 | Transport Zone `<ZonaTransporte>` | Corresponds to the transport zone. | 20 | ALPHA NUM | a) No validation | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| 91 | Delivery Note Number `<NumeroAlbaran>` | Corresponds to the delivery note number. | 20 | ALPHA NUM | a) No validation | N | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 3 | 0 |
+| | END AREA | **TRANSPORT** | | | | | | | | | | | | | | |
+
+---
+
+### A.2 AREA: TOTALS `<Totales>`
