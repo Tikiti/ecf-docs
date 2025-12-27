@@ -4,6 +4,244 @@
 
 | Código | Tipo | Nombre |
 |--------|------|--------|
+| 010000 | **Provincia** | **DISTRITO NACIONAL** |
+| 010100 | Municipio | MUNICIPIO SANTO DOMINGO DE GUZMÁN |
+| 010101 | Municipio | SANTO DOMINGO DE GUZMÁN (D. M.). |
+| 020000 | **Provincia** | **PROVINCIA AZUA** |
+| 020100 | Municipio | MUNICIPIO AZUA DE COMPOSTELA |
+| 020101 | Municipio | AZUA DE COMPOSTELA (D. M.). |
+| 020102 | Municipio | BARRO ARRIBA (D. M.). |
+| 020103 | Municipio | LAS BARIAS-LA ESTANCIA (D. M.). |
+| 020104 | Municipio | LOS JOVILLOS (D. M.). |
+| 020105 | Municipio | PUERTO VIEJO (D. M.). |
+| 020106 | Municipio | BARRERAS (D. M.). |
+| 020107 | Municipio | DOÑA EMMA BALAGUER VIUDA VALLEJO (D. M.). |
+| 020108 | Municipio | CLAVELLINA (D. M.). |
+| 020200 | Municipio | MUNICIPIO LAS CHARCAS |
+| 020201 | Municipio | LAS CHARCAS (D. M.). |
+| 020202 | Municipio | PALMAR DE OCOA (D. M.). |
+| 020300 | Municipio | MUNICIPIO LAS YAYAS DE VIAJAMA |
+| 020301 | Municipio | LAS YAYAS DE VIAJAMA (D. M.). |
+| 020302 | Municipio | VILLARPANDO (D. M.). |
+| 020303 | Municipio | HATO NUEVO-CORTÉS (D. M.). |
+| 020400 | Municipio | MUNICIPIO PADRE LAS CASAS |
+| 020401 | Municipio | PADRE LAS CASAS (D. M.). |
+| 020402 | Municipio | LAS LAGUNAS (D. M.). |
+| 020403 | Municipio | LA SIEMBRA (D. M.). |
+| 020404 | Municipio | MONTE BONITO (D. M.). |
+| 020405 | Municipio | LOS FRÍOS (D. M.). |
+| 020500 | Municipio | MUNICIPIO PERALTA |
+| 020501 | Municipio | PERALTA (D. M.). |
+| 020600 | Municipio | MUNICIPIO SABANA YEGUA |
+| 020601 | Municipio | SABANA YEGUA (D. M.). |
+| 020602 | Municipio | PROYECTO 4 (D. M.). |
+| 020603 | Municipio | GANADERO (D. M.). |
+| 020700 | Municipio | MUNICIPIO PUEBLO VIEJO |
+| 020701 | Municipio | PUEBLO VIEJO (D. M.). |
+| 020702 | Municipio | EL ROSARIO (D. M.). |
+| 020800 | Municipio | MUNICIPIO TÁBARA ARRIBA |
+| 020801 | Municipio | TÁBARA ARRIBA (D. M.). |
+| 020802 | Municipio | TÁBARA ABAJO (D. M.). |
+| 020803 | Municipio | AMIAMA GÓMEZ (D. M.). |
+| 020804 | Municipio | LOS TOROS (D. M.). |
+| 020900 | Municipio | MUNICIPIO GUAYABAL |
+| 020901 | Municipio | GUAYABAL (D. M.). |
+| 021000 | Municipio | MUNICIPIO ESTEBANÍA |
+| 021001 | Municipio | ESTEBANÍA (D. M.). |
+| 030000 | **Provincia** | **PROVINCIA BAORUCO** |
+| 030100 | Municipio | MUNICIPIO NEIBA |
+| 030101 | Municipio | NEIBA (D. M.). |
+| 030102 | Municipio | EL PALMAR (D. M.). |
+| 030200 | Municipio | MUNICIPIO GALVÁN |
+| 030201 | Municipio | GALVÁN (D. M.). |
+| 030202 | Municipio | EL SALADO (D. M.). |
+| 030300 | Municipio | MUNICIPIO TAMAYO |
+| 030301 | Municipio | TAMAYO (D. M.). |
+| 030302 | Municipio | CABRAL (D. M.). |
+| 030303 | Municipio | UVILLA (D. M.). |
+| 030400 | Municipio | MUNICIPIO VILLA JARAGUA |
+| 030401 | Municipio | VILLA JARAGUA (D. M.). |
+| 030500 | Municipio | MUNICIPIO LOS RÍOS |
+| 030501 | Municipio | LOS RÍOS (D. M.). |
+| 030502 | Municipio | LAS CLAVELLINAS (D. M.). |
+| 040000 | **Provincia** | **PROVINCIA BARAHONA** |
+| 040100 | Municipio | MUNICIPIO BARAHONA |
+| 040101 | Municipio | BARAHONA (D. M.). |
+| 040102 | Municipio | EL CACHÓN (D. M.). |
+| 040200 | Municipio | MUNICIPIO CABRAL |
+| 040201 | Municipio | CABRAL (D. M.). |
+| 040300 | Municipio | MUNICIPIO ENRIQUILLO |
+| 040301 | Municipio | ENRIQUILLO (D. M.). |
+| 040302 | Municipio | ARROYO DULCE (D. M.). |
+| 040400 | Municipio | MUNICIPIO PARAÍSO |
+| 040401 | Municipio | PARAÍSO (D. M.). |
+| 040402 | Municipio | LOS PATOS (D. M.). |
+| 040500 | Municipio | MUNICIPIO VICENTE NOBLE |
+| 040501 | Municipio | VICENTE NOBLE (D. M.). |
+| 040502 | Municipio | CANOA (D. M.). |
+| 040503 | Municipio | QUITA CORAZA (D. M.). |
+| 040600 | Municipio | MUNICIPIO EL PEÑÓN |
+| 040601 | Municipio | EL PEÑÓN (D. M.). |
+| 040700 | Municipio | MUNICIPIO LA CIÉNAGA |
+| 040701 | Municipio | LA CIÉNAGA (D. M.). |
+| 040702 | Municipio | FONDO NEGRO (D. M.). |
+| 040800 | Municipio | MUNICIPIO FUNDACIÓN |
+| 040801 | Municipio | FUNDACIÓN (D. M.). |
+| 040802 | Municipio | PESCADERÍA (D. M.). |
+| 040900 | Municipio | MUNICIPIO LAS SALINAS |
+| 040901 | Municipio | LAS SALINAS (D. M.). |
+| 041000 | Municipio | MUNICIPIO POLO |
+| 041001 | Municipio | POLO (D. M.). |
+| 041100 | Municipio | MUNICIPIO JAQUIMEYES |
+| 041101 | Municipio | JAQUIMEYES (D. M.). |
+| 041102 | Municipio | PIZARRETE (D. M.). |
+| 050000 | **Provincia** | **PROVINCIA DAJABÓN** |
+| 050100 | Municipio | MUNICIPIO DAJABÓN |
+| 050101 | Municipio | DAJABÓN (D. M.). |
+| 050102 | Municipio | CAÑONGO (D. M.). |
+| 050200 | Municipio | MUNICIPIO LOMA DE CABRERA |
+| 050201 | Municipio | LOMA DE CABRERA (D. M.). |
+| 050202 | Municipio | CAPOTILLO (D. M.). |
+| 050203 | Municipio | SANTIAGO DE LA CRUZ (D. M.). |
+| 050300 | Municipio | MUNICIPIO PARTIDO |
+| 050301 | Municipio | PARTIDO (D. M.). |
+| 050400 | Municipio | MUNICIPIO RESTAURACIÓN |
+| 050401 | Municipio | RESTAURACIÓN (D. M.). |
+| 050500 | Municipio | MUNICIPIO EL PINO |
+| 050501 | Municipio | EL PINO (D. M.). |
+| 050502 | Municipio | MANUEL BUENO (D. M.). |
+| 060000 | **Provincia** | **PROVINCIA DUARTE** |
+| 060100 | Municipio | MUNICIPIO SAN FRANCISCO DE MACORÍS |
+| 060101 | Municipio | SAN FRANCISCO DE MACORÍS (D. M.). |
+| 060102 | Municipio | LA PEÑA (D. M.). |
+| 060103 | Municipio | CENOVÍ (D. M.). |
+| 060104 | Municipio | JAYA (D. M.). |
+| 060105 | Municipio | PRESIDENTE DON ANTONIO GUZMÁN FERNÁNDEZ (D. M.). |
+| 060200 | Municipio | MUNICIPIO ARENOSO |
+| 060201 | Municipio | ARENOSO (D. M.). |
+| 060202 | Municipio | LAS COLES (D. M.). |
+| 060203 | Municipio | EL AGUACATE (D. M.). |
+| 060300 | Municipio | MUNICIPIO CASTILLO |
+| 060301 | Municipio | CASTILLO (D. M.). |
+| 060400 | Municipio | MUNICIPIO PIMENTEL |
+| 060401 | Municipio | PIMENTEL (D. M.). |
+| 060500 | Municipio | MUNICIPIO VILLA RIVAS |
+| 060501 | Municipio | VILLA RIVAS (D. M.). |
+| 060502 | Municipio | AGUA SANTA DEL YUNA (D. M.). |
+| 060503 | Municipio | CRISTO REY DE GUARAGUAO (D. M.). |
+| 060504 | Municipio | LAS TARANAS (D. M.). |
+| 060600 | Municipio | MUNICIPIO LAS GUÁRANAS |
+| 060601 | Municipio | LAS GUÁRANAS (D. M.). |
+| 060700 | Municipio | MUNICIPIO EUGENIO MARÍA DE HOSTOS |
+| 060701 | Municipio | EUGENIO MARÍA DE HOSTOS (D. M.). |
+| 060702 | Municipio | SABANA GRANDE (D. M.). |
+| 070000 | **Provincia** | **PROVINCIA ELÍAS PIÑA** |
+| 070100 | Municipio | MUNICIPIO COMENDADOR |
+| 070101 | Municipio | COMENDADOR (D. M.). |
+| 070102 | Municipio | SABANA LARGA (D. M.). |
+| 070103 | Municipio | GUAYAJAYUCO (D. M.). |
+| 070200 | Municipio | MUNICIPIO BÁNICA |
+| 070201 | Municipio | BÁNICA (D. M.). |
+| 070202 | Municipio | SABANA CRUZ (D. M.). |
+| 070203 | Municipio | SABANA HIGÜERO (D. M.). |
+| 070300 | Municipio | MUNICIPIO EL LLANO |
+| 070301 | Municipio | EL LLANO (D. M.). |
+| 070302 | Municipio | GUANITO (D. M.). |
+| 070400 | Municipio | MUNICIPIO HONDO VALLE |
+| 070401 | Municipio | HONDO VALLE (D. M.). |
+| 070402 | Municipio | RANCHO DE LA GUARDIA (D. M.). |
+| 070500 | Municipio | MUNICIPIO PEDRO SANTANA |
+| 070501 | Municipio | PEDRO SANTANA (D. M.). |
+| 070502 | Municipio | RÍO LIMPIO (D. M.). |
+| 070600 | Municipio | MUNICIPIO JUAN SANTIAGO |
+| 070601 | Municipio | JUAN SANTIAGO (D. M.). |
+| 080000 | **Provincia** | **PROVINCIA EL SEIBO** |
+| 080100 | Municipio | MUNICIPIO EL SEIBO |
+| 080101 | Municipio | EL SEIBO (D. M.). |
+| 080102 | Municipio | PEDRO SÁNCHEZ (D. M.). |
+| 080103 | Municipio | SAN FRANCISCO-VICENTILLO (D. M.). |
+| 080104 | Municipio | SANTA LUCÍA (D. M.). |
+| 080200 | Municipio | MUNICIPIO MICHES |
+| 080201 | Municipio | MICHES (D. M.). |
+| 080202 | Municipio | EL CEDRO (D. M.). |
+| 080203 | Municipio | LA GINA (D. M.). |
+| 090000 | **Provincia** | **PROVINCIA ESPAILLAT** |
+| 090100 | Municipio | MUNICIPIO MOCA |
+| 090101 | Municipio | MOCA (D. M.). |
+| 090102 | Municipio | JOSÉ CONTRERAS (D. M.). |
+| 090103 | Municipio | SAN VÍCTOR (D. M.). |
+| 090104 | Municipio | JUAN LÓPEZ (D. M.). |
+| 090105 | Municipio | LAS LAGUNAS (D. M.). |
+| 090106 | Municipio | CANCA LA REYNA (D. M.). |
+| 090107 | Municipio | EL HIGÜERITO (D. M.). |
+| 090108 | Municipio | MONTE DE LA JAGUA (D. M.). |
+| 090109 | Municipio | LA ORTEGA (D. M.). |
+| 090200 | Municipio | MUNICIPIO CAYETANO GERMOSÉN |
+| 090201 | Municipio | CAYETANO GERMOSÉN (D. M.). |
+| 090300 | Municipio | MUNICIPIO GASPAR HERNÁNDEZ |
+| 090301 | Municipio | GASPAR HERNÁNDEZ (D. M.). |
+| 090302 | Municipio | JOBA ARRIBA (D. M.). |
+| 090303 | Municipio | VERAGUA (D. M.). |
+| 090304 | Municipio | VILLA MAGANTE (D. M.). |
+| 090400 | Municipio | MUNICIPIO JAMAO AL NORTE |
+| 090401 | Municipio | JAMAO AL NORTE (D. M.). |
+| 100000 | **Provincia** | **PROVINCIA INDEPENDENCIA** |
+| 100100 | Municipio | MUNICIPIO JIMANÍ |
+| 100101 | Municipio | JIMANÍ (D. M.). |
+| 100102 | Municipio | EL LIMÓN (D. M.). |
+| 100103 | Municipio | BOCA DE CACHÓN (D. M.). |
+| 100200 | Municipio | MUNICIPIO DUVERGÉ |
+| 100201 | Municipio | DUVERGÉ (D. M.). |
+| 100202 | Municipio | VENGAN A VER (D. M.). |
+| 100300 | Municipio | MUNICIPIO LA DESCUBIERTA |
+| 100301 | Municipio | LA DESCUBIERTA (D. M.). |
+| 100400 | Municipio | MUNICIPIO POSTRER RÍO |
+| 100401 | Municipio | POSTRER RÍO (D. M.). |
+| 100402 | Municipio | GUAYABAL (D. M.). |
+| 100500 | Municipio | MUNICIPIO CRISTÓBAL |
+| 100501 | Municipio | CRISTÓBAL (D. M.). |
+| 100502 | Municipio | BATEY 8 (D. M.). |
+| 100600 | Municipio | MUNICIPIO MELLA |
+| 100601 | Municipio | MELLA (D. M.). |
+| 100602 | Municipio | LA COLONIA (D. M.). |
+| 110000 | **Provincia** | **PROVINCIA LA ALTAGRACIA** |
+| 110100 | Municipio | MUNICIPIO SALVALEÓN DE HIGÜEY |
+| 110101 | Municipio | SALVALEÓN DE HIGÜEY (D. M.). |
+| 110102 | Municipio | LAS LAGUNAS DE NISIBÓN (D. M.). |
+| 110103 | Municipio | LA OTRA BANDA (D. M.). |
+| 110104 | Municipio | VERÓN PUNTA CANA (D. M.) |
+| 110200 | Municipio | MUNICIPIO SAN RAFAEL DEL YUMA |
+| 110201 | Municipio | SAN RAFAEL DEL YUMA (D. M.). |
+| 110202 | Municipio | BOCA DE YUMA (D. M.). |
+| 110203 | Municipio | BAYAHÍBE (D. M.). |
+| 120000 | **Provincia** | **PROVINCIA LA ROMANA** |
+| 120100 | Municipio | MUNICIPIO LA ROMANA |
+| 120101 | Municipio | LA ROMANA (D. M.). |
+| 120102 | Municipio | CALETA (D. M.). |
+| 120200 | Municipio | MUNICIPIO GUAYMATE |
+| 120201 | Municipio | GUAYMATE (D. M.). |
+| 120300 | Municipio | MUNICIPIO VILLA HERMOSA |
+| 120301 | Municipio | VILLA HERMOSA (D. M.). |
+| 120302 | Municipio | CUMAYASA (D. M.). |
+| 130000 | **Provincia** | **PROVINCIA LA VEGA** |
+| 130100 | Municipio | MUNICIPIO LA VEGA |
+| 130101 | Municipio | LA VEGA (D. M.). |
+| 130102 | Municipio | RÍO VERDE ARRIBA (D. M.). |
+| 130103 | Municipio | EL RANCHITO (D. M.). |
+| 130104 | Municipio | TAVERAS (D. M.). |
+| 130105 | Municipio | DON JUAN RODRÍGUEZ (D.M.) |
+| 130200 | Municipio | MUNICIPIO CONSTANZA |
+| 130201 | Municipio | CONSTANZA (D. M.). |
+| 130202 | Municipio | TIREO (D. M.). |
+| 130203 | Municipio | LA SABINA (D. M.). |
+| 130300 | Municipio | MUNICIPIO JARABACOA |
+| 130301 | Municipio | JARABACOA (D. M.). |
+| 130302 | Municipio | BUENA VISTA (D. M.). |
+| 130303 | Municipio | MANABAO (D. M.). |
+| 130400 | Municipio | MUNICIPIO JIMA ABAJO |
+| 130401 | Municipio | JIMA ABAJO (D. M.). |
+| 130402 | Municipio | RINCÓN (D. M.). |
+
 | 140000 | **Provincia** | **PROVINCIA MARÍA TRINIDAD SÁNCHEZ** |
 | 140100 | Municipio | MUNICIPIO NAGUA |
 | 140101 | Municipio | NAGUA (D. M.). |
@@ -343,4 +581,4 @@ M.). |
 | 320702 | Municipio | LA GUÁYIGA (D. M.). |
 | 320703 | Municipio | LA CUABA (D. M.). |
 
-**Total:** 335 entradas
+**Total:** 572 entradas

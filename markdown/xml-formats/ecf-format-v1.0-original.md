@@ -591,7 +591,7 @@ Se pueden incluir hasta 100 repeticiones.**
 | 320702 | Municipio | LA GUÁYIGA (D. M.). |
 | 320703 | Municipio | LA CUABA (D. M.). |
 
-**Total:** 32 provincias + ~303 municipios y distritos municipales = **335 entradas**
+**Total:** 32 provincias + ~540 municipios y distritos municipales = **572 entradas**
 
 **📄 Tabla completa:** [`tablas-provincias-completa.md`](tablas-provincias-completa.md)
 
@@ -695,7 +695,7 @@ Se pueden incluir hasta 100 repeticiones.**
 **ESTADO FINAL:**
 - ✅ TABLA I (Impuestos): Resumen incluido, PDF para códigos completos (~40 códigos)
 - ✅ TABLA II (Monedas): **Completa** (17 monedas autorizadas)
-- ✅ TABLA III (Provincias/Municipios): **Tabla completa extraída** → [`tablas-provincias-completa.md`](tablas-provincias-completa.md) (335 entradas)
+- ✅ TABLA III (Provincias/Municipios): **Tabla completa extraída** → [`tablas-provincias-completa.md`](tablas-provincias-completa.md) (572 entradas completas)
 - ✅ TABLA IV (Unidades): **Completa en este documento** (57 códigos)
 - ✅ TABLA V (Tipos e-CF): Completa (10 tipos)
 
