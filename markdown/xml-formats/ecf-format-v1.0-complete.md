@@ -425,3 +425,75 @@ Conditional on billing being in Other Currency.**
 ---
 
 ## B. GOODS OR SERVICES DETAIL
+
+### AREA: ITEM DETAILS `<DetallesItem>`
+
+This AREA is mandatory for all e-CF types.
+
+### AREA: ITEM `<Item>`
+
+Up to 100 repetitions can be included.**
+
+| # | FIELDS | DESCRIPTION | Max Length | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----| 
+| | ITEM DETAILS AREA `<DetallesItem>` | | | | | | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| | ITEM AREA `<Item>` | Up to 100 repetitions can be included. | | | | | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 1 | Line No. or Sequential No. `<NumeroLinea>` | Line that numbers the item. From 1 to 100 repetitions.⁴⁸ | 5 | NUM | a) Sequential line number. | N | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| | **Item Codes Table `<TablaCodigosItem>`** | Up to 5 repetitions of code-value pairs can be included. Includes the following two fields: | | | | | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 2 | Code Type `<TipoCodigo>` | Type of coding used for the item<br>Standard: EAN, PLU, DUN or Internal<br>(Up to 5 code types) | 14 | ALPHANUM | a) No validation. | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 3 | Item Code `<CodigoItem>` | Item code according to the coding type indicated in the previous field.<br>(Up to 5 codes) | 35 | ALPHANUM | a) No validation. | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| | **END TABLE** | **ITEM CODES** | | | | | | | | | | | | | | |
+| 4 | Billing Indicator `<IndicadorFacturacion>` | Indicates if the item is exempt, taxed, or Non-billable. Will indicate different rates:<br>0: Non-Billable<br>ITBIS 1: item taxed at ITBIS rate1 (18%).<br>ITBIS 2: item taxed at ITBIS rate2 (16%).<br>ITBIS 3: item taxed at ITBIS rate3 (0%).<br>E: Exempt | 1 | NUM | a) Indicate if value is<br>0: Non-Billable<br>1: ITBIS 1 (18%)<br>2: ITBIS 2 (16%)<br>3: ITBIS 3 (0%)<br>4: Exempt (E) | P⁴⁹ | 1 | 1 | 1 | 1 | 1 | 1⁵⁰ | 1 | 1 | 1⁵¹ | 1 |
+| | AREA `<Retencion>` | **WITHHOLDING** | | | Conditional on withholding existing. | | 2 | 0 | 2 | 2 | 1 | 0 | 0 | 0 | 0 | 1 |
+| 5 | Withholding or Perception Agent Indicator⁵² `<IndicadorAgenteRetencionoPercepcion>` | For Withholding or Perception Agents. Indicates for each transaction if they are a withholding agent for the product being sold or the service. Conditional on withholding existing. | 1 | NUM | a) Coding:<br>1: "R"<br>2: "P" | N | 2 | 0 | 2 | 2 | 1 | 0 | 0 | 0 | 0 | 1 |
+| 6 | Withheld ITBIS Amount `<MontoITBISRetenido>` | Amount of ITBIS corresponding to the withholding that will be made by the buyer. Conditional on withholding existing.⁵³ | 18 | NUM | a) Numeric value of 16 integers, two decimals, ≥0. | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
+| 7 | Income Tax Withholding Amount `<MontoISRRetenido>` | Amount of Income Tax corresponding to the withholding made from the provision or rental of services.<br>The e-CF type 41 is conditional on withholding existing and the 'Goods or Services Indicator' being equal to 2. | 18 | NUM | a) Numeric value of 16 integers, two decimals, ≥0.<br>b) The e-CF type 41 is conditional on withholding existing and the 'Goods or Services Indicator' being equal to 2. | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 1 |
+| | END AREA | **WITHHOLDING** | | | | | | | | | | | | | | |
+| 8 | Item Name `<NombreItem>` | Product or service name. | 80 | ALPHANUM | a) No validation. | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 9 | Goods or Services Indicator `<IndicadorBienoServicio>` | Identifies if the item corresponds to Goods or Service. | 1 | NUM | a) Indicate if Value is:<br>1: Goods<br>2: Service | N | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1⁵⁴ |
+| 10 | Additional Description `<DescripcionItem>` | Additional description of the item. | 1000 | ALPHANUM | a) No validation | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 11 | Quantity `<CantidadItem>` | Item quantity⁵⁵ | 18 | NUM | a) Numeric value of 16 integers, 2 decimals; >0 (Cannot be negative). | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 12 | Item Unit of Measure `<UnidadMedida>` | Indicates the unit of measure in which the quantity is expressed. | 2 | NUM | a) Validate with the Unit of Measure Coding Table. | P | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 13 | Reference Quantity `<CantidadReferencia>` | Quantity for the reference unit of measure (not used for Item Amount calculation).<br>Conditional on the item being taxed with additional tax codes between 006-022 in the Additional Tax Type Coding Table.⁵⁶ | 18 | NUM | a) Numeric value of 16 integers, 2 decimals; ≥0 (Cannot be negative). | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 14 | Reference Unit `<UnidadReferencia>` | Indicates the reference unit of measure.<br>Conditional on the Reference quantity field being completed. | 2 | NUM | a) Validate with Table IV (Unit of Measure Coding). | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| | **Subquantity Distribution Table `<TablaSubcantidad>`⁵⁷** | This table must be included for the purpose of calculating selective consumption taxes on products derived from alcohol and beer and tobacco and cigarette products.<br>Conditional on code from 006 to 039 existing according to the 'Additional Tax Types Coding Table'.<br>Up to 5 repetitions of quantity-code pairs can be included. Includes the following two fields: | | | | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 15 | Subquantity `<Subcantidad>` | Number of reference units that the item unit has.<br>Conditional on the item being taxed with additional tax codes from 006 to 022 in the Additional Tax Type Coding Table.⁵⁸ | 19 | NUM | a) Numeric value of 16 integers, 3 decimals; ≥0 (Cannot be negative). | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 16 | Subquantity Code `<CodigoSubcantidad>` | Indicates the unit of measure for the subquantity. | 2 | NUM | a) Validate with Table IV (Unit of Measure Coding). | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| | **END TABLE** | **SUBQUANTITY** | | | | | | | | | | | | | | |
+| 17 | Alcohol Degrees in %⁵⁹ `<GradosAlcohol>` | Corresponds to the percentage of alcohol in the total alcoholic concentration volume per product unit. Conditional on the item being taxed with additional tax codes 006 to 018 in the Additional Tax Type Coding Table (alcoholic beverages). | 5 | NUM | a) Numeric value of 3 integers and 2 decimals; >0. (Must be positive) | I | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 18 | Reference Unit Price⁶⁰ `<PrecioUnitarioReferencia>` | Unit price for the reference unit of measure (not used for Total amount calculation).<br>Conditional on the item being taxed with additional tax codes from 023 to 039 in the Additional Tax Type Coding Table. | 18 | NUM | a) Numeric value of 16 integers, 2 decimals. >0 (Cannot be negative) | I | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 19 | Manufacturing Date `<FechaElaboracion>` | Data corresponding to the item manufacturing date. | 10 | ALPHANUM | a) Valid date<br>Format: (dd-MM-YYYY) | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| 20 | Expiration Date `<FechaVencimientoItem>` | Data corresponding to the item expiration date. | 10 | ALPHANUM | a) Valid date<br>Format: (dd-MM-YYYY) | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| | AREA `<Mineria>` | **MINING.**<br>Conditional on billing related to the mining sector existing. | | | | | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+| 21 | Net Weight Kilogram `<PesoNetoKilogramo>` | Indicates the net weight in kilogram of the mineral.⁶¹ | 19 | NUM | a) Numeric value of 16 integers, 3 decimals; ≥0 (Cannot be negative). | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+| 22 | Net Weight `<PesoNetoMineria>` | Indicates the net weight of the mineral.⁶² | 19 | NUM | a) Numeric value of 16 integers, 3 decimals; ≥0 (Cannot be negative). | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+| 23 | Affiliation Type `<TipoAfiliacion>` | Indicates if the recipient is affiliated or not.⁶³ | 1 | NUM | a) Indicate if value is:<br>1: Affiliated<br>2: Not affiliated | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+| 24 | Settlement `<Liquidacion>` | Indicates if the mineral settlement is provisional or final.⁶⁴ | 1 | NUM | a) Indicate if value is:<br>1: Provisional<br>2: Final | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+| | END AREA | **MINING** | | | | | | | | | | | | | | |
+| 25 | Item Unit Price⁶⁵ `<PrecioUnitarioItem>` | Data corresponding to the item unit price. | 20 | NUM | a) Numeric value of 16 integers, 4 decimals; ≥0 (Cannot be negative). | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 26 | Discount Amount `<DescuentoMonto>` | Totalizes all sub-discounts granted to the item in amounts. Conditional on Subdiscount Amount existing. | 18 | NUM | a) Numeric value of 16 integers, 2 decimals; ≥0 (Cannot be negative).<br>b) Subdiscount Amount | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| | **Subdiscount Distribution Table `<TablaSubDescuento>`⁶⁶** | Conditional on discount existing on the item. Up to 12 repetitions can be included. Includes the following three fields: | | | | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 27 | Subdiscount Type `<TipoSubDescuento>` | Indicates if the Subdiscount is in amount ($) or percentage (%). Conditional on discount existing on the item. | 1 | ALPHA | a) "$" or "%" | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 28 | Subdiscount in % `<SubDescuentoPorcentaje>` | Value of the Subdiscount in percentage %. Conditional on Subdiscount type in percentage (%) existing. | 5 | NUM | a) Numeric value. 3 integers and 2 decimals; >0 (Cannot be negative) | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 29 | Subdiscount Amount `<MontoSubDescuento>` | Corresponding to the discount value expressed in amount.<br>If the subdiscount is in %, the subdiscount amount must go. | 18 | NUM | a) Numeric value of 16 integers, 2 decimals. ≥0 (Cannot be negative).<br>b) If the subdiscount is in %, the subdiscount amount value must equal the item unit price times the subdiscount percentage, times the number of items. | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| | **END TABLE** | **SUBDISCOUNT** | | | | | | | | | | | | | | |
+| 30 | Surcharge Amount `<RecargoMonto>` | Totalizes all Subsurcharges granted to the item in amounts. Conditional on Subsurcharge Amount existing. | 18 | NUM | a) Numeric value of 16 integers, 2 decimals; ≥0 (Cannot be negative).<br>b) Subsurcharge Amount. | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| | **Subsurcharge Distribution Table `<TablaSubRecargo>`⁶⁷** | Conditional on surcharge existing on the item. Up to 12 repetitions of Type-Value pairs can be included. Includes the following three fields: | | | | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 31 | Subsurcharge Type `<TipoSubRecargo>` | Indicates if the Subsurcharge is in $ or %. Conditional on surcharge existing on the item. | 1 | ALPHA | "$" or "%" | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 32 | Subsurcharge in % `<SubRecargoPorcentaje>` | Value of the Subsurcharge in percentage %. Conditional on Subsurcharge type in percentage (%) existing. | 5 | NUM | a) Numeric value, 3 integers and 2 decimals; >0 (Cannot be negative) | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 33 | Subsurcharge Amount `<MontoSubRecargo>` | Corresponding to the Subsurcharge value expressed in amount. Conditional on subsurcharge existing.<br>If the subsurcharge is in %, the subsurcharge amount must go. | 18 | NUM | a) Numeric value of 16 integers, 2 decimals; ≥0 (Cannot be negative).<br>b) If the subsurcharge is in %, the subsurcharge amount value must equal the item unit price times the subsurcharge percentage value, times the number of items. | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| | **END TABLE** | **SUBSURCHARGE** | | | | | | | | | | | | | | |
+| | **Additional Tax Codes Table `<TablaImpuestoAdicional>`⁶⁸** | Up to 2 repetitions of tax codes can be included. | | | | | 2 | 2 | 2 | 2 | 0 | 0 | **2⁶⁹** | 2 | 0 | 0 |
+| 34 | Additional Tax Code `<TipoImpuesto>` | Data corresponding to the Additional Tax Code according to the Additional Tax Types Coding Table (Table I). Conditional on the item being taxed with Additional Tax.⁷⁰ | 3 | NUM | Valid code with respect to Table I (Additional Tax Types Coding). | N | 2 | 2 | 2 | 2 | 0 | 0 | 2⁷¹ | 2 | 0 | 0 |
+| | **END TABLE** | **ADDITIONAL TAXES** | | | | | | | | | | | | | | |
+| | AREA `<OtraMonedaDetalle>` | **DETAIL OTHER CURRENCY.**<br>Indicate prices in alternative currencies.⁷² | | | | | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 35 | Unit price in other currency `<PrecioOtraMoneda>` | Data corresponding to the Item Unit Price in other currency. Conditional on the item being in Other Currency. | 20 | NUM | a) Numeric value of 16 integers, 4 decimals. ≥0 (Cannot be negative). | N⁷³ | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 36 | Discount in Other Currency `<DescuentoOtraMoneda>` | Corresponds to the discount value granted in Other Currency. | 18 | NUM | a) Numeric value of 16 integers, 2 decimals. ≥0 (Cannot be negative). | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 37 | Surcharge in Other Currency `<RecargoOtraMoneda>` | Corresponds to the surcharge value granted in Other Currency. | 18 | NUM | a) Numeric value of 16 integers, 2 decimals. ≥0 (Cannot be negative). | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 38 | Item Amount Other Currency `<MontoItemOtraMoneda>` | (Unit Price in other currency * Quantity) – Discount in other currency + Surcharge in other currency.<br>Conditional on the item Price and Discounts or Surcharge (if they exist) being in Other Currency. | 18 | NUM | a) Numeric value of 16 integers, 2 decimals. ≥0 (Cannot be negative).<br>b) Numeric value according to the Description field. | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| | END AREA | **DETAIL OTHER CURRENCY** | | | | | | | | | | | | | | |
+| 39 | Item Amount (Value per detail line) `<MontoItem>` | (Item Unit Price * Quantity) – Discount Amount + Surcharge Amount | 18 | NUM | a) Numeric value of 16 integers, 2 decimals; ≥ 0 (Cannot be negative).<br>b) Numeric value, according to description.<br>c) Must be zero when: it is a Credit Note for text correction purposes.⁷⁴<br>When it is zero, it may not be printed or an explanatory text may be printed (no value, no cost, etc.) | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| | END AREA | **ITEM** | | | | | | | | | | | | | | |
+| | END AREA | **ITEM DETAILS** | | | | | | | | | | | | | | |
+
+---
