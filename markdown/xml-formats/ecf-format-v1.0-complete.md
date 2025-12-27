@@ -1,4 +1,4 @@
-]633;E;} > markdown/xml-formats/ecf-format-v1.0-complete.md.cleaned;65b1a7dd-e3e5-41bc-8527-c371a1fa6b24]633;C# Electronic Tax Receipt Format (e-CF)
+# Electronic Tax Receipt Format (e-CF)
 
 **Version 1.0 | October 2025**
 

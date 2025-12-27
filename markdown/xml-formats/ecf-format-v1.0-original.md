@@ -1,4 +1,4 @@
-]633;E;} > markdown/xml-formats/ecf-format-v1.0-original.md.cleaned;65b1a7dd-e3e5-41bc-8527-c371a1fa6b24]633;C# Formato Comprobante Fiscal Electrónico (e-CF)
+# Formato Comprobante Fiscal Electrónico (e-CF)
 
 **Versión 1.0 | Octubre 2025**
 
