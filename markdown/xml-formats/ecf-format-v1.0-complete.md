@@ -693,3 +693,344 @@ This is a 22-page table in the original PDF (pages 63-85). A sample is provided 
 
 ---
 
+## Section B: DetallesItem (Line Item Details)
+
+Each `<Item>` element describes one line item (good or service). Up to 100 items per e-CF (up to 1,000 for type 32 ≥DOP$250k, or 10,000 for type 32 <DOP$250k).
+
+### B.1 Item Identification (Fields 1-3)
+
+| # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 1 | `<NumeroLinea>` | Line number | 5 | NUM | Sequential 1 to n | N | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| — | `<TablaCodigosItem>` | — | — | — | Container (up to 5 reps) | — | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 2 | `<TipoCodigo>` | Code type | 14 | ALFANUM | EAN, PLU, DUN, Interna | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 3 | `<CodigoItem>` | Item code | 35 | ALFANUM | Up to 5 codes | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+
+### B.2 Tax Indicator & Retention (Fields 4-7)
+
+| # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 4 | `<IndicadorFacturacion>` | Tax indicator | 1 | NUM | 0-4 (see codes below) | P | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| — | `<Retencion>` | — | — | — | Container (if retention exists) | — | 2 | 0 | 2 | 2 | 1 | 0 | 0 | 0 | 0 | 1 |
+| 5 | `<IndicadorAgenteRetencionoPercepcion>` | Agent indicator | 1 | NUM | 1=R (Retention), 2=P (Perception) | N | 2 | 0 | 2 | 2 | 1 | 0 | 0 | 0 | 0 | 1 |
+| 6 | `<MontoITBISRetenido>` | ITBIS withheld | 18 | NUM | ≥0, 2 decimals | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
+| 7 | `<MontoISRRetenido>` | ISR withheld | 18 | NUM | ≥0, 2 decimals | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 1 |
+
+**IndicadorFacturacion Values:**
+
+| Code | Description |
+|------|-------------|
+| `0` | Non-billable (No Facturable) |
+| `1` | Taxable ITBIS Rate 1 (18%) (Gravado ITBIS Tasa 1) |
+| `2` | Taxable ITBIS Rate 2 (16%) (Gravado ITBIS Tasa 2) |
+| `3` | Taxable ITBIS Rate 3 (0%) (Gravado ITBIS Tasa 3) |
+| `4` | Exempt (Exento) |
+
+> [!NOTE]
+> **Type 43, 44, 47**: IndicadorFacturacion must = 4 (Exempt). **Type 46**: must = 3 (ITBIS 0%).
+
+> [!WARNING]
+> If `IndicadorFacturacion=4` (Exempt) AND `IndicadorAgenteRetencionoPercepcion=1` (R), then `MontoITBISRetenido` **must be 0**.
+
+---
+
+### B.3 Item Details (Fields 8-14)
+
+| # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 8 | `<NombreItem>` | Item name | 80 | ALFANUM | — | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 9 | `<IndicadorBienoServicio>` | Good/Service | 1 | NUM | 1=Good, 2=Service | N | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 10 | `<DescripcionItem>` | Description | 1000 | ALFANUM | — | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 11 | `<CantidadItem>` | Quantity | 18 | NUM | >0, 2 decimals | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 12 | `<UnidadMedida>` | Unit of measure | 2 | NUM | Tabla IV codes | P | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 13 | `<CantidadReferencia>` | Reference qty | 18 | NUM | ≥0, for ISC 006-022 | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 14 | `<UnidadReferencia>` | Reference unit | 2 | NUM | Tabla IV codes | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+
+> [!NOTE]
+> **Type 47 (Pagos al Exterior)**: Field 9 `IndicadorBienoServicio` must = 2 (Service).
+
+---
+
+### B.4 Subcantidad for ISC Products (Fields 15-18)
+
+For alcohol, tobacco products with ISC codes 006-022 (specific) and 023-039 (ad-valorem).
+
+| # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| — | `<TablaSubcantidad>` | — | — | — | Container (up to 5 reps) | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 15 | `<Subcantidad>` | Sub-quantity | 19 | NUM | ≥0, 3 decimals | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 16 | `<CodigoSubcantidad>` | Sub-qty unit code | 2 | NUM | Tabla IV codes | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 17 | `<GradosAlcohol>` | Alcohol % | 5 | NUM | >0, 3 int + 2 dec | I | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 18 | `<PrecioUnitarioReferencia>` | Reference unit price | 18 | NUM | >0 (retail price for ISC calc) | I | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+
+> [!NOTE]
+> **Field 15 (Subcantidad)**: For alcohol = absolute alcohol content in liters. For tobacco = cigarette units per pack.
+> **Field 18 (PrecioUnitarioReferencia)**: For ISC Ad-Valorem (codes 023-039), this is the retail price (PVP) used as tax base.
+
+---
+
+### B.5 Product Dates (Fields 19-20)
+
+| # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 19 | `<FechaElaboracion>` | Manufacturing date | 10 | ALFANUM | dd-MM-AAAA | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| 20 | `<FechaVencimientoItem>` | Expiry date | 10 | ALFANUM | dd-MM-AAAA | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+
+---
+
+### B.6 Minería Section (Fields 21-24)
+
+For mining sector invoices only (conditional on mining transactions).
+
+| # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| — | `<Mineria>` | — | — | — | Container (mining sector) | — | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+| 21 | `<PesoNetoKilogramo>` | Net weight (kg) | 19 | NUM | ≥0, 3 decimals | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+| 22 | `<PesoNetoMineria>` | Mineral net weight | 19 | NUM | ≥0, 3 decimals | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+| 23 | `<TipoAfiliacion>` | Affiliation type | 1 | NUM | 1=Affiliated, 2=Non-affiliated | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+| 24 | `<Liquidacion>` | Settlement type | 1 | NUM | 1=Provisional, 2=Final | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+
+---
+
+### B.7 Unit Price (Field 25)
+
+| # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 25 | `<PrecioUnitarioItem>` | Unit price | 20 | NUM | ≥0, 4 decimals | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+
+> [!NOTE]
+> For alcohol/beer producers: this is the **list price**. For insurance services: this is the **insurance premium**.
+
+---
+
+### B.8 Discounts (Fields 26-29)
+
+| # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 26 | `<DescuentoMonto>` | Total discount | 18 | NUM | ≥0, 2 decimals | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| — | `<TablaSubDescuento>` | — | — | — | Container (up to 12 reps) | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 27 | `<TipoSubDescuento>` | Sub-discount type | 1 | ALFA | "$" or "%" | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 28 | `<SubDescuentoPorcentaje>` | Discount % | 5 | NUM | >0, 3 int + 2 dec | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 29 | `<MontoSubDescuento>` | Sub-discount amount | 18 | NUM | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+
+---
+
+### B.9 Surcharges (Fields 30-33)
+
+| # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 30 | `<RecargoMonto>` | Total surcharge | 18 | NUM | ≥0, 2 decimals | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| — | `<TablaSubRecargo>` | — | — | — | Container (up to 12 reps) | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 31 | `<TipoSubRecargo>` | Sub-surcharge type | 1 | ALFA | "$" or "%" | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 32 | `<SubRecargoPorcentaje>` | Surcharge % | 5 | NUM | >0, 3 int + 2 dec | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 33 | `<MontoSubRecargo>` | Sub-surcharge amount | 18 | NUM | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+
+---
+
+### B.10 Additional Taxes per Item (Field 34)
+
+| # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| — | `<TablaImpuestoAdicional>` | — | — | — | Container (up to 2 reps) | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+| 34 | `<TipoImpuesto>` | Tax code | 3 | NUM | Tabla I (001-039) | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+
+---
+
+### B.11 OtraMoneda per Item (Fields 35-38)
+
+Foreign currency detail at item level.
+
+| # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| — | `<OtraMonedaDetalle>` | — | — | — | Container (FC detail) | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 35 | `<PrecioOtraMoneda>` | Unit price (FC) | 20 | NUM | ≥0, 4 decimals | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 36 | `<DescuentoOtraMoneda>` | Discount (FC) | 18 | NUM | ≥0, 2 decimals | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 37 | `<RecargoOtraMoneda>` | Surcharge (FC) | 18 | NUM | ≥0, 2 decimals | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 38 | `<MontoItemOtraMoneda>` | Line total (FC) | 18 | NUM | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+
+---
+
+### B.12 Line Total (Field 39)
+
+| # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 39 | `<MontoItem>` | Line total | 18 | NUM | =(Price×Qty)−Discount+Surcharge | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+
+> [!NOTE]
+> `MontoItem` can be **0** for text correction credit notes (when `CodigoModificacion=2` in Información de Referencia).
+
+---
+
+## Section C: Subtotales Informativos (Informational Subtotals)
+
+Optional informational subtotals (do not affect main totals). Up to 20 `<Subtotal>` entries can be included.
+
+**XML Structure:**
+```xml
+<Subtotales>
+  <Subtotal>...</Subtotal>
+  <Subtotal>...</Subtotal>
+</Subtotales>
+```
+
+| # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 1 | `<NumeroSubTotal>` | Subtotal number | 2 | NUM | Sequential 1 to n | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 2 | `<DescripcionSubtotal>` | Title | 40 | ALFA | — | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 3 | `<Orden>` | Display order | 2 | NUM | — | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 4 | `<SubTotalMontoGravadoTotal>` | Total taxable subtotal | 18 | NUM | ≥0, 2 decimals | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 0 |
+| 5 | `<SubTotalMontoGravadoI1>` | Subtotal at 18% | 18 | NUM | ≥0, 2 decimals | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 0 | 0 |
+| 6 | `<SubTotalMontoGravadoI2>` | Subtotal at 16% | 18 | NUM | ≥0, 2 decimals | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 0 | 0 |
+| 7 | `<SubTotalMontoGravadoI3>` | Subtotal at 0% | 18 | NUM | ≥0, 2 decimals | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 0 |
+| 8 | `<SubTotaITBIS>` | Subtotal ITBIS | 18 | NUM | ≥0, 2 decimals | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 0 |
+| 9 | `<SubTotaITBIS1>` | Subtotal ITBIS 18% | 18 | NUM | ≥0, 2 decimals | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 0 | 0 |
+| 10 | `<SubTotaITBIS2>` | Subtotal ITBIS 16% | 18 | NUM | ≥0, 2 decimals | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 0 | 0 |
+| 11 | `<SubTotaITBIS3>` | Subtotal ITBIS 0% | 18 | NUM | ≥0, 2 decimals | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 0 |
+| 12 | `<SubTotalImpuestoAdicional>` | Subtotal addtl taxes | 18 | NUM | >0, 2 decimals | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 0 | 0 |
+| 13 | `<SubTotalExento>` | Subtotal exempt | 18 | NUM | ≥0, 2 decimals | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 0 | 3 |
+| 14 | `<MontoSubTotal>` | Subtotal amount | 18 | NUM | ≥0, 2 decimals | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 15 | `<Lineas>` | Line count in subtotal | 2 | NUM | >0 | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+
+
+---
+
+## Section D: DescuentosORecargos (Global Discounts/Surcharges)
+
+Global discounts/surcharges that apply to the entire invoice (not per item). Up to 20 `<DescuentoORecargo>` entries can be included.
+
+**XML Structure:**
+```xml
+<DescuentosORecargos>
+  <DescuentoORecargo>...</DescuentoORecargo>
+  <DescuentoORecargo>...</DescuentoORecargo>
+</DescuentosORecargos>
+```
+
+| # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 1 | `<NumeroLinea>` | Line number | 2 | NUM | 1-20 | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 2 | `<TipoAjuste>` | D (Discount) or R (Surcharge) | 1 | ALFA | — | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 3 | `<IndicadorNorma1007>` | Norm 10-07 indicator | 1 | NUM | 1=Yes | N | 3 | 3 | 3 | 3 | 0 | 0 | 0 | 3 | 0 | 0 |
+| 4 | `<DescripcionDescuentooRecargo>` | Description | 45 | ALFA | — | I | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| 5 | `<TipoValor>` | Value type (% or $) | 1 | ALFA | "%" or "$" | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 6 | `<ValorDescuentooRecargo>` | Discount/surcharge % | 5 | NUM | >0, 3 int + 2 dec | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 7 | `<MontoDescuentooRecargo>` | Discount/surcharge amount | 18 | NUM | ≥0, 2 decimals | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 8 | `<MontoDescuentooRecargoOtraMoneda>` | Amount (foreign currency) | 18 | NUM | ≥0, 2 decimals | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| 9 | `<IndicadorFacturacionDescuentooRecargo>` | Tax indicator | 1 | NUM | 1=ITBIS1, 2=ITBIS2, 3=ITBIS3, 4=Exento | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+
+
+**TipoDescuentoRecargo Values:**
+
+| Code | Description |
+|------|-------------|
+| `1` | Discount (Descuento) |
+| `2` | Surcharge (Recargo) |
+
+**TipoValor Values (ALFA field):**
+
+| Code | Description |
+|------|-------------|
+| `%` | Percentage (Porcentaje) |
+| `$` | Fixed Amount (Monto) |
+
+> [!WARNING]
+> **Use literal characters**: `TipoValor` is an ALFA field. Send the actual characters `%` or `$`, not numeric values. The PDF explicitly defines these as "%" or "$".
+
+**IndicadorFacturacionDescuentooRecargo Values:**
+
+| Code | Description |
+|------|-------------|
+| `1` | ITBIS Rate 1 (18%) (ITBIS Tasa 1) |
+| `2` | ITBIS Rate 2 (16%) (ITBIS Tasa 2) |
+| `3` | ITBIS Rate 3 (0%) (ITBIS Tasa 3) |
+| `4` | Exempt (Exento) - displayed as "E" in DGII documentation, but send value `4` |
+
+> [!CAUTION]
+> **Do not send "E"**: Although DGII documentation labels Exempt as "E", the field is NUM type. You must send the numeric value `4`, not the letter "E".
+
+---
+
+## Section E: Paginacion (Pagination)
+
+For printed representation, indicates which items appear on each page.
+
+> [!NOTE]
+> Each `<Pagina>` element is wrapped inside the `<Paginacion>` container.
+> Structure: `<Paginacion><Pagina>...</Pagina></Paginacion>`
+
+| # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----:|
+| 1 | `<PaginaNo>` | Page number | 3 | NUM | 1-100, sequential | I | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 2 | `<NoLineaDesde>` | Starting line | 3 | NUM | >0, ≤NoLineaHasta | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 3 | `<NoLineaHasta>` | Ending line | 3 | NUM | >0, ≥NoLineaDesde | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 4 | `<SubtotalMontoGravadoPagina>` | Page taxable subtotal | 18 | NUM | ≥0, 2 decimals | I | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 5 | `<SubtotalMontoGravado1Pagina>` | Page subtotal 18% | 18 | NUM | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 6 | `<SubtotalMontoGravado2Pagina>` | Page subtotal 16% | 18 | NUM | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 7 | `<SubtotalMontoGravado3Pagina>` | Page subtotal 0% | 18 | NUM | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 8 | `<SubtotalExentoPagina>` | Page exempt subtotal | 18 | NUM | ≥0, 2 decimals | I | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 0 | 2 |
+| 9 | `<SubtotalItbisPagina>` | Page ITBIS subtotal | 18 | NUM | ≥0, 2 decimals | I | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 10 | `<SubtotalItbis1Pagina>` | Page ITBIS 18% | 18 | NUM | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 11 | `<SubtotalItbis2Pagina>` | Page ITBIS 16% | 18 | NUM | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 12 | `<SubtotalItbis3Pagina>` | Page ITBIS 0% | 18 | NUM | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 13 | `<SubtotalImpuestoAdicionalPagina>` | Page addtl taxes | 18 | NUM | >0, 2 decimals | I | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+| — | `<SubtotalImpuestoAdicional>` | Addtl taxes container (AREA) | — | — | — | — | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+| 14 | `<SubtotalImpuestoSelectivoConsumoEspecificoPagina>` | Page ISC specific | 18 | NUM | >0, 2 decimals | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 15 | `<SubtotalOtrosImpuesto>` | Page other taxes | 18 | NUM | >0, 2 decimals | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+| 16 | `<MontoSubtotalPagina>` | Page subtotal | 18 | NUM | ≥0, 2 decimals | I | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 17 | `<SubtotalMontoNoFacturablePagina>` | Page non-billable | 18 | NUM | ≥0, 2 decimals | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+
+> [!WARNING]
+> **Foreign currency pagination tags**: The tags `SubtotalMontoGravadoPaginaOtraMoneda` and `MontoSubtotalPaginaOtraMoneda` from earlier versions may not be present in all PDF versions. Verify against your specific PDF version before implementing.
+
+> [!TIP]
+> **Type "NUM" for monetary fields**: The PDF uses NUM for all monetary fields. When the field contains decimals, the validation specifies "2 decimals". This is the DGII convention.
+
+---
+
+## Section F: InformacionReferencia (Reference Information)
+
+Used for Debit/Credit Notes (types 33, 34) to reference the modified invoice.
+
+| # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----:|
+| 1 | `<NCFModificado>` | Modified e-NCF | 11/13/19 | ALFA | Valid NCF/e-NCF format | I | 0 | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 2 | `<RNCOtroContribuyente>` | Other taxpayer RNC | 9/11 | NUM | Valid RNC (9 or 11 digits) | N | 0 | 0 | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 3 | `<FechaNCFModificado>` | Modified e-CF date | 10 | DATE | DD-MM-YYYY | N | 0 | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 4 | `<CodigoModificacion>` | Modification code | 1 | NUM | Values 1-5 | P | 0 | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 5 | `<RazonModificacion>` | Modification reason | 90 | ALFA | Free text (e.g., "price error") | N | 0 | 0 | 3 | 3 | 0 | 0 | 0 | 0 | 0 | 0 |
+
+**Modification Codes (CodigoModificacion):**
+
+| Code | Description | Applies To |
+|------|-------------|------------|
+| `1` | Full cancellation (Anula documento completo) | Credit/Debit Note |
+| `2` | Text correction (Corrige texto) | Credit/Debit Note |
+| `3` | Amount correction (Corrige montos) | Credit/Debit Note |
+| `4` | Contingency replacement (Reemplazo NCF emitido en contingencia) | Credit/Debit Note |
+| `5` | Consumer Invoice Reference (Referencia Factura de Consumo Electrónica) | Factura Crédito Fiscal only |
+
+> [!NOTE]
+> **Footnote 80**: Codes 1, 2, 3 apply only when issuing a credit or debit note.
+> 
+> **Footnote 81**: Code 5 applies only for Factura de Crédito Fiscal referencing a consumer invoice.
+
+---
+
+## Section G: Fecha y Hora de Firma Digital (Signature Timestamp)
+
+| # | Element | Description | Max | Type | Validation |
+|---|---------|-------------|-----|------|------------|
+| 1 | `<FechaHoraFirma>` | Signature timestamp | 19 | ALFANUM | DD-MM-YYYY HH:mm:ss, GMT-4. Must be ≤ current time. |
+
+---
+
+## Section H: Firma Digital (Digital Signature)
+
+| # | Element | Description | Obligatoriedad |
+|---|---------|-------------|----------------|
+| 1 | `<Signature>` | XML-DSig enveloped signature covering entire document | 1 (Mandatory) |
+
+See [Digital Signing Guide](../guides/digital-signing-guide.md) for implementation details.
+
+---
+
