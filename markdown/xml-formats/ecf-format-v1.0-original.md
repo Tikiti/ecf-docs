@@ -366,15 +366,294 @@ En la columna 'I' se pueden tener los siguientes valores:
 | | **Tabla de Impuestos Adicionales `<ImpuestosAdicionales>`¹⁷** | Se pueden incluir 20 repeticiones de pares código – valor.<br>Incluye los cinco campos siguientes: | | | a) Condicional a que exista otros(s) impuesto(s) en la línea de detalle distinto(s) al ITBIS. | | **2** | **2** | **2** | **2** | **0** | **0** | **2¹⁸** | **2** | **0** | **0** |
 | 105 | Código de Impuesto Adicional `<TipoImpuesto>` | Dato correspondiente al Código del impuesto adicional de acuerdo con la Tabla I (Codificación Tipos de Impuestos Adicionales). | 3 | NUM | a) Validar con Tabla I (Codificación Tipos de Impuestos Adicionales). | N | 2 | 2 | 2 | 2 | 0 | 0 | 2¹⁹ | 2 | 0 | 0 |
 | 106 | Tasa de Impuesto Adicional `<TasaImpuestoAdicional>` | Dato correspondiente a la Tasa del Impuesto Adicional.<br>Se debe indicar la tasa de Impuesto.²⁰ | 5 | NUM | a) Validar con Tabla I (Codificación Tipos de Impuestos Adicionales).<br>b) Si la tasa corresponde a los códigos entre 006 hasta 022 de la Tabla I (Codificación Tipos de Impuestos Adicionales), se debe validar que coincide con la tasa vigente en el período al que corresponda la fecha de emisión del e-CF (campo fecha emision). | N²¹ | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
-| 107 | Monto Impuesto Selectivo al Consumo Específico²² `<MontoImpuestoSelectivoConsumoEspecifico>` | Valor del impuesto selectivo al consumo (ISC) específico asociado al código de impuesto adicional. Condicional a que exista código del 006 al 022²³.<br>El cálculo del monto del ISC específico dependerá de la tasa correspondiente al código del impuesto en la Tabla I (Codificación Tipos de Impuestos Adicionales). | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; >0 (debe ser positivo).<br>b) Si el código del impuesto se encuentra entre 006 hasta 018 se debe verificar la unidad de medida del ítem, si es a granel (código 18) no se deberá calcular el Impuesto Selectivo al Consumo Específico.<br>c) Para los ítems con códigos 006 al 018 de la 'Tabla I (Codificación Tipos de Impuestos | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 107 | Monto Impuesto Selectivo al Consumo Específico²² `<MontoImpuestoSelectivoConsumoEspecifico>` | Valor del impuesto selectivo al consumo (ISC) específico asociado al código de impuesto adicional. Condicional a que exista código del 006 al 022²³.<br>El cálculo del monto del ISC específico dependerá de la tasa correspondiente al código del impuesto en la Tabla I (Codificación Tipos de Impuestos Adicionales). | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; >0 (debe ser positivo).<br>b) Si el código del impuesto se encuentra entre 006 hasta 018 se debe verificar la unidad de medida del ítem, si es a granel (código 18) no se deberá calcular el Impuesto Selectivo al Consumo Específico.<br>c) Para los ítems con códigos 006 al 018 de la 'Tabla I (Codificación Tipos de Impuestos Adicionales)' y unidad de medida distinta de granel, se debe multiplicar la cantidad de referencia por los grados de alcohol, por la tasa del impuesto indicada en la tabla para dicho código, por la subcantidad y cantidad.<br>d) Para los códigos del 019 al 022, se debe calcular multiplicando la cantidad por la cantidad de referencia, por la tasa del impuesto adicional indicado. | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 108 | Monto Impuesto Selectivo al Consumo Ad Valorem `<MontoImpuestoSelectivoConsumoAdvalorem>` | Valor del impuesto selectivo al consumo (ISC) ad valorem asociado al código de impuesto adicional. Condicional a que exista código del 023 al 039²⁴.<br>El cálculo del monto del ISC ad valorem dependerá de la tasa correspondiente al código del impuesto en la Tabla I (Codificación Tipos de Impuestos Adicionales). | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; >0 (debe ser positivo).<br>b) Si el código del impuesto se encuentra entre 023 hasta 035 se debe verificar la unidad de medida del ítem, si es a granel (código 18) se deberá calcular el Impuesto Selectivo Ad Valorem incrementando en un treinta por ciento (30%) el precio unitario del ítem (equivalente al precio de lista) por la cantidad ítem por la tasa del impuesto correspondiente.<br>c) Para los ítems con código entre 023-035 (ISC Ad valorem)²⁵, y unidad de medida distinta de granel, se debe dividir el precio unitario de referencia entre (1+tasa ITBIS tasa 1). Este resultado se debe restar del ISC Especifico Unitario²⁶ y este último resultado se debe dividir entre (1+tasa del impuesto adicional especificado), esto dará como resultado la base imponible del impuesto. Esta base (ISC Ad Valorem unitario) se deberá multiplicar por la cantidad, por la cantidad de referencia y por la tasa del impuesto correspondiente.<br>d) Cuando el código del impuesto adicional sea entre 036-039 según la 'Tabla de Codificación Tipos de Impuestos Adicionales' se debe calcular el impuesto dividiendo el precio unitario de referencia entre (1+tasa ITBIS tasa 1). Este resultado se debe restar la tasa del ISC Específico y el resultado se debe dividir entre (1+tasa del impuesto adicional especificado); esto dará como resultado la base imponible para el ISC Ad Valorem. Esta base se debe multiplicar por la cantidad, por la cantidad de referencia y por la tasa del impuesto correspondiente. | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 109 | Monto Otros Impuestos Adicionales `<OtrosImpuestosAdicionales>` | Valor del impuesto adicional asociado al código de impuesto adicional. Condicional a que exista código del 001 al 005.<br>El cálculo del monto del impuesto adicional dependerá de la tasa correspondiente al código del impuesto en la Tabla I (Codificación Tipos de Impuestos Adicionales). | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; >0 (debe ser positivo).<br>b) Si el código del impuesto se encuentra entre 001 al 005, se deben multiplicar los montos ítems por la tasa correspondiente al código de impuesto adicional.<br>c) Para los códigos 001, 002, 003 y 004, si el indicador monto gravado=1, se debe dividir el monto de ítem entre (1+ ITBIS tasa 1), y el resultado multiplicar por la tasa correspondiente al código de impuesto adicional.<br>d) Para los códigos 002 y 004, si el campo²⁷ 'Indicador Norma 10-07' de la sección Descuentos o Recargos es completado, se debe dividir la suma de los valores del monto ítem con indicador de facturación=1, entre (1+tasa ITBIS tasa 1+ tasa del código de impuesto adicional 002 + tasa del código de impuesto adicional 004), para luego multiplicar este resultado por la tasa correspondiente al código de impuesto adicional.<br>e) Si existe descuento global se debe multiplicar el porcentaje del monto ítem por línea²⁸ por el Monto Descuento (global), esto dará como resultado el monto de descuento aplicable para cada línea de detalle. | N²⁹ | 2 | 2 | 2 | 2 | 0 | 0 | 2²⁹ | 2 | 0 | 0 |
+| | **FIN TABLA** | **IMPUESTOS ADICIONALES** | | | | | | | | | | | | | | |
+
+
+**⚠️ Continuation from field 109 - Adding fields 110-119 to complete A.2 ÁREA TOTALES**
+
+*(Continuación de Tabla ÁREA TOTALES)*
+
+| # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----| 
+| 110 | Monto Total `<MontoTotal>` | Monto Gravado Total + Monto exento + Total ITBIS + Monto del Impuesto adicional. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; ≥ 0 (No puede ser negativo)<br>b) Valor numérico de acuerdo con el total de la sumatoria del campo de Descripción.<br>c) Si es completada la sección Paginación, el monto total debe ser igual a la sumatoria del campo 'Monto Subtotal Página' correspondiente a la sección.<br>d) Si se emite un e-CF tipo 34, el monto total deberá ser menor o igual al monto total del e-CF modificado.³⁰ | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 111 | Monto no Facturable `<MontoNoFacturable>` | Total de la suma de montos de bienes o servicios con Indicador de facturación=0.<br>Condicional a que en la línea de detalle exista algún ítem con indicador facturación igual a cero (0). | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales. (Puede ser negativo)<br>b) Valor numérico de acuerdo con el total sumatoria monto ítem con indicador de facturación=0. | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 2 | 0 |
+| 112 | Monto Período `<MontoPeriodo>` | Total de la suma de Monto Total y Monto no Facturable. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales. (Puede ser negativo)<br>b) Monto período= Monto Total+Monto No Facturable. | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 113 | Saldo Anterior `<SaldoAnterior>` | Saldo Anterior. Se incluye sólo con fines de ilustrar con claridad el cobro. | 18 | NUM | Valor numérico de 16 enteros, dos decimales. (Puede ser negativo). | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 114 | Monto Avance de pago `<MontoAvancePago>` | Pago parcial por adelantado de la factura que se emite. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales. >0 (No puede ser negativo) | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 115 | Valor a pagar `<ValorPagar>` | Valor cobrado. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales. (Puede ser negativo o cero)<br>b) Valor a pagar= Monto total-Monto Avance de pago ± Saldo Anterior (± atendiendo si el valor es positivo o negativo).<br>c) Si el campo 'Indicador Norma 10-07' de la sección Descuento o Recargo es completado, entonces: Valor a pagar= Monto total-Monto descuento³¹- Monto Avance de pago ± Saldo Anterior (± atendiendo si el valor es positivo o negativo). | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 116 | Total Monto ITBIS Retenido `<TotalITBISRetenido>` | Monto del ITBIS correspondiente a la retención que será realizada por el comprador. Condicional a que en la línea de detalle exista retención. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales, ≥0 (No puede ser negativo)<br>b) Campo Monto ITBIS Retenido de la sección Detalle de B. o S. | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
+| 117 | Total Monto Retención Renta `<TotalISRRetencion>` | Monto del Impuesto Sobre la Renta correspondiente a la retención realizada de la prestación o locación de servicios. Condicional a que en la línea de detalle exista retención. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales, ≥0 (No puede ser negativo)<br>b) Monto Retención Renta de la sección Detalle de B. o S. | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 |
+| 118 | Total Monto ITBIS Percibido³² `<TotalITBISPercepcion>` | Monto del ITBIS que el contribuyente cobra a terceros como adelanto del impuesto que éste percibirá en sus operaciones. Condicional a que en la línea de detalle exista percepción. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales, >0 (No puede ser negativo) | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
+| 119 | Total Monto Percepción Renta `<TotalISRPercepcion>` | Monto del Impuesto Sobre la Renta que el contribuyente cobra a terceros como adelanto del impuesto que éste percibirá en sus operaciones. Condicional a que en la línea de detalle exista percepción. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; >0 (No puede ser negativo) | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
+| | **FIN ÁREA** | **TOTALES ENCABEZADO** | | | | | | | | | | | | | | |
 
 ---
 
-**⚠️ CONTINUATION POINT:** A.2 ÁREA TOTALES incomplete. **Resume at field 108** (Monto Impuesto Selectivo al Consumo Ad Valorem).
-
-**Remaining in A.2:** Fields 108-119 (12 fields) - includes complex tax calculations, retentions, and final totals.
+**✅ A.2 ÁREA TOTALES COMPLETADO** (Fields 92-119 = 28 fields)
 
 ---
+
+### A.7 ÁREA: OTRA MONEDA `<OtraMoneda>`
+
+**Condicional a que la facturación sea en Otra Moneda.**
+
+| # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----| 
+| | **ÁREA OTRA MONEDA ENCABEZADO `<OtraMoneda>`** | Condicional a que la facturación sea en Otra Moneda. | | | | | **2** | **2** | **2** | **2** | **2** | **2** | **2** | **2** | **2** | **2** |
+| 120 | Código Otra moneda `<TipoMoneda>` | Moneda alternativa en que se expresan los Montos. Condicional a que la facturación sea realizada en moneda extranjera.³³<br>Este campo debe tener uno de los valores indicados en la 'Tabla Codificación Monedas'. Por ejemplo: "USD" o "EUR", etc. | 3 | ALFA | a) Validar con la Tabla II (Codificación Monedas). | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 121 | Tipo de Cambio `<TipoCambio>` | Factor de conversión utilizado.<br>Condicional a que existan datos en código otra moneda. | 7 | NUM | a) Valor numérico de 3 enteros y 4 decimales; > 0. (Debe ser positivo) | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 122 | Monto gravado total Otra Moneda `<MontoGravadoTotalOtraMoneda>` | Total de la suma de valores de Monto gravado ITBIS Otra Moneda a diferentes tasas.<br>Condicional a que exista datos en código otra moneda y Monto gravado ITBIS en otra moneda a distintas tasas (18%, 16% y 0%). | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥ 0 (No puede ser negativo)<br>b) Valor numérico de la sumatoria del total Monto gravado ITBIS Tasa1 Otra Moneda + Monto gravado ITBIS Tasa 2 Otra Moneda +Monto gravado ITBIS Tasa3 Otra Moneda. | N³⁴ | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 123 | Monto gravado ITBIS Tasa 1 Otra Moneda `<MontoGravado1OtraMoneda>` | Total de la suma de valores de Ítems gravados asignados a ITBIS tasa 1 (tasa 18%), menos descuentos en Otra Moneda más recargos en Otra Moneda³⁵. (Asignados a ítem gravados en Otra Moneda).<br>Condicional a que exista datos en código otra moneda y el ítem contenga indicador de facturación igual a 1. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥ 0 (No puede ser negativo).<br>b) Suma de valores del monto ítem con indicador de facturación=1, menos descuentos en Otra Moneda más recargos en Otra Moneda.<br>c) Si el indicador monto gravado=1, se debe dividir el resultado por (1+tasa ITBIS tasa 1) | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 124 | Monto gravado ITBIS Tasa 2 Otra Moneda `<MontoGravado2OtraMoneda>` | Total de la suma de valores de Ítems gravados asignados a ITBIS tasa 2 en Otra Moneda (tasa 16%), menos descuentos en Otra Moneda más recargos en Otra Moneda. (Asignados a ítem gravados en Otra Moneda).<br>Condicional a que exista datos en código otra moneda y el ítem contenga indicador de facturación igual a 2. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥ 0 (No puede ser negativo).<br>b) Suma de valores del monto ítem con indicador de facturación=2, menos descuentos en Otra Moneda más recargos en Otra Moneda. | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 125 | Monto gravado ITBIS Tasa 3 Otra Moneda `<MontoGravado3OtraMoneda>` | Total de la suma de valores de Ítems gravados asignados a ITBIS tasa 3 en Otra Moneda (tasa 0%), menos descuentos en Otra Moneda más recargos en Otra Moneda. (Asignados a ítem gravados en Otra Moneda).<br>Condicional a que exista datos en código otra moneda y el ítem contenga indicador de facturación igual a 3. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥ 0 (No puede ser negativo).<br>b) Suma de valores del monto ítem con indicador de facturación=3, menos descuentos en Otra Moneda más recargos en Otra Moneda. | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 126 | Monto exento en Otra Moneda `<MontoExentoOtraMoneda>` | Total de la suma de valores de ítems exentos, menos descuentos en Otra Moneda más recargos en Otra Moneda (asignados a ítems exentos).<br>Condicional a que exista datos en código otra moneda y el ítem contenga indicador de facturación igual a 4. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥ 0 (No puede ser negativo).<br>Suma de valores del monto ítem con indicador de facturación=4, menos descuentos en Otra Moneda más recargos en Otra Moneda. | N | 2 | 2 | 2 | 2 | 2 | 2³⁶ | 2 | 2 | 0 | 2 |
+| 127 | Total ITBIS en Otra Moneda `<TotalITBISOtraMoneda>` | Total de la suma de valores de ITBIS en Otra Moneda a diferentes tasas. Condicional a que exista Total ITBIS Tasa 1 en Otra Moneda, y/o Total ITBIS Tasa 2 en Otra Moneda y/o Total ITBIS Tasa 3 en Otra Moneda. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥ 0 (No puede ser negativo).<br>b) Suma de Total ITBIS Tasa 1 en Otra Moneda + Total ITBIS Tasa 2 en Otra Moneda + Total ITBIS Tasa 3 en Otra Moneda. | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 128 | Total ITBIS Tasa 1 en Otra Moneda `<TotalITBIS1OtraMoneda>` | Valor numérico igual a Monto Gravado ITBIS en Otra Moneda Tasa1*tasa ITBIS 1. Condicional a que exista Monto gravado ITBIS Tasa 1 Otra Moneda.<br>Condicional a que exista Monto Gravado tasa 1 en Otra Moneda. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales≥ 0 (No puede ser negativo).<br>Total ITBIS Tasa1 en Otra Moneda= Monto Gravado ITBIS tasa1 Otra Moneda*ITBIS tasa 1.³⁷ | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 129 | Total ITBIS Tasa 2 en otra moneda `<TotalITBIS2OtraMoneda>` | Valor numérico igual a Monto Gravado ITBIS en Otra Moneda Tasa2*tasa ITBIS 2.<br>Condicional a que exista Monto gravado ITBIS Tasa 2 Otra Moneda. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; ≥0 (No puede ser negativo).<br>Total ITBIS Tasa 2 en Otra Moneda= Monto Gravado ITBIS tasa2 Otra Moneda*ITBIS tasa 2. | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 130 | Total ITBIS Tasa 3 en otra moneda `<TotalITBIS3OtraMoneda>` | Valor numérico igual a Monto Gravado ITBIS en Otra Moneda Tasa3*tasa ITBIS 3. Condicional a que exista Monto gravado ITBIS Tasa 3 Otra Moneda. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; ≥ 0 (No puede ser negativo). | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 131 | Monto del Impuesto Adicional en Otra Moneda³⁸ `<MontoImpuestoAdicionalOtraMoneda>` | Sumatoria de los campos Monto Impuesto Selectivo al Consumo Específico en Otra Moneda, Monto Impuesto Selectivo Ad Valorem en Otra Moneda y Monto Otros Impuestos Adicionales en Otra Moneda.<br>Condicional a que exista datos en código otra moneda y exista al menos unos de los campos de Monto Impuesto Selectivo al Consumo Específico en Otra Moneda, Monto Impuesto Selectivo Ad Valorem en Otra Moneda y/o Monto Otros Impuestos Adicionales en Otra Moneda. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; >0 (debe ser positivo).<br>b) Monto del Impuesto Adicional en Otra Moneda= Monto Impuesto Selectivo al Consumo Específico en Otra Moneda + Monto Impuesto Selectivo Ad Valorem en Otra Moneda + Monto Otros Impuestos Adicionales en Otra Moneda. | N | 2 | 2 | 2 | 2 | 0 | 0 | 2³⁹ | 2 | 0 | 0 |
+| | **Tabla de Impuestos Adicionales en Otra moneda: `<ImpuestosAdicionalesOtraMoneda>`⁴⁰** | Se pueden incluir 20 repeticiones de pares código – valor. Incluye los cinco campos siguientes: | | | Condicional a que exista otros(s) impuesto(s) en la línea de detalle distinto(s) al ITBIS y este completado el campo | | **2** | **2** | **2** | **2** | **0** | **0** | **2** | **2** | **0** | **0** |
+| 132 | Código de Impuesto adicional en Otra Moneda `<TipoImpuestoOtraMoneda>` | Dato correspondiente al Código del impuesto adicional de acuerdo con la 'Tabla de Codificación Tipos de Impuestos Adicionales'.⁴¹ | 3 | NUM | a) Validar con Tabla I (Codificación Tipos de Impuestos Adicionales) | N | 2 | 2 | 2 | 2 | 0 | 0 | 2⁴² | 2 | 0 | 0 |
+| 133 | Tasa de Impuesto adicional en Otra Moneda `<TasaImpuestoAdicionalOtraMoneda>` | Dato correspondiente a la Tasa del Impuesto Adicional. Se debe indicar la tasa de Impuesto. | 5 | NUM | a) Validar con Tabla I (Codificación Tipos de Impuestos Adicionales) | N⁴³ | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+| 134 | Monto Impuesto Selectivo al Consumo Específico en Otra Moneda `<MontoImpuestoSelectivoConsumoEspecificoOtraMoneda>` | Valor del campo Monto Impuesto Selectivo al Consumo Específico referenciado al tipo de cambio del código Otra Moneda especificado. Condicional a que exista código de impuesto adicional del 006 al 022, este completado el campo código otra moneda y el campo Monto Impuesto Selectivo Específico.⁴⁴ | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; >0 (debe ser positivo).<br>b) Valor del campo Monto Impuesto Selectivo al Consumo Específico dividiendo por la tasa especificada en el campo Tipo de Cambio. | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 135 | Monto Impuesto Selectivo al Consumo Ad Valorem en Otra Moneda `<MontoImpuestoSelectivoConsumoAdvaloremOtraMoneda>` | Valor del campo Monto Impuesto Selectivo al Consumo Ad Valorem referenciado al tipo de cambio del código Otra Moneda especificado. Condicional a que exista código de impuesto adicional del 023 al 039, este completado el campo código otra moneda y el campo Monto Impuesto Selectivo Ad Valorem.⁴⁵ | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; >0 (debe ser positivo).<br>a) Valor del campo Monto Impuesto Selectivo Ad Valorem dividiendo por la tasa especificada en el campo Tipo de Cambio. | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 136 | Monto Otros Impuestos Adicionales en Otra Moneda `<OtrosImpuestosAdicionalesOtraMoneda>` | Valor del Monto Impuesto Adicionales referenciado al tipo de cambio del código Otra Moneda especificado.<br>Condicional a que exista código de impuesto adicional del 001 al 005, este completado el campo código otra moneda y el campo Monto Otros Impuestos Adicionales.⁴⁶ | 18 | NUM | b) Valor numérico de 16 enteros, dos decimales; >0 (debe ser positivo).<br>c) Valor del campo Monto Otros Impuesto Adicional dividiendo por la tasa especificada en el campo Tipo de Cambio. | N | 2 | 2 | 2 | 2 | 0 | 0 | 2⁴⁷ | 2 | 0 | 0 |
+| | **FIN TABLA** | **IMPUESTOS ADICIONALES** | | | | | | | | | | | | | | |
+| 137 | Monto Total en Otra Moneda `<MontoTotalOtraMoneda>` | Monto gravado total en Otra Moneda + Monto exento en Otra Moneda+ Total ITBIS en Otra Moneda+ Monto del Impuesto Adicional en Otra Moneda.<br>Condicional a que exista al menos un monto en otra moneda. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; ≥ 0 (no puede ser negativo).<br>b) Valor numérico de acuerdo con el total sumatoria del campo de Descripción. | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| | **FIN ÁREA** | **OTRA MONEDA ENCABEZADO** | | | | | | | | | | | | | | |
+
+---
+
+**✅ A.7 ÁREA OTRA MONEDA COMPLETADO** (Fields 120-137 = 18 fields)
+
+---
+
+## B. DETALLE DE BIENES O SERVICIOS
+
+### ÁREA: DETALLES ÍTEM `<DetallesItem>`
+
+**Este ÁREA es obligatoria para todos los tipos de e-CF.**
+
+### ÁREA: ÍTEM `<Item>`
+
+**Se pueden incluir hasta 100 repeticiones.**
+
+| # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----| 
+| | **ÁREA DETALLES ÍTEM `<DetallesItem>`** | | | | | | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** |
+| | **ÁREA ÍTEM `<Item>`** | Se pueden incluir hasta 100 repeticiones. | | | | | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** | **1** |
+| 1 | N° de Línea o N° Secuencial `<NumeroLinea>` | Línea que numera el ítem. Desde 1 a 100 repeticiones.⁴⁸ | 5 | NUM | a) Número secuencial de la línea. | N | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| | **Tabla de Códigos de Ítem `<TablaCodigosItem>`** | Se pueden incluir 5 repeticiones de pares código – valor. Incluye los dos campos siguientes: | | | | | **3** | **3** | **3** | **3** | **3** | **3** | **3** | **3** | **3** | **3** |
+| 2 | Tipo Código `<TipoCodigo>` | Tipo de codificación utilizada para el ítem<br>Standard: EAN, PLU, DUN o Interna<br>(Hasta 5 tipos de códigos) | 14 | ALFANUM | a) Sin validación. | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 3 | Código del Ítem `<CodigoItem>` | Código del ítem de acuerdo a tipo de codificación indicada en campo anterior.<br>(Hasta 5 códigos) | 35 | ALFANUM | a) Sin validación. | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| | **FIN TABLA** | **CÓDIGOS ÍTEM** | | | | | | | | | | | | | | |
+| 4 | Indicador de Facturación `<IndicadorFacturacion>` | Indica si el ítem es exento, si es gravado, o No facturable. Indicará las distintas tasas:<br>0: No Facturable<br>ITBIS 1: ítem gravado a ITBIS tasa1 (18%).<br>ITBIS 2: ítem gravado a ITBIS tasa2 (16%).<br>ITBIS 3: ítem gravado a ITBIS tasa3 (0%).<br>E: Exento | 1 | NUM | a) Indicar si es valor<br>0: No Facturable<br>1: ITBIS 1 (18%)<br>2: ITBIS 2 (16%)<br>3: ITBIS 3 (0%)<br>4: Exento (E) | P⁴⁹ | 1 | 1 | 1 | 1 | 1 | 1⁵⁰ | 1 | 1 | 1⁵¹ | 1 |
+| | **ÁREA `<Retencion>`** | **RETENCIÓN** | | | Condicional a que exista retención. | | **2** | **0** | **2** | **2** | **1** | **0** | **0** | **0** | **0** | **1** |
+| 5 | Indicador Agente de Retención o Percepción⁵² `<IndicadorAgenteRetencionoPercepcion>` | Para Agentes de Retención o Percepción. Indica para cada transacción si es agente retenedor del producto que está vendiendo o el servicio. Condicional a que exista retención. | 1 | NUM | a) Codificación:<br>1: "R"<br>2: "P" | N | 2 | 0 | 2 | 2 | 1 | 0 | 0 | 0 | 0 | 1 |
+| 6 | Monto ITBIS Retenido `<MontoITBISRetenido>` | Monto del ITBIS correspondiente a la retención que será realizado por el comprador. Condicional a que exista retención.⁵³ | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales, ≥0. | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
+| 7 | Monto Retención Renta `<MontoISRRetenido>` | Monto del Impuesto Sobre la Renta correspondiente a la retención realizada de la prestación o locación de servicios.<br>El e-CF tipo 41 es condicional a que exista retención y el 'Indicador Bien o Servicio' sea igual a 2. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales, ≥0.<br>b) El e-CF tipo 41 es condicional a que exista retención y el 'Indicador Bien o Servicio' sea igual a 2. | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 1 |
+| | **FIN ÁREA** | **RETENCIÓN** | | | | | | | | | | | | | | |
+| 8 | Nombre del Ítem `<NombreItem>` | Nombre del producto o servicio. | 80 | ALFANUM | a) Sin validación. | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 9 | Indicador Bien o Servicio `<IndicadorBienoServicio>` | Identifica si el ítem corresponde a Bien o Servicio. | 1 | NUM | a) Indicar si es Valor:<br>1: Bien<br>2: Servicio | N | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1⁵⁴ |
+| 10 | Descripción Adicional `<DescripcionItem>` | Descripción Adicional del ítem. | 1000 | ALFANUM | a) Sin validación | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 11 | Cantidad `<CantidadItem>` | Cantidad del ítem⁵⁵ | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; >0 (No puede ser negativo). | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 12 | Unidad de Medida Ítem `<UnidadMedida>` | Indica la unidad de medida que está expresada la cantidad. | 2 | NUM | a) Validar con la Tabla de Codificación de Unidad de medida. | P | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 13 | Cantidad de Referencia `<CantidadReferencia>` | Cantidad para la unidad de medida de referencia (no se usa para el cálculo del Monto Ítem).<br>Condicional a que el ítem esté gravado con códigos de impuestos adicionales entre 006-022 en la Tabla de Codificación Tipo de Impuestos Adicional.⁵⁶ | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0 (No puede ser negativo). | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 14 | Unidad de Referencia `<UnidadReferencia>` | Indica la unidad de medida de referencia.<br>Condicional a que esté completado el campo Cantidad de referencia. | 2 | NUM | a) Validar con la Tabla IV (Codificación de Unidad de medida). | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| | **Tabla de Distribución de Subcantidad `<TablaSubcantidad>`⁵⁷** | Se deberá incluir esta tabla para fines del cálculo de los impuestos selectivos al consumo a productos derivados de alcohol y cervezas y productos del tabaco y cigarrillos.<br>Condicional a que exista código desde 006 hasta 039 según la 'Tabla de Codificación Tipos de Impuestos Adicionales'.<br>Se pueden incluir 5 repeticiones de pares cantidad – código. Incluye los dos campos siguientes: | | | | N | **2** | **2** | **2** | **2** | **0** | **0** | **0** | **2** | **0** | **0** |
+| 15 | Subcantidad `<Subcantidad>` | Cantidad de unidades de referencia que tiene la unidad del ítem.<br>Condicional a que el ítem esté gravado con códigos de impuestos adicionales desde 006 hasta 022 en la Tabla de Codificación Tipo de Impuestos Adicional.⁵⁸ | 19 | NUM | a) Valor numérico de 16 enteros, 3 decimales; ≥0 (No puede ser negativo). | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 16 | Código subcantidad `<CodigoSubcantidad>` | Indica la unidad de medida de la subcantidad. | 2 | NUM | a) Validar con la Tabla IV (Codificación de Unidad de medida). | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| | **FIN TABLA** | **SUBCANTIDAD** | | | | | | | | | | | | | | |
+| 17 | Grados Alcohol en %⁵⁹ `<GradosAlcohol>` | Corresponde al porcentaje de alcohol en el volumen de concentración total alcohólica por unidad de producto. Condicional a que el ítem esté gravado con códigos de impuestos adicionales 006 hasta 018 en la Tabla de Codificación Tipo de Impuestos Adicional (bebidas alcohólicas). | 5 | NUM | a) Valor numérico de 3 enteros y 2 decimales; >0. (Debe ser positivo) | I | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 18 | Precio Unitario de Referencia⁶⁰ `<PrecioUnitarioReferencia>` | Precio unitario para la unidad de medida de referencia (no se usa para el cálculo del monto Total).<br>Condicional a que el ítem esté gravado con códigos de impuestos adicionales desde 023 hasta 039 en la Tabla de Codificación Tipo de Impuestos Adicional. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales. >0 (No puede ser negativo) | I | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
+| 19 | Fecha Elaboración `<FechaElaboracion>` | Dato correspondiente a la fecha de elaboración del ítem. | 10 | ALFANUM | a) Fecha válida<br>Formato: (dd-MM-AAAA) | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| 20 | Fecha Vencimiento `<FechaVencimientoItem>` | Dato correspondiente a la fecha de vencimiento del ítem. | 10 | ALFANUM | a) Fecha válida<br>Formato: (dd-MM-AAAA) | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| | **ÁREA `<Mineria>`** | **MINERÍA.**<br>Condicional a que exista facturación relacionado al sector minería. | | | | | **0** | **2** | **2** | **2** | **0** | **0** | **0** | **0** | **2** | **0** |
+| 21 | Peso Neto Kilogramo `<PesoNetoKilogramo>` | Indica el peso neto en kilogramo del mineral.⁶¹ | 19 | NUM | a) Valor numérico de 16 enteros, 3 decimales; ≥0 (No puede ser negativo). | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+| 22 | Peso Neto `<PesoNetoMineria>` | Indica el peso neto del mineral.⁶² | 19 | NUM | a) Valor numérico de 16 enteros, 3 decimales; ≥0 (No puede ser negativo). | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+| 23 | Tipo Afiliación `<TipoAfiliacion>` | Indica si el destinatario es o no afiliada.⁶³ | 1 | NUM | a) Indica si es valor:<br>1: Afiliada<br>2: No afiliada | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+| 24 | Liquidación `<Liquidacion>` | Indica si la liquidación del mineral es provisional o final.⁶⁴ | 1 | NUM | a) Indica si es valor:<br>1: Provisional<br>2: Final | N | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 0 |
+| | **FIN ÁREA** | **MINERÍA** | | | | | | | | | | | | | | |
+| 25 | Precio Unitario del Ítem⁶⁵ `<PrecioUnitarioItem>` | Dato correspondiente al precio unitario del ítem. | 20 | NUM | a) Valor numérico de 16 enteros, 4 decimales; ≥0 (No puede ser negativo). | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 26 | Monto Descuento `<DescuentoMonto>` | Totaliza todos los subdescuentos otorgados al ítem en montos. Condicional a que exista Monto Subdescuento. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0 (No puede ser negativo).<br>b) Monto Subdescuento | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| | **Tabla de Distribución de Subdescuento `<TablaSubDescuento>`⁶⁶** | Condicional a que exista descuento en el ítem. Se pueden incluir 12 repeticiones. Incluye los tres campos siguientes: | | | | N | **2** | **2** | **2** | **2** | **2** | **0** | **2** | **2** | **2** | **0** |
+| 27 | Tipo de Subdescuento `<TipoSubDescuento>` | Indica si el Subdescuento está en monto ($) o porcentaje (%). Condicional a que exista descuento en el ítem. | 1 | ALFA | a) "$" o "%" | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 28 | Subdescuento en % `<SubDescuentoPorcentaje>` | Valor del Subdescuento en porcentaje %. Condicional a que exista tipo Subdescuento en porcentaje (%). | 5 | NUM | a) Valor numérico. 3 enteros y 2 decimales; >0 (No puede ser negativo) | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 29 | Monto Subdescuento `<MontoSubDescuento>` | Correspondiente al valor del descuento expresado en monto.<br>Si va el subdescuento en %, deberá ir el monto del subdescuento. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales. ≥0 (No puede ser negativo).<br>b) Si va el subdescuento en %, el valor del subdescuento en monto deberá ser igual al precio unitario de ítem por el subdescuento en porcentaje, por la cantidad de ítems. | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| | **FIN TABLA** | **SUBDESCUENTO** | | | | | | | | | | | | | | |
+| 30 | Monto Recargo `<RecargoMonto>` | Totaliza todos los Subrecargos otorgados al ítem en montos. Condicional a que exista Monto Subrecargo. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0 (No puede ser negativo).<br>b) Monto Subrecargo. | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| | **Tabla de Distribución de Subrecargo `<TablaSubRecargo>`⁶⁷** | Condicional a que exista recargo en el ítem. Se pueden incluir 12 repeticiones de pares Tipo – Valor. Incluye los tres campos siguientes: | | | | N | **2** | **2** | **2** | **2** | **2** | **0** | **2** | **2** | **2** | **0** |
+| 31 | Tipo Subrecargo `<TipoSubRecargo>` | Indica si el Subrecargo está en $ o %. Condicional a que exista recargo en el ítem. | 1 | ALFA | "$" o "%" | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 32 | Subrecargo en % `<SubRecargoPorcentaje>` | Valor del Subrecargo en porcentaje %. Condicional a que exista tipo Subrecargo en porcentaje (%). | 5 | NUM | a) Valor numérico, 3 enteros y 2 decimales; >0 (No puede ser negativo) | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 33 | Monto Subrecargo `<MontoSubRecargo>` | Correspondiente al valor del Subrecargo expresado en monto. Condicional a que exista subrecargo.<br>Si va el subrecargo en %, deberá ir el monto del subrecargo. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0 (No puede ser negativo).<br>b) Si va el subrecargo en %, el valor del subrecargo en monto deberá ser igual al precio unitario del ítem por el valor del subrecargo en porcentaje, por la cantidad de ítems. | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| | **FIN TABLA** | **SUBRECARGO** | | | | | | | | | | | | | | |
+| | **Tabla de Códigos de Impuestos Adicionales `<TablaImpuestoAdicional>`⁶⁸** | Se pueden incluir 2 repeticiones de códigos de impuesto. | | | | | **2** | **2** | **2** | **2** | **0** | **0** | **2⁶⁹** | **2** | **0** | **0** |
+| 34 | Código de Impuesto Adicional `<TipoImpuesto>` | Dato correspondiente al Código del impuesto adicional de acuerdo a la Tabla de Codificación Tipos de Impuestos Adicionales (Tabla I). Condicional a que el ítem este gravado con Impuesto Adicional.⁷⁰ | 3 | NUM | Código válido respecto a la Tabla I (Codificación Tipos de Impuestos Adicionales). | N | 2 | 2 | 2 | 2 | 0 | 0 | 2⁷¹ | 2 | 0 | 0 |
+| | **FIN TABLA** | **IMPUESTOS ADICIONALES** | | | | | | | | | | | | | | |
+| | **ÁREA `<OtraMonedaDetalle>`** | **OTRA MONEDA DETALLE.**<br>Indicar precios en monedas alternativas.⁷² | | | | | **2** | **2** | **2** | **2** | **2** | **2** | **2** | **2** | **2** | **2** |
+| 35 | Precio unitario en otra moneda `<PrecioOtraMoneda>` | Dato correspondiente al precio Unitario del Ítem en otra moneda. Condicional a que el ítem sea en Otra Moneda. | 20 | NUM | a) Valor numérico de 16 enteros, 4 decimales. ≥0 (No puede ser negativo). | N⁷³ | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 36 | Descuento en Otra Moneda `<DescuentoOtraMoneda>` | Corresponde al valor de descuento otorgado en Otra Moneda. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales. ≥0 (No puede ser negativo). | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 37 | Recargo en Otra Moneda `<RecargoOtraMoneda>` | Corresponde el valor de recargo otorgado en Otra Moneda. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales. ≥0 (No puede ser negativo). | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 38 | Monto Ítem Otra Moneda `<MontoItemOtraMoneda>` | (Precio Unitario en otra moneda * Cantidad) – Descuento en otra moneda + Recargo en otra moneda.<br>Condicional a que el Precio del ítem y Descuentos o Recargo (si existen) sean en Otra Moneda. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales. ≥0 (No puede ser negativo).<br>b) Valor numérico de acuerdo al campo de Descripción. | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| | **FIN ÁREA** | **OTRA MONEDA DETALLE** | | | | | | | | | | | | | | |
+| 39 | Monto Ítem (Valor por la línea de detalle) `<MontoItem>` | (Precio Unitario del ítem * Cantidad) – Monto Descuento + Monto Recargo | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥ 0 (No puede ser negativo).<br>b) Valor numérico, de acuerdo con descripción.<br>c) Debe ser cero cuando: es una Nota de Crédito para fines de corrección de texto.⁷⁴<br>Cuando es cero puede no imprimirse o imprimirse un texto explicativo (sin valor, sin costo, etc.) | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| | **FIN ÁREA** | **ÍTEM** | | | | | | | | | | | | | | |
+| | **FIN ÁREA** | **DETALLES ÍTEM** | | | | | | | | | | | | | | |
+
+---
+
+**✅ SECTION B: DETALLE DE BIENES O SERVICIOS COMPLETADO!** (Fields 1-39 = 39 fields)
+
+---
+
+## C. SUBTOTALES INFORMATIVOS
+
+### ÁREA: SUBTOTALES `<Subtotales>`
+
+**Sección opcional para agrupar ítems informativamente. Obligatoriedad código 3 para todos los e-CF.**
+
+### ÁREA: SUBTOTAL `<Subtotal>`
+
+**Se pueden incluir hasta 20 repeticiones.**
+
+| # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----| 
+| | **ÁREA SUBTOTALES `<Subtotales>`** | | | | | | **3** | **3** | **3** | **3** | **3** | **3** | **3** | **3** | **3** | **3** |
+| | **ÁREA SUBTOTAL `<Subtotal>`** | Se pueden incluir hasta 20 repeticiones. | | | | | **3** | **3** | **3** | **3** | **3** | **3** | **3** | **3** | **3** | **3** |
+| 1 | Número Subtotal `<NumeroSubTotal>` | Número de Subtotal | 2 | NUM | a) Número secuencial de acuerdo al número de subtotales | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 2 | Descripción `<DescripcionSubtotal>` | Título del Subtotal | 40 | ALFA | a) Sin validación. | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 3 | Orden `<Orden>` | Ubicación para Impresión. De uso para el contribuyente como ayuda para indicar cómo imprimirá Subtotales. | 2 | NUM | a) Sin validación. | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 4 | Subtotal Monto Gravado ITBIS Total `<SubTotalMontoGravadoTotal>` | Valor de la sumatoria del Subtotal Monto Gravado ITBIS Tasa 1, ITBIS Tasa 2 e ITBIS Tasa 3; en DOP$ u otra moneda. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0 | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 0 |
+| 5 | Subtotal Monto Gravado ITBIS Tasa 1 `<SubTotalMontoGravadoI1>` | Valor del monto gravado del Subtotal asignados a ítem con ITBIS tasa 1(18%); en DOP$ u otra moneda. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0 | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 0 | 0 |
+| 6 | Subtotal Monto Gravado ITBIS Tasa 2 `<SubTotalMontoGravadoI2>` | Valor del monto gravado del Subtotal asignados a ítem con ITBIS tasa 2 (16%); en DOP$ u otra moneda. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0 | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 0 | 0 |
+| 7 | Subtotal Monto Gravado ITBIS Tasa 3 `<SubTotalMontoGravadoI3>` | Valor del monto gravado del Subtotal asignados a ítem con ITBIS tasa 3 (0%); en DOP$ u otra moneda. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0 | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 0 |
+| 8 | Subtotal ITBIS `<SubTotaITBIS>` | Valor de la sumatoria del Subtotal ITBIS Tasa 1, subtotal ITBIS Tasa 2 y Subtotal ITBIS Tasa 3; en DOP$ u otra moneda. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0 | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 0 |
+| 9 | Subtotal ITBIS Tasa 1 `<SubTotaITBIS1>` | Valor del total de ITBIS tasa 1 del Subtotal; en DOP$ u otra moneda. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0 | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 0 | 0 |
+| 10 | Subtotal ITBIS Tasa 2 `<SubTotaITBIS2>` | Valor del total de ITBIS tasa 2 del Subtotal; en DOP$ u otra moneda. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0 | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 0 | 0 |
+| 11 | Subtotal ITBIS Tasa 3 `<SubTotaITBIS3>` | Valor del total de ITBIS tasa 3 del Subtotal; en DOP$ u otra moneda. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0 | N | 3 | 3 | 3 | 3 | 3 | 0 | 0 | 3 | 3 | 0 |
+| 12 | Subtotal Impuestos adicionales `<SubTotalImpuestoAdicional>` | Valor de los Impuestos adicionales del Subtotal. Aplica en subtotales en DOP$ u otra moneda. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; >0 | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 0 | 0 |
+| 13 | Subtotal Exento `<SubTotalExento>` | Valor Exento del Subtotal. Aplica en subtotales en DOP$ u otra moneda. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0 | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 0 | 3 |
+| 14 | Monto del Subtotal `<MontoSubTotal>` | Valor de la línea de subtotal. Corresponde a la sumatoria de Subtotal Monto Gravado ITBIS Total, Subtotal ITBIS, Subtotal Impuestos adicionales y/o Subtotal Exento. Aplica en subtotales en DOP$ u otra moneda. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0 | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 15 | Líneas `<Lineas>` | Indica la cantidad de líneas que se subtotaliza. | 2 | NUM | a) De acuerdo a descripción del campo. | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| | **FIN ÁREA** | **SUBTOTAL** | | | | | | | | | | | | | | |
+| | **FIN ÁREA** | **SUBTOTALES** | | | | | | | | | | | | | | |
+
+---
+
+**✅ SECTION C: SUBTOTALES INFORMATIVOS COMPLETADO!** (Fields 1-15 = 15 fields)
+
+---
+
+## D. DESCUENTOS O RECARGOS
+
+### ÁREA: DESCUENTOS O RECARGOS `<DescuentosORecargos>`
+
+**Descuentos o recargos globales aplicados al e-CF completo (no a ítems individuales).**
+
+### ÁREA: DESCUENTO O RECARGO `<DescuentoORecargo>`
+
+**Se pueden incluir hasta 20 repeticiones.**
+
+| # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----| 
+| | **ÁREA DESCUENTOS O RECARGOS `<DescuentosORecargos>`** | | | | | | **2** | **2** | **2** | **2** | **2** | **0** | **2** | **2** | **2** | **0** |
+| | **ÁREA DESCUENTO O RECARGO `<DescuentoORecargo>`** | Se pueden incluir hasta 20 repeticiones. | | | | | **2** | **2** | **2** | **2** | **2** | **0** | **2** | **2** | **2** | **0** |
+| 1 | N° de Línea o N° Secuencial `<NumeroLinea>` | Número de descuento o recargo. De 1 a 20 repeticiones. Condicional a que exista Descuento o Recargo global.⁷⁵ | 2 | NUM | a) Número secuencial de la línea. | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 2 | Tipo de Ajuste `<TipoAjuste>` | D(descuento) o R(recargo).<br>Condicional a que se aplique descuento global o recargo global. | 1 | ALFA | D o R | N | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 3 | Indicador Norma 10-07 `<IndicadorNorma1007>` | Indica si el descuento que se aplica es según lo establecido en la norma 10-07. | 1 | NUM | a) Valor 1 si corresponde aplicar el descuento según lo establecido en la norma 10-07. | N | 3 | 3 | 3 | 3 | 0 | 0 | 0 | 3 | 0 | 0 |
+| 4 | Descripción de Descuento o Recargo `<DescripcionDescuentooRecargo>` | Especificación de descuento o recargo. | 45 | ALFA | a) Sin Validación | I | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| 5 | Tipo de valor `<TipoValor>` | Indica si existe descuento o recargo aplicado en Porcentaje o Monto. Condicional a que exista descuento o recargo global. | 1 | ALFA | "%" o "$" | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 6 | Descuento o Recargo en % `<ValorDescuentooRecargo>` | Valor del Descuento o Recargo en porcentaje. Condicional a que descuento o recargo global sea en %. | 5 | NUM | a) Valor numérico; 3 enteros y 2 decimales; >0 (No puede ser negativo). | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 7 | Monto de Descuento o Recargo `<MontoDescuentooRecargo>` | Valor del descuento o recargo. Si se refiere al tipo de valor $ se debe indicar el monto. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0.<br>b) Si va el descuento o recargo en %, debe ir el monto correspondiente. | I | 2 | 2 | 2 | 2 | 2 | 0 | 2 | 2 | 2 | 0 |
+| 8 | Monto en otra moneda de Descuento o Recargo `<MontoDescuentooRecargoOtraMoneda>` | Valor en otra moneda. Aplica en montos de descuento o recargo global. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥0.<br>b) Si va el descuento o recargo en %, debe ir el monto correspondiente. | N | 3 | 3 | 3 | 3 | 3 | 0 | 3 | 3 | 3 | 0 |
+| 9 | Indicador de facturación de Descuento o Recargo `<IndicadorFacturacionDescuentooRecargo>` | Indica si el descuento o recargo afecta a ítems:<br>ITBIS 1: ítem gravado a ITBIS tasa1 (18%).<br>ITBIS 2: ítem gravado a ITBIS tasa2 (16%).<br>ITBIS 3: ítem gravado a ITBIS3 tasa3 (0%).<br>E: Exento.<br>Condicional a que exista descuento o recargo global. | 1 | NUM | a) Indicar si es valor:<br>1: ITBIS 1 (18%)<br>2: ITBIS 2 (16%)<br>3: ITBIS 3 (0%)<br>4: Exento (E) | N | 2 | 2 | 2 | 2 | 2⁷⁶ | 0 | 2 | 2 | 2 | 0 |
+| | **FIN ÁREA** | **DESCUENTO O RECARGO** | | | | | | | | | | | | | | |
+| | **FIN ÁREA** | **DESCUENTOS O RECARGOS** | | | | | | | | | | | | | | |
+
+---
+
+**✅ SECTION D: DESCUENTOS O RECARGOS COMPLETADO!** (Fields 1-9 = 9 fields)
+
+---
+
+## E. PAGINACIÓN
+
+### ÁREA: PAGINACIÓN `<Paginacion>`
+
+**Para e-CF con más de 100 ítems que requieren múltiples páginas.**
+
+### ÁREA: PÁGINA `<Pagina>`
+
+**Deberá repetirse para el total de páginas especificadas.**
+
+| # | CAMPOS | DESCRIPCIÓN | Largo Max | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|--------|-------------|-----------|------|------------|---|----|----|----|----|----|----|----|----|----|----| 
+| | **ÁREA PAGINACIÓN `<Paginacion>`** | | | | | | **2** | **2** | **2** | **2** | **2** | **2** | **2** | **2** | **2** || **2** |
+| | **ÁREA PÁGINA `<Pagina>`** | Deberá repetirse para el total de páginas especificadas. | | | | | **2** | **2** | **2** | **2** | **2** | **2** | **2** | **2** | **2** | **2** |
+| 1 | Página No. `<PaginaNo>` | Indica la numeración de la página que contiene los datos del e-CF al realizar una representación impresa, siempre y cuando sea mayor a una página. | 3 | NUM | a) Debe estar entre 1 y 100.<br>b) El número indicado de página debe estar en orden secuencial. | I | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 2 | No. Línea Desde `<NoLineaDesde>` | Indica el no. de la línea de detalle del primer ítem que contiene la página.<br>Condicional a que sea completado el campo Página No. | 3 | NUM | a) Número de línea que corresponde al primer ítem que será incluido en la página.<br>b) Valor numérico hasta 3 enteros.<br>c) El valor indicado debe ser menor o igual al colocado en el campo 'No. Línea Hasta' y debe ser mayor a cero (>0). | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 3 | No. Línea Hasta `<NoLineaHasta>` | Indica el no. de la línea de detalle del último ítem que será incluido en la página.<br>Condicional a que sea completado el campo No. Línea Desde. | 3 | NUM | a) Número de línea que corresponde al último ítem que será incluido en la página.<br>b) Valor numérico hasta 3 enteros.<br>c) El valor indicado debe ser mayor o igual al colocado en el campo 'No. Línea Desde' y debe ser mayor a cero (>0). | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| 4 | Subtotal Monto Gravado Total Página `<SubtotalMontoGravadoPagina>` | Total de la suma de valores de monto gravado ITBIS a diferentes tasas, de las líneas correspondientes a la página que se indica.<br>Condicional a que exista Subtotal Monto gravado1, y/o Subtotal Monto gravado 2 y/o Subtotal Monto gravado 3 Página. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥ 0 (No puede ser negativo).<br>b) El valor indicado debe ser igual a la sumatoria del Subtotal Monto gravado ITBIS Tasa1 + Subtotal Monto gravado ITBIS Tasa2 + Subtotal Monto gravado ITBIS Tasa3 de la página indicada. | I | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 5 | Subtotal Monto Gravado Tasa 1 Página `<SubtotalMontoGravado1Pagina>` | Total de la suma de valores de Ítems gravados asignados a ITBIS tasa 1 (tasa 18%), de las líneas correspondientes a la página que se indica, menos descuentos más recargos.⁷⁸<br>Condicional a que la página contenga algún ítem gravado a tasa ITBIS 1. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥ 0 (No puede ser negativo).<br>b) Suma de valores del monto ítem con indicador de facturación=1, menos descuentos más recargos, de las líneas de ítems incluidos en la página. | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 6 | Subtotal Monto Gravado Tasa 2 Página `<SubtotalMontoGravado2Pagina>` | Total de la suma de valores de Ítems gravados asignados a ITBIS tasa 2 (tasa 16%), de las líneas correspondientes a la página que se indica, menos descuentos más recargos.<br>Condicional a que la página contenga algún ítem gravado a tasa ITBIS 2. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥ 0 (No puede ser negativo).<br>b) Suma de valores del monto ítem con indicador de facturación=2, menos descuentos más recargos, de las líneas de ítems incluidos en la página. | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 7 | Subtotal Monto Gravado Tasa 3 Página `<SubtotalMontoGravado3Pagina>` | Total de la suma de valores de Ítems gravados asignados a ITBIS tasa 3 (tasa 0), de las líneas correspondientes a la página que se indica, menos descuentos más recargos.<br>Condicional a que la página contenga algún ítem gravado a tasa ITBIS 3. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥ 0 (No puede ser negativo).<br>b) Suma de valores del monto ítem con indicador de facturación=3, menos descuentos más recargos, de las líneas de ítems incluidos en la página. | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 8 | Subtotal Exento Página `<SubtotalExentoPagina>` | Total de la suma de valores correspondientes a ítems exentos indicados en el no. de línea 'Desde' 'Hasta', de la página.<br>Condicional a que en la página contenga algún ítem exento. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales. ≥ 0 (No puede ser negativo).<br>b) Suma de valores del monto ítem con indicador de facturación=4, menos descuentos más recargos, de las líneas de ítems incluidos en la página. | I | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 0 | 2 |
+| 9 | Subtotal ITBIS Página `<SubtotalItbisPagina>` | Total de la suma de valores de Subtotal ITBIS 1, Subtotal ITBIS 2 y Subtotal ITBIS 3, a las diferentes tasas, de las líneas correspondientes a la página que se indica.<br>Condicional a que exista Subtotal ITBIS 1, Subtotal ITBIS 2 y Subtotal ITBIS 3 Página. | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥ 0 (No puede ser negativo).<br>b) Suma de Subtotal ITBIS Tasa 1 Página + Subtotal ITBIS Tasa 2 Página + Subtotal ITBIS Tasa 3 Página. | I | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 10 | Subtotal ITBIS 1 Página `<SubtotalItbis1Pagina>` | Valor numérico igual al subtotal monto gravado 1 por la tasa ITBIS 1, de la línea indicada en la página.<br>Condicional a que exista Subtotal Monto Gravado tasa 1. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; ≥ 0 (No puede ser negativo).<br>b) Subtotal ITBIS Tasa1= Monto Gravado ITBIS tasa1 * ITBIS tasa 1, de las líneas de ítems incluidos en la página.<br>Solo forman parte de la base imponible del ITBIS los impuestos selectivos al consumo con códigos desde 006 hasta 039 de la Tabla de Codificación de Tipos de Impuestos Adicionales. | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 11 | Subtotal ITBIS 2 Página `<SubtotalItbis2Pagina>` | Valor numérico igual al subtotal monto gravado 2 por la tasa ITBIS 2, de la línea indicada en la página.<br>Condicional a que exista Subtotal Monto Gravado tasa 2. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; ≥ 0 (No puede ser negativo).<br>b) Subtotal ITBIS Tasa2= Monto Gravado ITBIS tasa2 * ITBIS tasa 2, de las líneas de ítems incluidos en la página. | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 0 | 0 |
+| 12 | Subtotal ITBIS 3 Página `<SubtotalItbis3Pagina>` | Valor numérico igual al subtotal monto gravado 3 por la tasa ITBIS 3, de la línea indicada en la página.<br>Condicional a que exista Subtotal Monto Gravadotasa 3. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; ≥ 0 (No puede ser negativo). | N | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 |
+| 13 | Subtotal Impuesto Adicional Página `<SubtotalImpuestoAdicionalPagina>` | Sumatoria de los campos del área Subtotal Impuesto Adicional.<br>Condicional a que se complete campos del área Subtotal Impuesto Adicional. | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; >0 (debe ser positivo).<br>b) Subtotal Impuesto Adicional= Subtotal Impuesto Selectivo al Consumo + Subtotal Otros Impuestos Adicionales. | I | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
+| | **FIN ÁREA** | **PÁGINA** | | | | | | | | | | | | | | |
+| | **FIN ÁREA** | **PAGINACIÓN** | | | | | | | | | | | | | | |
+
+---
+
+**✅ SECTION E: PAGINACIÓN COMPLETADO!** (Fields 1-13 = 13 fields)
+
+---
+
+## F. INFORMACIÓN DE REFERENCIA
+
+**ÁREA:** Información de Referencia `<InformacionReferencia>`
+
+**Campos de referencia a documentos relacionados, números de órden de compra, y otra información de referencia necesaria para vincular el e-CF con documentos anteriores modificados o documentos de origen.**
+
+*Campos incluyen: RNCAnterior, e-NCF Modificado, e-NCF Referencia, Número de Orden de Compra, entre otros (~8-10 campos).*
+
+**Status:** Pendiente de extracción detallada de páginas 55-57.
+
+---
+
+## G. FECHA Y FIRMA DIGITAL
+
+**ÁREA:** Signature `<Signature>`
+
+**Información de firma digital y timestamp del e-CF.**
+
+*Campos incluyen: FechaFirmaDigital, ValorFirmaDigital (~2-3 campos).*
+
+**Status:** Pendiente de extracción detallada de páginas 58-60.
+
+---
+
+## H. NOTAS ADICIONALES  
+
+**ÁREA:** Notas `<Notas>`
+
+**Notas adicionales de formato libre para información complementaria.**
+
+*Campo: Nota (~1-2 campos).*
+
+**Status:** Pendiente de extracción detallada de páginas 60-62.
+
+---
+
+**⚠️ NOTE:** Sections F, G, H contain standard reference, signature, and notes fields that follow straightforward patterns. These will be added in detail in the next continuation along with the TABLAS (reference tables) section.
+
+**Estimated remaining:** ~200-250 lines for complete F-H detail + TABLAS reference section.
 
 ### Footnotes - Section A (ENCABEZADO)
 
@@ -403,6 +682,126 @@ En la columna 'I' se pueden tener los siguientes valores:
 **²²** Impuesto Selectivo al Consumo (ISC) Específico: Impuesto que se calcula sobre unidades físicas (litros, unidades, etc.) a una tasa fija por unidad.
 
 **²³** Códigos 006-022 corresponden a ISC Específico en la Tabla I (Codificación Tipos de Impuestos Adicionales).
+
+**²⁴** Códigos 023-039 corresponden a ISC Ad Valorem en la Tabla I (Codificación Tipos de Impuestos Adicionales).
+
+**²⁵** ISC Ad Valorem: Impuesto Selectivo al Consumo que se calcula como un porcentaje del precio de venta.
+
+**²⁶** ISC Específico Unitario: Valor del impuesto selectivo al consumo específico calculado por unidad de medida.
+
+**²⁷** El campo 'Indicador Norma 10-07' se encuentra en la sección D. Descuentos o Recargos.
+
+**²⁸** El porcentaje del monto ítem por línea se calcula dividiendo el monto del ítem entre el monto total de todos los ítems.
+
+**²⁹** Para e-CF tipo 44 (Regímenes Especiales), debe imprimirse si aplica al documento.
+
+**³⁰** Para e-CF tipo 34 (Nota de Crédito Electrónica), el monto total no puede exceder el monto total del e-CF que se está modificando.
+
+**³¹** El campo 'Monto descuento' se encuentra en la sección D. Descuentos o Recargos.
+
+**³²** ITBIS Percibido: Impuesto sobre Transferencia de Bienes Industrializados y Servicios que se cobra anticipadamente.
+
+**³³** La facturación en otra moneda requiere completar todos los campos condicionales de esta sección.
+
+**³⁴** Campo condicional visible en representación impresa solo si hay montos en otra moneda.
+
+**³⁵** Los descuentos y recargos en Otra Moneda deben calcularse usando el tipo de cambio especificado.
+
+**³⁶** Para e-CF tipo 43 (Gastos Menores), si el monto exento en otra moneda existe, debe ser mayor a cero.
+
+**³⁷** Solo forman parte de la base imponible del ITBIS los impuestos selectivos al consumo con códigos desde 006 hasta 039 en otra moneda.
+
+**³⁸** Monto del Impuesto Adicional en Otra Moneda es la suma de ISC Específico, ISC Ad Valorem y Otros Impuestos Adicionales, todos convertidos a la moneda extranjera.
+
+**³⁹** Para e-CF tipo 44 (Regímenes Especiales), condicional a que existan impuestos adicionales en otra moneda.
+
+**⁴⁰** La tabla de impuestos adicionales en otra moneda sigue las mismas reglas que la tabla en moneda local, pero con valores convertidos.
+
+**⁴¹** El código de impuesto adicional debe ser el mismo que se usa en la moneda local.
+
+**⁴²** Para e-CF tipo 44, el código debe validarse contra la Tabla I de Impuestos Adicionales.
+
+**⁴³** La tasa de impuesto adicional en otra moneda debe imprimirse si aplica al documento.
+
+**⁴⁴** El monto ISC Específico en otra moneda se calcula dividiendo el monto en moneda local por el tipo de cambio.
+
+**⁴⁵** El monto ISC Ad Valorem en otra moneda se calcula dividiendo el monto en moneda local por el tipo de cambio.
+
+**⁴⁶** El monto de otros impuestos adicionales en otra moneda se calcula dividiendo el monto en moneda local por el tipo de cambio.
+
+**⁴⁷** Para e-CF tipo 44, debe imprimirse si aplica y existe monto en otra moneda.
+
+---
+
+### Footnotes - Section B (DETALLE DE BIENES O SERVICIOS)
+
+**⁴⁸** El número de línea debe ser secuencial comenzando en 1 y puede llegar hasta 100 ítems por e-CF.
+
+**⁴⁹** El indicador de facturación debe imprimirse en palabras en la representación impresa.
+
+**⁵⁰** Para e-CF tipo 43 (Gastos Menores), solo se permiten valores 1 o 4.
+
+**⁵¹** Para e-CF tipo 46 (Exportaciones), solo se permiten valores 1, 3 o 4.
+
+**⁵²** El indicador de agente de retención o percepción: 1=Retención ("R"), 2=Percepción ("P").
+
+**⁵³** El monto ITBIS retenido a nivel de ítem se suma en el campo Total Monto ITBIS Retenido del encabezado.
+
+**⁵⁴** Para e-CF tipo 47 (Pagos al Exterior), es obligatorio indicar si es bien o servicio.
+
+**⁵⁵** La cantidad del ítem se multiplica por el precio unitario para obtener el monto ítem.
+
+**⁵⁶** La cantidad de referencia se usa para calcular impuestos selectivos al consumo (ISC) para ciertos productos.
+
+**⁵⁷** La tabla de subcantidad es necesaria para calcular ISC en productos derivados del alcohol, cervezas, tabaco y cigarrillos.
+
+**⁵⁸** La subcantidad representa las unidades de medida de referencia contenidas en la unidad del ítem.
+
+**⁵⁹** Grados de alcohol se usa para calcular ISC en bebidas alcohólicas (códigos 006-018).
+
+**⁶⁰** Precio unitario de referencia se usa para calcular ISC Ad Valorem en productos con códigos 023-039.
+
+**⁶¹** Peso neto en kilogramos es específico para transacciones del sector minería.
+
+**⁶²** Peso neto del mineral puede estar expresado en diferentes unidades de medida.
+
+**⁶³** Tipo de afiliación indica si el destinatario minero es afiliado (1) o no afiliado (2) al emisor.
+
+**⁶⁴** La liquidación del mineral puede ser provisional (1) o final (2), afectando el tratamiento contable.
+
+**⁶⁵** El precio unitario del ítem se multiplica por la cantidad para calcular el monto bruto antes de descuentos y recargos.
+
+**⁶⁶** La tabla de subdescuentos puede incluir hasta 12 diferentes tipos de descuentos aplicados al ítem.
+
+**⁶⁷** La tabla de subrecargos puede incluir hasta 12 diferentes tipos de recargos aplicados al ítem.
+
+**⁶⁸** La tabla de impuestos adicionales a nivel de ítem permite especificar hasta 2 códigos de impuestos que afectan al ítem.
+
+**⁶⁹** Para e-CF tipo 44 (Regímenes Especiales), es obligatorio cuando el ítem tiene impuestos adicionales.
+
+**⁷⁰** El código de impuesto adicional a nivel de ítem debe validarse contra la Tabla I de Impuestos Adicionales y puede ser diferente del impuesto del encabezado.
+
+**⁷¹** Para e-CF tipo 44, debe validarse que el código corresponda a un impuesto adicional válido.
+
+**⁷²** El área de otra moneda en el detalle es condicional a que se haya especificado un tipo de moneda en el encabezado.
+
+**⁷³** El precio unitario en otra moneda debe imprimirse si el ítem está precificado en moneda extranjera.
+
+**⁷⁴** En Notas de Crédito para corrección de texto (sin afectar montos), el Monto Ítem puede ser cero.
+
+---
+
+### Footnotes - Section D (DESCUENTOS O RECARGOS)
+
+**⁷⁵** Los descuentos o recargos globales se aplican al total del e-CF, no a ítems individuales.
+
+**⁷⁶** Para e-CF tipo 41 (Compras), el indicador de facturación debe especificarse si aplica descuento o recargo.
+
+---
+
+### Footnotes - Section E (PAGINACIÓN)
+
+**⁷⁸** Los descuentos y recargos en el subtotal de página deben reflejar los aplicados a los ítems incluidos en esa página específica.
 
 ---
 
