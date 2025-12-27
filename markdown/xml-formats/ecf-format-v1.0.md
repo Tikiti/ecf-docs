@@ -321,13 +321,163 @@ This section is primarily used for **Type 46 (Exports)** and shipping-related in
 | 108 | `<MontoImpuestoSelectivoConsumoAdvalorem>` | ISC Ad-Valorem | 18 | DEC | ≥0, **see Granel rule** | N | 2 | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
 | 109 | `<OtrosImpuestosAdicionales>` | Other taxes | 18 | DEC | ≥0 | N | 2 | 2 | 2 | 2 | 0 | 0 | 2 | 2 | 0 | 0 |
 
+---
+
+#### **ISC Calculation Formulas (Fórmulas de Cálculo ISC)**
+
+The following calculation logic applies to **Field 107-109** based on tax code ranges defined in **Table I**.
+
 > [!CAUTION]
-> **30% "Granel" Markup Rule for ISC Ad-Valorem** (Codes 023-035):
-> When the unit of measure is **Granel** (Code 18), the base price must be **increased by 30%** before calculating the Ad-Valorem tax.
-> Formula: `ISC = (PrecioBase × 1.30) × TasaAdValorem`
+> **Critical**: ISC (Impuesto Selectivo al Consumo / Selective Consumption Tax) calculations are STRICTLY regulated by DGII. Incorrect calculations will cause invoice rejection.
+
+##### **Field 107: ISC Específico (Specific ISC) — Codes 006-022**
+
+ISC Específico applies a **fixed amount per unit** (RD$ por unidad) for alcoholic beverages and tobacco products.
+
+**Calculation Steps:**
+
+1. **Verify Unit of Measure**:
+   - If `UnidadMedida` = 18 (GRAN / Granel / Bulk): **DO NOT calculate ISC Específico** (set to 0)
+   - Otherwise: Proceed to step 2
+
+2. **For Alcohol Products (Codes 006-018)**:
+   ```
+   ISC_Específico = CantidadReferencia × GradosAlcohol × TasaISC × Subcantidad × CantidadItem
+   ```
+   - `CantidadReferencia` (Field 13): Reference quantity
+   - `GradosAlcohol` (Field 17): Alcohol percentage (e.g., 40% = 40)
+   - `TasaISC`: Rate from Table I for the specific code (e.g., 632.58)
+   - `Subcantidad` (Field 15): Sub-quantity (liters of absolute alcohol per unit)
+   - `CantidadItem` (Field 11): Item quantity
+
+3. **For Tobacco Products (Codes 019-022)**:
+   ```
+   ISC_Específico = CantidadItem × CantidadReferencia × TasaISC
+   ```
+   - `CantidadItem` (Field 11): Item quantity
+   - `CantidadReferencia` (Field 13): Reference quantity (cigarettes per pack)
+   - `TasaISC`: Rate from Table I (e.g., RD$53.51 for 20-unit pack)
+
+**Example (Beer @ Code 006):**
+```
+Item: 100 crates × 24 bottles × 0.355L @ 5% alcohol
+ISC = 24 (ref qty) × 5 (alcohol %) × 632.58 (rate) × 0.355 (liters) × 100 (qty)
+ISC = RD$2,689,266.00
+```
+
+---
+
+##### **Field 108: ISC Ad-Valorem (Ad-Valorem ISC) — Codes 023-039**
+
+ISC Ad-Valorem applies a **percentage of the sale price** for various products.
 
 > [!WARNING]
-> **ISC Tax Codes (006-039)**: These require strict calculation logic. If `TipoImpuesto` is in range 006-039, you must calculate either ISC Específico OR ISC Ad-Valorem based on the tax code type. See DGII formulas in Table I.
+> **Granel (Bulk) Products**: Code 023-035 items sold by bulk (UnidadMedida=18) require a **30% markup** on the base price before calculating tax.
+
+**Calculation Steps:**
+
+1. **Check if Granel (Bulk)**:
+   - If `TipoImpuesto` is 023-035 AND `UnidadMedida` = 18 (Granel):
+     ```
+     ISC_AdValorem = (PrecioUnitarioItem × 1.30) × CantidadItem × TasaISC
+     ```
+   - Otherwise: Proceed to step 2
+
+2. **For Non-Granel Products (Codes 023-035)**:
+   ```
+   Step 1: Remove ITBIS from reference price
+   PrecioSinITBIS = PrecioUnitarioReferencia / (1 + ITBIS_Tasa1)
+   
+   Step 2: Subtract ISC Específico per unit (if any)
+   BaseISC = PrecioSinITBIS - ISC_Específico_Unitario
+   
+   Step 3: Remove additional tax from base
+   BaseISC = BaseISC / (1 + TasaImpuestoAdicional)
+   
+   Step 4: Calculate total ISC Ad-Valorem
+   ISC_AdValorem = BaseISC × CantidadItem × CantidadReferencia × TasaISC
+   ```
+
+3. **For Other Ad-Valorem Products (Codes 036-039)**:
+   ```
+   Step 1: Remove ITBIS
+   PrecioSinITBIS = PrecioUnitarioReferencia / (1 + ITBIS_Tasa1)
+   
+   Step 2: Subtract ISC Específico RATE (not amount)
+   BaseISC = PrecioSinITBIS - Tasa_ISC_Específico
+   
+   Step 3: Remove additional tax
+   BaseISC = BaseISC / (1 + TasaImpuestoAdicional)
+   
+   Step 4: Calculate total
+   ISC_AdValorem = BaseISC × CantidadItem × CantidadReferencia × TasaISC
+   ```
+
+**Example (Granel Product @ Code 023):**
+```
+Item: 500L alcohol @ RD$100/L
+ISC = (100 × 1.30) × 500 × 0.10 (10% rate)
+ISC = RD$6,500.00
+```
+
+---
+
+##### **Field 109: OtrosImpuestosAdicionales (Other Additional Taxes) — Codes 001-005**
+
+Other additional taxes (Propina Legal, CDT, ISC Seguros, ISC Telecomunicaciones, Primera Placa).
+
+**Calculation Steps:**
+
+1. **Standard Calculation (Codes 001-005)**:
+   ```
+   OtrosImpuestos = MontoItem × TasaImpuesto
+   ```
+
+2. **If `IndicadorMontoGravado` = 1** (prices include ITBIS) for Codes 001-004:
+   ```
+   MontoSinITBIS = MontoItem / (1 + ITBIS_Tasa1)
+   OtrosImpuestos = MontoSinITBIS × TasaImpuesto
+   ```
+
+3. **If `IndicadorNorma1007` = 1** (Standard 10-07) for Codes 002 & 004:
+   ```
+   Step 1: Sum all items with billing indicator = 1
+   MontoGravadoTotal = Σ(MontoItem donde IndicadorFacturacion = 1)
+   
+   Step 2: Remove all taxes from base
+   Base = MontoGravadoTotal / (1 + ITBIS_Tasa1 + Tasa_Codigo_002 + Tasa_Codigo_004)
+   
+   Step 3: Calculate tax
+   OtrosImpuestos = Base × TasaImpuesto_Correspondiente
+   ```
+
+4. **If Global Discount Exists** (Section D - DescuentosORecargos):
+   ```
+   Step 1: Calculate line percentage
+   PorcentajeLinea = MontoItem / Σ(TodosMontoItem)
+   
+   Step 2: Apply proportional discount
+   DescuentoLinea = PorcentajeLinea × MontoDescuentoGlobal
+   
+   Step 3: Adjust item amount
+   MontoItemAjustado = MontoItem - DescuentoLinea
+   
+   Step 4: Calculate tax on adjusted amount
+   OtrosImpuestos = MontoItemAjustado × TasaImpuesto
+   ```
+
+**Example (Propina Legal 10% @ Code 001):**
+```
+Item amount: RD$1,000.00
+Propina Legal = 1,000 × 0.10 = RD$100.00
+```
+
+> [!NOTE]
+> **Footnote 27**: The `IndicadorNorma1007` field is located in Section D (Descuentos o Recargos / Discounts or Surcharges).
+>
+> **Footnote 28**: Line percentage = (Item amount / Total of all item amounts). This is used for proportional discount allocation.
+
+---
 
 | # | Element | Description | Max | Type | Validation | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
 |---|---------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----|
@@ -342,12 +492,83 @@ This section is primarily used for **Type 46 (Exports)** and shipping-related in
 | 118 | `<TotalITBISPercepcion>` | ITBIS perceived total | 18 | DEC | >0 (must be positive) | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
 | 119 | `<TotalISRPercepcion>` | ISR perceived total | 18 | DEC | >0 (must be positive) | N | 2 | 0 | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 0 |
 
+---
+
+#### **MontoTotal & ValorPagar Validation Formulas**
+
+##### **Field 110: MontoTotal (Grand Total / Total General)**
+
+**Formula:**
+```
+MontoTotal = MontoGravadoTotal + MontoExento + TotalITBIS + MontoImpuestoAdicional
+```
+
+> [!IMPORTANT]
+> **Critical Validations for MontoTotal**:
+>
+> 1. **Pagination Consistency** (If Section E Paginación exists):
+>    ```
+>    MontoTotal MUST EQUAL Σ(MontoSubtotalPagina) from ALL pages
+>    ```
+>    If pagination is used, the sum of all page subtotals must exactly match the grand total. Mismatch will cause rejection.
+>
+> 2. **Credit Note Limit** (Type 34 - Nota de Crédito Electrónica):
+>    ```
+>    MontoTotal ≤ MontoTotal_of_NCFModificado
+>    ```
+>    Credit note amount cannot exceed the original invoice's total. Validate against the referenced e-NCF in Section F.
+>
+> 3. **Components Must Be Non-Negative**:
+>    - `MontoGravadoTotal` ≥ 0
+>    - `MontoExento` ≥ 0  
+>    - `TotalITBIS` ≥ 0
+>    - `MontoImpuestoAdicional` ≥ 0 (or omit if none)
+
+> [!NOTE]
+> **Footnote 30**: For e-CF type 34 (Electronic Credit Note), the total amount cannot exceed the total amount of the e-CF being modified.
+>
+> **Footnote ¹¹**: Conditional on taxed amount existing with at least one of the ITBIS rates (18%, 16%, or 0%).
+>
+> **Footnote ¹²**: Discounts and surcharges must be proportional to each ITBIS rate.
+
+---
+
+##### **Field 115: ValorPagar (Amount to Pay / Valor a Pagar)**
+
+> [!IMPORTANT]
+> **Two calculation methods** exist depending on whether **Norma 10-07** discount is applied:
+
+**1. Standard Calculation (Sin Norma 10-07 / Without Standard 10-07):**
+```
+ValorPagar = MontoTotal - MontoAvancePago ± SaldoAnterior
+```
+- If `SaldoAnterior` is POSITIVE: Add it (customer owes from previous period)
+- If `SaldoAnterior` is NEGATIVE: Subtract it (credit balance in favor of customer)
+
+**2. With Norma 10-07 Discount (Con Norma 10-07):**
+```
+ValorPagar = MontoTotal - MontoDescuento - MontoAvancePago ± SaldoAnterior
+```
+- `MontoDescuento`: From Section D (Global discount with `IndicadorNorma1007 = 1`)
+- This discount is subtracted AFTER the total, not before calculating ITBIS
+
+> [!WARNING]
+> **Norma 10-07 Special Rule** (General Standard 10-07):
+> When `IndicadorNorma1007 = 1` in Section D (DescuentosORecargos), the discount applies to the **net base BEFORE ITBIS calculation**, but is reflected in `ValorPagar` as a direct subtraction from the total.
+>
+> For tax purposes, the discount must be distributed proportionally across ITBIS rates when calculating the tax base.
+
+> [!NOTE]
+> **Footnote 31**: The 'Discount amount' (`MontoDescuento`) field is located in Section D (Descuentos o Recargos / Discounts or Surcharges).
+>
+> **Footnote ³¹** (duplicate numbering in PDF): If the 'Standard 10-07 Indicator' field from the Discount or Surcharge section is completed, then: Amount payable = Total amount - Discount amount - Payment Advance amount ± Previous Balance.
+
+---
+
 > [!NOTE]
 > **Perception Regime**: The PDF notes "Régimen de percepción no está vigente" (perception regime is not currently in force). Fields 118-119 are included for future use.
 
-> [!NOTE]
-> **Formula**: `MontoTotal` = `MontoGravadoTotal` + `MontoExento` + `TotalITBIS` + `MontoImpuestoAdicional`
-> Note: Discounts/surcharges are handled in the global DescuentosORecargos section, not in this formula.
+
 
 ---
 
