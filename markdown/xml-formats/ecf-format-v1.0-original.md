@@ -371,7 +371,6 @@ En la columna 'I' se pueden tener los siguientes valores:
 | 109 | Monto Otros Impuestos Adicionales `<OtrosImpuestosAdicionales>` | Valor del impuesto adicional asociado al código de impuesto adicional. Condicional a que exista código del 001 al 005.<br>El cálculo del monto del impuesto adicional dependerá de la tasa correspondiente al código del impuesto en la Tabla I (Codificación Tipos de Impuestos Adicionales). | 18 | NUM | a) Valor numérico de 16 enteros, dos decimales; >0 (debe ser positivo).<br>b) Si el código del impuesto se encuentra entre 001 al 005, se deben multiplicar los montos ítems por la tasa correspondiente al código de impuesto adicional.<br>c) Para los códigos 001, 002, 003 y 004, si el indicador monto gravado=1, se debe dividir el monto de ítem entre (1+ ITBIS tasa 1), y el resultado multiplicar por la tasa correspondiente al código de impuesto adicional.<br>d) Para los códigos 002 y 004, si el campo²⁷ 'Indicador Norma 10-07' de la sección Descuentos o Recargos es completado, se debe dividir la suma de los valores del monto ítem con indicador de facturación=1, entre (1+tasa ITBIS tasa 1+ tasa del código de impuesto adicional 002 + tasa del código de impuesto adicional 004), para luego multiplicar este resultado por la tasa correspondiente al código de impuesto adicional.<br>e) Si existe descuento global se debe multiplicar el porcentaje del monto ítem por línea²⁸ por el Monto Descuento (global), esto dará como resultado el monto de descuento aplicable para cada línea de detalle. | N²⁹ | 2 | 2 | 2 | 2 | 0 | 0 | 2²⁹ | 2 | 0 | 0 |
 | | **FIN TABLA** | **IMPUESTOS ADICIONALES** | | | | | | | | | | | | | | |
 
-
 **⚠️ Continuation from field 109 - Adding fields 110-119 to complete A.2 ÁREA TOTALES
 
 *(Continuación de Tabla ÁREA TOTALES)*
@@ -391,8 +390,6 @@ En la columna 'I' se pueden tener los siguientes valores:
 | | FIN ÁREA | **TOTALES ENCABEZADO** | | | | | | | | | | | | | | |
 
 ---
-
-**✅ A.2 ÁREA TOTALES COMPLETADO (Fields 92-119 = 28 fields)
 
 ---
 
@@ -426,8 +423,6 @@ Condicional a que la facturación sea en Otra Moneda.**
 | | FIN ÁREA | **OTRA MONEDA ENCABEZADO** | | | | | | | | | | | | | | |
 
 ---
-
-**✅ A.7 ÁREA OTRA MONEDA COMPLETADO (Fields 120-137 = 18 fields)
 
 ---
 
@@ -502,9 +497,6 @@ Se pueden incluir hasta 100 repeticiones.**
 | 39 | Monto Ítem (Valor por la línea de detalle) `<MontoItem>` | (Precio Unitario del ítem * Cantidad) – Monto Descuento + Monto Recargo | 18 | NUM | a) Valor numérico de 16 enteros, 2 decimales; ≥ 0 (No puede ser negativo).<br>b) Valor numérico, de acuerdo con descripción.<br>c) Debe ser cero cuando: es una Nota de Crédito para fines de corrección de texto.⁷⁴<br>Cuando es cero puede no imprimirse o imprimirse un texto explicativo (sin valor, sin costo, etc.) | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 | | FIN ÁREA | **ÍTEM** | | | | | | | | | | | | | | |
 | | FIN ÁREA | **DETALLES ÍTEM** | | | | | | | | | | | | | | |
-
-
-**🎉 ALL CONTENT SECTIONS (A-H) ARE NOW COMPLETE! 🎉**
 
 ---
 
