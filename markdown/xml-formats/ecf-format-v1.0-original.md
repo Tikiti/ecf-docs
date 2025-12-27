@@ -953,6 +953,19 @@ En la columna 'I' se pueden tener los siguientes valores:
 
 ---
 
-**END OF CURRENT WORK SESSION**
+## Información de Contacto
+
+**Dirección General de Impuestos Internos (DGII)**
+
+- **Web:** dgii.gov.do
+- **Teléfono:** (809) 689-3444 desde cualquier parte del país
+- **Email:** informacion@dgii.gov.do
+
+**IMPUESTOS INTERNOS**
+
+**Publicación:** Octubre 2025  
+**Nota:** Publicación informativa sin validez legal
 
 ---
+
+*Fin del documento*
