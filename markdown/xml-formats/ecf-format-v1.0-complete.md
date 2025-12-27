@@ -423,3 +423,273 @@ When transactions are in foreign currency, this section mirrors the Totales stru
 
 ---
 
+## Code Tables (TABLAS)
+
+### Tabla I: Impuestos Adicionales (Additional Tax Codes)
+
+| Code | Tax Type | Abbreviation | Description | Rate |
+|------|----------|--------------|-------------|------|
+| 001 | Propina Legal | Propina Legal | Legal tip | 10% |
+| 002 | CDT | CDT | Contribución Desarrollo Telecomunicaciones (Law 153-98 Art. 45) | 2% |
+| 003 | ISC | ISC | General insurance services | 16% |
+| 004 | ISC | ISC | Telecommunications services | 10% |
+| 005 | Primera Placa | Primera Placa | First vehicle registration plate issuance | 17% |
+| 006 | ISC Específico | ISC Específico | Beer | 632.58 |
+| 007 | ISC Específico | ISC Específico | Grape wines | 632.58 |
+| 008 | ISC Específico | ISC Específico | Vermouth and other wines from fresh grapes | 632.58 |
+| 009 | ISC Específico | ISC Específico | Other fermented beverages | 632.58 |
+| 010 | ISC Específico | ISC Específico | Undenatured ethyl alcohol (≥80%) | 632.58 |
+| 011 | ISC Específico | ISC Específico | Undenatured ethyl alcohol (<80%) | 632.58 |
+| 012 | ISC Específico | ISC Específico | Grape spirits | 632.58 |
+| 013 | ISC Específico | ISC Específico | Whisky | 632.58 |
+| 014 | ISC Específico | ISC Específico | Rum and other sugarcane spirits | 632.58 |
+| 015 | ISC Específico | ISC Específico | Gin | 632.58 |
+| 016 | ISC Específico | ISC Específico | Vodka | 632.58 |
+| 017 | ISC Específico | ISC Específico | Liqueurs | 632.58 |
+| 018 | ISC Específico | ISC Específico | Other spirituous beverages | 632.58 |
+| 019 | ISC Específico | ISC Específico | Denatured ethyl alcohol | 632.58 |
+| 020 | ISC Específico | ISC Específico | Blond tobacco cigarettes | Per unit |
+| 021 | ISC Específico | ISC Específico | Black tobacco cigarettes | Per unit |
+| 022 | ISC Específico | ISC Específico | Cigars | Per unit |
+| 023 | ISC Ad-Valorem | ISC Ad-Valorem | Alcohol and alcoholic beverage products | 10% |
+| 024 | ISC Ad-Valorem | ISC Ad-Valorem | Motor vehicles | Variable |
+| 025 | ISC Ad-Valorem | ISC Ad-Valorem | Household appliances | Variable |
+| 026 | CESC | CESC | Special contribution construction sector | 5% |
+| 027-039 | Various | Various | Other ISC codes per DGII classification | Variable |
+
+> [!NOTE]
+> ISC Específico rates are updated periodically by DGII. The 632.58 figure is the rate per liter of absolute alcohol as of the document date.
+
+---
+
+### Tabla II: Monedas (Currencies) — OFFICIAL DGII List
+
+> [!WARNING]
+> Only the following 17 currencies are officially recognized by DGII for foreign currency transactions. Using non-listed codes may cause validation errors. Note: DOP (Dominican Peso) is the native currency and is NOT listed here—this table is for `<OtraMoneda>` (foreign currency) fields only.
+
+| Code | Currency (Spanish) | Currency (English) |
+|------|-------------------|-------------------| 
+| BRL | Real Brasileño | Brazilian Real |
+| CAD | Dólar Canadiense | Canadian Dollar |
+| CHF | Franco Suizo | Swiss Franc |
+| CHY | Yuan Chino (Renminbi) | Chinese Yuan *(DGII uses CHY; ISO 4217 is CNY)* |
+| COP | Peso Colombiano | Colombian Peso *(added 2025)* |
+| DKK | Corona Danesa | Danish Krone |
+| EUR | Euro | Euro |
+| GBP | Libra Esterlina | British Pound |
+| HTG | Gurda Haitiana *(PDF typo, correct: Gourde)* | Haitian Gourde *(added 2024)* |
+| JPY | Yen Japonés | Japanese Yen |
+| MXN | Peso Mexicano | Mexican Peso *(added 2024)* |
+| NOK | Corona Noruega | Norwegian Krone |
+| SCP | Libra Escocesa | Scottish Pound |
+| SEK | Corona Sueca | Swedish Krona |
+| USD | Dólar Estadounidense | US Dollar |
+| VEF | Bolívar Fuerte Venezolano | Venezuelan Bolívar *(obsolete - Venezuela now uses VES)* |
+| XDR | Derecho Especial de Giro (DEG) | IMF Special Drawing Rights |
+
+> [!NOTE]
+> **Footnote 83**: XDR (DEG) is not a currency but the IMF's unit of account.
+
+---
+
+### Tabla III: Provincias y Municipios (Province/Municipality Codes)
+
+> [!WARNING]
+> **Sample Only** - This table contains 22 pages (158+ municipalities) in the original PDF. Do not hardcode these values. 
+> 
+> **Full list available in: [provinces.md](provinces.md)**
+
+This is a 22-page table in the original PDF (pages 63-85). A sample is provided below:
+
+| Province Code | Municipality Code | Description |
+|---------------|-------------------|-------------|
+| 010000 | — | DISTRITO NACIONAL |
+| — | 010100 | MUNICIPIO SANTO DOMINGO DE GUZMÁN |
+| — | 010101 | Santo Domingo de Guzmán (D.M.) |
+| 020000 | — | PROVINCIA AZUA |
+| — | 020100 | MUNICIPIO AZUA |
+| — | 020101 | Azua (D.M.) |
+| 320000 | — | PROVINCIA SANTO DOMINGO |
+| — | 320100 | MUNICIPIO SANTO DOMINGO ESTE |
+| — | 320101 | Santo Domingo Este (D.M.) |
+| — | 320200 | MUNICIPIO SANTO DOMINGO OESTE |
+| — | 320300 | MUNICIPIO SANTO DOMINGO NORTE |
+| — | 320400 | MUNICIPIO BOCA CHICA |
+| — | 320500 | MUNICIPIO SAN ANTONIO DE GUERRA |
+| — | 320600 | MUNICIPIO LOS ALCARRIZOS |
+| — | 320700 | MUNICIPIO PEDRO BRAND |
+
+> [!TIP]
+> Source: Oficina Nacional de Estadística (ONE), Departamento de Cartografía, División de Límites y Linderos. Updated June 30, 2014.
+
+---
+
+### Tabla IV: Unidades de Medida (Units of Measure) - Complete List
+
+| Code | Abbr | Measure |
+|------|------|---------|
+| 1 | BARR | Barrel (Barril) |
+| 2 | BOL | Bag (Bolsa) |
+| 3 | BOT | Can (Bote) |
+| 4 | BULTO | Bundles (Bultos) |
+| 5 | BOTELLA | Bottle (Botella) |
+| 6 | CAJ | Box/Crate (Caja/Cajón) |
+| 7 | CAJETILLA | Pack (Cajetilla) |
+| 8 | CM | Centimeter (Centímetro) |
+| 9 | CIL | Cylinder (Cilindro) |
+| 10 | CONJ | Set (Conjunto) |
+| 11 | CONT | Container (Contenedor) |
+| 12 | DÍA | Day (Día) |
+| 13 | DOC | Dozen (Docena) |
+| 14 | FARD | Bale (Fardo) |
+| 15 | GL | Gallons (Galones) |
+| 16 | GRAD | Degree (Grado) |
+| 17 | GR | Gram (Gramo) |
+| 18 | GRAN | Bulk (Granel) |
+| 19 | HOR | Hour (Hora) |
+| 20 | HUAC | Crate (Huacal) |
+| 21 | KG | Kilogram (Kilogramo) |
+| 22 | kWh | Kilowatt Hour (Kilovatio Hora) |
+| 23 | LB | Pound (Libra) |
+| 24 | LITRO | Liter (Litro) |
+| 25 | LOT | Lot (Lote) |
+| 26 | M | Meter (Metro) |
+| 27 | M2 | Square Meter (Metro Cuadrado) |
+| 28 | M3 | Cubic Meter (Metro Cúbico) |
+| 29 | MMBTU | Million Thermal Units (Millones de Unidades Térmicas) |
+| 30 | MIN | Minute (Minuto) |
+| 31 | PAQ | Package (Paquete) |
+| 32 | PAR | Pair (Par) |
+| 33 | PIE | Foot (Pie) |
+| 34 | PZA | Piece (Pieza) |
+| 35 | ROL | Roll (Rollo) |
+| 36 | SOBR | Envelope (Sobre) |
+| 37 | SEG | Second (Segundo) |
+| 38 | TANQUE | Tank (Tanque) |
+| 39 | TONE | Ton (Tonelada) |
+| 40 | TUB | Tube (Tubo) |
+| 41 | YD | Yard (Yarda) |
+| 42 | YD2 | Square Yard (Yarda cuadrada) |
+| 43 | UND | Unit (Unidad) |
+| 44 | EA | Element (Elemento) |
+| 45 | MILLAR | Thousand (Millar) |
+| 46 | SAC | Sack (Saco) |
+| 47 | LAT | Can (Lata) |
+| 48 | DIS | Display (Display) |
+| 49 | BID | Drum (Bidón) |
+| 50 | RAC | Ration (Ración) |
+| 51 | Q | Quintal (Quintal) |
+| 52 | GRT | Gross Register Tonnage (Toneladas de registro bruto) |
+| 53 | P2 | Square Foot (Pie cuadrado) |
+| 54 | PAX | Passenger (Pasajero) |
+| 55 | PULG | Inches (Pulgadas) |
+| 56 | STAY | Ship Dock Parking (Parqueo barcos en muelle) |
+| 57 | BDJ | Tray (Bandeja) |
+| 58 | HA | Hectare (Hectárea) |
+| 59 | ML | Milliliter (Mililitro) |
+| 60 | MG | Milligram (Miligramo) |
+| 61 | OZ | Ounces (Onzas) |
+| 62 | OZT | Troy Ounces (Onzas Troy) |
+
+---
+
+### Tabla V: Payment Methods (Formas de Pago)
+
+| Code | Description |
+|------|-------------|
+| 1 | Cash (Efectivo) |
+| 2 | Check/Transfer/Deposit (Cheque/Transferencia/Depósito) |
+| 3 | Credit/Debit Card (Tarjeta de Crédito/Débito) |
+| 4 | Credit Sale (Venta a Crédito) |
+| 5 | Gift Vouchers/Certificates (Bonos o Certificados de regalo) |
+| 6 | Barter/Exchange (Permuta) |
+| 7 | Credit Note (Nota de crédito) |
+| 8 | Other Payment Methods (Otras Formas de pago) |
+
+> [!NOTE]
+> If `FormaPago = 05` (gift certificates), the e-CF must be type 32 (Consumer Invoice).
+
+---
+
+### Tabla VI: Income Types (Tipos de Ingresos)
+
+| Code | Description |
+|------|-------------|
+| 01 | Operational income (Ingresos por operaciones) |
+| 02 | Financial income (Ingresos financieros) |
+| 03 | Extraordinary income (Ingresos extraordinarios) |
+| 04 | Rental income (Ingresos por arrendamientos) |
+| 05 | Depreciable asset sale (Ingresos por venta de activo depreciable) |
+| 06 | Other income (Otros ingresos) |
+
+---
+
+### Tabla VII: Payment Types (Tipos de Pago)
+
+| Code | Description |
+|------|-------------|
+| 1 | Cash/Immediate payment (Contado) |
+| 2 | Credit (Crédito) |
+| 3 | Free/No charge (Gratuito) |
+
+> [!WARNING]
+> Invoices with `TipoPago = 3` (Gratuito) cannot be used for tax credit purposes.
+
+---
+
+## Validation Rules Summary
+
+| Rule ID | Description |
+|---------|-------------|
+| E01 | `eNCF` must match issuer RNC and be from an authorized, non-expired range |
+| E05 | For type 31, `RNCComprador` is mandatory and must be valid/active |
+| E32 | For type 32 ≥ RD$250,000, buyer identification is mandatory |
+| E-DATE | `FechaEmision` cannot be >30 days in past from submission |
+| E-TOTAL | `MontoTotal` must equal sum of components |
+| E-SIG | `RNCEmisor` must match the signer's authorized RNC |
+| E-EXP | e-NCF sequence must not be expired at submission time |
+| E-EMPTY | Empty tags are forbidden; omit tags with null values |
+
+> [!CAUTION]
+> **Empty Tags Are Forbidden**: Do not include empty elements like `<Field></Field>` or `<Field />`. If a value is null/empty, **omit the tag entirely**.
+
+---
+
+## Data Type Reference
+
+| Type | Description |
+|------|-------------|
+| `ALFA` | Alphabetic string |
+| `NUM` | Numeric (integers) |
+| `DEC` | Decimal number (16 integers, 2-6 decimals as specified) |
+| `DATE` | Date in DD-MM-YYYY format |
+
+---
+
+## Line Item Limits
+
+| e-CF Type | Condition | Max Lines |
+|-----------|-----------|-----------|
+| 32 (Consumer) | < RD$250,000 | 10,000 |
+| 32 (Consumer) | ≥ RD$250,000 | 1,000 |
+| All other types | — | 10,000 |
+
+> [!NOTE]
+> **Footnote 48**: Consumer invoices ≥ RD$250,000 have a maximum of 1,000 line items.
+
+---
+
+## Key Business Rules from Footnotes
+
+1. **Footnote 4**: Consumer invoices < DOP$250,000 have optional buyer RNC.
+2. **Footnote 30**: Credit note amounts must be ≤ original invoice total.
+3. **Footnote 36**: Amounts on Gastos Menores (type 43) cannot be used as ITBIS advance.
+4. **Footnote 48**: Consumer invoices ≥ DOP$250k limited to 1,000 line items.
+5. **Footnote 54**: For Pagos al Exterior (type 47), `IndicadorBienoServicio` must be `2` (Service).
+6. **Footnotes 57-58 (ISC special reporting)**:
+   - For **alcohol and alcoholic beverages** (ISC codes **006-012**): Report the **absolute alcohol content (volume per unit) in liters**.
+   - For **tobacco and cigarette products** (ISC codes **013-022**): Report the **number of units per pack** (cajetilla).
+   - This field is **only required** when invoicing goods whose transfer, at the **producer or manufacturer level**, is taxed with ISC (codes 006-022).
+
+---
+
