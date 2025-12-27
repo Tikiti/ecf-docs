@@ -5,6 +5,16 @@
 
 ---
 
+## Changelog (Bitácora)
+
+**Version 1.0 - Updates as of 2022-05-24**
+
+> [!NOTE]
+> **Modification (does not imply version change):**  
+> Validation e) was removed from the "Detalle de Anulación" section. Previously, it required that "the e-NCF must be greater than the one placed in the 'e-NCF Sequence From' field of any previously submitted annulment format." This validation has been eliminated.
+
+---
+
 ## Overview
 
 This format is used to **cancel (annul) unused e-NCF sequences** that were authorized by DGII but not yet used or sent. This applies only to sequences that have **not** been transmitted to the DGII or receptor.

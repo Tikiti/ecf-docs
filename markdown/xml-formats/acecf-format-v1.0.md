@@ -10,6 +10,11 @@
 
 The Commercial Approval (ACECF - Aprobación Comercial) is the acceptance or rejection response that a **buyer** sends regarding an e-CF they received. Unlike the ARECF (which only confirms receipt), this document indicates whether the invoice is **commercially accepted or rejected**.
 
+> [!NOTE]
+> **From the PDF Specification:**
+> - **Footnote 1**: The Acknowledgment of Receipt (ARECF) notifies the reception of the electronic invoice, indicating whether it was received or not.
+> - **Footnote 2**: DGII will receive commercial approval or rejection of e-CFs previously accepted by DGII.
+
 > [!IMPORTANT]
 > **Key Differences from ARECF:**
 > - **ARECF** = Confirms receipt only (did you get it?)

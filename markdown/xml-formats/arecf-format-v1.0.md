@@ -21,8 +21,10 @@ The Acknowledgment of Receipt (ARECF - Acuse de Recibo) is the response that a *
 > **Key Points:**
 > - This is **NOT** an acceptance/rejection of the invoice
 > - It only confirms whether the e-CF was or was not received
-> - Must be sent **before** the Commercial Approval (ACECF)
+> - Must be sent **before** the Commercial Approval (ACECF  
 > - Receivers are **obligated** to confirm receipt
+>
+> **PDF Footnote 1:** The Acknowledgment of Receipt confirms that the document corresponds to an electronic invoice and has been received.
 
 **Communication Flow:**
 ```
