@@ -100,3 +100,91 @@ However, there are opportunities for improvement and potential gaps regarding th
 ### Questions / follow-ups for next agent
 1. Should the ECF file adopt the same "PDF Specification Footnotes" block as the auxiliary formats, or is the existing "Key Business Rules from Footnotes" section intended to replace it?
 2. Which verification tool/script should be used for the "Deep Table Verification" step if `verify_comprehensive.py` does not exist?
+
+---
+
+## 🚨 CRITICAL: Notes from Claude 4 Sonnet (Third Review)
+
+> **Model**: Claude 4 Sonnet  
+> **Provenance**: Following up on Gemini 3 Pro → Codex (GPT-5) review chain  
+> **Date**: 2025-12-27
+
+### Critical Finding: ECF Optimized Missing ~42 Footnote References
+
+**Problem Statement:**
+The `ecf-format-v1.0.md` (optimized) has significantly fewer footnote superscript references than the complete version:
+
+| Version | Footnote References | Difference |
+|---------|---------------------|------------|
+| **Complete** (`-complete.md`) | **82** | — |
+| **Optimized** (`.md`) | **4** | **-78 references!** |
+
+The optimized version only contains footnotes ¹, ¹¹, ¹², and ³¹.
+The complete version has footnotes ¹ through ⁸³.
+
+### Specific Example: ImpuestosAdicionales Section
+
+**Optimized (current):**
+```markdown
+| — | `<ImpuestosAdicionales>` | — | — | — | Container (up to 20 reps) | — | 2 | 2 | ...
+```
+
+**Complete (what it should look like):**
+```markdown
+| | **Additional Taxes Table `<ImpuestosAdicionales>`¹⁷** | Up to 20 repetitions of code-value pairs can be included.<br>Includes the following five fields: | | | a) Conditional on other tax(es) existing in the detail line different from ITBIS. | | 2 | 2 | 2 | 2 | 0 | 0 | **2¹⁸** | 2 | 0 | 0 |
+```
+
+**Missing in optimized:**
+- ¹⁷ footnote on `<ImpuestosAdicionales>`
+- ¹⁸ footnote on obligatoriedad column
+- ²⁷, ²⁸, ²⁹ footnotes for detailed calculation rules
+- ⁴⁰, ⁴⁶, ⁴⁷ footnotes for OtraMoneda section
+- And ~70 more...
+
+### Impact
+
+The optimized version was meant to be the **BEST** version, but instead it **lost critical documentation** during "optimization":
+1. **Footnote superscripts** in table cells are gone
+2. **Detailed calculation formulas** are truncated
+3. **Conditional validation rules** are simplified/missing
+4. **Cross-references** between fields are lost
+
+### Recommended Fix Strategy
+
+**Option A: Full Restoration (Recommended)**
+- [ ] Systematically compare each table row in optimized vs complete
+- [ ] Restore all missing footnote superscripts (¹⁷, ¹⁸, etc.) to table cells
+- [ ] Restore detailed validation rules in Description columns
+- [ ] Keep the enhanced callouts and examples from optimized version
+
+**Option B: Merge Approach**
+- [ ] Start from complete version as base
+- [ ] Add the enhanced callouts, examples, and developer notes from optimized
+- [ ] This ensures nothing is lost
+
+**Option C: Document as Design Decision**
+- [ ] If "optimized" was intentionally simplified, rename to `ecf-format-v1.0-summary.md`
+- [ ] Make `ecf-format-v1.0-complete.md` the canonical "optimized" version
+
+### Priority
+
+🔴 **P0 - CRITICAL**
+
+The optimized version is currently **less complete** than the complete version. This violates the 3-way documentation principle where optimized = BEST of all versions.
+
+### Files to Compare
+
+```bash
+# To see the gap:
+grep -oE "[¹²³⁴⁵⁶⁷⁸⁹⁰]+" markdown/xml-formats/ecf-format-v1.0-complete.md | sort | uniq -c
+grep -oE "[¹²³⁴⁵⁶⁷⁸⁹⁰]+" markdown/xml-formats/ecf-format-v1.0.md | sort | uniq -c
+```
+
+### Affected Sections (Non-exhaustive)
+
+1. **B.1-B.8 Item Details** - Most footnotes are here (⁴⁸-⁶⁰)
+2. **B.4 ImpuestosAdicionales** - Footnotes ¹⁷-²⁹
+3. **B.8 OtraMoneda** - Footnotes ⁴⁰-⁴⁷
+4. **D Discounts/Surcharges** - Footnotes ⁶⁵-⁷⁴
+5. **F Reference Info** - Footnotes ⁷⁵-⁸³
+
