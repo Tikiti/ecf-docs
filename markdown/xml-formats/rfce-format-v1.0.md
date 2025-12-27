@@ -242,11 +242,13 @@ See [Digital Signing Guide](../guides/digital-signing-guide.md) for implementati
 >
 > **Footnote 1**: By XML definition, for each element there must be a container tag that groups the fields contained in a table. Example: in the case of `<TablaFormasPago>`, they are grouped within the `<FormaDePago>` tag for each `<FormaPago>` and `<MontoPago>` pair specified.
 >
+> **Footnote 2**: If `IdentificadorExtranjero` is populated, `RNCComprador` must be blank (see Section A.3 Comprador).
+>
 > **Footnote 3**: If the 'Foreign Identifier' field is completed, the 'Buyer RNC' field must be blank.
 >
-> **Foot note 4**: In fields where numeric values of 16 integers and 2 decimals exist, the rounding rule must be applied according to the e-CF Technical Report.
+> **Footnote 4**: In fields where numeric values of 16 integers and 2 decimals exist, the rounding rule must be applied according to the e-CF Technical Report.
 >
-> **Footnote 5**: See note 2.
+> **Footnote 5**: See Footnote 2 above.
 >
 > **Footnote 6**: According to the 'Additional Tax Types Codification' Table, included in the e-CF Format document.
 

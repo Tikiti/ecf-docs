@@ -1,9 +1,10 @@
 # Electronic Fiscal Voucher (e-CF) XML Format v1.0
 
 > **Original**: Formato Comprobante Fiscal Electrónico (e-CF) V1.0  
-> **Source**: Formato Comprobante Fiscal Electrónico (e-CF) V1.0.pdf  
+> **Source**: [Formato Comprobante Fiscal Electrónico (e-CF) V1.0.pdf](file:///home/romulo/visual/ecf/ecf-docs/Formatos%20XML/Formato%20Comprobante%20Fiscal%20Electr%C3%B3nico%20%28e-CF%29%20V1.0.pdf)  
 > **Pages**: 87  
-> **Version**: 1.0 | October 2025
+> **Version**: 1.0 | October 2025  
+> **Scope**: Main e-CF format for all electronic fiscal voucher types (31-47)
 
 ---
 
