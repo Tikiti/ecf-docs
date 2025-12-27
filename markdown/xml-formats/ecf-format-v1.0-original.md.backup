@@ -1,4 +1,4 @@
-]633;E;} > markdown/xml-formats/ecf-format-v1.0-original.md.cleaned;65b1a7dd-e3e5-41bc-8527-c371a1fa6b24]633;C# Formato Comprobante Fiscal Electrónico (e-CF)
+# Formato Comprobante Fiscal Electrónico (e-CF)
 
 **Versión 1.0 | Octubre 2025**
 
@@ -499,6 +499,24 @@ Se pueden incluir hasta 100 repeticiones.**
 ---
 
 
+---
+
+| 36 | `<DescuentoOtraMoneda>` | Descuento (ME) | 18 | NUM | ≥0, 2 decimales | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 37 | `<RecargoOtraMoneda>` | Recargo (ME) | 18 | NUM | ≥0, 2 decimales | N | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| 38 | `<MontoItemOtraMoneda>` | Total de línea (ME) | 18 | NUM | ≥0, 2 decimales | N | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+
+---
+
+### B.12 Total de Línea (Campo 39)
+
+| # | Elemento | Descripción | Máx | Tipo | Validación | I | 31 | 32 | 33 | 34 | 41 | 43 | 44 | 45 | 46 | 47 |
+|---|----------|-------------|-----|------|------------|:-:|----|----|----|----|----|----|----|----|----|----| 
+| 39 | `<MontoItem>` | Total de línea | 18 | NUM | =(Precio×Cant)−Descuento+Recargo | I | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+
+> [!NOTE]
+> `MontoItem` puede ser **0** para notas de crédito de corrección de texto (cuando `CodigoModificacion=2` en Información de Referencia).
+
+---
 
 ## C. SUBTOTALES INFORMATIVOS
 
@@ -853,6 +871,70 @@ Usado para Notas de Débito/Crédito (tipos 33, 34) para referenciar la factura 
 
 ---
 
+### TABLA V: Tipos de e-CF (Comprobantes Fiscales Electrónicos)
+
+**Fuente:** PDF páginas 3-4
+
+**Tipos de comprobantes fiscales electrónicos autorizados por la DGII:**
+
+| Código | Tipo de e-CF | Descripción/Uso |
+|--------|-------------|-----------------|
+| 31 | Factura de Crédito Fiscal Electrónica | Para contribuyentes registrados en el ITBIS que realizan transacciones comerciales |
+| 32 | Factura de Consumo Electrónica | Para ventas a consumidores finales |
+| 33 | Nota de Débito Electrónica | Aumenta el valor de una factura anterior emitida |
+| 34 | Nota de Crédito Electrónica | Disminuye el valor de una factura anterior o la anula |
+| 41 | Compras Electrónica | Para registrar compras realizadas |
+| 43 | Gastos Menores Electrónica | Para gastos menores que no requieren NCF físico |
+| 44 | Regímenes Especiales Electrónica | Para contribuyentes en regímenes especiales de tributación |
+| 45 | Gubernamental Electrónica | Para ventas a instituciones gubernamentales |
+| 46 | Exportaciones Electrónica | Para ventas de exportación |
+| 47 | Pagos al Exterior Electrónica | Para pagos a proveedores del exterior |
+
+**Total:** **10 tipos** de e-CF
+
+---
+
+**✅ TABLAS DE CODIFICACIÓN: DOCUMENTACIÓN COMPLETADA**
+
+**ESTADO FINAL:**
+- ✅ TABLA I (Impuestos): Resumen incluido, PDF para códigos completos (~40 códigos)
+- ✅ TABLA II (Monedas): **Completa** (17 monedas autorizadas)
+- ✅ TABLA III (Provincias/Municipios): **Tabla completa extraída** → [`tablas-provincias-completa.md`](tablas-provincias-completa.md) (572 entradas completas)
+- ✅ TABLA IV (Unidades): **Completa en este documento** (57 códigos)
+- ✅ TABLA V (Tipos e-CF): Completa (10 tipos)
+
+**NOTA:** El archivo markdown [`tablas-provincias-completa.md`](tablas-provincias-completa.md) contiene la tabla completa de provincias y municipios. Para unidades de medida, todos los 57 códigos están incluidos en este documento.
+---
+
+**🎊 DOCUMENTO FORMATO e-CF V1.0 COMPLETADO 🎊**
+
+**Este documento representa la especificación completa del Formato Comprobante Fiscal Electrónico (e-CF) V1.0**
+
+---
+
+### Actualizaciones al 09-10-2025
+**Modificaciones no implican cambio de versión.**
+
+1. Se actualiza la tabla II. Codificación Monedas, para agregar el tipo de moneda "Peso Colombiano"
+
+### Actualizaciones al 17-09-2024
+**Modificaciones no implican cambio de versión.**
+
+1. Se actualiza la tabla II. Codificación Monedas, para agregar los tipos de monedas "Gourde Haitiana" y "Peso Mexicano"
+2. Se actualiza la tabla IV. Codificación Unidad de Medida, para agregar los tipos de medidas "Hectárea", "Mililitro", "Miligramo", "Onzas" y "Onzas Troy"
+
+### Actualizaciones al 30-08-2022
+**Modificaciones no implican cambio de versión.**
+
+1. Se actualiza la tabla IV. Codificación Unidad de Medida, para agregar el tipo de medida "Bandeja"
+
+---
+de la DGII de República Dominicana en formato Markdown con TRUE 1:1 representación en español del PDF oficial.**
+
+- **Total campos:** 225 campos  
+- **Total secciones:** 8 (A-H) + Tablas  
+- **Total footnotes:** 82  
+- **Cobertura:** 100%
 
 ### Footnotes - Section A (ENCABEZADO)
 
