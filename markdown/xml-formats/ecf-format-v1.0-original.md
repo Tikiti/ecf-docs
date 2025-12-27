@@ -16,8 +16,8 @@ Modificaciones no implican cambio de versión.
 #### Actualizaciones al 17-09-2024
 Modificaciones no implican cambio de versión.
 
-1. Se actualiza la tabla II. Codificación Monedas, para agregar los tipos de monedas "Peso Mexicano" y otros
-2. Se actualiza la tabla IV. Codificación Unidad de Medida, para agregar los tipos de medidas adicionales
+1. Se actualiza la tabla II. Codificación Monedas, para agregar los tipos de monedas "Gourde Haitiana" y "Peso Mexicano"
+2. Se actualiza la tabla IV. Codificación Unidad de Medida, para agregar los tipos de medidas "Hectárea", "Mililitro", "Miligramo", "Onzas" y "Onzas Troy"
 
 #### Actualizaciones al 30-08-2022
 Modificaciones no implican cambio de versión.
